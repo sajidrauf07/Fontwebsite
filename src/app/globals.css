@@ -6663,6 +6663,70 @@ html[data-theme="light"] article strong {
   color: #0F172A !important;
 }
 
+/* ═══════════════════════════════════════════════════
+   Cursive Alphabet Preview & Letter Cards in Light Mode
+   ═══════════════════════════════════════════════════ */
+html[data-theme="light"] .alphabet-block {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+html[data-theme="light"] .alphabet-block-title {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .alphabet-char {
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="light"] .alphabet-char:hover {
+  background: #EEF2FF !important;
+  border-color: #6366F1 !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+html[data-theme="light"] .char-original {
+  color: #64748B !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .char-cursive {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+}
+
+/* Cursive Examples Grid in Light Mode */
+html[data-theme="light"] .cursive-example-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+html[data-theme="light"] .cursive-example-card:hover {
+  border-color: #6366F1 !important;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.08) !important;
+}
+
+html[data-theme="light"] .example-label {
+  color: #4F46E5 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .example-original {
+  color: #64748B !important;
+}
+
+html[data-theme="light"] .example-cursive {
+  color: #0F172A !important;
+  font-weight: 600 !important;
+}
+
+
 
 
 
