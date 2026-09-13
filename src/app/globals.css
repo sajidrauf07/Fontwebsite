@@ -5773,6 +5773,36 @@ html[data-theme="light"] .faq-v2-subtitle {
   color: #475569 !important;
 }
 
+html[data-theme="light"] .faq-v2-badge {
+  background: rgba(236, 72, 153, 0.08) !important;
+  border-color: rgba(236, 72, 153, 0.25) !important;
+  color: #DB2777 !important;
+}
+
+html[data-theme="light"] .faq-v2-badge.amber {
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-color: rgba(245, 158, 11, 0.25) !important;
+  color: #D97706 !important;
+}
+
+html[data-theme="light"] .faq-v2-badge.cyan {
+  background: rgba(14, 165, 233, 0.08) !important;
+  border-color: rgba(14, 165, 233, 0.25) !important;
+  color: #0284C7 !important;
+}
+
+html[data-theme="light"] .faq-v2-badge.purple {
+  background: rgba(139, 92, 246, 0.08) !important;
+  border-color: rgba(139, 92, 246, 0.25) !important;
+  color: #7C3AED !important;
+}
+
+html[data-theme="light"] .faq-v2-badge.emerald {
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+  color: #059669 !important;
+}
+
 html[data-theme="light"] .faq-v2-card {
   background: #F8FAFC !important;
   border: 1px solid rgba(15, 23, 42, 0.08) !important;
@@ -6293,6 +6323,84 @@ html[data-theme="light"] .clt-result-box {
 html[data-theme="light"] .clt-title {
   color: #0F172A !important;
 }
+
+/* ═══════════════════════════════════════════════════
+   SEO Articles, Cards & Content Sections in Light Mode
+   ═══════════════════════════════════════════════════ */
+html[data-theme="light"] .seo-card-section {
+  background: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #334155 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+html[data-theme="light"] .seo-card-section h2,
+html[data-theme="light"] .seo-card-section h3,
+html[data-theme="light"] .seo-card-section h4 {
+  color: #0F172A !important;
+}
+
+html[data-theme="light"] .seo-card-section p,
+html[data-theme="light"] .seo-card-section li {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .seo-card-section strong {
+  color: #0F172A !important;
+}
+
+/* Inner cards and boxes inside seo-card-section and seo-content-container */
+html[data-theme="light"] .seo-content-container [class*="bg-slate-950"],
+html[data-theme="light"] .seo-content-container [class*="bg-slate-900"],
+html[data-theme="light"] .seo-card-section [class*="bg-slate-950"],
+html[data-theme="light"] .seo-card-section [class*="bg-slate-900"],
+html[data-theme="light"] [class*="bg-gradient-to-r from-slate-950"],
+html[data-theme="light"] [class*="from-pink-950/40 via-slate-900"] {
+  background: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .seo-content-container .text-white,
+html[data-theme="light"] .seo-card-section .text-white {
+  color: #0F172A !important;
+}
+
+html[data-theme="light"] .seo-content-container .text-slate-300,
+html[data-theme="light"] .seo-content-container .text-slate-400,
+html[data-theme="light"] .seo-card-section .text-slate-300,
+html[data-theme="light"] .seo-card-section .text-slate-400 {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .seo-content-container .text-slate-700,
+html[data-theme="light"] .seo-card-section .text-slate-700 {
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="light"] .seo-content-container [class*="bg-slate-800"],
+html[data-theme="light"] .seo-card-section [class*="bg-slate-800"] {
+  background: #F1F5F9 !important;
+  color: #334155 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Tables inside SEO cards in light mode */
+html[data-theme="light"] .seo-card-section table th {
+  background: #F1F5F9 !important;
+  color: #0F172A !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .seo-card-section table td {
+  color: #334155 !important;
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html[data-theme="light"] .seo-card-section table tr:hover {
+  background: #F8FAFC !important;
+}
+
 
 
 
