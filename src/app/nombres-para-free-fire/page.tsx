@@ -107,7 +107,7 @@ export default function NombresParaFreeFirePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+    <div className="silo-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -121,45 +121,50 @@ export default function NombresParaFreeFirePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Header & Hero */}
-      <header className="bg-slate-950 border-b border-slate-800/80 pt-8 pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-2">
-            <Link href="/" className="hover:text-pink-400 transition-colors">
-              Inicio
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <span className="text-pink-400 font-medium">Nombres para Free Fire</span>
-          </nav>
+      {/* Breadcrumbs */}
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Nombres para Free Fire</span>
+        </div>
+      </nav>
 
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs sm:text-sm font-medium mb-4">
-              <Flame className="w-4 h-4 text-orange-400" />
-              <span>Generador de Nicks Gamer, Símbolos Pro y Letras Especiales</span>
+      {/* Hero Section */}
+      <section className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Flame size={16} className="sparkle-icon" color="#F59E0B" />
+            <span>Generador de Nicks Gamer, Símbolos Pro y Letras Especiales</span>
+          </div>
+
+          <h1 className="hero-h1">
+            Nombres para Free Fire: crea y copia tu nick
+          </h1>
+
+          <p className="hero-tagline">
+            Genera nombres chidos, insanos y originales para Free Fire, personalízalos con letras y símbolos y copia tu nick en segundos.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Compatibles con Free Fire Android / iOS</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-              Nombres para Free Fire: crea y copia tu nick
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6">
-              Genera nombres chidos, insanos y originales para Free Fire, personalízalos con letras y símbolos y copia tu nick en segundos.
-            </p>
-            <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-800/60 pt-4">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Compatibles con Free Fire Android / iOS
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Generador de 1 Clic
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Letras Unicode e Insanas
-              </span>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Generador de 1 Clic</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Letras Unicode e Insanas</span>
             </div>
           </div>
         </div>
-      </header>
+      </section>
 
       {/* Main Interactive Generator Component */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6">
