@@ -17,6 +17,7 @@ import {
   type SiloNavItem
 } from '@/config/navigation';
 import { MobileNav } from './MobileNav';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -212,6 +213,8 @@ export const Header: React.FC = () => {
 
         {/* Header Right Actions */}
         <div className="header-right-actions">
+          <ThemeToggle />
+
           <a href="/#generador" className="header-cta-btn">
             <Compass size={16} />
             <span>Usar Generador</span>

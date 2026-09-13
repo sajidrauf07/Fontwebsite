@@ -18,6 +18,7 @@ import {
   getActiveSilo,
   type SiloNavItem
 } from '@/config/navigation';
+import { ThemeToggle } from './ThemeToggle';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -105,15 +106,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             </div>
           </Link>
 
-          <button
-            ref={closeBtnRef}
-            onClick={onClose}
-            className="mobile-nav-close-btn"
-            aria-label="Cerrar menú de navegación"
-            type="button"
-          >
-            <X size={22} />
-          </button>
+          <div className="mobile-drawer-header-actions">
+            <ThemeToggle />
+            <button
+              ref={closeBtnRef}
+              onClick={onClose}
+              className="mobile-nav-close-btn"
+              aria-label="Cerrar menú de navegación"
+              type="button"
+            >
+              <X size={22} />
+            </button>
+          </div>
         </div>
 
         {/* Drawer Body */}
