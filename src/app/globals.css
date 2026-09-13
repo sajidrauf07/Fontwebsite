@@ -5648,8 +5648,35 @@ html[data-theme="light"] .seo-subtext {
   color: #334155;
 }
 
+html[data-theme="light"] .hero-h1 {
+  background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #0F172A !important;
+}
+
 html[data-theme="light"] .hero-tagline {
-  color: #475569;
+  color: #1E293B !important;
+}
+
+html[data-theme="light"] .hero-description {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .highlight-item {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .preset-chip {
+  background: #F1F5F9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .preset-chip:hover {
+  background: #EEF2FF !important;
+  border-color: #6366F1 !important;
+  color: #4338CA !important;
 }
 
 html[data-theme="light"] .seo-icon-badge {
