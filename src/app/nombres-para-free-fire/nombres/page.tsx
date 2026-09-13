@@ -1,0 +1,606 @@
+import React from 'react';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import FreeFireNamesSubcategoryGenerator from '@/components/free-fire-names/FreeFireNamesSubcategoryGenerator';
+import FreeFireNamesNicheIdeas from '@/components/free-fire-names/FreeFireNamesNicheIdeas';
+import FreeFireNamesFaq from '@/components/free-fire-names/FreeFireNamesFaq';
+import { FREE_FIRE_SUB_FAQ_ITEMS } from '@/data/freeFireSubcategoryData';
+import {
+  Sparkles,
+  ArrowRight,
+  ChevronRight,
+  MousePointerClick,
+  CheckCircle2,
+  BookOpen,
+  Zap,
+  Flame,
+  Search,
+  Shield,
+  AlertTriangle,
+  ExternalLink,
+  Table as TableIcon,
+  Check,
+  Crown,
+  Swords,
+  Heart,
+  Smile,
+  Gamepad2,
+  Lightbulb
+} from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
+  description:
+    'Encuentra nombres para Free Fire: nicks insanos, pro, cortos, con símbolos y estilos. Crea, copia y personaliza tu próximo nombre.',
+  alternates: {
+    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/'
+  },
+  openGraph: {
+    title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
+    description:
+      'Crea un nickname único para Free Fire con ideas, símbolos, letras bonitas y estilos listos para copiar y personalizar.',
+    url: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/',
+    siteName: 'Letras Bonitas',
+    locale: 'es_MX',
+    type: 'article'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
+    description:
+      'Catálogo completo de nicks insanos, pro, cortos, aesthetic y con símbolos para Free Fire al instante.'
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+
+export default function NombresSubcategoryPage() {
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: 'https://letrasbonitas.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Nombres para Free Fire',
+        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Nombres para Copiar',
+        item: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/'
+      }
+    ]
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FREE_FIRE_SUB_FAQ_ITEMS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Nombres para Free Fire: ideas, nicks y nombres para copiar y pegar',
+    description:
+      'Catálogo interactivo y guía completa de nombres para Free Fire. Nicks insanos, pro, cortos, aesthetic, con símbolos, para dúos y clanes listos para copiar y pegar.',
+    url: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/',
+    inLanguage: 'es-MX',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Letras Bonitas',
+      url: 'https://letrasbonitas.com/'
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
+      {/* Header & Hero */}
+      <header className="bg-slate-950 border-b border-slate-800/80 pt-8 pb-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-2">
+            <Link href="/" className="hover:text-pink-400 transition-colors">
+              Inicio
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
+            <Link
+              href="/nombres-para-free-fire/"
+              className="hover:text-pink-400 transition-colors"
+            >
+              Nombres para Free Fire
+            </Link>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
+            <span className="text-pink-400 font-medium">Nombres para Copiar</span>
+          </nav>
+
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs sm:text-sm font-medium mb-4">
+              <Flame className="w-4 h-4 text-orange-400" />
+              <span>Colección de Nicks Insanos, Pro, Aesthetic y Símbolos</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+              Nombres para Free Fire: ideas, nicks y nombres para copiar y pegar
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6">
+              Crea un nickname único para Free Fire con ideas, símbolos, letras bonitas y estilos listos para copiar y personalizar.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-800/60 pt-4">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Copiado Instantáneo con 1 Clic
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Compatibles con Android y iOS
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Estilos Unicode e Insanos
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Interactive Tool Component */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6">
+        <FreeFireNamesSubcategoryGenerator />
+      </div>
+
+      {/* Main SEO Article Content */}
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
+        {/* Intro & PAS Framework */}
+        <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6">
+          <p className="text-base sm:text-lg leading-relaxed text-slate-200">
+            Encontrar nombres para Free Fire que realmente se vean bien puede ser más difícil de lo que parece. Hay miles de opciones en Internet, pero muchas son demasiado largas, repetidas o están llenas de símbolos que hacen que el nick sea difícil de leer.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed">
+            Además, no todos buscan el mismo estilo. Algunos jugadores quieren un nombre insano, otros prefieren un nick corto y limpio, mientras que otros buscan símbolos, letras especiales, nombres graciosos o un nombre que funcione para toda su escuadra.
+          </p>
+          <p className="text-base sm:text-lg leading-relaxed font-medium text-pink-300">
+            Por eso, en esta guía encontrarás ideas de diferentes estilos en nuestra página principal de{' '}
+            <Link href="/nombres-para-free-fire/" className="text-pink-400 underline hover:text-pink-300">
+              nombres para Free Fire
+            </Link>
+            , consejos para crear tu propio nickname y una forma práctica de convertir una palabra sencilla en un nombre con personalidad. También veremos cómo copiar y pegar un nombre y qué debes revisar antes de utilizar caracteres especiales.
+          </p>
+        </section>
+
+        {/* Ready to Copy Nicknames Section */}
+        <section className="space-y-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Nombres para Free Fire listos para copiar y pegar
+          </h2>
+          <p>
+            Si quieres cambiar tu nickname rápidamente, lo más práctico es partir de una lista organizada de ideas y elegir el estilo que mejor represente cómo quieres que te vean en el juego:
+          </p>
+
+          {/* Subcategory 1: Insanos */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-amber-400 flex items-center gap-2">
+              <Crown className="w-5 h-5" /> Nombres insanos para Free Fire
+            </h3>
+            <p className="text-sm text-slate-300">
+              Si buscas un nombre con una vibra agresiva, competitiva o imponente, puedes probar estas combinaciones de nuestra sección especializada de{' '}
+              <Link href="/nombres-para-free-fire/nombres-insanos/" className="text-pink-400 hover:underline">
+                nombres insanos para Free Fire
+              </Link>:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-amber-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">亗Sombra亗</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">乂Nexus乂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">꧁Lobo꧂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">〆Vortex〆</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">★Titan★</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">么Raptor么</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">『Furia』</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">⚡Rayo⚡</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">乂Caos乂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">꧁Demon꧂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">☠Hunter☠</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">亗Phantom亗</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">★Venom★</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">〆Reaper〆</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">乂Inferno乂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">꧁Blaze꧂</span>
+            </div>
+          </div>
+
+          {/* Subcategory 2: Pro y Tryhard */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-rose-400 flex items-center gap-2">
+              <Swords className="w-5 h-5" /> Nombres pro y tryhard
+            </h3>
+            <p className="text-sm text-slate-300">
+              Para un estilo enfocado en la competición de alto nivel, normalmente funciona mejor un nombre corto de fácil reconocimiento:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-rose-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Zyro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Vex</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Kiro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Nox</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Raze</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Zayn</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Kyro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Axel</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">亗Zyro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Zyro亗</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">〆Vex</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">Noxメ</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">★Kyro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">『Nova』</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">乂Flux乂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">⚡Raze</span>
+            </div>
+          </div>
+
+          {/* Subcategory 3: Cortos */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-cyan-400 flex items-center gap-2">
+              <Zap className="w-5 h-5" /> Nombres cortos para Free Fire
+            </h3>
+            <p className="text-sm text-slate-300">
+              Si prefieres algo minimalista, prueba con palabras de 3 o 4 letras que dejen espacio limpio para tu desempeño:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-cyan-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">KRX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">ZEN</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">NEX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">REX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">VEX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">ZYX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">KAI</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">NOX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">RAY</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">FOX</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">SKY</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">ICE</span>
+            </div>
+          </div>
+
+          {/* Subcategory 4: Símbolos */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-emerald-400 flex items-center gap-2">
+              <Sparkles className="w-5 h-5" /> Nombres con símbolos
+            </h3>
+            <p className="text-sm text-slate-300">
+              Los caracteres decorativos transforman la estética visual del nombre. Revisa también nuestro catálogo de{' '}
+              <Link href="/nombres-para-free-fire/simbolos/" className="text-pink-400 hover:underline">
+                símbolos para Free Fire
+              </Link>:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-emerald-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">★Nova★</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">亗Ghost亗</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">乂Shadow乂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">『Dark』</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">〆Viper〆</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">꧁Luna꧂</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">⚡Blaze⚡</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">♛King♛</span>
+            </div>
+          </div>
+
+          {/* Subcategory 5: Aesthetic y Elegantes */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-pink-400 flex items-center gap-2">
+              <Heart className="w-5 h-5" /> Nombres elegantes y aesthetic
+            </h3>
+            <p className="text-sm text-slate-300">
+              Para una apariencia limpia, sofisticada o delicada:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-pink-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">✿Luna✿</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">♡Aurora♡</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">『Mystic』</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">✧Crystal✧</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">𓆩Luna𓆪</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">♡Sakura♡</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">★Moon★</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">୨୧Angel୨୧</span>
+            </div>
+          </div>
+
+          {/* Subcategory 6: Graciosos */}
+          <div className="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4">
+            <h3 className="text-xl font-bold text-purple-400 flex items-center gap-2">
+              <Smile className="w-5 h-5" /> Nombres graciosos para Free Fire
+            </h3>
+            <p className="text-sm text-slate-300">
+              Si tu estilo de juego es más divertido o relajado:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-sm text-purple-300 select-all">
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">NoMePegues</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">CasiPro</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">SinLag</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">FueAccidente</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">DonPing</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">MeCaí</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">NoEraYo</span>
+              <span className="bg-slate-900/80 p-2 rounded text-center border border-slate-800">ModoAvión</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Hombre vs Mujer */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Nombres para Free Fire para hombre y mujer
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+              <h3 className="font-bold text-cyan-400 text-lg">Para Hombre</h3>
+              <p className="text-sm text-slate-300">
+                Bases de fuerza, velocidad o misterio: <em>DarkWolf, IronX, Shadow, Thunder, Titan, Phantom, Hunter, Vortex</em>. Puedes añadir marcos como <span className="font-mono text-cyan-300">亗DarkWolf亗</span> o <span className="font-mono text-cyan-300">⚡Thunder⚡</span>.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3">
+              <h3 className="font-bold text-pink-400 text-lg">Para Mujer</h3>
+              <p className="text-sm text-slate-300">
+                Bases elegantes o competitivas: <em>QueenX, ShadowGirl, DarkLuna, ViperGirl, LadyGhost, MissStorm</em>. Añade detalles visuales como <span className="font-mono text-pink-300">♕QueenX♕</span> o <span className="font-mono text-pink-300">✿Luna✿</span>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Dúos, Escuadras y Clanes */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Nombres para dúos, escuadras y clanes
+          </h2>
+          <p>
+            Si juegas con amigos, la clave es mantener una relación visual o temática compartida:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-2">
+              <h3 className="font-semibold text-white text-base">Nombres para Dúos y Parejas</h3>
+              <p className="text-sm text-slate-300">
+                Pares opuestos o complementarios: <em>Dark亗 / Light亗</em>, <em>King★ / Queen★</em>, <em>Moon✦ / Sun✦</em>, <em>Fire⚡ / Ice⚡</em>. Visita nuestra guía de{' '}
+                <Link href="/nombres-para-free-fire/apodos/" className="text-pink-400 hover:underline">
+                  apodos para Free Fire
+                </Link>.
+              </p>
+            </div>
+
+            <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-2">
+              <h3 className="font-semibold text-white text-base">Nombres para Escuadras y Clanes</h3>
+              <p className="text-sm text-slate-300">
+                Abreviaturas o tags de clan: <span className="font-mono text-amber-300">亗NEX亗 Alex</span>, <span className="font-mono text-amber-300">亗NEX亗 Leo</span>, <span className="font-mono text-amber-300">NX・Shadow</span>. Revisa las ideas de{' '}
+                <Link href="/nombres-para-free-fire/clanes/" className="text-pink-400 hover:underline">
+                  nombres para clanes
+                </Link>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: How to create your own nickname */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Cómo crear tu propio nombre para Free Fire
+          </h2>
+          <p>
+            En lugar de copiar un nombre idéntico al de miles de jugadores, sigue este método de 4 pasos para construir tu nick propio:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-slate-800/40 p-4 rounded-xl border border-slate-700/60 space-y-2">
+              <h3 className="font-semibold text-white text-base">1. Elige una palabra base</h3>
+              <p className="text-xs text-slate-300">
+                Usa tu apodo real, una palabra corta o un concepto gamer (ej. <em>Lobo, Rayo, Shadow</em>).
+              </p>
+            </div>
+
+            <div className="bg-slate-800/40 p-4 rounded-xl border border-slate-700/60 space-y-2">
+              <h3 className="font-semibold text-white text-base">2. Añade letras estilizadas</h3>
+              <p className="text-xs text-slate-300">
+                Usa nuestro conversor para ver variantes Unicode cursivas, negritas o versalitas (
+                <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="text-pink-400 hover:underline">
+                  letras para copiar y pegar
+                </Link>
+                ).
+              </p>
+            </div>
+
+            <div className="bg-slate-800/40 p-4 rounded-xl border border-slate-700/60 space-y-2">
+              <h3 className="font-semibold text-white text-base">3. Usa símbolos con moderación</h3>
+              <p className="text-xs text-slate-300">
+                Coloca 1 o 2 símbolos decorativos al inicio o final sin saturar la lectura (ej. <span className="font-mono text-pink-300">亗Lobo亗</span>).
+              </p>
+            </div>
+
+            <div className="bg-slate-800/40 p-4 rounded-xl border border-slate-700/60 space-y-2">
+              <h3 className="font-semibold text-white text-base">4. Comprueba el resultado</h3>
+              <p className="text-xs text-slate-300">
+                Revisa la vista previa en el juego antes de confirmar el cambio de nombre.
+              </p>
+            </div>
+          </div>
+
+          <FreeFireNamesNicheIdeas />
+        </section>
+
+        {/* Section: Unicode Explanation (EEAT) */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Qué son las letras y símbolos Unicode
+          </h2>
+          <p>
+            Es común escuchar que estos estilos son "fuentes para Free Fire". Sin embargo, técnicamente se trata de caracteres codificados dentro del estándar universal <strong>Unicode</strong>.
+          </p>
+
+          <div className="bg-slate-800/50 border-l-4 border-pink-500 p-5 rounded-r-xl space-y-3">
+            <h3 className="text-white font-semibold text-base flex items-center gap-2">
+              <Lightbulb className="w-5 h-5 text-pink-400" />
+              Especificación de Unicode
+            </h3>
+            <p className="text-sm text-slate-300">
+              Unicode asigna un identificador numérico único a miles de caracteres gráficos, signos de puntuación, emojis y símbolos matemáticos (
+              <a
+                href="https://www.unicode.org/standard/standard.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-400 hover:text-pink-300 underline inline-flex items-center gap-1 ml-1"
+              >
+                <span>Unicode Standard</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              ).
+            </p>
+            <p className="text-sm text-slate-300">
+              Una fuente tradicional modifica la visualización dentro de un programa editor. En cambio, las variantes Unicode son caracteres de texto reales que se pueden copiar y pegar en{' '}
+              <Link href="/conversor-de-letras/texto-con-estilos/" className="text-pink-400 hover:underline">
+                texto con estilos
+              </Link>{' '}
+              y redes como{' '}
+              <Link href="/letras-para-instagram/" className="text-pink-400 hover:underline">
+                letras para Instagram
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Official Garena Copy & Paste Instructions */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Cómo copiar y pegar un nombre en Free Fire
+          </h2>
+          <p>
+            El flujo general para aplicar tu nuevo apodo de forma segura:
+          </p>
+
+          <ol className="list-decimal list-inside space-y-3 text-slate-300 text-sm bg-slate-950 p-6 rounded-2xl border border-slate-800">
+            <li>Selecciona el nick deseado o genéralo en nuestra herramienta.</li>
+            <li>Pulsa el botón <strong>Copiar</strong> para guardar el texto formateado.</li>
+            <li>Abre la aplicación de Free Fire en tu móvil.</li>
+            <li>Accede a tu perfil de jugador en la esquina superior izquierda.</li>
+            <li>Toca la casilla de edición de apodo o nickname.</li>
+            <li>Mantén presionado el campo y selecciona <strong>Pegar</strong>.</li>
+            <li>Comprueba que no existan cuadros vacíos (<span className="font-mono text-rose-400">□</span>) antes de confirmar.</li>
+            <li>Revisa la guía oficial de soporte de Garena si requieres diamantes o tarjeta de cambio (
+              <a
+                href="https://ffsupport.garena.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-400 hover:underline inline-flex items-center gap-1 ml-1"
+              >
+                <span>Garena Free Fire Support</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              ).
+            </li>
+          </ol>
+        </section>
+
+        {/* Selection Matrix Table */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Ideas rápidas según tu estilo
+          </h2>
+
+          <div className="overflow-x-auto rounded-xl border border-slate-800">
+            <table className="w-full text-left text-sm text-slate-300">
+              <thead className="bg-slate-950 text-slate-200 uppercase text-xs border-b border-slate-800">
+                <tr>
+                  <th className="px-4 py-3">Si quieres...</th>
+                  <th className="px-4 py-3">Prueba con...</th>
+                  <th className="px-4 py-3">Ejemplo de Base</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/80 bg-slate-900/60">
+                <tr className="hover:bg-slate-800/40">
+                  <td className="px-4 py-3 font-semibold text-white">Un nombre competitivo</td>
+                  <td className="px-4 py-3 text-pink-300">Algo corto y fácil de leer</td>
+                  <td className="px-4 py-3 font-mono text-xs">⚡ AcePro ⚡</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40">
+                  <td className="px-4 py-3 font-semibold text-white">Un estilo agresivo</td>
+                  <td className="px-4 py-3 text-cyan-300">Palabras como Fury, Venom o Titan</td>
+                  <td className="px-4 py-3 font-mono text-xs">亗Titan亗</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40">
+                  <td className="px-4 py-3 font-semibold text-white">Un nombre elegante</td>
+                  <td className="px-4 py-3 text-purple-300">Luna, Nova, Crystal o Aurora</td>
+                  <td className="px-4 py-3 font-mono text-xs">✧Crystal✧</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40">
+                  <td className="px-4 py-3 font-semibold text-white">Un estilo misterioso</td>
+                  <td className="px-4 py-3 text-amber-300">Shadow, Ghost, Night o Phantom</td>
+                  <td className="px-4 py-3 font-mono text-xs">꧁Phantom꧂</td>
+                </tr>
+                <tr className="hover:bg-slate-800/40">
+                  <td className="px-4 py-3 font-semibold text-white">Un nombre de clan</td>
+                  <td className="px-4 py-3 text-emerald-300">Etiqueta corta común</td>
+                  <td className="px-4 py-3 font-mono text-xs">亗NEX亗 Alex</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* FAQ Accordion UI Section */}
+        <section className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
+            Preguntas frecuentes sobre nombres para Free Fire
+          </h2>
+          <p>
+            Respuestas a las preguntas habituales sobre la creación, copiado y compatibilidad de nicks gamer:
+          </p>
+
+          <FreeFireNamesFaq />
+        </section>
+
+        {/* Conclusion */}
+        <section className="bg-gradient-to-r from-pink-900/30 via-purple-900/20 to-slate-900 border border-pink-500/20 rounded-2xl p-6 sm:p-8 space-y-4 text-center">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Copia y personaliza tu nick de Free Fire hoy
+          </h2>
+          <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Elegir nombres para Free Fire no consiste simplemente en copiar el nick más cargado de internet. Un buen nickname debe tener personalidad, ser fácil de reconocer y verse genial en tu perfil. Explora nuestros estilos, copia tu favorito en 1 clic y destaca en el juego.
+          </p>
+          <div className="pt-2">
+            <a
+              href="#main-tool"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold rounded-xl shadow-lg shadow-pink-500/25 transition-all transform hover:-translate-y-0.5"
+            >
+              <MousePointerClick className="w-5 h-5" />
+              <span>Ir al Generador de Nombres</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </div>
+  );
+}

@@ -1,0 +1,80 @@
+import type { Metadata, Viewport } from 'next';
+import { Inter, Outfit } from 'next/font/google';
+import './globals.css';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap'
+});
+
+export const viewport: Viewport = {
+  themeColor: '#0F172A',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5
+};
+
+export const metadata: Metadata = {
+  title: 'Letras Bonitas — Generador de Fuentes y Letras Elegantes (Copiar y Pegar)',
+  description:
+    'Genera letras bonitas, fuentes elegantes, letras cursivas, góticas y textos especiales para copiar y pegar en Instagram, WhatsApp, TikTok y juegos. Más de 350 estilos gratis.',
+  keywords: [
+    'letras bonitas',
+    'letras para copiar y pegar',
+    'fuentes bonitas',
+    'letras especiales',
+    'letras aesthetic',
+    'letras cursivas',
+    'letras elegantes',
+    'generador de letras',
+    'fuentes para instagram',
+    'texto bonito'
+  ],
+  alternates: {
+    canonical: 'https://letrasbonitas.com/'
+  },
+  openGraph: {
+    title: 'Letras Bonitas — Generador de Fuentes y Letras Elegantes',
+    description:
+      'Convierte tu texto en letras bonitas, cursivas, góticas y aesthetic para Instagram, WhatsApp y redes sociales.',
+    url: 'https://letrasbonitas.com/',
+    siteName: 'Letras Bonitas',
+    locale: 'es_ES',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Letras Bonitas — Generador de Fuentes y Letras Elegantes',
+    description:
+      'Convierte tu texto en letras bonitas, cursivas, góticas y aesthetic al instante. Gratis y sin registro.'
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+
+export default function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es" className={`${inter.variable} ${outfit.variable}`}>
+      <body className="antialiased">
+        <Header />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
