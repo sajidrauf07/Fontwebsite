@@ -1,8 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Copy, Check, Flame } from 'lucide-react';
+import { Copy, Check, Flame, Crown, Sparkles, Zap, Shield } from 'lucide-react';
 import { FREE_FIRE_NICHE_IDEAS, NicheNameIdeaGroup } from '@/data/freeFireData';
+
+const NICHE_CONFIG = [
+  { color: 'amber', icon: Crown },
+  { color: 'pink', icon: Sparkles },
+  { color: 'cyan', icon: Zap },
+  { color: 'emerald', icon: Shield }
+];
 
 export default function FreeFireNamesNicheIdeas() {
   const [copiedText, setCopiedText] = useState<string | null>(null);
@@ -35,71 +42,65 @@ export default function FreeFireNamesNicheIdeas() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.25rem',
           marginTop: '1.25rem'
         }}
       >
-        {FREE_FIRE_NICHE_IDEAS.map((group: NicheNameIdeaGroup, idx: number) => (
-          <div
-            key={idx}
-            style={{
-              background: 'var(--card-bg, #1e2029)',
-              borderRadius: '12px',
-              border: '1px solid var(--card-border, rgba(255, 255, 255, 0.08))',
-              padding: '1.25rem'
-            }}
-          >
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#f59e0b', marginBottom: '0.5rem' }}>
-              {group.title}
-            </h3>
-            <p style={{ fontSize: '0.875rem', color: '#94a3b8', marginBottom: '1rem', lineHeight: '1.4' }}>
-              {group.description}
-            </p>
+        {FREE_FIRE_NICHE_IDEAS.map((group: NicheNameIdeaGroup, idx: number) => {
+          const cfg = NICHE_CONFIG[idx % NICHE_CONFIG.length];
+          const IconComp = cfg.icon;
+          return (
+            <div
+              key={idx}
+              className={`niche-card niche-card-${cfg.color}`}
+            >
+              <div className="niche-card-header">
+                <IconComp size={18} />
+                <h3 className="niche-card-title">
+                  {group.title}
+                </h3>
+              </div>
+              <p className="niche-card-desc">
+                {group.description}
+              </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              {group.examples.map((ex: string, eIdx: number) => {
-                const isCopied = copiedText === ex;
-                return (
-                  <div
-                    key={eIdx}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      background: 'rgba(0, 0, 0, 0.25)',
-                      padding: '0.5rem 0.75rem',
-                      borderRadius: '8px',
-                      fontSize: '0.9rem',
-                      color: '#e2e8f0'
-                    }}
-                  >
-                    <span style={{ fontFamily: 'monospace, sans-serif', fontWeight: 600 }}>{ex}</span>
-                    <button
-                      type="button"
-                      className={`cp-card-copy-btn ${isCopied ? 'copied' : ''}`}
-                      style={{ padding: '3px 10px', fontSize: '0.75rem', height: 'auto', minWidth: 'auto' }}
-                      onClick={() => handleCopy(ex)}
+              <div className="niche-card-list">
+                {group.examples.map((ex: string, eIdx: number) => {
+                  const isCopied = copiedText === ex;
+                  return (
+                    <div
+                      key={eIdx}
+                      className="niche-example-row"
                     >
-                      {isCopied ? (
-                        <>
-                          <Check size={12} />
-                          <span>¡Copiado!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy size={12} />
-                          <span>Copiar</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-                );
-              })}
+                      <span className="niche-example-text">{ex}</span>
+                      <button
+                        type="button"
+                        className={`cp-card-copy-btn ${isCopied ? 'copied' : ''}`}
+                        style={{ padding: '4px 12px', fontSize: '0.75rem', height: 'auto', minWidth: 'auto', width: 'auto' }}
+                        onClick={() => handleCopy(ex)}
+                      >
+                        {isCopied ? (
+                          <>
+                            <Check size={12} />
+                            <span>¡Copiado!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy size={12} />
+                            <span>Copiar</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
 }
+
