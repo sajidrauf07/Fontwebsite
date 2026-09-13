@@ -66,11 +66,13 @@ export default function FreeFireRandomGenerator() {
 
         <div
           style={{
-            fontSize: '1.75rem',
+            fontSize: 'clamp(1.2rem, 5vw, 1.75rem)',
             fontWeight: 700,
             color: '#ffffff',
             margin: '1rem 0 1.5rem 0',
-            fontFamily: 'monospace, sans-serif'
+            fontFamily: 'monospace, sans-serif',
+            wordBreak: 'break-word',
+            overflowWrap: 'anywhere'
           }}
         >
           {randomName}

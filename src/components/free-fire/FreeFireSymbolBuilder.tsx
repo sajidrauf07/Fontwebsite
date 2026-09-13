@@ -84,7 +84,7 @@ export default function FreeFireSymbolBuilder() {
                 <span style={{ fontSize: '0.75rem', color: '#94a3b8', fontWeight: 600, textTransform: 'uppercase' }}>
                   {dec.label}
                 </span>
-                <div style={{ fontSize: '1.15rem', color: '#f8fafc', fontWeight: 600, marginTop: '4px' }}>
+                <div style={{ fontSize: '1.15rem', color: '#f8fafc', fontWeight: 600, marginTop: '4px', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
                   {formatted}
                 </div>
               </div>
