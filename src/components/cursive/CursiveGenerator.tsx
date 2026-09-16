@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useDeferredValue } from 'react';
 import { CURSIVE_STYLES } from '@/data/cursiveStyles';
 import { CursiveStyleCard } from './CursiveStyleCard';
-import { Sparkles, Trash2, Copy, Check, Type } from 'lucide-react';
+import { Sparkles, Trash2, Copy, Check, Type, ClipboardPaste } from 'lucide-react';
 
 const PRESET_EXAMPLES = [
   'Letras Bonitas',
@@ -16,16 +16,17 @@ const PRESET_EXAMPLES = [
 
 export const CursiveGenerator: React.FC = () => {
   const [inputText, setInputText] = useState('Letras Bonitas');
+  const deferredInputText = useDeferredValue(inputText);
   const [copiedAll, setCopiedAll] = useState(false);
 
-  const displayText = inputText.trim() || 'Letras Bonitas';
+  const displayText = deferredInputText.trim() || 'Letras Bonitas';
 
   // Sort styles by popularity desc
   const sortedStyles = useMemo(() => {
     return [...CURSIVE_STYLES].sort((a, b) => b.popularity - a.popularity);
   }, []);
 
-  // Generate all previews (memoized per inputText)
+  // Generate all previews (memoized per deferred input)
   const previews = useMemo(() => {
     return sortedStyles.map((style) => ({
       id: style.id,
@@ -49,6 +50,17 @@ export const CursiveGenerator: React.FC = () => {
     }
   }, [previews]);
 
+  const handlePaste = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) setInputText(text);
+      }
+    } catch {
+      // Fallback
+    }
+  };
+
   const charCount = inputText.length;
 
   return (
@@ -62,6 +74,15 @@ export const CursiveGenerator: React.FC = () => {
               <span>Escribe tu texto</span>
             </div>
             <div className="cg-input-actions">
+              <button
+                onClick={handlePaste}
+                className="action-btn text-btn-secondary"
+                type="button"
+                aria-label="Pegar texto del portapapeles"
+              >
+                <ClipboardPaste size={15} />
+                <span className="btn-text">Pegar</span>
+              </button>
               {inputText && (
                 <button
                   onClick={() => setInputText('')}

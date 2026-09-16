@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   description:
     'Encuentra nombres para Free Fire: nicks insanos, pro, cortos, con símbolos y estilos. Crea, copia y personaliza tu próximo nombre.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/'
   },
   openGraph: {
     title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
     description:
       'Crea un nickname único para Free Fire con ideas, símbolos, letras bonitas y estilos listos para copiar y personalizar.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -65,19 +65,19 @@ export default function NombresSubcategoryPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres para Copiar',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/'
       }
     ]
   };
@@ -101,12 +101,12 @@ export default function NombresSubcategoryPage() {
     headline: 'Nombres para Free Fire: ideas, nicks y nombres para copiar y pegar',
     description:
       'Catálogo interactivo y guía completa de nombres para Free Fire. Nicks insanos, pro, cortos, aesthetic, con símbolos, para dúos y clanes listos para copiar y pegar.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/nombres/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
       name: 'Letras Bonitas',
-      url: 'https://letrasbonitas.com/'
+      url: 'https://theletrasbonitas.com/'
     }
   };
 

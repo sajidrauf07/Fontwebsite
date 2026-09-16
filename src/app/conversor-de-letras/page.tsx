@@ -36,15 +36,15 @@ export const metadata: Metadata = {
   description:
     'Usa nuestro conversor de letras para crear letras bonitas, cursivas, góticas y más estilos. Convierte, copia y pega tu texto fácilmente.',
   alternates: {
-    canonical: 'https://letrasbonitas.mx/conversor-de-letras/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/'
   },
   openGraph: {
     title: 'Conversor de Letras: Letras Bonitas para Copiar y Pegar',
     description:
       'Convierte tu texto en letras bonitas, cursivas, negritas, góticas y aesthetic para copiar y pegar en Instagram, TikTok, WhatsApp y videojuegos.',
-    url: 'https://letrasbonitas.mx/conversor-de-letras/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/',
     siteName: 'Letras Bonitas',
-    locale: 'es_MX',
+    locale: 'es_ES',
     type: 'website'
   },
   twitter: {
@@ -111,13 +111,13 @@ export default function ConversorDeLetrasPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.mx/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://letrasbonitas.mx/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/'
       }
     ]
   };

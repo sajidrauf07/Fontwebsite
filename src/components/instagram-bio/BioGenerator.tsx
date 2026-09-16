@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
-import { Copy, Check, X, Search, Sparkles, Star, Zap } from 'lucide-react';
+import React, { useState, useMemo, useEffect, useDeferredValue } from 'react';
+import { Copy, Check, X, Search, Sparkles, Star, Zap, ClipboardPaste } from 'lucide-react';
 import { BIO_STYLES_COLLECTION, type BioStyleItem } from '@/data/bioStyles';
 import { sanitizeInput } from '@/lib/unicode/normalize';
 import BioPreview from './BioPreview';
@@ -21,6 +21,7 @@ const BIO_PRESET_CHIPS = [
 
 export default function BioGenerator() {
   const [inputText, setInputText] = useState('Creativo digital | Fotografía | Viajes');
+  const deferredInputText = useDeferredValue(inputText);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -52,7 +53,7 @@ export default function BioGenerator() {
   };
 
   const defaultText = 'Creativo digital | Fotografía | Viajes';
-  const textToTransform = sanitizeInput(inputText.trim() || defaultText, 300);
+  const textToTransform = sanitizeInput(deferredInputText.trim() || defaultText, 300);
 
   const filteredStyles = useMemo(() => {
     return BIO_STYLES_COLLECTION.filter((style) => {
@@ -110,6 +111,17 @@ export default function BioGenerator() {
     }
   };
 
+  const handlePaste = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) setInputText(text);
+      }
+    } catch {
+      // Fallback
+    }
+  };
+
   const currentStyledBio = filteredStyles[0]
     ? filteredStyles[0].transform(textToTransform)
     : textToTransform;
@@ -139,6 +151,15 @@ export default function BioGenerator() {
               <span>Escribe el texto de tu bio de Instagram</span>
             </label>
             <div className="cp-input-actions">
+              <button
+                type="button"
+                className="cp-clear-btn"
+                onClick={handlePaste}
+                title="Pegar del portapapeles"
+              >
+                <ClipboardPaste size={14} />
+                <span>Pegar</span>
+              </button>
               {inputText && (
                 <button
                   type="button"

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
-import { Copy, Check, X, Search, Sparkles, Star, Zap, Flame, Shield, Dices } from 'lucide-react';
+import React, { useState, useMemo, useEffect, useDeferredValue } from 'react';
+import { Copy, Check, X, Search, Sparkles, Star, Zap, Flame, Shield, Dices, ClipboardPaste } from 'lucide-react';
 import { ALL_STYLES, TextStyleDef } from '@/data/styles';
 import { transformText } from '@/lib/unicode/styleEngine';
 import { FREE_FIRE_PRESETS } from '@/data/freeFireData';
@@ -46,6 +46,7 @@ const SYMBOL_WRAPPERS = [
 
 export default function FreeFireNameGenerator() {
   const [inputText, setInputText] = useState('Shadow');
+  const deferredInputText = useDeferredValue(inputText);
   const [activeMode, setActiveMode] = useState<'stylish' | 'symbols' | 'gaming' | 'aesthetic' | 'minimal' | 'premium'>('stylish');
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
@@ -128,7 +129,18 @@ export default function FreeFireNameGenerator() {
     }
   };
 
-  const nameBase = inputText.trim() || 'Shadow';
+  const handlePaste = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) setInputText(text);
+      }
+    } catch {
+      // Fallback
+    }
+  };
+
+  const nameBase = deferredInputText.trim() || 'Shadow';
 
   return (
     <section className="copy-paste-tool-section" id="generador-free-fire">
@@ -160,6 +172,15 @@ export default function FreeFireNameGenerator() {
               <span>Escribe tu nombre o apodo para Free Fire</span>
             </label>
             <div className="cp-input-actions">
+              <button
+                type="button"
+                className="cp-clear-btn"
+                onClick={handlePaste}
+                title="Pegar del portapapeles"
+              >
+                <ClipboardPaste size={14} />
+                <span>Pegar</span>
+              </button>
               {inputText && (
                 <button
                   type="button"

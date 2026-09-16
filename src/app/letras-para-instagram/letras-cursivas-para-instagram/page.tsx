@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   description:
     'Crea letras cursivas para Instagram, copia y pega estilos bonitos en tu bio, nombres y publicaciones. Aprende cómo funcionan y evita errores.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/'
   },
   openGraph: {
     title: 'Letras Cursivas para Instagram: Copia y Pega',
     description:
       'Genera texto cursivo, elige tu estilo favorito y úsalo en tu bio, nombres, captions y comentarios de Instagram.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -65,19 +65,19 @@ export default function LetrasCursivasParaInstagramPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras Cursivas para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/'
       }
     ]
   };
@@ -101,12 +101,12 @@ export default function LetrasCursivasParaInstagramPage() {
     headline: 'Letras Cursivas para Instagram: Copia y Pega Estilos Bonitos',
     description:
       'Guía completa sobre cómo transformar texto normal en letras cursivas elegantes para Instagram. Copia fuentes Unicode manuscritas para bios, nombres y publicaciones.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
       name: 'Letras Bonitas',
-      url: 'https://letrasbonitas.com/'
+      url: 'https://theletrasbonitas.com/'
     }
   };
 

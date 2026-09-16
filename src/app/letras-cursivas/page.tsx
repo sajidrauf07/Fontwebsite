@@ -77,13 +77,13 @@ export const metadata: Metadata = {
   description:
     'Genera letras cursivas bonitas para copiar y pegar. Convierte tu texto en estilos elegantes para Instagram, WhatsApp, TikTok y más.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-cursivas/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/'
   },
   openGraph: {
     title: 'Letras Cursivas para Copiar y Pegar | Gratis',
     description:
       'Convierte tu texto en estilos cursivos elegantes y listos para copiar y pegar en segundos.',
-    url: 'https://letrasbonitas.com/letras-cursivas/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -122,13 +122,13 @@ export default function LetrasCursivasPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://letrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/'
       }
     ]
   };

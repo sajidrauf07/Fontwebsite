@@ -35,15 +35,15 @@ export const metadata: Metadata = {
   description:
     'Convierte texto normal en estilos de letras bonitas, cursivas, góticas y decoradas. Elige tu estilo, copia y pega fácilmente en Instagram, TikTok, WhatsApp y juegos.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/conversor-de-letras/texto-con-estilos/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/'
   },
   openGraph: {
     title: 'Texto con Estilos: Letras Bonitas para Copiar y Pegar',
     description:
       'Descubre cómo crear texto estilizado con caracteres Unicode, elegir el mejor estilo y copiarlo para tus redes, perfiles y nombres.',
-    url: 'https://letrasbonitas.com/conversor-de-letras/texto-con-estilos/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/',
     siteName: 'Letras Bonitas',
-    locale: 'es_MX',
+    locale: 'es_ES',
     type: 'article'
   },
   twitter: {
@@ -110,19 +110,19 @@ export default function TextoConEstilosPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://letrasbonitas.com/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Texto con Estilos',
-        item: 'https://letrasbonitas.com/conversor-de-letras/texto-con-estilos/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/'
       }
     ]
   };

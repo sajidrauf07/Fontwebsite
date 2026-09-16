@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   description:
     'Genera y copia letras cursivas bonitas para usar en Instagram, WhatsApp, TikTok, perfiles y nombres. Abecedario cursivo completo y más de 30 estilos manuscritos para copiar en un clic.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/'
   },
   openGraph: {
     title: 'Letras Cursivas para Copiar y Pegar | Generador Gratis',
     description:
       'Herramienta gratuita para convertir texto normal en letras cursivas bonitas, elegantes y manuscritas para copiar y pegar al instante.',
-    url: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -109,19 +109,19 @@ export default function CursiveCopyPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://letrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras Cursivas para Copiar y Pegar',
-        item: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/'
       }
     ]
   };

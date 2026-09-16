@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Trash2, Copy, Sparkles, RotateCcw } from 'lucide-react';
+import { Trash2, Copy, Sparkles, RotateCcw, ClipboardPaste } from 'lucide-react';
 
 interface TextInputProps {
   value: string;
@@ -31,6 +31,19 @@ export const TextInput: React.FC<TextInputProps> = ({
   const charCount = value.length;
   const wordCount = value.trim() ? value.trim().split(/\s+/).length : 0;
 
+  const handlePaste = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          onChange(text);
+        }
+      }
+    } catch {
+      // Fallback: clipboard access rejected or unsupported
+    }
+  };
+
   return (
     <div className="generator-input-card">
       <div className="input-card-header">
@@ -39,6 +52,15 @@ export const TextInput: React.FC<TextInputProps> = ({
           <span>Ingresa tu texto</span>
         </div>
         <div className="header-actions">
+          <button
+            onClick={handlePaste}
+            className="action-btn text-btn-secondary"
+            title="Pegar texto del portapapeles"
+            type="button"
+          >
+            <ClipboardPaste size={16} />
+            <span className="btn-text">Pegar</span>
+          </button>
           {value && (
             <button
               onClick={onClear}

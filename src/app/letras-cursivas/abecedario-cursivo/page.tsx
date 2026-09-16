@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   description:
     'Descubre el abecedario cursivo completo de A a Z, con mayúsculas y minúsculas para copiar y pegar, además de ejemplos y consejos de uso.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-cursivas/abecedario-cursivo/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/'
   },
   openGraph: {
     title: 'Abecedario Cursivo: Letras A-Z para Copiar y Pegar',
     description:
       'Encuentra letras cursivas mayúsculas y minúsculas, aprende cómo funcionan y descubre cómo utilizarlas en redes sociales, nombres y diseños.',
-    url: 'https://letrasbonitas.com/letras-cursivas/abecedario-cursivo/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -131,19 +131,19 @@ export default function AbecedarioCursivoPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://letrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Abecedario Cursivo',
-        item: 'https://letrasbonitas.com/letras-cursivas/abecedario-cursivo/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/'
       }
     ]
   };

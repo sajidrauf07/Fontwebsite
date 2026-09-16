@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   description:
     'Encuentra y copia los mejores símbolos para Free Fire. Símbolos de coronas, estrellas, kanjis, corchetes, calaveras y decorativos para tu nick gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/simbolos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/'
   },
   openGraph: {
     title: 'Símbolos para Free Fire | Bonitos, Especiales y para Copiar',
     description:
       'Catálogo completo y herramienta de combinación de símbolos bonitos, especiales y pro para Free Fire.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/simbolos/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -55,19 +55,19 @@ export default function SimbolosSubcategoryPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Símbolos para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/simbolos/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/'
       }
     ]
   };

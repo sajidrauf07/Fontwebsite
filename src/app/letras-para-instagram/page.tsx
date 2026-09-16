@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   description:
     'Crea letras para Instagram bonitas y gratis. Genera estilos cursivos, negrita, góticos y aesthetic para copiar y pegar en tu perfil, bio y publicaciones.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/'
   },
   openGraph: {
     title: 'Letras para Instagram: Bonitas, Gratis y para Copiar',
     description:
       'Crea textos con estilo para tu bio, nombre, publicaciones y comentarios. Descubre cómo copiar y pegar letras especiales en Instagram.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/',
     siteName: 'Letras Bonitas',
-    locale: 'es_MX',
+    locale: 'es_ES',
     type: 'article'
   },
   twitter: {
@@ -109,13 +109,13 @@ export default function LetrasParaInstagramPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/'
       }
     ]
   };

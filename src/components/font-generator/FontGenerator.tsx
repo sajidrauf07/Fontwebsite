@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useDeferredValue } from 'react';
 import { ALL_FONT_STYLES, FontStyle, CategoryType } from '@/data/fontStyles';
 import { TextInput } from './TextInput';
 import { CategoryFilter } from './CategoryFilter';
@@ -20,6 +20,8 @@ const ITEMS_PER_PAGE = 36;
 
 export const FontGenerator: React.FC = () => {
   const [inputText, setInputText] = useState<string>('Letras Bonitas');
+  // Defer the input for heavy style transformations so mobile keyboard typing remains 60fps instant
+  const deferredInputText = useDeferredValue(inputText);
   const [selectedCategory, setSelectedCategory] = useState<CategoryType>('All');
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [sortBy, setSortBy] = useState<SortOption>('Popular');
@@ -217,7 +219,7 @@ export const FontGenerator: React.FC = () => {
               <StyleCard
                 key={style.id}
                 styleDef={style}
-                inputText={inputText}
+                inputText={deferredInputText}
                 isFavorite={favorites.includes(style.id)}
                 onToggleFavorite={toggleFavorite}
                 onCopied={handleCopied}

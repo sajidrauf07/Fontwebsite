@@ -37,15 +37,15 @@ export const metadata: Metadata = {
   description:
     'Catálogo completo de letras para copiar y pegar en Instagram, WhatsApp, TikTok y videojuegos. Encuentra letras bonitas, cursivas, góticas y aesthetic gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.mx/conversor-de-letras/letras-para-copiar-y-pegar/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/'
   },
   openGraph: {
     title: 'Letras para Copiar y Pegar | Fuentes Bonitas y Especiales',
     description:
       'Catálogo de letras, palabras y frases bonitas listas para copiar con un solo clic para tu perfil de Instagram, WhatsApp, TikTok y juegos.',
-    url: 'https://letrasbonitas.mx/conversor-de-letras/letras-para-copiar-y-pegar/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/',
     siteName: 'Letras Bonitas',
-    locale: 'es_MX',
+    locale: 'es_ES',
     type: 'website'
   },
   twitter: {
@@ -112,19 +112,19 @@ export default function LetrasParaCopiarYPegarPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.mx/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://letrasbonitas.mx/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras para Copiar y Pegar',
-        item: 'https://letrasbonitas.mx/conversor-de-letras/letras-para-copiar-y-pegar/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/'
       }
     ]
   };

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useEffect } from 'react';
-import { Copy, Check, X, Search, Sparkles, Star, Zap } from 'lucide-react';
+import React, { useState, useMemo, useEffect, useDeferredValue } from 'react';
+import { Copy, Check, X, Search, Sparkles, Star, Zap, ClipboardPaste } from 'lucide-react';
 import { INSTAGRAM_STYLES, type InstagramStyleItem } from '@/data/instagramStyles';
 import { sanitizeInput } from '@/lib/unicode/normalize';
 
@@ -20,6 +20,7 @@ const INSTAGRAM_PRESETS = [
 
 export default function InstagramFontGenerator() {
   const [inputText, setInputText] = useState('Mi Perfil');
+  const deferredInputText = useDeferredValue(inputText);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -51,7 +52,7 @@ export default function InstagramFontGenerator() {
   };
 
   const defaultText = 'Mi Perfil';
-  const textToTransform = sanitizeInput(inputText.trim() || defaultText, 250);
+  const textToTransform = sanitizeInput(deferredInputText.trim() || defaultText, 250);
 
   const filteredStyles = useMemo(() => {
     return INSTAGRAM_STYLES.filter((style) => {
@@ -109,6 +110,17 @@ export default function InstagramFontGenerator() {
     }
   };
 
+  const handlePaste = async () => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        const text = await navigator.clipboard.readText();
+        if (text) setInputText(text);
+      }
+    } catch {
+      // Fallback
+    }
+  };
+
   return (
     <section className="copy-paste-tool-section" id="generador-letras-instagram">
       <div className="cp-panel">
@@ -134,6 +146,15 @@ export default function InstagramFontGenerator() {
               <span>Escribe tu texto para Instagram (Nombre, Bio, Caption...)</span>
             </label>
             <div className="cp-input-actions">
+              <button
+                type="button"
+                className="cp-clear-btn"
+                onClick={handlePaste}
+                title="Pegar del portapapeles"
+              >
+                <ClipboardPaste size={14} />
+                <span>Pegar</span>
+              </button>
               {inputText && (
                 <button
                   type="button"

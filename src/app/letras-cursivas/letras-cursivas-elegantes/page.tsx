@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   description:
     'Genera letras cursivas elegantes para copiar y pegar en tus redes sociales, perfiles, nombres y mensajes. Fuentes caligráficas finas, sofisticadas y manuscritas gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
   },
   openGraph: {
     title: 'Letras Cursivas Elegantes para Copiar y Pegar',
     description:
       'Conversor interactivo de fuentes cursivas elegantes, caligráficas y finas para copiar y pegar en Instagram, WhatsApp y perfiles de lujo.',
-    url: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -105,19 +105,19 @@ export default function ElegantCursivePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://letrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras Cursivas Elegantes',
-        item: 'https://letrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
       }
     ]
   };

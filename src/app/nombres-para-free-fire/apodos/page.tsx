@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description:
     'Crea y copia apodos originales, bonitos y estilosos para Free Fire. Generador de nicknames con símbolos, letras especiales, fuentes pro y aesthetic gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/apodos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/apodos/'
   },
   openGraph: {
     title: 'Apodos para Free Fire | Bonitos, Originales y para Copiar',
     description:
       'Descubre y copia ideas de apodos y nicknames originales con símbolos y letras bonitas para Free Fire.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/apodos/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/apodos/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -54,19 +54,19 @@ export default function ApodosSubcategoryPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Apodos para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/apodos/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/apodos/'
       }
     ]
   };

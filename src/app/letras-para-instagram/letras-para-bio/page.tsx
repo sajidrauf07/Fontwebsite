@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     'Crea letras bonitas, fuentes cursivas, elegantes y aesthetic para tu bio de Instagram. Generador de texto para biografía con vista previa y copiado en un clic.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-para-instagram/letras-para-bio/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio/'
   },
   openGraph: {
     title: 'Letras para Bio de Instagram | Fuentes Bonitas y Elegantes',
     description:
       'Transforma el texto de tu biografía de Instagram con letras cursivas, versalitas y estéticas. Vista previa de perfil y copiado instantáneo.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/letras-para-bio/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -58,19 +58,19 @@ export default function LetrasParaBioPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras para Bio',
-        item: 'https://letrasbonitas.com/letras-para-instagram/letras-para-bio/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio/'
       }
     ]
   };

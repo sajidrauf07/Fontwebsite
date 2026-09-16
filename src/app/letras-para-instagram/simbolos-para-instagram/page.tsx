@@ -40,13 +40,13 @@ export const metadata: Metadata = {
   description:
     'Descubre símbolos para Instagram, corazones, estrellas, flechas y separadores. Copia y pega símbolos bonitos para tu bio, nombre y publicaciones.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
   },
   openGraph: {
     title: 'Símbolos para Instagram: Copia y Pega Símbolos Bonitos',
     description:
       'Corazones, estrellas, flechas, flores y símbolos aesthetic para personalizar tu bio, nombre y publicaciones de Instagram.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -72,19 +72,19 @@ export default function SimbolosParaInstagramPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Símbolos para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
       }
     ]
   };
@@ -108,12 +108,12 @@ export default function SimbolosParaInstagramPage() {
     headline: 'Símbolos para Instagram: copia y pega símbolos bonitos',
     description:
       'Guía completa y colección interactiva de símbolos para Instagram. Copia corazones, estrellas, flechas, separadores y símbolos aesthetic para bios, nombres y publicaciones.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
       name: 'Letras Bonitas',
-      url: 'https://letrasbonitas.com/'
+      url: 'https://theletrasbonitas.com/'
     }
   };
 

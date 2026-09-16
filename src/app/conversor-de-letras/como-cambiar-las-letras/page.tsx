@@ -35,15 +35,15 @@ export const metadata: Metadata = {
   description:
     'Aprende cómo cambiar las letras de tu texto paso a paso. Tutorial completo para transformar tus fuentes a estilos cursivos, negritas y aesthetic copiables.',
   alternates: {
-    canonical: 'https://letrasbonitas.mx/conversor-de-letras/como-cambiar-las-letras/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/'
   },
   openGraph: {
     title: 'Cómo Cambiar las Letras | Guía y Conversor Online',
     description:
       'Tutorial sencillo y conversor gratuito para cambiar la fuente de tus textos a caracteres Unicode bonitos y copiables.',
-    url: 'https://letrasbonitas.mx/conversor-de-letras/como-cambiar-las-letras/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/',
     siteName: 'Letras Bonitas',
-    locale: 'es_MX',
+    locale: 'es_ES',
     type: 'website'
   },
   twitter: {
@@ -110,19 +110,19 @@ export default function ComoCambiarLasLetrasPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.mx/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://letrasbonitas.mx/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Cómo Cambiar las Letras',
-        item: 'https://letrasbonitas.mx/conversor-de-letras/como-cambiar-las-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/'
       }
     ]
   };

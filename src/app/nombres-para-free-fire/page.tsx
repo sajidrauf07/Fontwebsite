@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   description:
     'Crea nombres para Free Fire chidos, insanos y originales. Genera tu nick, usa símbolos, copia y pega y encuentra tu estilo ideal.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/'
   },
   openGraph: {
     title: 'Nombres para Free Fire: Nicks Chidos para Copiar',
     description:
       'Genera nombres chidos, insanos y originales para Free Fire, personalízalos con letras y símbolos y copia tu nick en segundos.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -67,13 +67,13 @@ export default function NombresParaFreeFirePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       }
     ]
   };
@@ -97,12 +97,12 @@ export default function NombresParaFreeFirePage() {
     headline: 'Nombres para Free Fire: crea y copia tu nick',
     description:
       'Guía definitiva y generador interactivo de nombres para Free Fire. Crea apodos insanos, chidos, tryhard y aesthetic con letras Unicode y símbolos para copiar y pegar.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
       name: 'Letras Bonitas',
-      url: 'https://letrasbonitas.com/'
+      url: 'https://theletrasbonitas.com/'
     }
   };
 

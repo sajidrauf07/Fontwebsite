@@ -122,10 +122,23 @@ export const Footer: React.FC = () => {
           })}
         </div>
 
-        {/* Footer Bottom Bar: Copyright & Subtle Utility Tagline */}
+        {/* Footer Bottom Bar: Copyright, Developer Credit & Subtle Utility Tagline */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
             © {currentYear} Letras Bonitas. Todos los derechos reservados.
+          </p>
+
+          <p className="footer-agency-credit">
+            Desarrollado por{' '}
+            <a
+              href="https://www.sntechweb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-agency-link"
+              title="SN Tech Web — Desarrollo y Soluciones Web"
+            >
+              SN Tech Web
+            </a>
           </p>
 
           <p className="footer-made-with">

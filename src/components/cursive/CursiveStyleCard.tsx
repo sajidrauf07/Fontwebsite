@@ -9,7 +9,7 @@ interface CursiveStyleCardProps {
   description?: string;
 }
 
-export const CursiveStyleCard: React.FC<CursiveStyleCardProps> = ({
+const CursiveStyleCardComponent: React.FC<CursiveStyleCardProps> = ({
   name,
   preview,
   description
@@ -68,3 +68,5 @@ export const CursiveStyleCard: React.FC<CursiveStyleCardProps> = ({
     </div>
   );
 };
+
+export const CursiveStyleCard = React.memo(CursiveStyleCardComponent);

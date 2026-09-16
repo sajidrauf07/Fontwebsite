@@ -38,13 +38,13 @@ export const metadata: Metadata = {
   description:
     'Crea letras para nombres bonitas y originales. Prueba estilos cursivos, góticos, aesthetic y más, copia tu favorito y úsalo donde quieras.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/letras-para-instagram/letras-para-nombres/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/'
   },
   openGraph: {
     title: 'Letras para Nombres Bonitos: Copia y Pega Estilos',
     description:
       'Personaliza tu nombre con estilos cursivos, góticos, aesthetic y especiales listos para copiar y pegar.',
-    url: 'https://letrasbonitas.com/letras-para-instagram/letras-para-nombres/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -70,19 +70,19 @@ export default function LetrasParaNombresPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://letrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras para Nombres',
-        item: 'https://letrasbonitas.com/letras-para-instagram/letras-para-nombres/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/'
       }
     ]
   };

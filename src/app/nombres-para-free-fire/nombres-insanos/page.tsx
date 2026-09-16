@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   description:
     'Genera nombres insanos, llamativos y estilosos para Free Fire. Copia y pega apodos savage, dark, pro y con símbolos para tu nick de Free Fire gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/nombres-insanos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos/'
   },
   openGraph: {
     title: 'Nombres Insanos para Free Fire | Generador y Nombres para Copiar',
     description:
       'Descubre y copia ideas de nombres insanos originales con símbolos Pro y estilos de letras avanzadas para Free Fire.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/nombres-insanos/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -55,19 +55,19 @@ export default function NombresInsanosPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres Insanos para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/nombres-insanos/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos/'
       }
     ]
   };

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { FontStyle } from '@/data/fontStyles';
 import { Copy, Check, Heart, AlertTriangle } from 'lucide-react';
 
@@ -12,7 +12,7 @@ interface StyleCardProps {
   onCopied: (id: string, text: string) => void;
 }
 
-export const StyleCard: React.FC<StyleCardProps> = ({
+const StyleCardComponent: React.FC<StyleCardProps> = ({
   styleDef,
   inputText,
   isFavorite,
@@ -23,9 +23,17 @@ export const StyleCard: React.FC<StyleCardProps> = ({
 
   const defaultText = 'Letras Bonitas';
   const rawText = inputText.trim() || defaultText;
-  const transformedText = styleDef.transform(rawText);
 
-  const handleCopy = async () => {
+  // Memoize transformation to avoid unnecessary string manipulations
+  const transformedText = useMemo(() => {
+    try {
+      return styleDef.transform(rawText);
+    } catch {
+      return rawText;
+    }
+  }, [styleDef, rawText]);
+
+  const handleCopy = useCallback(async () => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(transformedText);
@@ -50,7 +58,7 @@ export const StyleCard: React.FC<StyleCardProps> = ({
     } catch (err) {
       console.error('Error al copiar al portapapeles:', err);
     }
-  };
+  }, [transformedText, onCopied, styleDef.id]);
 
   return (
     <div className={`style-card ${copied ? 'card-copied' : ''}`}>
@@ -105,3 +113,5 @@ export const StyleCard: React.FC<StyleCardProps> = ({
     </div>
   );
 };
+
+export const StyleCard = React.memo(StyleCardComponent);

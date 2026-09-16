@@ -3,6 +3,7 @@ import { Inter, Outfit } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { ScrollToTop } from '@/components/ui/ScrollToTop';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -24,6 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://theletrasbonitas.com'),
   title: 'Letras Bonitas — Generador de Fuentes y Letras Elegantes (Copiar y Pegar)',
   description:
     'Genera letras bonitas, fuentes elegantes, letras cursivas, góticas y textos especiales para copiar y pegar en Instagram, WhatsApp, TikTok y juegos. Más de 350 estilos gratis.',
@@ -40,13 +42,13 @@ export const metadata: Metadata = {
     'texto bonito'
   ],
   alternates: {
-    canonical: 'https://letrasbonitas.com/'
+    canonical: 'https://theletrasbonitas.com/'
   },
   openGraph: {
     title: 'Letras Bonitas — Generador de Fuentes y Letras Elegantes',
     description:
       'Convierte tu texto en letras bonitas, cursivas, góticas y aesthetic para Instagram, WhatsApp y redes sociales.',
-    url: 'https://letrasbonitas.com/',
+    url: 'https://theletrasbonitas.com/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -81,6 +83,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

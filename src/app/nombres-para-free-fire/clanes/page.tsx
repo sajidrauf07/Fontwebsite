@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   description:
     'Encuentra y crea nombres originales para clanes de Free Fire. Generador de nombres de clan, tags de equipo y símbolos pro para copiar gratis.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/nombres-para-free-fire/clanes/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/'
   },
   openGraph: {
     title: 'Nombres para Clanes de Free Fire | Originales y para Copiar',
     description:
       'Descubre y crea nombres de clanes originales con símbolos Pro y tags de equipo para Free Fire.',
-    url: 'https://letrasbonitas.com/nombres-para-free-fire/clanes/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -56,19 +56,19 @@ export default function ClanesSubcategoryPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres para Clanes de Free Fire',
-        item: 'https://letrasbonitas.com/nombres-para-free-fire/clanes/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/'
       }
     ]
   };

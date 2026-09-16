@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'Crea letras bonitas para copiar y pegar. Explora estilos cursivos, góticos, aesthetic, elegantes y más para Instagram, juegos y redes sociales.',
   alternates: {
-    canonical: 'https://letrasbonitas.com/'
+    canonical: 'https://theletrasbonitas.com/'
   },
   openGraph: {
     title: 'Letras Bonitas para Copiar y Pegar | Gratis',
     description:
       'Genera letras cursivas, aesthetic, góticas y más estilos para copiar y pegar al instante en Instagram, WhatsApp y juegos.',
-    url: 'https://letrasbonitas.com/',
+    url: 'https://theletrasbonitas.com/',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -37,10 +37,10 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Letras Bonitas',
-    url: 'https://letrasbonitas.com/',
+    url: 'https://theletrasbonitas.com/',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://letrasbonitas.com/?s={search_term_string}',
+      target: 'https://theletrasbonitas.com/?s={search_term_string}',
       'query-input': 'required name=search_term_string'
     }
   };
@@ -66,7 +66,7 @@ export default function HomePage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Inicio',
-        item: 'https://letrasbonitas.com/'
+        item: 'https://theletrasbonitas.com/'
       }
     ]
   };
