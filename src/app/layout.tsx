@@ -8,13 +8,15 @@ import { ScrollToTop } from '@/components/ui/ScrollToTop';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap'
+  display: 'swap',
+  adjustFontFallback: true
 });
 
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',
-  display: 'swap'
+  display: 'swap',
+  adjustFontFallback: true
 });
 
 export const viewport: Viewport = {

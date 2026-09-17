@@ -1,7 +1,6 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import { SEOArticleFaqAccordion } from './SEOArticleFaqAccordion';
 import {
   Sparkles,
   Type,
@@ -83,11 +82,6 @@ const MASTER_ARTICLE_FAQS: FAQItem[] = [
 ];
 
 export const SEOContent: React.FC = () => {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -662,38 +656,7 @@ export const SEOContent: React.FC = () => {
         </div>
 
         {/* Master FAQ Stacked Accordion Cards */}
-        <div className="faq-v2-list">
-          {MASTER_ARTICLE_FAQS.map((faq, index) => {
-            const isOpen = openFaqIndex === index;
-            return (
-              <div
-                key={index}
-                className={`faq-v2-card${isOpen ? ' open' : ''}`}
-              >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="faq-v2-question"
-                  aria-expanded={isOpen}
-                  type="button"
-                >
-                  <span className="faq-v2-arrow">
-                    <ChevronRight size={18} />
-                  </span>
-                  <span className="faq-v2-question-text">
-                    {faq.question}
-                  </span>
-                </button>
-                {isOpen && (
-                  <div className="faq-v2-answer">
-                    <p className="faq-v2-answer-text">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <SEOArticleFaqAccordion faqs={MASTER_ARTICLE_FAQS} />
       </section>
 
       {/* 9. Conclusion Section */}

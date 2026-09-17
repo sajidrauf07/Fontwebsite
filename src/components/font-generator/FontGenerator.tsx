@@ -16,7 +16,7 @@ interface RecentStyleItem {
   timestamp: number;
 }
 
-const ITEMS_PER_PAGE = 36;
+const ITEMS_PER_PAGE = 18;
 
 export const FontGenerator: React.FC = () => {
   const [inputText, setInputText] = useState<string>('Letras Bonitas');

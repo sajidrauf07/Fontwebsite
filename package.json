@@ -19,5 +19,9 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "typescript": "^5.7.3"
-  }
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "not dead"
+  ]
 }

@@ -15,7 +15,7 @@
   
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
-  --text-dim: #64748B;
+  --text-dim: #94A3B8;
   
   --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
   --gradient-glow: radial-gradient(circle at 50% -20%, rgba(99, 102, 241, 0.25), transparent 70%);
@@ -5560,12 +5560,12 @@ body {
 
 .copyright-text {
   font-size: 0.82rem;
-  color: #64748B;
+  color: #94A3B8;
 }
 
 .footer-made-with {
   font-size: 0.82rem;
-  color: #64748B;
+  color: #94A3B8;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -6168,6 +6168,15 @@ html[data-theme="light"] .footer-silo-column {
 
 html[data-theme="light"] .footer-bottom-bar {
   border-top-color: rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .copyright-text,
+html[data-theme="light"] .footer-made-with {
+  color: #475569;
+}
+
+html[data-theme="light"] .input-counter {
+  color: #64748B;
 }
 
 /* ==========================================================================
