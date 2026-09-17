@@ -31,6 +31,13 @@ import {
   ShieldAlert
 } from 'lucide-react';
 import { mapAlphabet } from '@/lib/unicode/transformations';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
 
 export const metadata: Metadata = {
   title: 'Letras para Copiar y Pegar | Letras Bonitas y Fuentes Especiales',
@@ -103,6 +110,23 @@ const COPIAR_PEGAR_FAQ_ITEMS = [
   }
 ];
 
+const COPIAR_PEGAR_TOC_ITEMS = [
+  { id: 'herramienta-copiar-pegar', label: 'Herramienta de copia rápida' },
+  { id: 'letras-para-copiar', label: 'Abecedario de letras para copiar' },
+  { id: 'que-son', label: '¿Qué son las letras para copiar y pegar?' },
+  { id: 'como-copiar', label: 'Cómo copiar y pegar paso a paso' },
+  { id: 'catálogo-estilos', label: 'Principales estilos de letras' },
+  { id: 'mecanica-tecnica', label: 'Arquitectura técnica Unicode' },
+  { id: 'comparacion', label: 'Unicode vs Fuentes tradicionales' },
+  { id: 'plataformas', label: 'Dónde usar las letras para copiar' },
+  { id: 'matriz-seleccion', label: 'Matriz de recomendación' },
+  { id: 'ejemplos-practicos', label: 'Ejemplos listos para copiar' },
+  { id: 'diagnostico', label: 'Solución de problemas visuales' },
+  { id: 'errores', label: 'Errores comunes' },
+  { id: 'consejos-legibilidad', label: 'Consejos de legibilidad' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
+
 export default function LetrasParaCopiarYPegarPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -144,6 +168,8 @@ export default function LetrasParaCopiarYPegarPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -187,6 +213,9 @@ export default function LetrasParaCopiarYPegarPage() {
               Explora diferentes estilos, escribe tu propio texto o selecciona nuestros ejemplos preparados para usarlos en Instagram, WhatsApp, TikTok y juegos.
             </p>
           </header>
+
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={COPIAR_PEGAR_TOC_ITEMS} />
 
           {/* MAIN COPY & PASTE TOOL */}
           <CopyPasteTool />
@@ -252,50 +281,38 @@ export default function LetrasParaCopiarYPegarPage() {
               El proceso en nuestra plataforma ha sido diseñado para ser completamente intuitivo y veloz. No necesitas aprender códigos ni hacer selecciones manuales complicadas:
             </p>
 
-            <div className="steps-grid" style={{ marginTop: '1.5rem' }}>
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <div className="step-icon-wrapper">
-                  <Sparkles size={20} />
-                </div>
-                <h3>1. Escribe tu texto o elige un ejemplo</h3>
-                <p>
+            <div className="mt-6">
+              <StepGuide>
+                <StepItem
+                  stepNumber={1}
+                  title="Escribe tu texto o elige un ejemplo"
+                  badge="Paso 1"
+                >
                   Utiliza el cuadro de texto del generador superior para escribir tu propio nombre, frase o biografía. Si lo prefieres, navega por nuestras listas de letras individuales, palabras populares, nombres y frases listas.
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <div className="step-icon-wrapper">
-                  <Sliders size={20} />
-                </div>
-                <h3>2. Explora los estilos visuales</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={2}
+                  title="Explora los estilos visuales"
+                  badge="Paso 2"
+                >
                   Revisa la vista previa instantánea con variantes como cursivas caligráficas (<i>{mapAlphabet('Letras', 'script')}</i>), negritas serif (<b>{mapAlphabet('Letras', 'boldSerif')}</b>), góticas (𝔏𝔢𝔱𝔯𝔞𝔰) o burbujas (Ⓛⓔⓣⓡⓐⓢ). Si quieres saber más sobre la conversión, lee <Link href="/conversor-de-letras/como-cambiar-las-letras/">cómo cambiar las letras</Link>.
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <div className="step-icon-wrapper">
-                  <Copy size={20} />
-                </div>
-                <h3>3. Haz clic en el botón «Copiar»</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={3}
+                  title="Haz clic en el botón «Copiar»"
+                  badge="Paso 3"
+                >
                   Presiona el botón de copia al lado de tu diseño favorito. El botón cambiará a color verde confirmando que el texto estilizado se ha guardado en el portapapeles de tu celular o computadora.
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">4</div>
-                <div className="step-icon-wrapper">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h3>4. Pega en tu aplicación favorita</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={4}
+                  title="Pega en tu aplicación favorita"
+                  badge="Paso 4"
+                  isLast={true}
+                >
                   Abre Instagram, WhatsApp, TikTok, Discord o Free Fire. Mantén presionado el campo de texto (o usa Ctrl+V en PC) y selecciona "Pegar". ¡Listo! Tu texto lucirá un diseño único.
-                </p>
-              </div>
+                </StepItem>
+              </StepGuide>
             </div>
           </section>
 
@@ -650,6 +667,14 @@ export default function LetrasParaCopiarYPegarPage() {
                 <p>Si vas a publicar en Instagram, visualiza tu bio desde un iPhone y desde un teléfono Android para asegurarte de que luce impecable en ambos.</p>
               </div>
             </div>
+
+            <ToolCTA
+              title="¿Buscas una combinación de letras única?"
+              description="Escribe cualquier nombre o palabra en nuestra herramienta superior para copiarla al instante con más de 350 estilos compatibles."
+              buttonText="Ir a la Herramienta de Copia"
+              targetId="herramienta-copiar-pegar"
+              badge="Acceso Rápido"
+            />
           </section>
 
           {/* FAQ SECTION */}

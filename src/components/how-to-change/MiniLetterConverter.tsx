@@ -40,7 +40,7 @@ export default function MiniLetterConverter() {
   };
 
   return (
-    <section className="copy-paste-tool-section mb-12">
+    <section className="copy-paste-tool-section mb-12" id="herramienta-conversor">
       <div className="cp-panel">
         <div className="cp-quick-presets">
           <span className="cp-quick-label">

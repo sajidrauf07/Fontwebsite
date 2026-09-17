@@ -34,6 +34,25 @@ import {
   Smartphone,
   Layers
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const SIMBOLOS_INSTAGRAM_TOC_ITEMS = [
+  { id: 'main-tool', label: 'Herramienta de símbolos para Instagram' },
+  { id: 'simbolos-copiar', label: 'Símbolos populares para copiar' },
+  { id: 'que-son-simbolos', label: '¿Qué son los símbolos Unicode?' },
+  { id: 'simbolos-por-categoria', label: 'Símbolos por categoría' },
+  { id: 'simbolos-vs-emojis', label: 'Símbolos vs Emojis vs Letras Bonitas' },
+  { id: 'renderizado-glifos', label: '¿Por qué algunos símbolos se ven diferentes?' },
+  { id: 'como-copiar-pegar', label: 'Cómo copiar y pegar paso a paso' },
+  { id: 'estructura-bio', label: 'Cómo usar símbolos en la bio' },
+  { id: 'errores-comunes', label: '5 Errores comunes al usar símbolos' },
+  { id: 'combinar-conversor', label: 'Cómo combinar símbolos con texto' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Símbolos para Instagram: Copia y Pega Símbolos Bonitos',
@@ -119,6 +138,7 @@ export default function SimbolosParaInstagramPage() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -180,12 +200,15 @@ export default function SimbolosParaInstagramPage() {
       </header>
 
       {/* Main Interactive Tool Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6" id="main-tool">
         <MainSymbolTool />
       </div>
 
       {/* Main SEO Article Content */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
+        {/* TABLE OF CONTENTS */}
+        <TableOfContents items={SIMBOLOS_INSTAGRAM_TOC_ITEMS} />
+
         {/* Intro & PAS Framework Section */}
         <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6">
           <p className="text-base sm:text-lg leading-relaxed text-slate-200">
@@ -211,7 +234,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Rapid Copy Reference */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="simbolos-copiar">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Símbolos para Instagram para copiar y pegar
           </h2>
@@ -309,7 +332,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Educational EEAT Section: Unicode Explanation */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="que-son-simbolos">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Qué son los símbolos para Instagram?
           </h2>
@@ -355,7 +378,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Categorized Symbol Showcase Components */}
-        <section className="space-y-12">
+        <section className="space-y-12" id="simbolos-por-categoria">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Símbolos para Instagram por categoría
           </h2>
@@ -377,7 +400,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Comparative Tables */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="simbolos-vs-emojis">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Símbolos vs Emojis vs Letras Bonitas
           </h2>
@@ -451,7 +474,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Why Do Some Symbols Look Different? */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="renderizado-glifos">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Por qué algunos símbolos se ven diferentes?
           </h2>
@@ -492,7 +515,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Step by Step Guide: Copying & Pasting */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="como-copiar-pegar">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Cómo copiar y pegar símbolos en Instagram
           </h2>
@@ -531,7 +554,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Instagram Bio Structure & Aesthetic Tips */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="estructura-bio">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Cómo usar símbolos en la bio de Instagram
           </h2>
@@ -565,7 +588,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* Common Mistakes */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="errores-comunes">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             5 Errores comunes al usar símbolos en Instagram
           </h2>
@@ -623,7 +646,7 @@ export default function SimbolosParaInstagramPage() {
         </section>
 
         {/* How to Use the Conversor Engine with Symbols */}
-        <section className="space-y-6 bg-slate-950/70 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+        <section className="space-y-6 bg-slate-950/70 border border-slate-800 p-6 sm:p-8 rounded-2xl" id="combinar-conversor">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight flex items-center gap-2">
             <Sparkles className="w-6 h-6 text-pink-400" />
             Cómo combinar símbolos con el conversor de Letras Bonitas
@@ -649,8 +672,16 @@ export default function SimbolosParaInstagramPage() {
           </ol>
         </section>
 
+        {/* CONTEXTUAL TOOL CTA */}
+        <ToolCTA
+          targetId="main-tool"
+          title="¿Buscas el símbolo perfecto para tu perfil?"
+          description="Explora nuestra biblioteca interactiva arriba con corazones, estrellas, flechas y divisores listos para copiar con 1 clic."
+          buttonText="Subir al Buscador de Símbolos"
+        />
+
         {/* FAQ Accordion UI Section */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="faq">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Preguntas frecuentes sobre símbolos para Instagram
           </h2>

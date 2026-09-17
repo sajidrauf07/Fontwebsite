@@ -32,12 +32,17 @@ export default function FreeFireNameIdeasSection() {
   };
 
   return (
-    <section className="seo-card-section mb-12">
-      <div className="seo-icon-badge">
-        <Flame size={20} color="#F59E0B" />
+    <div className="mt-8 pt-6 border-t border-slate-800/80">
+      <div className="article-category-pill">
+        <Flame size={14} className="text-amber-400" aria-hidden="true" />
+        <span>Colección de Ideas</span>
       </div>
-      <h2>Ideas de Nombres para Free Fire</h2>
-      <p>Explora nombres clasificados por estilos para encontrar la opción perfecta para tu perfil o clan:</p>
+      <h3 className="article-h3" style={{ marginTop: '0.5rem' }}>
+        Ideas de Nombres para Free Fire
+      </h3>
+      <p className="article-paragraph">
+        Explora nombres clasificados por estilos para encontrar la opción perfecta para tu perfil o clan:
+      </p>
 
       <div
         style={{
@@ -100,7 +105,7 @@ export default function FreeFireNameIdeasSection() {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -6,6 +6,18 @@ import PopularStylesSection from '@/components/letter-converter/PopularStylesSec
 import CopyPasteSection from '@/components/letter-converter/CopyPasteSection';
 import { FAQSection } from '@/components/seo/FAQSection';
 import {
+  ReadingProgress,
+  TableOfContents,
+  ExamplePreviewCard,
+  CopyButton,
+  TipBox,
+  WarningBox,
+  InfoBox,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
+import {
   Sparkles,
   ArrowRight,
   HelpCircle,
@@ -102,6 +114,24 @@ const CONVERSOR_FAQ_ITEMS = [
   }
 ];
 
+const CONVERSOR_TOC_ITEMS = [
+  { id: 'que-es', title: '¿Qué es un conversor de letras?' },
+  { id: 'como-usar', title: 'Cómo usar el conversor de letras' },
+  { id: 'tipos-de-letras', title: '¿Qué tipos de letras puedes convertir?' },
+  { id: 'como-funciona', title: '¿Cómo funciona un conversor de letras?' },
+  { id: 'fuentes-vs-unicode', title: '¿Son fuentes o caracteres Unicode?' },
+  { id: 'donde-usar', title: '¿Dónde puedes usar las letras convertidas?' },
+  { id: 'como-elegir', title: 'Cómo elegir el mejor estilo de letras' },
+  { id: 'ejemplos', title: 'Letras para copiar y pegar: ejemplos prácticos' },
+  { id: 'problemas-de-visualizacion', title: '¿Por qué algunas letras no se muestran?' },
+  { id: 'compatibilidad', title: '¿Funcionan en celulares y computadoras?' },
+  { id: 'nombres-bios-perfiles', title: 'Para nombres, bios y perfiles' },
+  { id: 'errores-comunes', title: 'Errores comunes al usar letras especiales' },
+  { id: 'consejos-legibilidad', title: 'Consejos para conseguir mejor legibilidad' },
+  { id: 'faq', title: 'Preguntas frecuentes' },
+  { id: 'conclusion', title: 'Conclusión' }
+];
+
 export default function ConversorDeLetrasPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -189,6 +219,9 @@ export default function ConversorDeLetrasPage() {
           <CopyPasteSection />
 
           {/* INTRODUCTORY ESSAY */}
+          <ReadingProgress />
+          <TableOfContents items={CONVERSOR_TOC_ITEMS} />
+
           <section className="seo-card-section">
             <p>
               ¿Quieres que tu nombre, biografía, publicación o mensaje se vea diferente al texto normal? Un <strong>conversor de letras</strong> te permite transformar una palabra o frase en distintos estilos visuales y después copiar el resultado para usarlo donde quieras.
@@ -261,13 +294,8 @@ export default function ConversorDeLetrasPage() {
               Utilizar un conversor de letras debería ser rápido. No necesitas conocer códigos Unicode ni saber programación.
             </p>
 
-            <div className="steps-grid" style={{ marginTop: '1.5rem' }}>
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <div className="step-icon-wrapper">
-                  <Sparkles size={20} />
-                </div>
-                <h3>1. Escribe o pega tu texto</h3>
+            <StepGuide>
+              <StepItem stepNumber={1} title="Escribe o pega tu texto">
                 <p>
                   Primero introduce la palabra, nombre o frase que quieres transformar.
                 </p>
@@ -277,14 +305,9 @@ export default function ConversorDeLetrasPage() {
                 <p style={{ fontSize: '0.875rem', fontStyle: 'italic' }}>
                   Por ejemplo: <strong>Carlos</strong> o <strong>Mi mundo, mis reglas</strong>. No necesitas empezar pensando en el estilo. Primero escribe el contenido que quieres convertir.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <div className="step-icon-wrapper">
-                  <Sliders size={20} />
-                </div>
-                <h3>2. Explora los diferentes estilos</h3>
+              <StepItem stepNumber={2} title="Explora los diferentes estilos">
                 <p>
                   Después de introducir el texto, revisa las variantes que genera el conversor.
                 </p>
@@ -294,14 +317,9 @@ export default function ConversorDeLetrasPage() {
                 <p style={{ fontSize: '0.875rem', fontStyle: 'italic' }}>
                   La ventaja de mostrar varias opciones es que no tienes que decidir qué estilo quieres antes de empezar. Puedes comparar visualmente los resultados y elegir después.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <div className="step-icon-wrapper">
-                  <Gem size={20} />
-                </div>
-                <h3>3. Elige tu letra favorita</h3>
+              <StepItem stepNumber={3} title="Elige tu letra favorita">
                 <p>
                   No siempre la opción más llamativa es la mejor.
                 </p>
@@ -311,14 +329,9 @@ export default function ConversorDeLetrasPage() {
                 <p style={{ fontSize: '0.875rem', fontStyle: 'italic' }}>
                   Piensa primero en el uso final y en el contexto de tu publicación.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">4</div>
-                <div className="step-icon-wrapper">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h3>4. Copia y pega</h3>
+              <StepItem stepNumber={4} title="Copia y pega">
                 <p>
                   Cuando encuentres un resultado que te guste, utiliza el botón Copiar.
                 </p>
@@ -328,8 +341,8 @@ export default function ConversorDeLetrasPage() {
                 <p style={{ fontSize: '0.875rem', fontStyle: 'italic' }}>
                   Este último paso es importante porque una misma cadena de caracteres puede renderizarse de manera diferente según el sistema, la fuente disponible y la aplicación. Aprende más en nuestra sección de <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/">letras para copiar y pegar</Link>.
                 </p>
-              </div>
-            </div>
+              </StepItem>
+            </StepGuide>
           </section>
 
           {/* TYPES OF LETTERS */}
@@ -662,23 +675,19 @@ export default function ConversorDeLetrasPage() {
               </table>
             </div>
 
-            <div className="tips-grid" style={{ marginTop: '1.5rem' }}>
-              <div className="tip-box">
-                <h4>Para una bio</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '1.5rem' }}>
+              <TipBox title="Para una bio">
                 <p>Prioriza la legibilidad. Una bio puede tener varios elementos, así que una letra excesivamente decorada puede hacer que todo se vea saturado.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Para un nickname</h4>
+              </TipBox>
+              <TipBox title="Para un nickname">
                 <p>Puedes experimentar un poco más. Una palabra corta permite utilizar estilos que serían incómodos en una frase completa.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Para una frase</h4>
+              </TipBox>
+              <TipBox title="Para una frase">
                 <p>Prueba primero estilos sencillos. Si la frase es larga, evita convertir cada palabra en un estilo extremadamente decorativo.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Para un mensaje</h4>
+              </TipBox>
+              <TipBox title="Para un mensaje">
                 <p>Elige una variante que todavía sea fácil de leer. La estética debe complementar el contenido, no esconderlo.</p>
-              </div>
+              </TipBox>
             </div>
           </section>
 
@@ -692,13 +701,13 @@ export default function ConversorDeLetrasPage() {
               Supongamos que quieres convertir la frase <strong>Letras Bonitas</strong>. Puedes experimentar con diferentes estilos según la vibra que quieras proyectar:
             </p>
 
-            <div className="code-example-block">
-              <code>𝐋𝐞𝐭𝐫𝐚𝐬 𝐁𝐨𝐧𝐢𝐭𝐚𝐬</code> — (Negrita Serif)<br />
-              <code>𝑳𝒆𝒕𝒓𝒂𝒔 𝑩𝒐𝒏𝒊𝒕𝒂𝒔</code> — (Negrita Cursiva)<br />
-              <code>𝓛𝓮𝓽𝓻𝓪𝓼 𝓑𝓸𝓷𝓲𝓽𝓪𝓼</code> — (Script Caligráfico)<br />
-              <code>𝔏𝔢𝔱𝔯𝔞𝔰 𝔅𝔬𝔫𝔦𝔱𝔞𝔰</code> — (Gótico Fraktur)<br />
-              <code>𝕃𝕖𝕥𝕣𝕒𝕤 𝔹𝕠𝕟𝕚𝕥𝕒𝕤</code> — (Doble Trazo)<br />
-              <code>Ⓛⓔⓣⓡⓐⓢ Ⓑⓞⓝⓘⓣⓐⓢ</code> — (Burbujas en Círculo)
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '1.25rem 0' }}>
+              <ExamplePreviewCard text="𝐋𝐞𝐭𝐫𝐚𝐬 𝐁𝐨𝐧𝐢𝐭𝐚𝐬" label="Negrita Serif" tags={['Negrita', 'Clásico']} copyable />
+              <ExamplePreviewCard text="𝑳𝒆𝒕𝒓𝒂𝒔 𝑩𝒐𝒏𝒊𝒕𝒂𝒔" label="Negrita Cursiva" tags={['Cursiva', 'Dinámico']} copyable />
+              <ExamplePreviewCard text="𝓛𝓮𝓽𝓻𝓪𝓼 𝓑𝓸𝓷𝓲𝓽𝓪𝓼" label="Script Caligráfico" tags={['Elegante', 'Manuscrito']} copyable />
+              <ExamplePreviewCard text="𝔏𝔢𝔱𝔯𝔞𝔰 𝔅𝔬𝔫𝔦𝔱𝔞𝔰" label="Gótico Fraktur" tags={['Gótico', 'Gaming']} copyable />
+              <ExamplePreviewCard text="𝕃𝕖𝕥𝕣𝕒𝕤 𝔹𝕠𝕟𝕚𝕥𝕒𝕤" label="Doble Trazo" tags={['Moderno', 'Aesthetic']} copyable />
+              <ExamplePreviewCard text="Ⓛⓔⓣⓡⓐⓢ Ⓑⓞⓝⓘⓣⓐⓢ" label="Burbujas en Círculo" tags={['Divertido', 'Círculos']} copyable />
             </div>
 
             <p>
@@ -836,23 +845,19 @@ export default function ConversorDeLetrasPage() {
             </div>
             <h2>Consejos para conseguir un resultado más legible</h2>
             
-            <div className="tips-grid" style={{ marginTop: '1.25rem' }}>
-              <div className="tip-box">
-                <h4>Usa la decoración como acento</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '1.25rem' }}>
+              <TipBox title="Usa la decoración como acento">
                 <p>No necesitas convertir cada palabra. Puedes destacar únicamente <code>𝓜𝓲 𝓹𝓮𝓻𝓯𝓲𝓵</code> y mantener el resto en texto convencional.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Prueba dos o tres estilos</h4>
+              </TipBox>
+              <TipBox title="Prueba dos o tres estilos">
                 <p>No necesitas revisar cientos de opciones si ya sabes qué buscas. Compara una cursiva, una negrita y una gótica, y elige la que mejor encaje.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Considera el tamaño del texto</h4>
+              </TipBox>
+              <TipBox title="Considera el tamaño del texto">
                 <p>Un estilo que funciona perfectamente para una palabra grande puede ser ilegible cuando se muestra en tamaño pequeño en un móvil.</p>
-              </div>
-              <div className="tip-box">
-                <h4>Piensa en el lector</h4>
+              </TipBox>
+              <TipBox title="Piensa en el lector">
                 <p>Si otras personas necesitan entender rápidamente tu mensaje o buscar tu nombre, la legibilidad siempre debe ser la prioridad.</p>
-              </div>
+              </TipBox>
             </div>
             <p style={{ marginTop: '1rem' }}>
               <strong>Haz una prueba antes de publicar:</strong> Este paso toma pocos segundos y puede evitar problemas. Copia el resultado, pégalo donde realmente lo utilizarás y revisa la apariencia final.
@@ -974,6 +979,14 @@ export default function ConversorDeLetrasPage() {
               La regla más útil es: Elige el estilo que mejore el contenido, no el que simplemente tenga más decoración.
             </p>
           </section>
+
+          {/* TOOL CTA */}
+          <ToolCTA
+            title="¿Listo para probar todos los estilos en vivo?"
+            description="Escribe cualquier nombre, apodo o frase en nuestro conversor gratuito y copia tus letras bonitas favoritas en un solo clic."
+            buttonText="Subir al Conversor de Letras"
+            targetId="conversor-herramienta"
+          />
 
           {/* FAQ SECTION */}
           <FAQSection

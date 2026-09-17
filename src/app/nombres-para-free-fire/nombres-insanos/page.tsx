@@ -17,6 +17,20 @@ import {
   Zap,
   Skull
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const INSANOS_TOC_ITEMS = [
+  { id: 'generador-insano', label: 'Generador de nombres insanos' },
+  { id: 'insanos-aleatorios', label: 'Generador aleatorio de nicks' },
+  { id: 'decorador-insano', label: 'Decorador con marcos y símbolos' },
+  { id: 'catalogo-insano', label: 'Ideas de nombres insanos por nicho' },
+  { id: 'compatibilidad-insana', label: '¿Funcionan estos nombres en Free Fire?' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Nombres Insanos para Free Fire | Generador y Nombres para Copiar',
@@ -87,6 +101,8 @@ export default function NombresInsanosPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -140,21 +156,32 @@ export default function NombresInsanosPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={INSANOS_TOC_ITEMS} />
+
           {/* Primary Interactive Subcategory Tool */}
           <main id="main-content">
-            <FreeFireInsaneGenerator />
+            <div id="generador-insano">
+              <FreeFireInsaneGenerator />
+            </div>
 
             {/* Random Insane Name Generator */}
-            <RandomInsaneNameGenerator />
+            <div id="insanos-aleatorios">
+              <RandomInsaneNameGenerator />
+            </div>
 
             {/* Insane Symbol Decorator */}
-            <InsaneSymbolDecorator />
+            <div id="decorador-insano">
+              <InsaneSymbolDecorator />
+            </div>
 
             {/* Curated Insane Niche Ideas Showcase */}
-            <InsaneNicheIdeasSection />
+            <div id="catalogo-insano">
+              <InsaneNicheIdeasSection />
+            </div>
 
             {/* Compatibility & Availability Disclaimer Section */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="compatibilidad-insana">
               <div className="seo-icon-badge">
                 <Shield size={20} />
               </div>
@@ -282,8 +309,18 @@ export default function NombresInsanosPage() {
               </div>
             </div>
 
+            {/* CONTEXTUAL TOOL CTA */}
+            <ToolCTA
+              targetId="generador-insano"
+              title="¿Listo para crear un nick insano para Free Fire?"
+              description="Escribe tu apodo arriba, combínalo con marcos agresivos y símbolos virales listos para copiar."
+              buttonText="Subir al Generador Insano"
+            />
+
             {/* Frequently Asked Questions */}
-            <InsaneFaqSection />
+            <div id="faq">
+              <InsaneFaqSection />
+            </div>
 
             {/* SILO Interlinking Navigation */}
             <section className="silo-nav-block">

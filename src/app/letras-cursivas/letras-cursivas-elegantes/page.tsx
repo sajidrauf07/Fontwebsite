@@ -24,6 +24,13 @@ import {
   PenTool,
   ShieldCheck
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
 
 export const metadata: Metadata = {
   title: 'Letras Cursivas Elegantes para Copiar y Pegar',
@@ -96,6 +103,16 @@ const FAQ_ITEMS = [
   }
 ];
 
+const ELEGANT_CURSIVE_TOC_ITEMS = [
+  { id: 'generador-elegante', label: 'Generador de cursiva elegante' },
+  { id: 'como-usar', label: 'Cómo usar las letras elegantes' },
+  { id: 'que-son', label: '¿Qué son las letras cursivas elegantes?' },
+  { id: 'comparativa-fuentes', label: 'Unicode elegante vs fuentes tradicionales' },
+  { id: 'donde-usar', label: 'Dónde usar letras cursivas elegantes' },
+  { id: 'compatibilidad-espanol', label: 'Acentos y letra Ñ en español' },
+  { id: 'preguntas-frecuentes', label: 'Preguntas frecuentes' }
+];
+
 export default function ElegantCursivePage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -137,6 +154,8 @@ export default function ElegantCursivePage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -176,6 +195,9 @@ export default function ElegantCursivePage() {
               Conversor interactivo de fuentes cursivas elegantes, caligráficas y finas para copiar y pegar en Instagram, WhatsApp y perfiles de lujo.
             </p>
           </header>
+
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={ELEGANT_CURSIVE_TOC_ITEMS} />
 
           {/* MAIN ELEGANT CURSIVE GENERATOR */}
           <ElegantCursiveGenerator />
@@ -231,38 +253,36 @@ export default function ElegantCursivePage() {
               Consigue una tipografía manuscrita de lujo en tres simples pasos:
             </p>
 
-            <div className="steps-grid my-6">
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <div className="step-icon-wrapper">
-                  <Sparkles size={20} />
-                </div>
-                <h3>1. Escribe tu texto</h3>
-                <p>Introduce tu nombre, frase o biografía en el cuadro del conversor superior o usa nuestras pruebas rápidas.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <div className="step-icon-wrapper">
-                  <Gem size={20} />
-                </div>
-                <h3>2. Elige un estilo elegante</h3>
-                <p>Explora la colección de cursiva fina, clásica, sofisticada o decorativa en la vista previa instantánea.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <div className="step-icon-wrapper">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h3>3. Pulsa «Copiar» y pega</h3>
-                <p>Haz clic en el botón de copia y utiliza tus letras cursivas elegantes en Instagram, WhatsApp o Canva.</p>
-              </div>
+            <div className="mt-6">
+              <StepGuide>
+                <StepItem
+                  stepNumber={1}
+                  title="Escribe tu texto"
+                  badge="Paso 1"
+                >
+                  Introduce tu nombre, frase o biografía en el cuadro del conversor superior o usa nuestras pruebas rápidas.
+                </StepItem>
+                <StepItem
+                  stepNumber={2}
+                  title="Elige un estilo elegante"
+                  badge="Paso 2"
+                >
+                  Explora la colección de cursiva fina, clásica, sofisticada o decorativa en la vista previa instantánea.
+                </StepItem>
+                <StepItem
+                  stepNumber={3}
+                  title="Pulsa «Copiar» y pega"
+                  badge="Paso 3"
+                  isLast={true}
+                >
+                  Haz clic en el botón de copia y utiliza tus letras cursivas elegantes en Instagram, WhatsApp o Canva.
+                </StepItem>
+              </StepGuide>
             </div>
           </section>
 
           {/* WHAT ARE ELEGANT CURSIVE LETTERS? */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="que-son">
             <div className="seo-icon-badge">
               <BookOpen size={20} />
             </div>
@@ -288,7 +308,7 @@ export default function ElegantCursivePage() {
           </section>
 
           {/* COMPARISON TABLE */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="comparativa-fuentes">
             <h2 className="seo-h2">Letras Cursivas Elegantes Unicode vs. Fuentes Caligráficas Tradicionales</h2>
             <p className="seo-paragraph">
               Compara las ventajas operativas entre usar símbolos cursivos elegantes y fuentes instaladas tradicionales:
@@ -358,7 +378,7 @@ export default function ElegantCursivePage() {
           </div>
 
           {/* USE CASES & PLATFORMS */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="donde-usar">
             <div className="seo-icon-badge">
               <Share2 size={20} />
             </div>
@@ -423,7 +443,7 @@ export default function ElegantCursivePage() {
           </section>
 
           {/* SPANISH ACCENTS & Ñ COMPATIBILITY */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="compatibilidad-espanol">
             <h2 className="seo-h2">Tratamiento de acentos y la letra Ñ en español</h2>
             <p className="seo-paragraph">
               El alfabeto castellano requiere una atención cuidadosa para vocales acentuadas (<strong>á, é, í, ó, ú</strong>) y la consonante <strong>Ñ/ñ</strong>.
@@ -442,13 +462,21 @@ export default function ElegantCursivePage() {
             </p>
           </section>
 
+          <ToolCTA
+            title="¿Deseas transformar tu texto a cursiva elegante?"
+            description="Escribe cualquier nombre o biografía y copia de inmediato versiones caligráficas exclusivas para tus redes."
+            buttonText="Probar Generador Elegante"
+            targetId="generador-elegante"
+            badge="Estilos de Lujo"
+          />
+
           {/* FAQ SECTION */}
           <div className="mb-8">
             <FAQSection
               items={FAQ_ITEMS.map((item) => ({ question: item.q, answer: item.a }))}
               title="Preguntas Frecuentes sobre Letras Cursivas Elegantes"
               colorTheme="purple"
-              id="faq"
+              id="preguntas-frecuentes"
             />
           </div>
 

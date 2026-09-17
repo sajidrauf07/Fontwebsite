@@ -16,6 +16,20 @@ import {
   Flame,
   Smile
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const APODOS_TOC_ITEMS = [
+  { id: 'generador-apodos', label: 'Generador de apodos para Free Fire' },
+  { id: 'apodos-aleatorios', label: 'Generador aleatorio de apodos' },
+  { id: 'decorador-simbolos', label: 'Decorador con símbolos' },
+  { id: 'catalogo-apodos', label: 'Catálogo de apodos por nicho' },
+  { id: 'compatibilidad-ff', label: '¿Funcionan estos apodos en Free Fire?' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Apodos para Free Fire | Bonitos, Originales y para Copiar',
@@ -86,6 +100,8 @@ export default function ApodosSubcategoryPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -139,21 +155,32 @@ export default function ApodosSubcategoryPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={APODOS_TOC_ITEMS} />
+
           {/* Primary Interactive Subcategory Tool */}
           <main id="main-content">
-            <NicknameGenerator />
+            <div id="generador-apodos">
+              <NicknameGenerator />
+            </div>
 
             {/* Random Nickname Generator */}
-            <RandomNicknameGenerator />
+            <div id="apodos-aleatorios">
+              <RandomNicknameGenerator />
+            </div>
 
             {/* Nickname Symbol Decorator */}
-            <NicknameSymbolDecorator />
+            <div id="decorador-simbolos">
+              <NicknameSymbolDecorator />
+            </div>
 
             {/* Curated Nickname Showcase */}
-            <NicknameNicheIdeasSection />
+            <div id="catalogo-apodos">
+              <NicknameNicheIdeasSection />
+            </div>
 
             {/* Compatibility & Availability Disclaimer Section */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="compatibilidad-ff">
               <div className="seo-icon-badge">
                 <Shield size={20} />
               </div>
@@ -281,8 +308,18 @@ export default function ApodosSubcategoryPage() {
               </div>
             </div>
 
+            {/* CONTEXTUAL TOOL CTA */}
+            <ToolCTA
+              targetId="generador-apodos"
+              title="¿Listo para crear tu nuevo apodo de Free Fire?"
+              description="Escribe cualquier nombre o palabra arriba, añade símbolos insanos y copia tu nuevo nick para el juego."
+              buttonText="Subir al Generador de Apodos"
+            />
+
             {/* Frequently Asked Questions */}
-            <NicknameFaqSection />
+            <div id="faq">
+              <NicknameFaqSection />
+            </div>
 
             {/* SILO Interlinking Navigation */}
             <section className="silo-nav-block">

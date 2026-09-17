@@ -29,6 +29,13 @@ import {
   X,
   AlertTriangle
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
 
 export const metadata: Metadata = {
   title: 'Texto con Estilos: Letras Bonitas para Copiar y Pegar',
@@ -101,6 +108,20 @@ const TEXTO_CON_ESTILOS_FAQ_ITEMS = [
   }
 ];
 
+const TEXTO_CON_ESTILOS_TOC_ITEMS = [
+  { id: 'generador-texto-estilos', label: 'Herramienta de texto con estilos' },
+  { id: 'introduccion', label: 'Introducción al texto con estilos' },
+  { id: 'que-es', label: '¿Qué es el texto con estilos?' },
+  { id: 'como-funciona', label: '¿Cómo funciona el conversor?' },
+  { id: 'comparativa-fuentes', label: 'Texto estilizado vs fuentes instaladas' },
+  { id: 'pasos-conversion', label: 'Cómo convertir texto paso a paso' },
+  { id: 'tipos-estilos', label: 'Tipos de texto con estilos' },
+  { id: 'donde-usar', label: 'Dónde usar texto con estilos' },
+  { id: 'estudio-instagram', label: 'Texto con estilos para Instagram' },
+  { id: 'compatibilidad-tecnica', label: 'Compatibilidad y accesibilidad' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
+
 export default function TextoConEstilosPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -142,6 +163,8 @@ export default function TextoConEstilosPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -182,6 +205,9 @@ export default function TextoConEstilosPage() {
             </p>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={TEXTO_CON_ESTILOS_TOC_ITEMS} />
+
           {/* MAIN STYLED TEXT TOOL */}
           <StyledTextTool />
 
@@ -211,7 +237,7 @@ export default function TextoConEstilosPage() {
           <StyledPhrasesSection />
 
           {/* ARTICLE SECTION 1: WHAT IS STYLED TEXT */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="que-es">
             <div className="seo-icon-badge">
               <Type size={20} />
             </div>
@@ -246,7 +272,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* ARTICLE SECTION 2: HOW A CONVERTER WORKS */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="como-funciona">
             <div className="seo-icon-badge">
               <BookOpen size={20} />
             </div>
@@ -335,7 +361,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* COMPARISON TABLE: INSTALLED FONTS VS UNICODE */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="comparativa-fuentes">
             <div className="seo-icon-badge">
               <TableIcon size={20} />
             </div>
@@ -385,7 +411,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* STEP BY STEP CONVERSION GUIDELINES */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="pasos-conversion">
             <div className="seo-icon-badge">
               <MousePointerClick size={20} />
             </div>
@@ -394,43 +420,43 @@ export default function TextoConEstilosPage() {
               Utilizar la herramienta de Letras Bonitas es un proceso optimizado para dispositivos móviles y computadoras:
             </p>
 
-            <div className="steps-grid my-8">
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <h3>1. Escribe tu texto</h3>
-                <p>
+            <div className="mt-6">
+              <StepGuide>
+                <StepItem
+                  stepNumber={1}
+                  title="Escribe tu texto"
+                  badge="Paso 1"
+                >
                   Ingresa tu palabra, nombre, apodo o frase en la caja del conversor. Puedes comenzar con textos cortos como <em>“Sofia”</em> o descripciones como <em>“Bienvenidos a mi perfil”</em>.
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <h3>2. Revisa los estilos</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={2}
+                  title="Revisa los estilos"
+                  badge="Paso 2"
+                >
                   El conversor generará decenas de alternativas. No elijas automáticamente la opción más recargada; evalúa el contexto de uso (bio profesional vs nickname gaming).
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <h3>3. Elige tu favorito</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={3}
+                  title="Elige tu favorito"
+                  badge="Paso 3"
+                >
                   Compara la legibilidad y estética. Verifica si las letras acentuadas (á, é, í, ó, ú) o la ñ se visualizan correctamente en el estilo seleccionado.
-                </p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">4</div>
-                <h3>4. Copia y pega</h3>
-                <p>
+                </StepItem>
+                <StepItem
+                  stepNumber={4}
+                  title="Copia y pega"
+                  badge="Paso 4"
+                  isLast={true}
+                >
                   Presiona el botón de copia rápida al lado de la variante y pégala en tu biografía de Instagram, chat de WhatsApp o perfil de videojuego.
-                </p>
-              </div>
+                </StepItem>
+              </StepGuide>
             </div>
           </section>
 
           {/* TYPES OF STYLED TEXT */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="tipos-estilos">
             <div className="seo-icon-badge">
               <Sparkles size={20} />
             </div>
@@ -513,7 +539,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* PLATFORMS & USE CASES */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="donde-usar">
             <div className="seo-icon-badge">
               <Share2 size={20} />
             </div>
@@ -566,7 +592,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* INSTAGRAM SPECIFIC CASE STUDY */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="estudio-instagram">
             <div className="seo-icon-badge">
               <Smartphone size={20} />
             </div>
@@ -588,7 +614,7 @@ export default function TextoConEstilosPage() {
           </section>
 
           {/* TECHNICAL COMPATIBILITY, ACCESSIBILITY & NORMALIZATION */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="compatibilidad-tecnica">
             <div className="seo-icon-badge">
               <ShieldAlert size={20} />
             </div>
@@ -720,6 +746,14 @@ export default function TextoConEstilosPage() {
               </Link>
             </div>
           </div>
+
+          <ToolCTA
+            title="¿Deseas generar texto con estilos ahora?"
+            description="Escribe cualquier nombre, frase o biografía para obtener al instante más de 350 estilos Unicode listos para copiar y pegar."
+            buttonText="Ir al Generador de Texto"
+            targetId="generador-texto-estilos"
+            badge="Herramienta en Vivo"
+          />
 
           {/* FAQ SECTION */}
           <FAQSection

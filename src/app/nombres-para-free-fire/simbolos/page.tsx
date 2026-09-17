@@ -17,6 +17,20 @@ import {
   Star,
   Layers
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const SIMBOLOS_FF_TOC_ITEMS = [
+  { id: 'libreria-simbolos', label: 'Librería interactiva de símbolos' },
+  { id: 'combinador-simbolos', label: 'Combinador de símbolos' },
+  { id: 'decora-tu-nombre', label: 'Decorador de nombres con símbolos' },
+  { id: 'colecciones-tematicas', label: 'Colecciones temáticas de símbolos' },
+  { id: 'compatibilidad-simbolos', label: '¿Funcionan todos en Free Fire?' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Símbolos para Free Fire | Bonitos, Especiales y para Copiar',
@@ -87,6 +101,8 @@ export default function SimbolosSubcategoryPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -140,12 +156,19 @@ export default function SimbolosSubcategoryPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={SIMBOLOS_FF_TOC_ITEMS} />
+
           {/* Primary Interactive Symbol Discovery Tool */}
           <main id="main-content">
-            <FreeFireSymbolsTool />
+            <div id="libreria-simbolos">
+              <FreeFireSymbolsTool />
+            </div>
 
             {/* Symbol Combiner Tool */}
-            <SymbolCombiner />
+            <div id="combinador-simbolos">
+              <SymbolCombiner />
+            </div>
 
             {/* Name Decorator with 350+ Global Unicode Engine */}
             <div id="decora-tu-nombre">
@@ -153,10 +176,12 @@ export default function SimbolosSubcategoryPage() {
             </div>
 
             {/* Curated Symbol Collections Showcase */}
-            <SymbolCollectionsSection />
+            <div id="colecciones-tematicas">
+              <SymbolCollectionsSection />
+            </div>
 
             {/* Compatibility & Acceptance Disclaimer Section */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="compatibilidad-simbolos">
               <div className="seo-icon-badge">
                 <Shield size={20} />
               </div>
@@ -284,8 +309,18 @@ export default function SimbolosSubcategoryPage() {
               </div>
             </div>
 
+            {/* CONTEXTUAL TOOL CTA */}
+            <ToolCTA
+              targetId="libreria-simbolos"
+              title="¿Buscando símbolos épicos para tu nick?"
+              description="Explora cientos de coronas, alas, espadas y caracteres especiales listos para copiar con 1 clic."
+              buttonText="Subir a la Librería de Símbolos"
+            />
+
             {/* Frequently Asked Questions */}
-            <SymbolFaqSection />
+            <div id="faq">
+              <SymbolFaqSection />
+            </div>
 
             {/* SILO Interlinking Navigation */}
             <section className="silo-nav-block">

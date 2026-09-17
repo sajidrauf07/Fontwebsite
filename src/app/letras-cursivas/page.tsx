@@ -5,6 +5,16 @@ import { CursiveAlphabetPreview } from '@/components/cursive/CursiveAlphabetPrev
 import { CursiveExamples } from '@/components/cursive/CursiveExamples';
 import { FAQSection } from '@/components/seo/FAQSection';
 import {
+  ReadingProgress,
+  TableOfContents,
+  ExamplePreviewCard,
+  CopyButton,
+  TipBox,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
+import {
   Feather,
   Sparkles,
   Type,
@@ -99,6 +109,21 @@ export const metadata: Metadata = {
     follow: true
   }
 };
+
+const CURSIVAS_TOC_ITEMS = [
+  { id: 'generador-cursivas', title: 'Generador de Letras Cursivas' },
+  { id: 'que-son', title: '¿Qué son las letras cursivas?' },
+  { id: 'copiar-pegar', title: 'Letras cursivas para copiar y pegar' },
+  { id: 'abecedario', title: 'Abecedario de letras cursivas' },
+  { id: 'como-convertir', title: 'Cómo convertir texto a letras cursivas' },
+  { id: 'es-una-fuente', title: '¿Las letras cursivas son una fuente?' },
+  { id: 'vs-fuentes', title: 'Letras cursivas vs. fuentes tradicionales' },
+  { id: 'redes-juegos', title: 'Uso en redes sociales y juegos' },
+  { id: 'estilos-generador', title: '¿Cuántos estilos debería tener?' },
+  { id: 'consejos', title: 'Consejos para elegir el mejor estilo' },
+  { id: 'compatibilidad', title: 'Problemas de compatibilidad' },
+  { id: 'preguntas-frecuentes', title: 'Preguntas frecuentes' }
+];
 
 export default function LetrasCursivasPage() {
   const faqSchema = {
@@ -196,6 +221,8 @@ export default function LetrasCursivasPage() {
       {/* SEO Content Sections */}
       <div className="seo-wrapper-section">
         <div className="seo-container">
+          <ReadingProgress />
+          <TableOfContents items={CURSIVAS_TOC_ITEMS} />
 
           {/* Image Plan 1 Visual Demonstration Card */}
           <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
@@ -230,7 +257,7 @@ export default function LetrasCursivasPage() {
           </div>
 
           {/* H2: Generador de Letras Cursivas */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="generador-cursivas">
             <h2 className="seo-h2">Generador de Letras Cursivas</h2>
             <p className="seo-paragraph">
               La forma más sencilla de crear letras cursivas es utilizar el generador de arriba. Introduce una palabra, un nombre o una frase. El resultado aparecerá automáticamente en diferentes estilos. Después puedes comparar las opciones y copiar la que mejor se adapte a lo que estás creando.
@@ -239,15 +266,9 @@ export default function LetrasCursivasPage() {
               Por ejemplo, una palabra normal como <strong>Letras Cursivas</strong> puede convertirse en diferentes estilos visuales como:
             </p>
 
-            <div className="my-4 p-4 bg-slate-950/80 rounded-xl border border-slate-800 flex flex-wrap gap-6 justify-around text-center">
-              <div>
-                <span className="text-xs text-slate-400 block mb-1">Cursiva Manuscrita Script</span>
-                <span className="text-xl font-bold text-amber-300">𝓛𝓮𝓽𝓻𝒶𝓼 𝓒𝓾𝓻𝓼𝓲𝓿𝒶𝓼</span>
-              </div>
-              <div>
-                <span className="text-xs text-slate-400 block mb-1">Cursiva en Negrita Math</span>
-                <span className="text-xl font-bold text-indigo-300">𝑳𝒆𝒕𝒓𝒂𝒔 𝑪𝒖𝒓𝒔𝒊𝒗𝒂𝒔</span>
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '1.25rem 0' }}>
+              <ExamplePreviewCard text="𝓛𝓮𝓽𝓻𝒶𝓼 𝓒𝓾𝓻𝓼𝓲𝓿𝒶𝓼" label="Cursiva Manuscrita Script" tags={['Cursiva', 'Script']} copyable />
+              <ExamplePreviewCard text="𝑳𝒆𝒕𝒓𝒂𝒔 𝑪𝒖𝒓𝒔𝒊𝒗𝒂𝒔" label="Cursiva en Negrita Math" tags={['Cursiva', 'Negrita']} copyable />
             </div>
 
             <p className="seo-paragraph">
@@ -270,7 +291,7 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* H2: ¿Qué son las letras cursivas? */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="que-son">
             <h2 className="seo-h2">¿Qué son las letras cursivas?</h2>
             <p className="seo-paragraph">
               Las letras cursivas son estilos de escritura que normalmente tienen una apariencia inclinada, fluida o parecida a la escritura manuscrita.
@@ -379,67 +400,47 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* H2: Cómo convertir texto a letras cursivas */}
-          <section className="seo-card-section steps-section mb-8">
+          <section className="seo-card-section steps-section mb-8" id="como-convertir">
             <h2 className="seo-h2 text-center">Cómo convertir texto a letras cursivas</h2>
             <p className="seo-subtext text-center mb-6">
               Sigue estos 5 sencillos pasos para transformar cualquier mensaje:
             </p>
 
-            <div className="space-y-4">
-              <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 flex gap-4 items-start">
-                <span className="bg-indigo-600 text-white font-bold text-sm px-3 py-1 rounded-lg">Paso 1</span>
-                <div>
-                  <h4 className="font-bold text-white text-base">Escribe tu texto</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Introduce tu nombre, apodo, frase, palabra o biografía corta en el cuadro del generador.
-                  </p>
-                </div>
-              </div>
+            <StepGuide>
+              <StepItem stepNumber={1} title="Escribe tu texto">
+                <p className="text-xs text-slate-300 mt-1">
+                  Introduce tu nombre, apodo, frase, palabra o biografía corta en el cuadro del generador.
+                </p>
+              </StepItem>
 
-              <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 flex gap-4 items-start">
-                <span className="bg-indigo-600 text-white font-bold text-sm px-3 py-1 rounded-lg">Paso 2</span>
-                <div>
-                  <h4 className="font-bold text-white text-base">Explora los estilos</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    El conversor mostrará decenas de variantes cursivas, manuscritas y caligráficas en tiempo real.
-                  </p>
-                </div>
-              </div>
+              <StepItem stepNumber={2} title="Explora los estilos">
+                <p className="text-xs text-slate-300 mt-1">
+                  El conversor mostrará decenas de variantes cursivas, manuscritas y caligráficas en tiempo real.
+                </p>
+              </StepItem>
 
-              <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 flex gap-4 items-start">
-                <span className="bg-indigo-600 text-white font-bold text-sm px-3 py-1 rounded-lg">Paso 3</span>
-                <div>
-                  <h4 className="font-bold text-white text-base">Elige el estilo</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Busca un equilibrio entre estética visual y legibilidad cómoda según el destino final.
-                  </p>
-                </div>
-              </div>
+              <StepItem stepNumber={3} title="Elige el estilo">
+                <p className="text-xs text-slate-300 mt-1">
+                  Busca un equilibrio entre estética visual y legibilidad cómoda según el destino final.
+                </p>
+              </StepItem>
 
-              <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 flex gap-4 items-start">
-                <span className="bg-indigo-600 text-white font-bold text-sm px-3 py-1 rounded-lg">Paso 4</span>
-                <div>
-                  <h4 className="font-bold text-white text-base">Copia</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Presiona el botón de copia del estilo elegido para guardarlo en tu portapapeles.
-                  </p>
-                </div>
-              </div>
+              <StepItem stepNumber={4} title="Copia">
+                <p className="text-xs text-slate-300 mt-1">
+                  Presiona el botón de copia del estilo elegido para guardarlo en tu portapapeles.
+                </p>
+              </StepItem>
 
-              <div className="bg-slate-900/60 p-4 rounded-xl border border-slate-800 flex gap-4 items-start">
-                <span className="bg-indigo-600 text-white font-bold text-sm px-3 py-1 rounded-lg">Paso 5</span>
-                <div>
-                  <h4 className="font-bold text-white text-base">Pega</h4>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Abre tu red social o aplicación preferida y pega el resultado en tu perfil o mensaje.
-                  </p>
-                </div>
-              </div>
-            </div>
+              <StepItem stepNumber={5} title="Pega">
+                <p className="text-xs text-slate-300 mt-1">
+                  Abre tu red social o aplicación preferida y pega el resultado en tu perfil o mensaje.
+                </p>
+              </StepItem>
+            </StepGuide>
           </section>
 
           {/* H2: Technical Unicode Questions & Official External References */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="es-una-fuente">
             <h2 className="seo-h2">¿Las letras cursivas son una fuente?</h2>
             <p className="seo-paragraph">
               No necesariamente. Esta es una de las confusiones más comunes. Una fuente tradicional es un recurso tipográfico que determina cómo se dibujan los caracteres en una aplicación. En cambio, un conversor Unicode sustituye caracteres normales por caracteres Unicode diferentes que tienen una apariencia estilizada.
@@ -473,7 +474,7 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* Comparison Table Section */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="vs-fuentes">
             <h2 className="seo-h2">Letras cursivas vs. fuentes tradicionales</h2>
             <p className="seo-paragraph">
               Compara las diferencias principales entre utilizar caracteres Unicode estilizados y una fuente instalada tradicional:
@@ -562,7 +563,7 @@ export default function LetrasCursivasPage() {
           </div>
 
           {/* Social Media & Gaming Use Cases */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="redes-juegos">
             <h2 className="seo-h2">Uso de letras cursivas en redes sociales y juegos</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
@@ -632,7 +633,7 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* H2: ¿Cuántos estilos de letras cursivas debería tener un generador? */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="estilos-generador">
             <h2 className="seo-h2">¿Cuántos estilos de letras cursivas debería tener un generador?</h2>
             <p className="seo-paragraph">
               Más no siempre significa mejor. Algunos sitios web promocionan decenas o cientos de resultados sin organización. En Letras Bonitas, una biblioteca amplia de más de 350 fuentes es una ventaja porque está organizada por categorías claras: Cursivas, Elegantes, Caligráficas, Negritas, Aesthetic, Góticas y Especiales.
@@ -640,7 +641,7 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* H2: Consejos para elegir el mejor estilo cursivo */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="consejos">
             <h2 className="seo-h2">Consejos para elegir el mejor estilo cursivo</h2>
             <ol className="list-decimal list-inside space-y-2 text-sm text-slate-300 my-4 pl-2">
               <li><strong>Prioriza la legibilidad:</strong> Un estilo puede ser bonito, pero si nadie puede leerlo, pierde utilidad.</li>
@@ -654,7 +655,7 @@ export default function LetrasCursivasPage() {
           </section>
 
           {/* H2: Problemas de compatibilidad y caracteres especiales */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="compatibilidad">
             <h2 className="seo-h2">Problemas de compatibilidad y caracteres especiales</h2>
             <p className="seo-paragraph">
               Aunque Unicode facilita el intercambio de texto, la representación exacta depende del sistema operativo, navegador y soporte de la aplicación.
@@ -731,6 +732,14 @@ export default function LetrasCursivasPage() {
               Lo más importante es elegir un estilo que no solo se vea bonito, sino que también sea fácil de leer y compatible con el lugar donde quieres utilizarlo. Escribe tu texto, prueba diferentes opciones y copia tu favorita directamente desde Letras Bonitas.
             </p>
           </section>
+
+          {/* TOOL CTA */}
+          <ToolCTA
+            title="¿Quieres generar letras cursivas al instante?"
+            description="Escribe cualquier nombre o frase y descubre decenas de estilos cursivos y caligráficos listos para copiar con un solo clic."
+            buttonText="Subir al Generador de Cursivas"
+            targetId="generador-cursiva"
+          />
 
         </div>
       </div>

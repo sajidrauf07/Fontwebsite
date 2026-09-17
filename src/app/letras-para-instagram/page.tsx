@@ -9,6 +9,16 @@ import InstagramSymbolsSection from '@/components/instagram/InstagramSymbolsSect
 import InstagramCaptionsSection from '@/components/instagram/InstagramCaptionsSection';
 import { FAQSection } from '@/components/seo/FAQSection';
 import {
+  ReadingProgress,
+  TableOfContents,
+  ExamplePreviewCard,
+  CopyButton,
+  TipBox,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
+import {
   Sparkles,
   ArrowRight,
   HelpCircle,
@@ -100,6 +110,19 @@ const INSTAGRAM_FAQ_ITEMS = [
   }
 ];
 
+const INSTAGRAM_TOC_ITEMS = [
+  { id: 'guia-instagram', title: 'Introducción' },
+  { id: 'que-son-letras-instagram', title: '¿Qué son las letras para Instagram?' },
+  { id: 'como-usar', title: 'Cómo poner letras bonitas paso a paso' },
+  { id: 'donde-usar', title: '¿Dónde puedes usar letras especiales?' },
+  { id: 'estilos-populares', title: 'Los estilos más populares' },
+  { id: 'como-elegir', title: 'Cómo elegir la mejor letra según tu perfil' },
+  { id: 'como-funcionan', title: '¿Cómo funcionan realmente las fuentes?' },
+  { id: 'consejos', title: 'Consejos para usar letras sin exagerar' },
+  { id: 'faq', title: 'Preguntas frecuentes' },
+  { id: 'conclusion', title: 'Conclusión' }
+];
+
 export default function LetrasParaInstagramPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -188,6 +211,9 @@ export default function LetrasParaInstagramPage() {
           </div>
 
           {/* PAS INTRODUCTION & PROBLEM STATEMENT */}
+          <ReadingProgress />
+          <TableOfContents items={INSTAGRAM_TOC_ITEMS} />
+
           <article className="seo-card-section mb-12" id="guia-instagram">
             <p className="lead-text" style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#E2E8F0' }}>
               ¿Quieres que tu perfil de Instagram tenga un estilo diferente, pero no sabes cómo poner letras bonitas sin instalar aplicaciones? Es más fácil de lo que parece.
@@ -219,7 +245,7 @@ export default function LetrasParaInstagramPage() {
           <InstagramCaptionsSection />
 
           {/* ARTICLE SECTION 1: WHAT ARE INSTAGRAM FONTS */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="que-son-letras-instagram">
             <div className="seo-icon-badge">
               <Type size={20} />
             </div>
@@ -231,23 +257,11 @@ export default function LetrasParaInstagramPage() {
               Por ejemplo, una frase sencilla como <em>“Mi mundo”</em> puede convertirse visualmente en:
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-              <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <span className="text-xs text-indigo-400 font-semibold block mb-1">Cursiva Simple</span>
-                <span className="text-lg text-white">𝑀𝑖 𝑚𝑢𝑛𝑑𝑜</span>
-              </div>
-              <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <span className="text-xs text-indigo-400 font-semibold block mb-1">Negrita Matemática</span>
-                <span className="text-lg text-white">𝐌𝐢 𝐦𝐮𝐧𝐝𝑜</span>
-              </div>
-              <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <span className="text-xs text-indigo-400 font-semibold block mb-1">Manuscrito Caligráfico</span>
-                <span className="text-lg text-white">𝓜𝓲 𝓶𝓾𝓷𝓭𝓸</span>
-              </div>
-              <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <span className="text-xs text-indigo-400 font-semibold block mb-1">Doble Trazo</span>
-                <span className="text-lg text-white">𝕄𝕚 𝕞𝕦𝕟𝕕𝕠</span>
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '1.25rem 0' }}>
+              <ExamplePreviewCard text="𝑀𝑖 𝑚𝑢𝑛𝑑𝑜" label="Cursiva Simple" tags={['Instagram', 'Cursiva']} copyable />
+              <ExamplePreviewCard text="𝐌𝐢 𝐦𝐮𝐧𝐝𝑜" label="Negrita Matemática" tags={['Instagram', 'Negrita']} copyable />
+              <ExamplePreviewCard text="𝓜𝓲 𝓶𝓾𝓷𝓭𝓸" label="Manuscrito Caligráfico" tags={['Instagram', 'Caligráfico']} copyable />
+              <ExamplePreviewCard text="𝕄𝕚 𝕞𝕦𝑛𝕕𝕠" label="Doble Trazo" tags={['Instagram', 'Aesthetic']} copyable />
             </div>
 
             <p>
@@ -272,43 +286,35 @@ export default function LetrasParaInstagramPage() {
             <h2>Cómo poner letras bonitas en Instagram paso a paso</h2>
             <p>El proceso es bastante sencillo e intuitivo:</p>
 
-            <div className="steps-grid my-8">
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <h3>1. Escribe tu texto</h3>
+            <StepGuide>
+              <StepItem stepNumber={1} title="Escribe tu texto">
                 <p>
                   Primero escribe el nombre, palabra, frase o descripción que quieres personalizar. Puede ser: <em>“Ana | Fotografía”</em>, <em>“Viajando por México 🇲🇽”</em>, <em>“Creador digital”</em> o <em>“Sueña en grande ✨”</em>. No necesitas empezar pensando en una fuente concreta. Es mejor escribir primero el mensaje.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <h3>2. Elige un estilo</h3>
+              <StepItem stepNumber={2} title="Elige un estilo">
                 <p>
                   Una vez generado el texto, revisa las diferentes opciones. Puedes encontrar estilos como <Link href="/letras-cursivas/" className="seo-link">letras cursivas</Link>, negritas, góticas, versalitas, monoespaciadas, en círculos o decorativas.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <h3>3. Copia el resultado</h3>
+              <StepItem stepNumber={3} title="Copia el resultado">
                 <p>
                   Cuando encuentres un estilo que te guste, utiliza el botón de copiar del generador. El resultado queda guardado en el portapapeles del dispositivo.
                 </p>
-              </div>
+              </StepItem>
 
-              <div className="step-card">
-                <div className="step-number">4</div>
-                <h3>4. Pégalo en Instagram</h3>
+              <StepItem stepNumber={4} title="Pégalo en Instagram">
                 <p>
                   Ahora abre Instagram y pega el texto en el campo correspondiente (bio, nombre visible, comentario o publicación). Comprueba cómo se ve antes de guardar.
                 </p>
-              </div>
-            </div>
+              </StepItem>
+            </StepGuide>
           </section>
 
           {/* WHERE TO USE STYLED TEXT IN INSTAGRAM */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="donde-usar">
             <div className="seo-icon-badge">
               <Smartphone size={20} />
             </div>
@@ -354,7 +360,7 @@ export default function LetrasParaInstagramPage() {
           </section>
 
           {/* POPULAR STYLES CATALOGUE */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="estilos-populares">
             <div className="seo-icon-badge">
               <Sparkles size={20} />
             </div>
@@ -403,7 +409,7 @@ export default function LetrasParaInstagramPage() {
           </section>
 
           {/* SELECTION MATRIX TABLE */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="como-elegir">
             <div className="seo-icon-badge">
               <TableIcon size={20} />
             </div>
@@ -453,7 +459,7 @@ export default function LetrasParaInstagramPage() {
           </section>
 
           {/* TECHNICAL UNDERSTANDING: UNICODE & CORE SPECIFICATION */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="como-funcionan">
             <div className="seo-icon-badge">
               <ShieldAlert size={20} />
             </div>
@@ -485,27 +491,24 @@ export default function LetrasParaInstagramPage() {
           </section>
 
           {/* TIPS & COMMON ERRORS */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="consejos">
             <div className="seo-icon-badge">
               <CheckCircle2 size={20} />
             </div>
             <h2>Consejos para usar letras bonitas sin exagerar</h2>
 
-            <div className="space-y-4 my-6">
-              <div className="p-4 bg-slate-900/70 border border-slate-800 rounded-xl">
-                <h4 className="font-bold text-indigo-300">1. Mantén un propósito claro</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', margin: '1.5rem 0' }}>
+              <TipBox title="1. Mantén un propósito claro">
                 <p className="text-sm text-slate-300 mt-1">Usa negrita para destacar y cursiva para dar elegancia. No satures una frase con diez estilos distintos.</p>
-              </div>
+              </TipBox>
 
-              <div className="p-4 bg-slate-900/70 border border-slate-800 rounded-xl">
-                <h4 className="font-bold text-indigo-300">2. Revisa tildes y la letra Ñ</h4>
+              <TipBox title="2. Revisa tildes y la letra Ñ">
                 <p className="text-sm text-slate-300 mt-1">Palabras en español como <em>México</em>, <em>diseño</em> o <em>años</em> pueden requerir estilos que soporten acentos correctamente. Comprueba siempre antes de publicar.</p>
-              </div>
+              </TipBox>
 
-              <div className="p-4 bg-slate-900/70 border border-slate-800 rounded-xl">
-                <h4 className="font-bold text-indigo-300">3. No sacrifiques legibilidad por estética</h4>
+              <TipBox title="3. No sacrifiques legibilidad por estética">
                 <p className="text-sm text-slate-300 mt-1">Una letra bonita que no se entiende dificulta que los visitantes comprendan tu perfil.</p>
-              </div>
+              </TipBox>
             </div>
           </section>
 
@@ -551,6 +554,14 @@ export default function LetrasParaInstagramPage() {
               </Link>
             </div>
           </div>
+
+          {/* TOOL CTA */}
+          <ToolCTA
+            title="¿Quieres crear letras bonitas para tu Instagram?"
+            description="Personaliza tu bio, nombre de perfil o publicaciones con más de 350 tipografías aesthetic listas para copiar con un solo clic."
+            buttonText="Subir al Generador de Instagram"
+            targetId="generador-letras-instagram"
+          />
 
           {/* FAQ SECTION */}
           <FAQSection

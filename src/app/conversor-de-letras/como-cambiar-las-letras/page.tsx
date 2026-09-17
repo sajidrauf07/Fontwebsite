@@ -29,6 +29,13 @@ import {
   Laptop
 } from 'lucide-react';
 import { mapAlphabet } from '@/lib/unicode/transformations';
+import {
+  ReadingProgress,
+  TableOfContents,
+  TipBox,
+  WarningBox,
+  ToolCTA
+} from '@/components/article';
 
 export const metadata: Metadata = {
   title: 'Cómo Cambiar las Letras | Guía Paso a Paso y Conversor',
@@ -101,6 +108,19 @@ const CAMBIAR_LETRAS_FAQ_ITEMS = [
   }
 ];
 
+const CAMBIAR_LETRAS_TOC_ITEMS = [
+  { id: 'pasos', label: 'Cómo cambiar las letras paso a paso' },
+  { id: 'metodos', label: 'Los 3 métodos principales' },
+  { id: 'mecanica-unicode', label: 'Mecánica técnica Unicode' },
+  { id: 'comparativa-fuentes', label: 'Fuentes nativas vs Unicode' },
+  { id: 'tutorial-plataformas', label: 'Guía según la plataforma' },
+  { id: 'estilos-disponibles', label: 'Estilos tipográficos populares' },
+  { id: 'matriz-estilos', label: 'Matriz de recomendación' },
+  { id: 'solucion-problemas', label: 'Por qué no se ven en algunos móviles' },
+  { id: 'errores-y-consejos', label: 'Errores comunes y consejos' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
+
 export default function ComoCambiarLasLetrasPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -142,6 +162,8 @@ export default function ComoCambiarLasLetrasPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -186,26 +208,23 @@ export default function ComoCambiarLasLetrasPage() {
             </p>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={CAMBIAR_LETRAS_TOC_ITEMS} />
+
           {/* QUICK ANSWER CALLOUT */}
-          <div className="p-5 bg-gradient-to-r from-violet-950/60 to-indigo-950/60 border border-violet-800/50 rounded-2xl mb-10 flex items-start gap-4">
-            <div className="p-2 bg-violet-600/30 rounded-xl text-violet-300 shrink-0 mt-0.5">
-              <Lightbulb size={22} />
-            </div>
-            <div>
-              <h2 className="text-sm font-bold uppercase tracking-wider text-violet-300 mb-1">
-                Respuesta Rápida
-              </h2>
-              <p className="text-sm text-slate-200 leading-relaxed">
-                Para cambiar las letras de tu texto, escríbelo en un conversor de letras online como <strong>Letras Bonitas</strong>, selecciona el estilo que prefieras (cursiva, elegante, negrita, gótica o aesthetic) y presiona el botón «Copiar». Los estilos utilizan caracteres internacionales <strong>Unicode</strong> que se pueden copiar y pegar libremente en Instagram, WhatsApp, TikTok y juegos sin instalar aplicaciones.
-              </p>
-            </div>
+          <div className="my-8">
+            <TipBox title="Respuesta Rápida">
+              Para cambiar las letras de tu texto, escríbelo en un conversor de letras online como <strong>Letras Bonitas</strong>, selecciona el estilo que prefieras (cursiva, elegante, negrita, gótica o aesthetic) y presiona el botón «Copiar». Los estilos utilizan caracteres internacionales <strong>Unicode</strong> que se pueden copiar y pegar libremente en Instagram, WhatsApp, TikTok y juegos sin instalar aplicaciones.
+            </TipBox>
           </div>
 
           {/* MINI CONVERTER TOOL */}
           <MiniLetterConverter />
 
           {/* HOW TO CHANGE LETTERS - STEP BY STEP */}
-          <HowToSteps />
+          <div id="pasos">
+            <HowToSteps />
+          </div>
 
           {/* INTRODUCTORY ESSAY - PAS FORMULA */}
           <section className="seo-card-section">
@@ -496,6 +515,14 @@ export default function ComoCambiarLasLetrasPage() {
                 <p>Recuerda que los lectores de pantalla para personas con discapacidad visual leen mejor el texto estándar. Mantén la información crítica en formato normal.</p>
               </div>
             </div>
+
+            <ToolCTA
+              title="¿Listo para cambiar tus letras ahora mismo?"
+              description="Escribe cualquier frase en nuestro conversor gratuito y obtén al instante más de 350 estilos compatibles con Instagram, WhatsApp y juegos."
+              buttonText="Probar Conversor de Letras"
+              targetId="herramienta-conversor"
+              badge="Generador Activo"
+            />
           </section>
 
           {/* FAQ SECTION */}

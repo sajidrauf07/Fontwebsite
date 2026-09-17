@@ -32,6 +32,30 @@ import {
   UserCheck,
   Gamepad2
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  TipBox,
+  ToolCTA
+} from '@/components/article';
+
+const NOMBRES_TOC_ITEMS = [
+  { id: 'generador-nombres', label: 'Generador de nombres bonitos' },
+  { id: 'guia-nombres', label: 'Por qué personalizar tu nombre' },
+  { id: 'crea-tu-nombre', label: 'Crea tu nombre con letras bonitas' },
+  { id: 'que-son-nombres', label: '¿Qué son las letras para nombres?' },
+  { id: 'paso-a-paso', label: 'Cómo crear tu nombre paso a paso' },
+  { id: 'mejores-estilos', label: 'Los mejores estilos de letras' },
+  { id: 'ejemplos-nombres', label: 'Ejemplos de nombres estilizados' },
+  { id: 'instagram-gaming', label: 'Nombres para Instagram y videojuegos' },
+  { id: 'acentos-espanol', label: 'Nombres con Ñ, acentos y apellidos' },
+  { id: 'matriz-estilos', label: 'Elegir el estilo correcto' },
+  { id: 'unicode-vs-fuentes', label: 'Letras Unicode vs fuentes tradicionales' },
+  { id: 'errores-comunes', label: 'Errores comunes y cómo evitarlos' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Letras para Nombres Bonitos: Copia y Pega Estilos',
@@ -176,6 +200,8 @@ export default function LetrasParaNombresPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -225,6 +251,9 @@ export default function LetrasParaNombresPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={NOMBRES_TOC_ITEMS} />
+
           {/* PRIMARY INTERACTIVE NAME GENERATOR TOOL */}
           <main id="main-content">
             <div id="generador-nombres">
@@ -251,7 +280,7 @@ export default function LetrasParaNombresPage() {
             </article>
 
             {/* SECTION 1: CREA TU NOMBRE CON LETRAS BONITAS */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="crea-tu-nombre">
               <div className="seo-icon-badge">
                 <Sparkles size={20} />
               </div>
@@ -301,7 +330,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* SECTION 2: WHAT ARE LETRAS PARA NOMBRES & UNICODE TECHNICAL EXPLANATION */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="que-son-nombres">
               <div className="seo-icon-badge">
                 <Type size={20} />
               </div>
@@ -340,53 +369,46 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* SECTION 3: STEP BY STEP GUIDELINE */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="paso-a-paso">
               <div className="seo-icon-badge">
                 <MousePointerClick size={20} />
               </div>
               <h2>Cómo crear un nombre con letras bonitas paso a paso</h2>
               <p>Crear una versión especial de tu nombre requiere solo 5 pasos sencillos:</p>
 
-              <div className="steps-grid my-8">
-                <div className="step-card">
-                  <div className="step-number">1</div>
-                  <h3>Paso 1: escribe tu nombre</h3>
-                  <p>
-                    Comienza escribiendo el nombre real, apellido, apodo o nickname que quieres personalizar (por ejemplo: <em>José</em>, <em>Iñaki</em>, <em>María</em> o <em>Peña</em>).
-                  </p>
-                </div>
-
-                <div className="step-card">
-                  <div className="step-number">2</div>
-                  <h3>Paso 2: prueba diferentes estilos</h3>
-                  <p>
-                    Compara varias categorías (Cursivas, Negritas, Góticas, Aesthetic). Una misma palabra como <em>Alex</em> luce totalmente distinta en <strong>𝓐𝓵𝓮𝔁</strong>, <strong>𝐀𝐥𝐞𝐱</strong> o <strong>𝔄𝔩𝔢𝔵</strong>.
-                  </p>
-                </div>
-
-                <div className="step-card">
-                  <div className="step-number">3</div>
-                  <h3>Paso 3: compara la legibilidad</h3>
-                  <p>
-                    Verifica si el nombre se entiende a primera vista, si se distinguen las letras y si se ve claro en pantallas pequeñas.
-                  </p>
-                </div>
-
-                <div className="step-card">
-                  <div className="step-number">4</div>
-                  <h3>Paso 4: copia tu favorito</h3>
-                  <p>
-                    Haz clic en el botón "Copiar" al lado del estilo seleccionado para guardarlo en tu portapapeles.
-                  </p>
-                </div>
-
-                <div className="step-card">
-                  <div className="step-number">5</div>
-                  <h3>Paso 5: pégalo donde quieras</h3>
-                  <p>
-                    Abre tu red social o juego y pega el resultado en la casilla de Nombre, Bio o Comentario.
-                  </p>
-                </div>
+              <div className="mt-6">
+                <StepGuide>
+                  <StepItem
+                    stepNumber={1}
+                    title="Escribe tu nombre"
+                    badge="Paso 1"
+                    description="Comienza escribiendo el nombre real, apellido, apodo o nickname que quieres personalizar (por ejemplo: José, Iñaki, María o Peña)."
+                  />
+                  <StepItem
+                    stepNumber={2}
+                    title="Prueba diferentes estilos"
+                    badge="Paso 2"
+                    description="Compara varias categorías (Cursivas, Negritas, Góticas, Aesthetic). Una misma palabra como Alex luce totalmente distinta en 𝓐𝓵𝓮𝔁, 𝐀𝐥𝐞𝐱 o 𝔄𝔩𝔢𝔵."
+                  />
+                  <StepItem
+                    stepNumber={3}
+                    title="Compara la legibilidad"
+                    badge="Paso 3"
+                    description="Verifica si el nombre se entiende a primera vista, si se distinguen las letras y si se ve claro en pantallas pequeñas."
+                  />
+                  <StepItem
+                    stepNumber={4}
+                    title="Copia tu favorito"
+                    badge="Paso 4"
+                    description="Haz clic en el botón 'Copiar' al lado del estilo seleccionado para guardarlo en tu portapapeles."
+                  />
+                  <StepItem
+                    stepNumber={5}
+                    title="Pégalo donde quieras"
+                    badge="Paso 5"
+                    description="Abre tu red social o juego y pega el resultado en la casilla de Nombre, Bio o Comentario."
+                  />
+                </StepGuide>
               </div>
             </section>
 
@@ -400,7 +422,7 @@ export default function LetrasParaNombresPage() {
             <NameSymbolsSection />
 
             {/* STYLES CATALOGUE */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="mejores-estilos">
               <div className="seo-icon-badge">
                 <Sliders size={20} />
               </div>
@@ -461,7 +483,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* EXAMPLES SECTION */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="ejemplos-nombres">
               <div className="seo-icon-badge">
                 <UserCheck size={20} />
               </div>
@@ -507,7 +529,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* INSTAGRAM AND GAMING SPECIFIC USE CASES */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="instagram-gaming">
               <div className="seo-icon-badge">
                 <Smartphone size={20} />
               </div>
@@ -528,7 +550,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* ACCENTS, Ñ AND SPANISH NAMES */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="acentos-espanol">
               <div className="seo-icon-badge">
                 <AlertTriangle size={20} />
               </div>
@@ -542,7 +564,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* SELECTION MATRIX TABLE */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="matriz-estilos">
               <div className="seo-icon-badge">
                 <TableIcon size={20} />
               </div>
@@ -585,7 +607,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* COMPARISON TABLE: UNICODE VS INSTALLED FONTS */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="unicode-vs-fuentes">
               <div className="seo-icon-badge">
                 <ShieldAlert size={20} />
               </div>
@@ -622,7 +644,7 @@ export default function LetrasParaNombresPage() {
             </section>
 
             {/* COMMON ERRORS & GUIDELINES */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="errores-comunes">
               <div className="seo-icon-badge">
                 <CheckCircle2 size={20} />
               </div>
@@ -646,8 +668,18 @@ export default function LetrasParaNombresPage() {
               </div>
             </section>
 
+            {/* CONTEXTUAL TOOL CTA */}
+            <ToolCTA
+              targetId="generador-nombres"
+              title="¿Quieres personalizar tu nombre ahora?"
+              description="Escribe tu nombre arriba, compara decenas de alfabetos Unicode y copia tu estilo preferido al instante."
+              buttonText="Subir al Generador de Nombres"
+            />
+
             {/* FREQUENTLY ASKED QUESTIONS */}
-            <NameFaqSection />
+            <div id="faq">
+              <NameFaqSection />
+            </div>
 
             {/* CONCLUSION */}
             <section className="seo-card-section mb-12">

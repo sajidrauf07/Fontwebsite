@@ -26,6 +26,13 @@ import {
   Flame,
   Copy
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  ToolCTA
+} from '@/components/article';
 import { POPULAR_NAME_EXAMPLES, INSTAGRAM_EXAMPLES } from '@/data/cursiveExamples';
 import { mapAlphabet } from '@/lib/unicode/transformations';
 
@@ -100,6 +107,17 @@ const FAQ_ITEMS = [
   }
 ];
 
+const CURSIVE_COPY_TOC_ITEMS = [
+  { id: 'generador-cursivas', label: 'Generador de letras cursivas' },
+  { id: 'como-usar', label: 'Cómo copiar letras cursivas paso a paso' },
+  { id: 'que-son', label: '¿Qué son las letras cursivas copiables?' },
+  { id: 'comparativa-fuentes', label: 'Unicode cursivo vs fuentes tradicionales' },
+  { id: 'donde-usar', label: 'Dónde puedo usar letras cursivas' },
+  { id: 'compatibilidad-espanol', label: 'Acentos y letra Ñ en español' },
+  { id: 'ejemplos-populares', label: 'Ejemplos populares para copiar' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
+
 export default function CursiveCopyPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -141,6 +159,8 @@ export default function CursiveCopyPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -181,8 +201,13 @@ export default function CursiveCopyPage() {
             </p>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={CURSIVE_COPY_TOC_ITEMS} />
+
           {/* MAIN GENERATOR PANEL (TOOL FIRST) */}
-          <CursiveCopyGenerator />
+          <div id="generador-cursivas">
+            <CursiveCopyGenerator />
+          </div>
 
           {/* Image Plan 1 Visual Banner */}
           <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
@@ -229,38 +254,36 @@ export default function CursiveCopyPage() {
               ¿Estás buscando darle una apariencia más elegante a tus mensajes, bio de Instagram o nombre de usuario? Las <strong>letras cursivas para copiar y pegar</strong> te permiten transformar texto plano ordinario en tipografías manuscritas en cuestión de segundos.
             </p>
 
-            <div className="steps-grid my-6">
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <div className="step-icon-wrapper">
-                  <Sparkles size={20} />
-                </div>
-                <h3>1. Escribe tu texto</h3>
-                <p>Introduce tu nombre, palabra o biografía en el cuadro de texto del generador al inicio de la página.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <div className="step-icon-wrapper">
-                  <BookOpen size={20} />
-                </div>
-                <h3>2. Selecciona tu estilo</h3>
-                <p>Explora la vista previa en tiempo real y elige entre cursiva script, negrita manuscrita o variante caligráfica.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <div className="step-icon-wrapper">
-                  <CheckCircle2 size={20} />
-                </div>
-                <h3>3. Copia y pega</h3>
-                <p>Presiona el botón «Copiar» y pega el texto resultante directamente en Instagram, WhatsApp o TikTok.</p>
-              </div>
+            <div className="mt-6">
+              <StepGuide>
+                <StepItem
+                  stepNumber={1}
+                  title="Escribe tu texto"
+                  badge="Paso 1"
+                >
+                  Introduce tu nombre, palabra o biografía en el cuadro de texto del generador al inicio de la página.
+                </StepItem>
+                <StepItem
+                  stepNumber={2}
+                  title="Selecciona tu estilo"
+                  badge="Paso 2"
+                >
+                  Explora la vista previa en tiempo real y elige entre cursiva script, negrita manuscrita o variante caligráfica.
+                </StepItem>
+                <StepItem
+                  stepNumber={3}
+                  title="Copia y pega"
+                  badge="Paso 3"
+                  isLast={true}
+                >
+                  Presiona el botón «Copiar» y pega el texto resultante directamente en Instagram, WhatsApp o TikTok.
+                </StepItem>
+              </StepGuide>
             </div>
           </section>
 
           {/* SECTION 2: UNICODE EXPLANATION */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="que-son">
             <h2 className="seo-h2">¿Qué son las letras cursivas para copiar y pegar?</h2>
             <p className="seo-paragraph">
               Las <strong>letras cursivas para copiar y pegar</strong> son representaciones tipográficas creadas mediante el estándar internacional{' '}
@@ -284,7 +307,7 @@ export default function CursiveCopyPage() {
           </section>
 
           {/* COMPARISON TABLE SECTION */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="comparativa-fuentes">
             <h2 className="seo-h2">Letras cursivas Unicode vs. Fuentes tradicionales</h2>
             <p className="seo-paragraph">
               Entiende las diferencias clave entre usar caracteres cursivos copiables y fuentes tradicionales de sistema:
@@ -358,7 +381,7 @@ export default function CursiveCopyPage() {
           </div>
 
           {/* SECTION 3: WHERE TO USE & PLATFORM GUIDELINES */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="donde-usar">
             <h2 className="seo-h2">¿Dónde puedo usar letras cursivas?</h2>
             <p className="seo-paragraph">
               Puedes copiar y pegar estas tipografías manuscritas en las principales plataformas digitales:
@@ -424,7 +447,7 @@ export default function CursiveCopyPage() {
           </section>
 
           {/* SECTION 4: SPANISH CHARACTER & ACCENTS HANDLING */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="compatibilidad-espanol">
             <h2 className="seo-h2">Manejo de acentos y la letra Ñ en español</h2>
             <p className="seo-paragraph">
               Para los usuarios de México e Hispanoamérica, la correcta preservación de vocales con tilde (<strong>á, é, í, ó, ú</strong>) y de la letra <strong>Ñ/ñ</strong> es vital.
@@ -444,7 +467,7 @@ export default function CursiveCopyPage() {
           </section>
 
           {/* SECTION 5: POPULAR EXAMPLES DISPLAY */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="ejemplos-populares">
             <h2 className="seo-h2">Ejemplos populares de letras cursivas para copiar</h2>
 
             <h3 className="text-lg font-bold text-indigo-300 mt-4 mb-2">Frases bonitas y aesthetic</h3>
@@ -487,6 +510,14 @@ export default function CursiveCopyPage() {
               ))}
             </div>
           </section>
+
+          {/* CONTEXTUAL TOOL CTA */}
+          <ToolCTA
+            targetId="generador-cursivas"
+            title="¿Listo para crear tus propias letras cursivas?"
+            description="Escribe cualquier palabra o frase en nuestro conversor gratuito arriba y copia más de 30 estilos caligráficos con un solo clic."
+            buttonText="Subir al Conversor de Cursivas"
+          />
 
           {/* SECTION 6: FAQ ACCORDION DISPLAY */}
           <div className="mb-8">

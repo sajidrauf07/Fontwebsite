@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { SEOArticleFaqAccordion } from './SEOArticleFaqAccordion';
 import {
   Sparkles,
   Type,
@@ -22,6 +21,20 @@ import {
   Layers,
   Globe
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  ExamplePreviewCard,
+  CopyButton,
+  TipBox,
+  InfoBox,
+  WarningBox,
+  ToolCTA,
+  RelatedLinks
+} from '@/components/article';
+import { SEOArticleFaqAccordion } from './SEOArticleFaqAccordion';
 
 export interface FAQItem {
   question: string;
@@ -81,8 +94,19 @@ const MASTER_ARTICLE_FAQS: FAQItem[] = [
   }
 ];
 
-export const SEOContent: React.FC = () => {
+const ARTICLE_TOC_ITEMS = [
+  { id: 'que-son-las-letras-bonitas', title: 'Letras Bonitas para Copiar y Pegar' },
+  { id: 'como-usar-el-generador', title: '¿Cómo usar el generador de letras bonitas?' },
+  { id: 'estilos-de-letras', title: 'Más de 350 estilos de letras para explorar' },
+  { id: 'explicacion-tecnica-unicode', title: 'Explicación técnica: ¿Qué son y cómo funcionan?' },
+  { id: 'donde-puedes-usar', title: '¿Dónde puedes usar letras bonitas?' },
+  { id: 'letras-bonitas-para-copiar', title: 'Letras bonitas con Ñ y acentos' },
+  { id: 'por-que-se-ven-diferentes', title: '¿Por qué algunas letras se ven diferentes y cómo elegir?' },
+  { id: 'preguntas-frecuentes', title: 'Preguntas Frecuentes sobre Letras Bonitas' },
+  { id: 'conclusion', title: 'Conclusión y Recomendaciones' }
+];
 
+export const SEOContent: React.FC = () => {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -97,586 +121,602 @@ export const SEOContent: React.FC = () => {
   };
 
   return (
-    <div className="seo-content-container w-full space-y-12 text-left block">
+    <>
+      <ReadingProgress />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* 1. Introduction SEO Card */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-pink-500 to-purple-600 rounded-l-2xl" />
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold">
-          <Sparkles size={16} />
-          <span>Generador de Letras Bonitas</span>
-        </div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-          Letras Bonitas para Copiar y Pegar
-        </h2>
-        <div className="space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
-          <p className="leading-relaxed">
+      <article className="article-prose-container">
+        {/* ==================================================================
+            1. INTRO SECTION
+            ================================================================== */}
+        <header className="article-intro-header" id="que-son-las-letras-bonitas">
+          <div className="article-category-pill">
+            <Sparkles size={14} aria-hidden="true" />
+            <span>Guía Editorial y Herramienta</span>
+          </div>
+
+          <h2 className="article-h2">Letras Bonitas para Copiar y Pegar</h2>
+
+          <p className="article-lead-paragraph">
             ¿Quieres darle un toque diferente a tu nombre, frase, biografía o perfil? Con un generador de letras bonitas puedes transformar un texto normal en diferentes estilos y copiar el resultado en cuestión de segundos.
           </p>
-          <p className="leading-relaxed">
+
+          <p className="article-paragraph">
             No necesitas diseñar las letras manualmente ni instalar un programa para probar diferentes opciones. Escribe tu texto, explora los estilos disponibles y copia el que más te guste.
           </p>
-          <p className="leading-relaxed">
+
+          <p className="article-paragraph">
             En <strong>Letras Bonitas</strong> encontrarás una colección amplia de estilos pensados para diferentes situaciones. Puedes buscar una apariencia elegante para tu perfil, una opción cursiva para una frase, un estilo llamativo para un nombre de juego o una variante sencilla para{' '}
-            <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 font-medium text-sm hover:bg-pink-500/20 transition-all underline decoration-pink-500/40">
-              <span>letras para copiar y pegar</span>
-              <ChevronRight size={14} />
+            <Link
+              href="/conversor-de-letras/letras-para-copiar-y-pegar/"
+              className="seo-link"
+            >
+              letras para copiar y pegar
             </Link>{' '}
             en tus redes sociales.
           </p>
-        </div>
-      </section>
 
-      {/* Interactive UI Demo Visual Banner */}
-      <div className="w-full p-6 sm:p-8 lg:p-10 bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950/90 rounded-2xl border border-indigo-500/30 shadow-2xl overflow-hidden relative space-y-6 block">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-          <div className="flex-1 space-y-3 text-left">
-            <span className="text-xs uppercase tracking-widest font-bold text-pink-400 block">
-              Generador de Letras Bonitas — Demostración
-            </span>
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
-              El proceso es rápido: Escribe → Explora → Elige → Copia y Pega
-            </h3>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              El generador de Letras Bonitas está diseñado para hacer una cosa especialmente bien: convertir tu texto en diferentes estilos de caracteres que puedas copiar y utilizar fácilmente.
+          <TipBox title="Transformación instantánea">
+            Introduce cualquier palabra o frase en el campo de texto superior y obtén al instante cientos de alternativas compatibles con Instagram, WhatsApp, TikTok y videojuegos.
+          </TipBox>
+
+          {/* Table of Contents for easy scanning */}
+          <TableOfContents items={ARTICLE_TOC_ITEMS} />
+
+          {/* Interactive UI Demo Showcase */}
+          <div className="my-8">
+            <h3 className="article-h3">Muestra de estilos populares</h3>
+            <p className="article-paragraph">
+              El proceso es rápido: <strong>Escribe → Explora → Elige → Copia y Pega</strong>. Aquí tienes algunos de los formatos más utilizados listos para copiar con un solo clic:
             </p>
-          </div>
 
-          <div className="w-full lg:w-auto shrink-0 flex flex-col justify-center">
-            <div className="bg-slate-950/90 p-4 sm:p-6 rounded-2xl border border-slate-800 flex flex-col gap-3 min-w-[280px] sm:min-w-[340px] shadow-2xl">
-              {/* Row 1 */}
-              <div className="flex justify-between items-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800/80 hover:border-pink-500/40 transition-all gap-4">
-                <span className="font-mono text-base text-pink-300 font-semibold tracking-wide">
-                  𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 𝓒𝓾𝓻𝓼𝓲𝓿𝓪
-                </span>
-                <span className="bg-emerald-500 text-white px-2.5 py-1 rounded-lg text-xs font-bold shadow-sm shadow-emerald-500/20 shrink-0 flex items-center gap-1">
-                  <CheckCircle2 size={12} /> Copiado
-                </span>
-              </div>
-              {/* Row 2 */}
-              <div className="flex justify-between items-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800/80 hover:border-purple-500/40 transition-all gap-4">
-                <span className="font-mono text-base text-purple-300 font-semibold tracking-wide">
-                  𝕲ó𝖙𝖎𝖈𝖔 𝕴𝖓𝖘𝖆𝖓𝖔
-                </span>
-                <span className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-700 transition-colors shrink-0 flex items-center gap-1">
-                  <Copy size={12} /> Copiar
-                </span>
-              </div>
-              {/* Row 3 */}
-              <div className="flex justify-between items-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800/80 hover:border-cyan-500/40 transition-all gap-4">
-                <span className="font-mono text-base text-cyan-300 font-semibold tracking-wide">
-                  ░A░e░s░t░h░e░t░i░c░
-                </span>
-                <span className="bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1 rounded-lg text-xs font-semibold border border-slate-700 transition-colors shrink-0 flex items-center gap-1">
-                  <Copy size={12} /> Copiar
-                </span>
-              </div>
+            <div className="space-y-3 mt-4">
+              <ExamplePreviewCard
+                title="Cursiva Elegante"
+                sampleText="𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 𝓒𝓾𝓻𝓼𝓲𝓿𝓪"
+                tag="Instagram & Bio"
+                description="Tipografía caligráfica clásica ideal para nombres visibles y citas."
+              />
+              <ExamplePreviewCard
+                title="Gótico Insano"
+                sampleText="𝕲ó𝖙𝖎𝖈𝖔 𝕴𝖓𝖘𝖆𝖓𝖔"
+                tag="Free Fire & Nicks"
+                description="Estilo medieval Fraktur con trazos gruesos y apariencia imponente."
+              />
+              <ExamplePreviewCard
+                title="Aesthetic con Decoración"
+                sampleText="░A░e░s░t░h░e░t░i░c░"
+                tag="Redes Sociales"
+                description="Efecto de sombreado pixelado con caracteres especiales entre letras."
+              />
             </div>
           </div>
-        </div>
+        </header>
 
-        <div className="p-4 bg-slate-950/80 border border-slate-800/90 rounded-xl flex items-center gap-3 text-xs sm:text-sm text-slate-300">
-          <Info size={18} className="text-pink-400 shrink-0" />
-          <span>Explora diferentes estilos y copia el que mejor se adapte a tu texto.</span>
-        </div>
-      </div>
+        <hr className="article-section-divider" />
 
-      {/* 2. How to use section */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-purple-500 to-indigo-600 rounded-l-2xl" />
-        <div className="space-y-2 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold">
-            <Layers size={16} />
-            <span>Guía de Uso Paso a Paso</span>
+        {/* ==================================================================
+            2. STEP-BY-STEP GUIDE (VERTICAL TIMELINE)
+            ================================================================== */}
+        <section id="como-usar-el-generador">
+          <div className="article-category-pill">
+            <Layers size={14} aria-hidden="true" />
+            <span>Paso a Paso</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            ¿Cómo usar el generador de letras bonitas?
-          </h2>
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-            Utilizar un generador de este tipo no debería ser complicado.
+
+          <h2 className="article-h2">¿Cómo usar el generador de letras bonitas?</h2>
+
+          <p className="article-paragraph">
+            Utilizar un generador de este tipo no debería ser complicado. Sigue estos 4 sencillos pasos para obtener tu texto personalizado en segundos:
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 space-y-3 relative overflow-hidden group hover:border-pink-500/40 transition-all text-left flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center">
-                  <Type size={20} />
+          <StepGuide>
+            <StepItem
+              number="01"
+              label="PASO 1"
+              title="Escribe tu texto"
+              description="Introduce el texto que quieres transformar: tu nombre, apodo, frase, palabra, biografía corta, nombre para un juego, título o descripción en el recuadro superior."
+              exampleSnippet={
+                <div className="p-3 bg-slate-900/90 rounded-lg border border-slate-800 font-mono text-sm text-pink-300 flex items-center justify-between">
+                  <span>Ejemplo: Mi nombre</span>
+                  <span className="text-xs text-slate-400">Texto original</span>
                 </div>
-                <span className="text-2xl font-extrabold text-slate-700 group-hover:text-pink-500/40 transition-colors">01</span>
-              </div>
-              <h3 className="text-base font-bold text-white">1. Escribe tu texto</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Primero introduce el texto que quieres transformar: tu nombre, apodo, frase, palabra, biografía corta, nombre para un juego, título o descripción. Por ejemplo: <em>Mi nombre</em>.
-              </p>
-            </div>
-          </div>
+              }
+            />
 
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 space-y-3 relative overflow-hidden group hover:border-purple-500/40 transition-all text-left flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
-                  <MousePointerClick size={20} />
+            <StepItem
+              number="02"
+              label="PASO 2"
+              title="Explora los estilos"
+              description="Revisa las variantes disponibles que se generan automáticamente: cursivas, elegantes, góticas, aesthetic, negrita, burbuja, pequeñas, decorativas, gaming o especiales."
+            />
+
+            <StepItem
+              number="03"
+              label="PASO 3"
+              title="Copia tu favorito"
+              description="Cuando encuentres el estilo que más te guste, presiona el botón Copiar. El texto se guardará al instante en el portapapeles de tu dispositivo sin necesidad de seleccionar manualmente las letras."
+              exampleSnippet={
+                <div className="p-3 bg-slate-900/90 rounded-lg border border-slate-800 flex items-center justify-between gap-4">
+                  <span className="font-unicode text-base text-white font-semibold">
+                    𝓜𝓲 𝓷𝓸𝓶𝓫𝓻𝓮
+                  </span>
+                  <CopyButton textToCopy="𝓜𝓲 𝓷𝓸𝓶𝓫𝓻𝓮" label="Probar Copiar" size="sm" />
                 </div>
-                <span className="text-2xl font-extrabold text-slate-700 group-hover:text-purple-500/40 transition-colors">02</span>
-              </div>
-              <h3 className="text-base font-bold text-white">2. Explora los estilos</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Revisa las variantes disponibles: cursivas, elegantes, góticas, aesthetic, negrita, burbuja, pequeñas, decorativas, gaming o especiales.
-              </p>
-            </div>
+              }
+            />
+
+            <StepItem
+              number="04"
+              label="PASO 4"
+              title="Pégalo donde quieras"
+              description="Abre la aplicación o página donde quieres utilizar el texto y pégalo en tu perfil, biografía de Instagram, mensaje de WhatsApp, comentario de TikTok, publicación o nickname de juego."
+              isLast={true}
+            />
+          </StepGuide>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* ==================================================================
+            3. 350+ STYLE CATALOG
+            ================================================================== */}
+        <section id="estilos-de-letras">
+          <div className="article-category-pill">
+            <BookOpen size={14} aria-hidden="true" />
+            <span>Catálogo Tipográfico</span>
           </div>
 
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 space-y-3 relative overflow-hidden group hover:border-cyan-500/40 transition-all text-left flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
-                  <Copy size={20} />
-                </div>
-                <span className="text-2xl font-extrabold text-slate-700 group-hover:text-cyan-500/40 transition-colors">03</span>
-              </div>
-              <h3 className="text-base font-bold text-white">3. Copia tu favorito</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Cuando encuentres el estilo que más te guste, utiliza el botón Copiar. El texto se guardará al instante en tu portapapeles.
-              </p>
-            </div>
-          </div>
+          <h2 className="article-h2">Más de 350 estilos de letras para explorar</h2>
 
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 space-y-3 relative overflow-hidden group hover:border-emerald-500/40 transition-all text-left flex flex-col justify-between">
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                  <Smartphone size={20} />
-                </div>
-                <span className="text-2xl font-extrabold text-slate-700 group-hover:text-emerald-500/40 transition-colors">04</span>
-              </div>
-              <h3 className="text-base font-bold text-white">4. Pégalo donde quieras</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Abre la aplicación o página donde quieres utilizar el texto y pégalo en tu perfil, bio, mensaje, comentario, publicación o nombre.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. 350+ Style Library Section */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-cyan-500 to-blue-600 rounded-l-2xl" />
-        <div className="space-y-3 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">
-            <BookOpen size={16} />
-            <span>Catálogo de Fuentes</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            Más de 350 estilos de letras para explorar
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-            Tener muchas opciones puede ser útil cuando buscas una apariencia específica. Por eso, el generador está pensado para ofrecer una colección amplia de más de 350 fuentes y facilitar su exploración.
+          <p className="article-paragraph">
+            Tener muchas opciones puede ser útil cuando buscas una apariencia específica. Por eso, el generador está pensado para ofrecer una colección amplia de más de 350 fuentes y facilitar su exploración por categorías especializadas:
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
-          {/* Card 1 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-pink-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center">
-                <Feather size={20} />
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-pink-300 transition-colors">
-                Letras cursivas
+          <div className="space-y-6 mt-6">
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Feather size={20} className="text-pink-400" aria-hidden="true" />
+                <span>Letras cursivas</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras cursivas son una de las opciones más populares para quienes buscan una apariencia elegante. Su aspecto recuerda a diferentes formas de escritura manuscrita para nombres, biografías, frases, dedicatorias o publicaciones.
               </p>
-            </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs">
-              <Link href="/letras-cursivas/" className="px-3 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors font-medium inline-flex items-center gap-1">
-                <span>Letras cursivas</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="px-3 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors font-medium inline-flex items-center gap-1">
-                <span>Abecedario cursivo</span>
-                <ChevronRight size={12} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-purple-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
-                <Crown size={20} />
+              <ExamplePreviewCard
+                title="Muestra Cursiva"
+                sampleText="𝓛𝓮𝓽𝓻𝓪𝓼 𝓒𝓾𝓻𝓼𝓲𝓿𝓪𝓼 𝓑𝓸𝓷𝓲𝓽𝓪𝓼"
+                tag="Cursiva"
+              />
+              <div className="flex flex-wrap gap-2 mt-2">
+                <Link href="/letras-cursivas/" className="seo-link-pill">
+                  <span>Letras cursivas</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/letras-cursivas/abecedario-cursivo/" className="seo-link-pill">
+                  <span>Abecedario cursivo</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link-pill">
+                  <span>Cursivas elegantes</span>
+                  <ChevronRight size={14} />
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
-                Letras elegantes
+            </div>
+
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Crown size={20} className="text-purple-400" aria-hidden="true" />
+                <span>Letras elegantes</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras elegantes pueden ser una buena opción cuando buscas destacar sin utilizar demasiados elementos decorativos. Funcionan para perfiles personales, nombres, frases cortas, biografías y títulos.
               </p>
+              <ExamplePreviewCard
+                title="Muestra Elegante"
+                sampleText="𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 & 𝓢𝓸𝓯𝓲𝓼𝓽𝓲𝓬𝓪𝓭𝓸"
+                tag="Elegante"
+              />
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
-              <span className="text-xs font-mono text-purple-300">𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 & 𝓢𝓸𝓯𝓲𝓼𝓽𝓲𝓬𝓪𝓭𝓸</span>
-            </div>
-          </div>
 
-          {/* Card 3 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-amber-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
-                <Flame size={20} />
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
-                Letras góticas
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Flame size={20} className="text-amber-400" aria-hidden="true" />
+                <span>Letras góticas</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras góticas tienen una apariencia más intensa y llamativa. Son populares para nombres de gaming, perfiles con estética oscura, nombres especiales y títulos decorativos.
               </p>
-            </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
-              <Link href="/conversor-de-letras/" className="px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 hover:bg-amber-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Conversor de letras</span>
-                <ChevronRight size={12} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-cyan-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center">
-                <Sparkles size={20} />
+              <ExamplePreviewCard
+                title="Muestra Gótica"
+                sampleText="𝕷𝖊𝖙𝖗𝖆𝖘 𝕲ó𝖙𝖎𝖈𝖆𝖘 𝕴𝖓𝖘𝖆𝖓𝖆𝖘"
+                tag="Gótico"
+              />
+              <div className="mt-2">
+                <Link href="/conversor-de-letras/" className="seo-link-pill">
+                  <span>Explorar en conversor de letras</span>
+                  <ChevronRight size={14} />
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
-                Letras aesthetic
+            </div>
+
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Sparkles size={20} className="text-cyan-400" aria-hidden="true" />
+                <span>Letras aesthetic</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras aesthetic ayudan a crear un estilo visual diferente para perfiles y publicaciones. Este tipo de texto suele combinarse con símbolos, espacios, emojis y caracteres decorativos.
               </p>
+              <ExamplePreviewCard
+                title="Muestra Aesthetic"
+                sampleText="✦ 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝓋𝒾𝒷𝑒𝓈 ✦"
+                tag="Aesthetic"
+              />
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
-              <span className="text-xs font-mono text-cyan-300">✦ 𝒶𝑒𝓈𝓉𝒽𝑒𝓉𝒾𝒸 𝓋𝒾𝒷𝑒𝓈 ✦</span>
-            </div>
-          </div>
 
-          {/* Card 5 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-indigo-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                <Type size={20} />
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
-                Letras en negrita
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Type size={20} className="text-indigo-400" aria-hidden="true" />
+                <span>Letras en negrita</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras en negrita son útiles cuando quieres que determinadas palabras destaquen en títulos, nombres, frases, perfiles y publicaciones.
               </p>
+              <ExamplePreviewCard
+                title="Muestra Negrita"
+                sampleText="𝐍𝐞𝐠𝐫𝐢𝐭𝐚 𝐌𝐚𝐭𝐞𝐦á𝐭𝐢𝐜𝐚 𝐏𝐨𝐭𝐞𝐧𝐭𝐞"
+                tag="Negrita"
+              />
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
-              <span className="text-xs font-mono text-indigo-300 font-bold">𝐍𝐞𝐠𝐫𝐢𝐭𝐚 𝐌𝐚𝐭𝐞𝐦á𝐭𝐢𝐜𝐚</span>
-            </div>
-          </div>
 
-          {/* Card 6 */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-emerald-500/40 transition-all group text-left">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <Smile size={20} />
-              </div>
-              <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
-                Letras pequeñas, burbuja y decoradas
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Smile size={20} className="text-emerald-400" aria-hidden="true" />
+                <span>Letras pequeñas, burbuja y decoradas</span>
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="article-paragraph">
                 Las letras pequeñas crean una apariencia compacta, las letras de burbuja utilizan caracteres redondeados y las letras decoradas incorporan elementos visuales alrededor o dentro del texto.
               </p>
+              <ExamplePreviewCard
+                title="Muestra Burbuja"
+                sampleText="Ⓛⓔⓣⓡⓐⓢ Ⓑⓤⓡⓑⓤⓙⓐ"
+                tag="Burbuja"
+              />
             </div>
-            <div className="pt-4 mt-4 border-t border-slate-800/80">
-              <span className="text-[#10b981] font-mono text-xs">Ⓛⓔⓣⓡⓐⓢ Ⓑⓤⓡⓑⓤⓙⓐ</span>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 4. Technical Unicode Explanation & How it Works */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-pink-500 to-amber-500 rounded-l-2xl" />
-        <div className="space-y-3 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-semibold">
-            <Globe size={16} />
-            <span>Explicación Técnica Unicode</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            ¿Qué son las letras bonitas?
-          </h2>
-          <div className="space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
-            <p className="leading-relaxed">
-              Las letras bonitas son diferentes representaciones de texto que pueden utilizar caracteres especiales del estándar universal{' '}
-              <a href="https://www.unicode.org/" target="_blank" rel="noopener noreferrer" className="text-pink-400 underline font-bold hover:text-pink-300">
-                Unicode
-              </a>
-              .
-            </p>
-            <p className="leading-relaxed">
-              Esto es importante porque muchas personas piensan que un generador de letras simplemente cambia la fuente. En realidad, muchos generadores convierten determinados caracteres en otros caracteres Unicode que tienen una apariencia diferente, como bloques de símbolos alfanuméricos matemáticos para crear estilos como negrita, cursiva o doble trazo.
-            </p>
-          </div>
-        </div>
+        <hr className="article-section-divider" />
 
-        <div className="pt-6 border-t border-slate-800/80 space-y-5 text-left">
-          <h3 className="text-xl font-bold text-pink-300 flex items-center gap-2">
-            <Lightbulb size={20} className="text-pink-400" />
-            ¿Cómo funcionan las letras bonitas?
+        {/* ==================================================================
+            4. TECHNICAL UNICODE EXPLANATION
+            ================================================================== */}
+        <section id="explicacion-tecnica-unicode">
+          <div className="article-category-pill">
+            <Globe size={14} aria-hidden="true" />
+            <span>Fundamentos de la Tecnología</span>
+          </div>
+
+          <h2 className="article-h2">¿Qué son las letras bonitas?</h2>
+
+          <p className="article-paragraph">
+            Las letras bonitas son diferentes representaciones de texto que pueden utilizar caracteres especiales del estándar universal{' '}
+            <a
+              href="https://www.unicode.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="seo-link font-semibold"
+            >
+              Unicode
+            </a>
+            .
+          </p>
+
+          <p className="article-paragraph">
+            Esto es importante porque muchas personas piensan que un generador de letras simplemente cambia la fuente. En realidad, muchos generadores convierten determinados caracteres en otros caracteres Unicode que tienen una apariencia diferente, como bloques de símbolos alfanuméricos matemáticos para crear estilos como negrita, cursiva o doble trazo.
+          </p>
+
+          <InfoBox title="Unicode vs Fuentes tradicionales (.ttf / .otf)">
+            Una fuente tradicional cambia cómo se dibuja el texto dentro de un programa cerrado. En cambio, los caracteres Unicode son símbolos independientes que cualquier dispositivo moderno reconoce, por lo que puedes copiarlos y pegarlos en cualquier aplicación web o móvil sin enviar archivos externos.
+          </InfoBox>
+
+          <h3 className="article-h3 flex items-center gap-2 mt-8">
+            <Lightbulb size={20} className="text-amber-400" aria-hidden="true" />
+            <span>¿Cómo funcionan las letras bonitas?</span>
           </h3>
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+
+          <p className="article-paragraph">
             Imagina que escribes: <strong>Hola</strong>. El generador puede transformar determinados caracteres en equivalentes estilizados:
           </p>
 
-          <div className="my-5 p-5 bg-slate-950/90 rounded-2xl border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-            <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800/80">
-              <span className="text-xs text-slate-400 block mb-1.5 font-semibold uppercase tracking-wider">Negrita Matemáticas</span>
-              <span className="text-xl font-bold text-white">𝐇𝐨𝐥𝐚</span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-between gap-3">
+              <div>
+                <span className="text-xs text-slate-400 block mb-1 font-semibold uppercase tracking-wider">Negrita Matemáticas</span>
+                <span className="text-xl font-bold text-white font-unicode">𝐇𝐨𝐥𝐚</span>
+              </div>
+              <CopyButton textToCopy="𝐇𝐨𝐥𝐚" size="sm" />
             </div>
-            <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800/80">
-              <span className="text-xs text-slate-400 block mb-1.5 font-semibold uppercase tracking-wider">Cursiva Manuscrita</span>
-              <span className="text-xl font-bold text-pink-400 font-mono">𝓗𝓸𝓵𝓪</span>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-between gap-3">
+              <div>
+                <span className="text-xs text-slate-400 block mb-1 font-semibold uppercase tracking-wider">Cursiva Manuscrita</span>
+                <span className="text-xl font-bold text-pink-300 font-unicode">𝓗𝓸𝓵𝓪</span>
+              </div>
+              <CopyButton textToCopy="𝓗𝓸𝓵𝓪" size="sm" />
             </div>
-            <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800/80">
-              <span className="text-xs text-slate-400 block mb-1.5 font-semibold uppercase tracking-wider">Gótico Fraktur</span>
-              <span className="text-xl font-bold text-purple-300 font-mono">𝕳𝖔𝖑𝖆</span>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-between gap-3">
+              <div>
+                <span className="text-xs text-slate-400 block mb-1 font-semibold uppercase tracking-wider">Gótico Fraktur</span>
+                <span className="text-xl font-bold text-purple-300 font-unicode">𝕳𝖔𝖑𝖆</span>
+              </div>
+              <CopyButton textToCopy="𝕳𝖔𝖑𝖆" size="sm" />
             </div>
           </div>
 
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+          <p className="article-paragraph">
             La palabra sigue representando el mismo contenido, pero los caracteres utilizados son diferentes. Por eso puedes copiar el resultado y pegarlo en otros lugares que acepten esos caracteres sin descargar un archivo de fuente.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* 5. Where to Use Section & Social/Gaming Use Cases */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-emerald-500 to-teal-600 rounded-l-2xl" />
-        <div className="space-y-3 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-            <Smartphone size={16} />
-            <span>Compatibilidad y Usos</span>
+        <hr className="article-section-divider" />
+
+        {/* ==================================================================
+            5. WHERE TO USE (PLATFORMS & USE CASES)
+            ================================================================== */}
+        <section id="donde-puedes-usar">
+          <div className="article-category-pill">
+            <Smartphone size={14} aria-hidden="true" />
+            <span>Compatibilidad y Redes</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            ¿Dónde puedes usar letras bonitas?
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-            Las letras bonitas pueden ser útiles en muchos espacios digitales:
+
+          <h2 className="article-h2">¿Dónde puedes usar letras bonitas?</h2>
+
+          <p className="article-paragraph">
+            Las letras bonitas pueden ser útiles en muchos espacios digitales para transmitir personalidad y destacar frente a tipografías estándar:
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-          {/* Instagram Card */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-pink-500/40 transition-all text-left">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5 text-pink-400">
-                <Instagram size={22} />
-                <h3 className="font-bold text-white text-lg">Instagram</h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Puedes probar diferentes estilos para biografías, nombres, publicaciones, captions y comentarios.
+          <div className="space-y-6 mt-6">
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Instagram size={20} className="text-pink-400" aria-hidden="true" />
+                <span>Instagram</span>
+              </h3>
+              <p className="article-paragraph">
+                Puedes probar diferentes estilos para biografías, nombres, publicaciones, captions y comentarios. Destaca los encabezados de tu bio con letras elegantes o cursivas para una primera impresión atractiva.
               </p>
-            </div>
-            <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-slate-800/80">
-              <Link href="/letras-para-instagram/" className="px-2.5 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Letras para Instagram</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/letras-para-instagram/letras-para-bio/" className="px-2.5 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Letras para Bio</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/letras-para-instagram/letras-para-nombres/" className="px-2.5 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Letras para Nombres</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/letras-para-instagram/simbolos-para-instagram/" className="px-2.5 py-1.5 rounded-lg bg-pink-500/10 border border-pink-500/20 text-pink-300 hover:bg-pink-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Símbolos para Instagram</span>
-                <ChevronRight size={12} />
-              </Link>
-            </div>
-          </div>
-
-          {/* WhatsApp & TikTok Card */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-emerald-500/40 transition-all text-left">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5 text-emerald-400">
-                <Smartphone size={22} />
-                <h3 className="font-bold text-white text-lg">WhatsApp y TikTok</h3>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <Link href="/letras-para-instagram/" className="seo-link-pill">
+                  <span>Letras para Instagram</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link-pill">
+                  <span>Letras para Bio</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link-pill">
+                  <span>Letras para Nombres</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link-pill">
+                  <span>Símbolos para Instagram</span>
+                  <ChevronRight size={14} />
+                </Link>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            </div>
+
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Smartphone size={20} className="text-emerald-400" aria-hidden="true" />
+                <span>WhatsApp y TikTok</span>
+              </h3>
+              <p className="article-paragraph">
                 Puedes copiar caracteres estilizados en mensajes, estados, nombres y frases de WhatsApp o en áreas de tu perfil y contenido de TikTok.
               </p>
+              <TipBox title="Consejo para mensajería">
+                Los estilos simples como versalitas o negrita suave suelen ser la mejor opción para mensajes diarios en WhatsApp porque mantienen una lectura rápida y cómoda para todos los destinatarios.
+              </TipBox>
             </div>
-            <div className="mt-4 p-3 bg-slate-900/60 rounded-xl border border-slate-800/80 text-xs text-slate-300 flex items-start gap-2">
-              <Lightbulb size={16} className="text-amber-400 shrink-0 mt-0.5" />
-              <span>Los estilos simples suelen ser una buena opción para mensajes porque mantienen una lectura cómoda.</span>
-            </div>
-          </div>
 
-          {/* Gaming Card */}
-          <div className="bg-slate-950/90 p-6 rounded-2xl border border-slate-800/90 flex flex-col justify-between hover:border-amber-500/40 transition-all text-left">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2.5 text-amber-400">
-                <Gamepad2 size={22} />
-                <h3 className="font-bold text-white text-lg">Free Fire y Juegos</h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <div>
+              <h3 className="article-h3 flex items-center gap-2">
+                <Gamepad2 size={20} className="text-amber-400" aria-hidden="true" />
+                <span>Free Fire y Videojuegos</span>
+              </h3>
+              <p className="article-paragraph">
                 Experimenta con estilos góticos, negritas, pequeños, decorados y gaming para crear un nickname más llamativo en Free Fire y otros videojuegos.
               </p>
-            </div>
-            <div className="flex flex-wrap gap-2 pt-4 mt-4 border-t border-slate-800/80">
-              <Link href="/nombres-para-free-fire/" className="px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 hover:bg-amber-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Nombres para Free Fire</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/nombres-para-free-fire/apodos/" className="px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 hover:bg-amber-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Apodos para Free Fire</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/nombres-para-free-fire/clanes/" className="px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 hover:bg-amber-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Nombres para Clanes</span>
-                <ChevronRight size={12} />
-              </Link>
-              <Link href="/nombres-para-free-fire/simbolos/" className="px-2.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 hover:bg-amber-500/20 transition-colors text-xs font-medium inline-flex items-center gap-1">
-                <span>Símbolos para Free Fire</span>
-                <ChevronRight size={12} />
-              </Link>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <Link href="/nombres-para-free-fire/" className="seo-link-pill">
+                  <span>Nombres para Free Fire</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/nombres-para-free-fire/apodos/" className="seo-link-pill">
+                  <span>Apodos para Free Fire</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/nombres-para-free-fire/clanes/" className="seo-link-pill">
+                  <span>Nombres para Clanes</span>
+                  <ChevronRight size={14} />
+                </Link>
+                <Link href="/nombres-para-free-fire/simbolos/" className="seo-link-pill">
+                  <span>Símbolos para Free Fire</span>
+                  <ChevronRight size={14} />
+                </Link>
+              </div>
+
+              <WarningBox title="Límites en videojuegos">
+                Free Fire tiene un límite estricto de 12 caracteres para el apodo y algunos símbolos especiales no son aceptados por el motor del juego. Te recomendamos probar siempre el nick en una partida de práctica antes de gastar diamantes en el cambio de nombre.
+              </WarningBox>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="p-4 bg-slate-950/80 border border-slate-800/90 rounded-xl flex items-center gap-3 text-xs sm:text-sm text-slate-300 text-left">
-          <Info size={18} className="text-emerald-400 shrink-0" />
-          <span>Usa diferentes estilos de texto para personalizar perfiles, nombres y publicaciones.</span>
-        </div>
-      </section>
+        <hr className="article-section-divider" />
 
-      {/* 6. Copy and Paste & Spanish Ñ/Accents */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-l-2xl" />
-        <div className="space-y-3 text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            Letras bonitas para copiar y pegar
-          </h2>
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
+        {/* ==================================================================
+            6. ACCENTS & SPANISH CHARACTERS
+            ================================================================== */}
+        <section id="letras-bonitas-para-copiar">
+          <div className="article-category-pill">
+            <Copy size={14} aria-hidden="true" />
+            <span>Copiado Rápido</span>
+          </div>
+
+          <h2 className="article-h2">Letras bonitas para copiar y pegar</h2>
+
+          <p className="article-paragraph">
             La principal ventaja de este tipo de herramienta es la facilidad. No tienes que buscar caracteres uno por uno ni volver a escribir el texto. El proceso se resume en: <strong>Escribe → Explora → Elige → Copia → Pega</strong>.
           </p>
-        </div>
 
-        <div className="pt-6 border-t border-slate-800/80 space-y-5 text-left">
-          <h3 className="text-xl font-bold text-pink-300">
-            Letras bonitas con Ñ y acentos
-          </h3>
-          <div className="space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
-            <p className="leading-relaxed">
-              Para una herramienta dirigida a usuarios de México y otros países hispanohablantes, el soporte de caracteres como <strong>ñ, á, é, í, ó, ú</strong> es especialmente importante. Por ejemplo: <em>México, corazón, canción, niño, diseño, información</em>.
-            </p>
-            <p className="leading-relaxed">
-              No todos los estilos Unicode tienen equivalentes estilizados para todos los caracteres. Por eso, si una variante no puede representar correctamente un carácter, es preferible conservarlo o utilizar otro estilo antes que mostrar un resultado incorrecto.
-            </p>
-          </div>
-        </div>
-      </section>
+          <h3 className="article-h3 mt-8">Letras bonitas con Ñ y acentos</h3>
 
-      {/* 7. Why Characters Look Different & How to Choose */}
-      <section className="seo-card-section w-full bg-slate-900/80 border border-slate-800/90 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-xl relative overflow-hidden block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-amber-500 to-orange-600 rounded-l-2xl" />
-        <div className="space-y-3 text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-            ¿Por qué algunas letras se ven diferentes?
-          </h2>
-          <div className="space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
-            <p className="leading-relaxed">
-              El aspecto de un carácter depende de diferentes factores: sistema operativo, navegador, dispositivo, aplicación, fuente disponible y soporte Unicode.
-            </p>
-            <p className="leading-relaxed">
-              Por eso un carácter que aparece correctamente en un teléfono puede verse diferente en otro dispositivo o mostrarse como un cuadro si la aplicación no tiene soporte adecuado. Si esto sucede, prueba un estilo diferente con mejor compatibilidad.
-            </p>
-          </div>
-        </div>
-
-        <div className="pt-6 border-t border-slate-800/80 space-y-5 text-left">
-          <h3 className="text-xl font-bold text-pink-300">
-            Cómo elegir el mejor estilo de letras bonitas
-          </h3>
-          <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-            No existe un único estilo perfecto. La mejor opción depende de tu objetivo:
+          <p className="article-paragraph">
+            Para una herramienta dirigida a usuarios de México y otros países hispanohablantes, el soporte de caracteres como <strong>ñ, á, é, í, ó, ú</strong> es especialmente importante. Por ejemplo: <em>México, corazón, canción, niño, diseño, información</em>.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-sm sm:text-base text-slate-300 pt-2">
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-pink-400 shrink-0 mt-0.5" />
-              <span><strong>Para una bio elegante:</strong> Prueba cursivas o estilos refinados.</span>
-            </li>
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-0.5" />
-              <span><strong>Para un nombre de juego:</strong> Experimenta con estilos góticos, fuertes o decorativos, pero comprueba la compatibilidad.</span>
-            </li>
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-purple-400 shrink-0 mt-0.5" />
-              <span><strong>Para Instagram:</strong> Puedes utilizar cursivas, aesthetic, negritas o estilos elegantes.</span>
-            </li>
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-0.5" />
-              <span><strong>Para WhatsApp:</strong> Los estilos sencillos suelen ser una buena opción porque son fáciles de leer.</span>
-            </li>
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-cyan-400 shrink-0 mt-0.5" />
-              <span><strong>Para una frase:</strong> Puedes utilizar una combinación de estilo y símbolos.</span>
-            </li>
-            <li className="bg-slate-950/90 p-4 rounded-xl border border-slate-800 flex items-start gap-3 text-left">
-              <CheckCircle2 size={18} className="text-indigo-400 shrink-0 mt-0.5" />
-              <span><strong>Para máxima compatibilidad:</strong> Utiliza estilos menos complejos.</span>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      {/* 8. Single Unified Master Article FAQ Section (Before Conclusion) */}
-      <section className="faq-v2-wrapper" id="preguntas-frecuentes">
-        <div className="faq-v2-accent-bar" />
-        <div className="faq-v2-header">
-          <div className="faq-v2-badge">
-            <HelpCircle size={16} />
-            <span>Dudas resueltas</span>
-          </div>
-          <h2 className="faq-v2-title">
-            Preguntas Frecuentes sobre Letras Bonitas
-          </h2>
-          <p className="faq-v2-subtitle">
-            Todo lo que necesitas saber sobre el funcionamiento, copiado y compatibilidad de tipografías Unicode.
+          <p className="article-paragraph">
+            No todos los estilos Unicode tienen equivalentes estilizados para todos los caracteres acentuados. Por eso, en <strong>Letras Bonitas</strong>, si una variante no puede representar correctamente un carácter, preservamos la ortografía original en lugar de mostrar cuadros vacíos o símbolos rotos.
           </p>
-        </div>
 
-        {/* Master FAQ Stacked Accordion Cards */}
-        <SEOArticleFaqAccordion faqs={MASTER_ARTICLE_FAQS} />
-      </section>
+          <TipBox title="Preservación ortográfica">
+            En Letras Bonitas garantizamos que palabras con tildes y diéresis conserven su sentido gramatical para que tus biografías y textos se lean con total profesionalismo.
+          </TipBox>
+        </section>
 
-      {/* 9. Conclusion Section */}
-      <section className="seo-card-section w-full bg-gradient-to-r from-pink-950/40 via-slate-900 to-purple-950/40 border border-pink-500/30 rounded-2xl p-6 sm:p-8 lg:p-10 backdrop-blur-md space-y-6 shadow-2xl relative overflow-hidden text-left block">
-        <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-pink-500 to-purple-500 rounded-l-2xl" />
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-          Conclusión
-        </h2>
-        <div className="space-y-5 text-slate-300 leading-relaxed text-base sm:text-lg">
-          <p className="leading-relaxed">
+        <hr className="article-section-divider" />
+
+        {/* ==================================================================
+            7. WHY THEY LOOK DIFFERENT & HOW TO CHOOSE
+            ================================================================== */}
+        <section id="por-que-se-ven-diferentes">
+          <div className="article-category-pill">
+            <CheckCircle2 size={14} aria-hidden="true" />
+            <span>Criterios de Elección</span>
+          </div>
+
+          <h2 className="article-h2">¿Por qué algunas letras se ven diferentes?</h2>
+
+          <p className="article-paragraph">
+            El aspecto de un carácter depende de diferentes factores: sistema operativo, navegador, dispositivo, aplicación receptora, fuentes instaladas y versión del estándar Unicode admitido.
+          </p>
+
+          <p className="article-paragraph">
+            Por eso un carácter que aparece correctamente en un teléfono puede verse ligeramente diferente en otro dispositivo o mostrarse como un cuadro si la aplicación carece de soporte adecuado. Si esto sucede, prueba un estilo diferente con mejor compatibilidad.
+          </p>
+
+          <h3 className="article-h3 mt-8">Cómo elegir el mejor estilo de letras bonitas</h3>
+
+          <p className="article-paragraph">
+            No existe un único estilo perfecto. La mejor opción depende del objetivo que tengas en mente:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-6">
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-pink-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para una bio elegante:</strong> Prueba cursivas finas o estilos refinados que aporten sobriedad.
+              </span>
+            </div>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-amber-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para un nombre de juego:</strong> Experimenta con estilos góticos o decorativos, comprobando la compatibilidad en el juego.
+              </span>
+            </div>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-purple-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para Instagram:</strong> Utiliza cursivas, aesthetic, negritas o estilos elegantes en tu nombre visible.
+              </span>
+            </div>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para WhatsApp:</strong> Los estilos sencillos son la mejor opción porque facilitan la lectura en pantallas pequeñas.
+              </span>
+            </div>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-cyan-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para una frase o estado:</strong> Puedes combinar estilos tipográficos con símbolos aesthetic en los extremos.
+              </span>
+            </div>
+
+            <div className="p-4 bg-slate-900/80 rounded-xl border border-slate-800 flex items-start gap-3">
+              <CheckCircle2 size={18} className="text-indigo-400 shrink-0 mt-1" aria-hidden="true" />
+              <span className="text-sm text-slate-300">
+                <strong className="text-white">Para máxima compatibilidad:</strong> Utiliza estilos de negrita matemática o versalitas, universalmente soportados.
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* ==================================================================
+            8. MASTER FAQ ACCORDION SECTION
+            ================================================================== */}
+        <section id="preguntas-frecuentes">
+          <div className="article-category-pill">
+            <HelpCircle size={14} aria-hidden="true" />
+            <span>Dudas Frecuentes</span>
+          </div>
+
+          <h2 className="article-h2">Preguntas Frecuentes sobre Letras Bonitas</h2>
+
+          <p className="article-paragraph">
+            Todo lo que necesitas saber sobre el funcionamiento, copiado y compatibilidad de tipografías Unicode en dispositivos móviles y computadoras:
+          </p>
+
+          <div className="mt-6">
+            <SEOArticleFaqAccordion faqs={MASTER_ARTICLE_FAQS} />
+          </div>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* ==================================================================
+            9. CONCLUSION & SILO NAVIGATION
+            ================================================================== */}
+        <footer id="conclusion">
+          <h2 className="article-h2">Conclusión</h2>
+
+          <p className="article-paragraph">
             Las letras bonitas ofrecen una forma sencilla de personalizar nombres, frases, perfiles y publicaciones. En lugar de escribir o diseñar cada variante manualmente, puedes introducir tu texto una sola vez y explorar diferentes estilos hasta encontrar el resultado que más te guste.
           </p>
-          <p className="leading-relaxed">
+
+          <p className="article-paragraph">
             La mejor elección depende de tu objetivo. Si buscas elegancia, prueba estilos cursivos; si quieres algo más intenso, explora opciones góticas; para redes sociales puedes experimentar con variantes aesthetic, decorativas o en negrita. Y si necesitas máxima compatibilidad, empieza con estilos sencillos.
           </p>
-          <p className="text-pink-200 font-semibold pt-1 leading-relaxed">
+
+          <p className="article-paragraph text-pink-200 font-semibold">
             Lo más importante es que puedas probar diferentes opciones rápidamente. Escribe tu texto, explora los estilos disponibles, copia tu favorito y comprueba cómo se ve en la plataforma donde quieres utilizarlo.
           </p>
-        </div>
-      </section>
-    </div>
+
+          {/* Contextual Natural Tool CTA */}
+          <ToolCTA
+            title="¿Listo para transformar tu texto ahora?"
+            description="Escribe cualquier nombre o frase y descubre al instante más de 350 estilos cursivos, góticos y aesthetic listos para copiar y pegar."
+            buttonText="Ir al Generador de Letras"
+          />
+
+          {/* Related SILO Hub */}
+          <RelatedLinks
+            title="También te puede interesar:"
+            subtitle="Explora nuestras herramientas especializadas para nombres, bios y caracteres decorativos:"
+          />
+        </footer>
+      </article>
+    </>
   );
 };

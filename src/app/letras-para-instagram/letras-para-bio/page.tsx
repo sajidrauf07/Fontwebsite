@@ -20,6 +20,26 @@ import {
   Lightbulb,
   AlertTriangle
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  StepGuide,
+  StepItem,
+  TipBox,
+  WarningBox,
+  ToolCTA
+} from '@/components/article';
+
+const BIO_TOC_ITEMS = [
+  { id: 'generador-bio-instagram', label: 'Generador de bio con vista previa' },
+  { id: 'ejemplos-bio', label: 'Ejemplos de letras para bio' },
+  { id: 'titulos-bio', label: 'Títulos y encabezados' },
+  { id: 'separadores-bio', label: 'Separadores y símbolos decorativos' },
+  { id: 'como-poner-bio', label: 'Cómo poner letras bonitas en la bio' },
+  { id: 'consejos-bio', label: 'Consejos para una bio clara y estética' },
+  { id: 'como-funcionan', label: '¿Cómo funcionan estas letras Unicode?' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Letras para Bio de Instagram | Fuentes Bonitas para Copiar',
@@ -156,6 +176,8 @@ export default function LetrasParaBioPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -206,6 +228,9 @@ export default function LetrasParaBioPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={BIO_TOC_ITEMS} />
+
           {/* MAIN BIO GENERATOR & PREVIEW */}
           <BioGenerator />
 
@@ -226,57 +251,64 @@ export default function LetrasParaBioPage() {
             <h2>¿Cómo poner letras bonitas en la bio de Instagram?</h2>
             <p>Sigue estos 5 sencillos pasos para actualizar tu perfil:</p>
 
-            <div className="steps-grid">
-              <div className="step-card">
-                <div className="step-number">1</div>
-                <h3>Escribe tu texto</h3>
-                <p>Introduce tu nombre, descripción o frase en nuestro generador.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">2</div>
-                <h3>Selecciona el estilo</h3>
-                <p>Elige tu tipografía cursiva, elegante o versalita preferida.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">3</div>
-                <h3>Pulsa «Copiar»</h3>
-                <p>Copia el resultado a tu portapapeles con un solo clic.</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">4</div>
-                <h3>Abre Instagram</h3>
-                <p>Ve a tu perfil de Instagram y pulsa en «Editar perfil».</p>
-              </div>
-
-              <div className="step-card">
-                <div className="step-number">5</div>
-                <h3>Pega en tu bio</h3>
-                <p>Pega el texto en la casilla de Biografía y guarda los cambios.</p>
-              </div>
+            <div className="mt-6">
+              <StepGuide>
+                <StepItem
+                  stepNumber={1}
+                  title="Escribe tu texto"
+                  badge="Paso 1"
+                  description="Introduce tu nombre, descripción o frase en nuestro generador."
+                />
+                <StepItem
+                  stepNumber={2}
+                  title="Selecciona el estilo"
+                  badge="Paso 2"
+                  description="Elige tu tipografía cursiva, elegante o versalita preferida."
+                />
+                <StepItem
+                  stepNumber={3}
+                  title="Pulsa «Copiar»"
+                  badge="Paso 3"
+                  description="Copia el resultado a tu portapapeles con un solo clic."
+                />
+                <StepItem
+                  stepNumber={4}
+                  title="Abre Instagram"
+                  badge="Paso 4"
+                  description="Ve a tu perfil de Instagram y pulsa en «Editar perfil»."
+                />
+                <StepItem
+                  stepNumber={5}
+                  title="Pega en tu bio"
+                  badge="Paso 5"
+                  description="Pega el texto en la casilla de Biografía y guarda los cambios."
+                />
+              </StepGuide>
             </div>
           </section>
 
           {/* BIO FORMATTING TIPS */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="consejos-bio">
             <div className="seo-icon-badge">
               <Lightbulb size={20} />
             </div>
             <h2>Consejos para crear una bio clara y estética</h2>
             <p>Para lograr una biografía profesional y atractiva:</p>
 
-            <ul className="seo-list mt-4">
+            <ul className="seo-list mt-4 mb-6">
               <li><strong>Mantén la legibilidad:</strong> Utiliza letras cursivas o decorativas principalmente en nombres y títulos.</li>
               <li><strong>Estructura con saltos de línea:</strong> Separa cada idea en una línea distinta para facilitar la lectura rápida.</li>
               <li><strong>Utiliza símbolos como separadores:</strong> Usa puntos, estrellas o divisores de línea en lugar de textos amontonados.</li>
               <li><strong>Destaca la llamada a la acción:</strong> Agrega una flecha (⬇️) apuntando hacia tu enlace web principal.</li>
             </ul>
+
+            <TipBox title="Consejo de diseño para perfiles">
+              Combina una palabra en negrita o cursiva en el primer renglón con texto estándar legible en las líneas secundarias para un balance estético profesional.
+            </TipBox>
           </section>
 
           {/* UNICODE EXPLANATION & FONT VS UNICODE */}
-          <section className="seo-card-section mb-12">
+          <section className="seo-card-section mb-12" id="como-funcionan">
             <div className="seo-icon-badge">
               <BookOpen size={20} />
             </div>
@@ -284,19 +316,13 @@ export default function LetrasParaBioPage() {
             <p>
               Los estilos para biografía que generas en esta página no son archivos de fuente instalables, sino caracteres del código universal <strong>Unicode</strong>.
             </p>
-            <p className="mt-3">
+            <p className="mt-3 mb-6">
               Dado que Unicode es un estándar compatible con iOS y Android, el texto transformado <strong>se puede copiar y pegar directamente</strong> en la app de Instagram conservando su estilo estético.
             </p>
 
-            <div className="seo-card-section mt-6" style={{ background: 'rgba(15, 23, 42, 0.9)', border: '1px dashed rgba(148, 163, 184, 0.3)' }}>
-              <div className="flex items-center gap-2 mb-1" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#F59E0B', fontWeight: 600 }}>
-                <AlertTriangle size={16} />
-                <span>Compatibilidad de caracteres</span>
-              </div>
-              <p className="text-xs text-slate-400" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', margin: 0 }}>
-                Si una letra o símbolo no posee un equivalente soportado en Unicode, el generador mantendrá intacto el carácter original para evitar textos corruptos.
-              </p>
-            </div>
+            <WarningBox title="Compatibilidad de caracteres">
+              Si una letra o símbolo no posee un equivalente soportado en Unicode, el generador mantendrá intacto el carácter original para evitar textos corruptos.
+            </WarningBox>
           </section>
 
           {/* MAIN INSTAGRAM PILLAR CTA */}
@@ -314,6 +340,14 @@ export default function LetrasParaBioPage() {
               <ArrowRight size={18} />
             </Link>
           </section>
+
+          {/* CONTEXTUAL TOOL CTA */}
+          <ToolCTA
+            targetId="generador-bio-instagram"
+            title="¿Listo para personalizar tu biografía de Instagram?"
+            description="Escribe tu presentación arriba, añade separadores estéticos y copia tu perfil listo en un solo clic."
+            buttonText="Subir al Generador de Bio"
+          />
 
           {/* FAQ SECTION */}
           <FAQSection

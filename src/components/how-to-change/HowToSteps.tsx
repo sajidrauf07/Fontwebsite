@@ -1,34 +1,8 @@
 import React from 'react';
-import { Type, Sparkles, Copy, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Type, Copy, CheckCircle2 } from 'lucide-react';
+import { StepGuide, StepItem } from '@/components/article';
 
 export default function HowToSteps() {
-  const steps = [
-    {
-      num: 1,
-      title: 'Escribe tu texto',
-      desc: 'Introduce tu palabra, nombre, frase o biografía en la casilla del conversor.',
-      icon: Type
-    },
-    {
-      num: 2,
-      title: 'Elige un estilo',
-      desc: 'Selecciona entre estilos cursivos, elegantes, negritas, aesthetic o decorados.',
-      icon: Sparkles
-    },
-    {
-      num: 3,
-      title: 'Copia el resultado',
-      desc: 'Pulsa el botón «Copiar» para guardar el texto formateado en tu portapapeles.',
-      icon: Copy
-    },
-    {
-      num: 4,
-      title: 'Pega tu texto',
-      desc: 'Pégalo libremente en tu perfil de Instagram, chat de WhatsApp o publicación.',
-      icon: CheckCircle2
-    }
-  ];
-
   return (
     <section className="seo-card-section mb-12">
       <div className="seo-icon-badge">
@@ -39,27 +13,38 @@ export default function HowToSteps() {
         Cambiar la apariencia de tu texto online no requiere instalar programas ni registrarse. Sigue estos sencillos pasos:
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-        {steps.map((step) => {
-          const Icon = step.icon;
-          return (
-            <div
-              key={step.num}
-              className="p-5 bg-slate-900/60 border border-slate-800 rounded-xl relative hover:border-violet-500/40 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="w-8 h-8 rounded-full bg-violet-600/20 text-violet-400 font-bold text-sm flex items-center justify-center border border-violet-500/30">
-                    {step.num}
-                  </span>
-                  <Icon className="text-slate-400 w-5 h-5" />
-                </div>
-                <h3 className="text-base font-bold text-slate-100 mb-2">{step.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{step.desc}</p>
-              </div>
-            </div>
-          );
-        })}
+      <div className="mt-6">
+        <StepGuide>
+          <StepItem
+            stepNumber={1}
+            title="Escribe o pega tu texto original"
+            badge="Paso 1"
+          >
+            Introduce tu palabra, nombre, frase o biografía completa en la casilla del conversor superior.
+          </StepItem>
+          <StepItem
+            stepNumber={2}
+            title="Elige el estilo que mejor encaje"
+            badge="Paso 2"
+          >
+            Explora la lista de resultados con fuentes cursivas, elegantes, negritas, aesthetic o decoradas en tiempo real.
+          </StepItem>
+          <StepItem
+            stepNumber={3}
+            title="Copia el resultado en un clic"
+            badge="Paso 3"
+          >
+            Pulsa el botón «Copiar» para transferir de inmediato el texto estilizado a tu portapapeles.
+          </StepItem>
+          <StepItem
+            stepNumber={4}
+            title="Pega y presume en tus redes"
+            badge="Paso 4"
+            isLast={true}
+          >
+            Pégalo libremente en tu perfil de Instagram, estados de WhatsApp, tweets o nickname de videojuegos.
+          </StepItem>
+        </StepGuide>
       </div>
     </section>
   );

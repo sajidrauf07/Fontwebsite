@@ -27,6 +27,26 @@ import {
   UserCheck,
   Heart
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const CURSIVE_INSTAGRAM_TOC_ITEMS = [
+  { id: 'generador-cursivas', label: 'Generador de letras cursivas' },
+  { id: 'listas-copiar', label: 'Estilos listos para copiar y pegar' },
+  { id: 'que-son', label: '¿Qué son las letras cursivas para Instagram?' },
+  { id: 'donde-usar', label: 'Dónde y por qué usar letras cursivas' },
+  { id: 'tipos-cursiva', label: 'Tipos de letras cursivas disponibles' },
+  { id: 'como-poner', label: 'Cómo poner letras cursivas paso a paso' },
+  { id: 'nombres-instagram', label: 'Letras cursivas para nombres' },
+  { id: 'compatibilidad-espanol', label: 'Acentos y letra Ñ en español' },
+  { id: 'resolucion-problemas', label: '¿Por qué algunas no se ven bien?' },
+  { id: 'tabla-comparativa', label: 'Texto Unicode vs fuentes tradicionales' },
+  { id: 'matriz-estilos', label: 'Selección de estilo por propósito' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Letras Cursivas para Instagram: Copia y Pega',
@@ -112,6 +132,7 @@ export default function LetrasCursivasParaInstagramPage() {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -173,12 +194,15 @@ export default function LetrasCursivasParaInstagramPage() {
       </header>
 
       {/* Main Interactive Tool Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6" id="generador-cursivas">
         <CursiveInstagramGenerator />
       </div>
 
       {/* Main SEO Article Content */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
+        {/* TABLE OF CONTENTS */}
+        <TableOfContents items={CURSIVE_INSTAGRAM_TOC_ITEMS} />
+
         {/* Intro & PAS Framework Section */}
         <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6">
           <p className="text-base sm:text-lg leading-relaxed text-slate-200">
@@ -193,7 +217,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Rapid How-To Guide */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="listas-copiar">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Letras cursivas para Instagram listas para copiar y pegar
           </h2>
@@ -239,7 +263,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Educational EEAT Section: What are Cursive Fonts for Instagram? */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="que-son">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Qué son las letras cursivas para Instagram?
           </h2>
@@ -288,7 +312,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Why Use Cursive Fonts in Instagram? */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="donde-usar">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Por qué usar letras cursivas en Instagram?
           </h2>
@@ -345,7 +369,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Types of Cursive Fonts */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="tipos-cursiva">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Tipos de letras cursivas que puedes usar
           </h2>
@@ -394,7 +418,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Step-by-Step Copy/Paste Instructions */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="como-poner">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Cómo poner letras cursivas en Instagram paso a paso
           </h2>
@@ -435,7 +459,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Username vs Display Name Caveat Component */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="nombres-instagram">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Letras cursivas para nombres de Instagram
           </h2>
@@ -447,7 +471,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Accents and Ñ Handling */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="compatibilidad-espanol">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Funcionan las letras cursivas con ñ y acentos?
           </h2>
@@ -470,7 +494,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Compatibility and Troubleshooting */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="resolucion-problemas">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             ¿Por qué algunas letras cursivas no se ven correctamente?
           </h2>
@@ -518,7 +542,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Comparative Table: Cursive Unicode vs Traditional Fonts */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="tabla-comparativa">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Letras cursivas vs. fuentes tradicionales
           </h2>
@@ -562,7 +586,7 @@ export default function LetrasCursivasParaInstagramPage() {
         </section>
 
         {/* Selection Matrix Table */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="matriz-estilos">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Selección de estilo cursivo por propósito
           </h2>
@@ -605,8 +629,16 @@ export default function LetrasCursivasParaInstagramPage() {
           </div>
         </section>
 
+        {/* CONTEXTUAL TOOL CTA */}
+        <ToolCTA
+          targetId="generador-cursivas"
+          title="¿Quieres crear tus letras cursivas ahora?"
+          description="Escribe tu texto arriba y elige entre más de 30 estilos elegantes y caligráficos listos para copiar con un solo clic."
+          buttonText="Subir al Generador de Cursivas"
+        />
+
         {/* FAQ Accordion Section */}
-        <section className="space-y-6">
+        <section className="space-y-6" id="faq">
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight border-b border-slate-800 pb-3">
             Preguntas frecuentes sobre letras cursivas para Instagram
           </h2>

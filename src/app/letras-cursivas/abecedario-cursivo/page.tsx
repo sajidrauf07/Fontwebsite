@@ -21,6 +21,11 @@ import {
   AlertTriangle,
   FileText
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
 
 export const metadata: Metadata = {
   title: 'Abecedario Cursivo: Letras A-Z para Copiar y Pegar',
@@ -122,6 +127,18 @@ const ALPHABET_TABLE_DATA = [
   { char: 'Z', lower: '𝓏', upper: '𝒵' }
 ];
 
+const ABECEDARIO_TOC_ITEMS = [
+  { id: 'abecedario-tool', label: 'Herramienta interactiva del abecedario' },
+  { id: 'abecedario-completo', label: 'Tabla del abecedario cursivo A a Z' },
+  { id: 'mayusculas-minusculas', label: 'Mayúsculas y minúsculas cursivas' },
+  { id: 'guia-individual', label: 'Catálogo de letras de la A a la Z' },
+  { id: 'que-es-abecedario', label: '¿Qué es y cómo funciona el abecedario?' },
+  { id: 'comparativa-fuente', label: 'Abecedario cursivo vs fuente tradicional' },
+  { id: 'donde-utilizar', label: 'Dónde utilizar letras cursivas' },
+  { id: 'limitaciones', label: 'Limitaciones y consejos de uso' },
+  { id: 'preguntas-frecuentes', label: 'Preguntas frecuentes' }
+];
+
 export default function AbecedarioCursivoPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -163,6 +180,8 @@ export default function AbecedarioCursivoPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -188,7 +207,7 @@ export default function AbecedarioCursivoPage() {
       <div className="seo-wrapper-section">
         <div className="seo-container">
           {/* Header Section */}
-          <header className="hero-section silo-hero">
+          <header className="hero-section silo-hero text-center">
             <div className="hero-badge">
               <Sparkles size={16} className="sparkle-icon" />
               <span>Abecedario Completo de A a Z</span>
@@ -202,10 +221,13 @@ export default function AbecedarioCursivoPage() {
               Encuentra letras cursivas mayúsculas y minúsculas, aprende cómo funcionan y descubre cómo utilizarlas en redes sociales, nombres y diseños.
             </p>
 
-            <p className="hero-description">
+            <p className="hero-description text-center">
               ¿Buscas un abecedario cursivo completo para copiar y pegar? Aquí puedes encontrar las letras de la A a la Z y utilizarlas para crear nombres, perfiles, mensajes, diseños y textos con un estilo diferente. La forma más rápida es elegir la letra que necesitas y copiarla.
             </p>
           </header>
+
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={ABECEDARIO_TOC_ITEMS} />
 
           {/* Image Plan 1 Visual Demonstration Banner */}
           <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
@@ -237,7 +259,7 @@ export default function AbecedarioCursivoPage() {
           <CursiveAlphabetTool />
 
           {/* Section: Abecedario cursivo completo de A a Z */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="abecedario-completo">
             <h2 className="seo-h2">Abecedario cursivo completo de A a Z</h2>
             <p className="seo-paragraph">
               El alfabeto español utiliza las 26 letras del alfabeto latino básico. Para facilitar la consulta rápida, aquí tienes la tabla completa de referencia de letras cursivas:
@@ -270,7 +292,7 @@ export default function AbecedarioCursivoPage() {
           </section>
 
           {/* Section: Letras cursivas mayúsculas y minúsculas */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="mayusculas-minusculas">
             <h2 className="seo-h2">Letras cursivas mayúsculas y minúsculas</h2>
             <p className="seo-paragraph">
               Una de las búsquedas más comunes relacionadas con el abecedario cursivo es encontrar las versiones mayúsculas y minúsculas. Las mayúsculas funcionan bien para iniciales y nombres propios, mientras que las minúsculas son más prácticas para formar palabras completas.
@@ -297,7 +319,7 @@ export default function AbecedarioCursivoPage() {
           </section>
 
           {/* Section: Abecedario cursivo de la A a la Z (A-Z Individual Guide) */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="guia-individual">
             <h2 className="seo-h2">Abecedario cursivo de la A a la Z</h2>
             <p className="seo-paragraph mb-4">
               Aquí tienes una referencia de consulta rápida para copiar letras individuales de la A a la Z:
@@ -412,7 +434,7 @@ export default function AbecedarioCursivoPage() {
           </section>
 
           {/* Section: ¿Qué es un abecedario cursivo? y ¿Cómo funcionan? */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="que-es-abecedario">
             <h2 className="seo-h2">¿Qué es un abecedario cursivo?</h2>
             <p className="seo-paragraph">
               Un abecedario cursivo es una colección de letras presentadas con una apariencia inspirada en la escritura manuscrita e inclinada. En el mundo digital, las páginas que ofrecen letras para copiar y pegar utilizan caracteres del estándar universal Unicode.
@@ -437,7 +459,7 @@ export default function AbecedarioCursivoPage() {
           </section>
 
           {/* Comparison Table Section */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="comparativa-fuente">
             <h2 className="seo-h2">Abecedario cursivo vs. fuente cursiva tradicional</h2>
             <p className="seo-paragraph">
               Revisa las diferencias clave entre el uso de caracteres Unicode cursivos y fuentes de sistema tradicionales:
@@ -526,7 +548,7 @@ export default function AbecedarioCursivoPage() {
           </div>
 
           {/* Social Platforms & Specific Use Cases */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="donde-utilizar">
             <h2 className="seo-h2">Usos del abecedario cursivo por plataforma</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
@@ -623,7 +645,7 @@ export default function AbecedarioCursivoPage() {
           </section>
 
           {/* Section: Limitations & Practice */}
-          <section className="seo-card-section mb-8">
+          <section className="seo-card-section mb-8" id="limitaciones">
             <h2 className="seo-h2">Limitaciones de las letras cursivas Unicode</h2>
             <ul className="list-disc list-inside space-y-2 text-sm text-slate-300 my-4 pl-2">
               <li><strong>Compatibilidad:</strong> No todas las plataformas representan todos los caracteres de la misma manera.</li>
@@ -700,6 +722,14 @@ export default function AbecedarioCursivoPage() {
               La clave está en utilizarlo de forma inteligente: elige letras legibles y comprueba que funcionen en la plataforma donde las usarás. Escribe tu texto, explora los estilos y copia tus letras favoritas directamente desde Letras Bonitas.
             </p>
           </section>
+
+          <ToolCTA
+            title="¿Deseas explorar el abecedario interactivo?"
+            description="Filtra entre mayúsculas, minúsculas o ambas y copia cualquier letra cursiva o el abecedario completo con un solo toque."
+            buttonText="Subir a la Herramienta del Abecedario"
+            targetId="abecedario-tool"
+            badge="Catálogo Cursivo"
+          />
 
           {/* Section: FAQ Accordion */}
           <FAQSection

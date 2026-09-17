@@ -18,6 +18,21 @@ import {
   Users,
   Tag
 } from 'lucide-react';
+import {
+  ReadingProgress,
+  TableOfContents,
+  ToolCTA
+} from '@/components/article';
+
+const CLANES_TOC_ITEMS = [
+  { id: 'generador-clanes', label: 'Generador de nombres para clanes' },
+  { id: 'generador-tags', label: 'Generador de tags y siglas' },
+  { id: 'clanes-aleatorios', label: 'Generador aleatorio de clanes' },
+  { id: 'decorador-clanes', label: 'Decorador con marcos y símbolos' },
+  { id: 'catalogo-clanes', label: 'Ideas de nombres por temática' },
+  { id: 'compatibilidad-clanes', label: '¿Funcionan estos nombres en Free Fire?' },
+  { id: 'faq', label: 'Preguntas frecuentes' }
+];
 
 export const metadata: Metadata = {
   title: 'Nombres para Clanes de Free Fire | Originales y para Copiar',
@@ -88,6 +103,8 @@ export default function ClanesSubcategoryPage() {
 
   return (
     <>
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -141,24 +158,37 @@ export default function ClanesSubcategoryPage() {
             </div>
           </header>
 
+          {/* TABLE OF CONTENTS */}
+          <TableOfContents items={CLANES_TOC_ITEMS} />
+
           {/* Primary Interactive Subcategory Tool */}
           <main id="main-content">
-            <ClanNameGenerator />
+            <div id="generador-clanes">
+              <ClanNameGenerator />
+            </div>
 
             {/* Clan Tag Generator */}
-            <ClanTagGenerator />
+            <div id="generador-tags">
+              <ClanTagGenerator />
+            </div>
 
             {/* Random Clan Generator */}
-            <RandomClanGenerator />
+            <div id="clanes-aleatorios">
+              <RandomClanGenerator />
+            </div>
 
             {/* Clan Symbol Decorator */}
-            <ClanSymbolDecorator />
+            <div id="decorador-clanes">
+              <ClanSymbolDecorator />
+            </div>
 
             {/* Curated Clan Showcase */}
-            <ClanNicheIdeasSection />
+            <div id="catalogo-clanes">
+              <ClanNicheIdeasSection />
+            </div>
 
             {/* Compatibility & Availability Disclaimer Section */}
-            <section className="seo-card-section mb-12">
+            <section className="seo-card-section mb-12" id="compatibilidad-clanes">
               <div className="seo-icon-badge">
                 <Shield size={20} />
               </div>
@@ -286,8 +316,18 @@ export default function ClanesSubcategoryPage() {
               </div>
             </div>
 
+            {/* CONTEXTUAL TOOL CTA */}
+            <ToolCTA
+              targetId="generador-clanes"
+              title="¿Listo para crear el nombre de tu clan?"
+              description="Genera nombres imponentes, iniciales de equipo y tags decorados con un solo clic."
+              buttonText="Subir al Generador de Clanes"
+            />
+
             {/* Frequently Asked Questions */}
-            <ClanFaqSection />
+            <div id="faq">
+              <ClanFaqSection />
+            </div>
 
             {/* SILO Interlinking Navigation */}
             <section className="silo-nav-block">

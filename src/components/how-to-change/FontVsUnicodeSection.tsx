@@ -3,7 +3,7 @@ import { BookOpen, FileCode, CheckCircle, AlertTriangle } from 'lucide-react';
 
 export default function FontVsUnicodeSection() {
   return (
-    <section className="seo-card-section mb-12">
+    <section className="seo-card-section mb-12" id="comparativa-fuentes">
       <div className="seo-icon-badge">
         <BookOpen size={20} />
       </div>
