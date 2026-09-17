@@ -19,6 +19,7 @@ import {
   type SiloNavItem
 } from '@/config/navigation';
 import { ThemeToggle } from './ThemeToggle';
+import { BrandLogo } from './BrandLogo';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -96,15 +97,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
       <div className="mobile-nav-drawer" ref={drawerRef}>
         {/* Drawer Header */}
         <div className="mobile-drawer-header">
-          <Link href="/" className="site-logo" onClick={onClose}>
-            <div className="logo-icon-wrapper">
-              <Sparkles size={18} className="logo-icon" />
-            </div>
-            <div className="logo-text-group">
-              <span className="logo-title">Letras Bonitas</span>
-              <span className="logo-badge">Menú</span>
-            </div>
-          </Link>
+          <BrandLogo onClick={onClose} size="sm" />
 
           <div className="mobile-drawer-header-actions">
             <ThemeToggle />

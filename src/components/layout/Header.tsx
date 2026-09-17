@@ -18,6 +18,7 @@ import {
 } from '@/config/navigation';
 import { MobileNav } from './MobileNav';
 import { ThemeToggle } from './ThemeToggle';
+import { BrandLogo } from './BrandLogo';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -83,16 +84,8 @@ export const Header: React.FC = () => {
   return (
     <header className="site-header" ref={headerRef}>
       <div className="header-container">
-        {/* Brand / Logo */}
-        <Link href="/" className="site-logo" aria-label="Letras Bonitas - Página de inicio">
-          <div className="logo-icon-wrapper">
-            <Sparkles size={20} className="logo-icon" />
-          </div>
-          <div className="logo-text-group">
-            <span className="logo-title">Letras Bonitas</span>
-            <span className="logo-badge">Generador</span>
-          </div>
-        </Link>
+        {/* Brand / Logo: TLB Monogram + The Letras Bonitas */}
+        <BrandLogo />
 
         {/* Desktop Navigation */}
         <nav className="desktop-silo-nav" aria-label="Navegación principal">

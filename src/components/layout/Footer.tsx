@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sparkles, ChevronDown, Heart } from 'lucide-react';
 import { SILO_NAVIGATION, isPathActive, type SiloNavItem } from '@/config/navigation';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -27,15 +28,7 @@ export const Footer: React.FC = () => {
         <div className="footer-main-grid">
           {/* COLUMN 1: Brand & Utility Mission */}
           <div className="footer-brand-column">
-            <Link href="/" className="site-logo footer-logo" aria-label="Letras Bonitas - Inicio">
-              <div className="logo-icon-wrapper">
-                <Sparkles size={20} className="logo-icon" />
-              </div>
-              <div className="logo-text-group">
-                <span className="logo-title">Letras Bonitas</span>
-                <span className="logo-badge">Unicode</span>
-              </div>
-            </Link>
+            <BrandLogo />
 
             <p className="footer-brand-desc">
               Plataforma gratuita en español de herramientas para transformar texto ordinario en letras bonitas, fuentes cursivas, caracteres decorativos para Instagram y nicks de videojuegos para copiar y pegar al instante.
