@@ -4,6 +4,8 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
+import CookieConsentBanner from '@/components/legal/CookieConsentBanner';
+import CookiePreferencesModal from '@/components/legal/CookiePreferencesModal';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -95,6 +97,8 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <CookieConsentBanner />
+        <CookiePreferencesModal />
         <ScrollToTop />
       </body>
     </html>

@@ -113,6 +113,109 @@ export const Footer: React.FC = () => {
               </div>
             );
           })}
+
+          {/* COLUMN 6: DEDICATED LEGAL SECTION */}
+          <div className="footer-silo-column theme-indigo">
+            <div className="footer-column-header">
+              <Link
+                href="/aviso-legal"
+                className={`footer-silo-heading-link ${pathname.startsWith('/politica') || pathname === '/terminos-y-condiciones' || pathname === '/aviso-legal' || pathname === '/derechos-de-autor' || pathname === '/contacto' ? 'active' : ''}`}
+              >
+                <h3 className="footer-silo-title">LEGAL</h3>
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => toggleFooterSilo('legal')}
+                className="footer-accordion-toggle-btn"
+                aria-expanded={!!expandedFooterSilos['legal']}
+                aria-controls="footer-silo-links-legal"
+                aria-label={`${expandedFooterSilos['legal'] ? 'Contraer' : 'Expandir'} enlaces legales`}
+              >
+                <ChevronDown
+                  size={16}
+                  className={`footer-chevron ${expandedFooterSilos['legal'] ? 'rotated' : ''}`}
+                />
+              </button>
+            </div>
+
+            <div
+              id="footer-silo-links-legal"
+              className={`footer-silo-links-wrapper ${expandedFooterSilos['legal'] ? 'mobile-open' : 'mobile-closed'}`}
+            >
+              <ul className="footer-nav-list">
+                <li className="footer-nav-item">
+                  <Link
+                    href="/politica-de-privacidad"
+                    className={`footer-nav-link ${pathname === '/politica-de-privacidad' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Política de Privacidad</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <Link
+                    href="/terminos-y-condiciones"
+                    className={`footer-nav-link ${pathname === '/terminos-y-condiciones' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Términos y Condiciones</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <Link
+                    href="/politica-de-cookies"
+                    className={`footer-nav-link ${pathname === '/politica-de-cookies' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Política de Cookies</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <Link
+                    href="/aviso-legal"
+                    className={`footer-nav-link ${pathname === '/aviso-legal' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Aviso Legal</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <Link
+                    href="/derechos-de-autor"
+                    className={`footer-nav-link ${pathname === '/derechos-de-autor' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Derechos de Autor</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <Link
+                    href="/contacto"
+                    className={`footer-nav-link ${pathname === '/contacto' ? 'active' : ''}`}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Contacto y Derechos ARCO</span>
+                  </Link>
+                </li>
+                <li className="footer-nav-item">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.dispatchEvent(new CustomEvent('open-cookie-preferences'));
+                      }
+                    }}
+                    className="footer-nav-link text-left w-full cursor-pointer"
+                    style={{ background: 'none', border: 'none', padding: 0 }}
+                  >
+                    <span className="footer-link-bullet" />
+                    <span className="footer-link-text">Configuración de cookies</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Footer Bottom Bar: Copyright, Developer Credit & Subtle Utility Tagline */}

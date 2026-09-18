@@ -23,13 +23,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/nombres-para-free-fire/nombres-insanos',
     '/nombres-para-free-fire/apodos',
     '/nombres-para-free-fire/clanes',
-    '/nombres-para-free-fire/simbolos'
+    '/nombres-para-free-fire/simbolos',
+    // Páginas Legales y de Transparencia
+    '/politica-de-privacidad',
+    '/terminos-y-condiciones',
+    '/politica-de-cookies',
+    '/aviso-legal',
+    '/derechos-de-autor',
+    '/contacto'
   ];
 
-  return routes.map((route) => ({
-    url: `${BASE_URL}${route || '/'}`,
-    lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : route.split('/').filter(Boolean).length === 1 ? 0.9 : 0.8,
-  }));
+  const legalRoutes = new Set([
+    '/politica-de-privacidad',
+    '/terminos-y-condiciones',
+    '/politica-de-cookies',
+    '/aviso-legal',
+    '/derechos-de-autor',
+    '/contacto'
+  ]);
+
+  return routes.map((route) => {
+    const isLegal = legalRoutes.has(route);
+    return {
+      url: `${BASE_URL}${route || '/'}`,
+      lastModified: new Date(),
+      changeFrequency: route === '' ? 'daily' : isLegal ? 'monthly' : 'weekly',
+      priority: route === '' ? 1.0 : isLegal ? 0.5 : route.split('/').filter(Boolean).length === 1 ? 0.9 : 0.8,
+    };
+  });
 }
