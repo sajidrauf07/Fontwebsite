@@ -127,7 +127,7 @@ export default function MiniLetterConverter() {
 
         {/* CTA Link Box */}
         <div className="cac-deep-link-box" style={{ marginTop: '2rem' }}>
-          <Link href="/conversor-de-letras/" className="cac-deep-link">
+          <Link href="/conversor-de-letras" className="cac-deep-link">
             <span>Probar el Conversor de Letras Completo (350+ Estilos)</span>
             <ArrowRight size={16} />
           </Link>

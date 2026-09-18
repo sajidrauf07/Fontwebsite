@@ -6,7 +6,6 @@ import { CursiveExamples } from '@/components/cursive/CursiveExamples';
 import { FAQSection } from '@/components/seo/FAQSection';
 import {
   ReadingProgress,
-  TableOfContents,
   ExamplePreviewCard,
   CopyButton,
   TipBox,
@@ -87,13 +86,13 @@ export const metadata: Metadata = {
   description:
     'Genera letras cursivas bonitas para copiar y pegar. Convierte tu texto en estilos elegantes para Instagram, WhatsApp, TikTok y más.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-cursivas/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas'
   },
   openGraph: {
     title: 'Letras Cursivas para Copiar y Pegar | Gratis',
     description:
       'Convierte tu texto en estilos cursivos elegantes y listos para copiar y pegar en segundos.',
-    url: 'https://theletrasbonitas.com/letras-cursivas/',
+    url: 'https://theletrasbonitas.com/letras-cursivas',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -109,21 +108,6 @@ export const metadata: Metadata = {
     follow: true
   }
 };
-
-const CURSIVAS_TOC_ITEMS = [
-  { id: 'generador-cursivas', title: 'Generador de Letras Cursivas' },
-  { id: 'que-son', title: '¿Qué son las letras cursivas?' },
-  { id: 'copiar-pegar', title: 'Letras cursivas para copiar y pegar' },
-  { id: 'abecedario', title: 'Abecedario de letras cursivas' },
-  { id: 'como-convertir', title: 'Cómo convertir texto a letras cursivas' },
-  { id: 'es-una-fuente', title: '¿Las letras cursivas son una fuente?' },
-  { id: 'vs-fuentes', title: 'Letras cursivas vs. fuentes tradicionales' },
-  { id: 'redes-juegos', title: 'Uso en redes sociales y juegos' },
-  { id: 'estilos-generador', title: '¿Cuántos estilos debería tener?' },
-  { id: 'consejos', title: 'Consejos para elegir el mejor estilo' },
-  { id: 'compatibilidad', title: 'Problemas de compatibilidad' },
-  { id: 'preguntas-frecuentes', title: 'Preguntas frecuentes' }
-];
 
 export default function LetrasCursivasPage() {
   const faqSchema = {
@@ -222,7 +206,6 @@ export default function LetrasCursivasPage() {
       <div className="seo-wrapper-section">
         <div className="seo-container">
           <ReadingProgress />
-          <TableOfContents items={CURSIVAS_TOC_ITEMS} />
 
           {/* Image Plan 1 Visual Demonstration Card */}
           <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
@@ -283,7 +266,7 @@ export default function LetrasCursivasPage() {
             <h3 className="text-xl font-bold text-indigo-300 mt-6 mb-3">Cómo copiar y pegar tus letras cursivas</h3>
             <p className="seo-paragraph">
               Una vez que encuentres la versión de{' '}
-              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="seo-link font-semibold">
+              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="seo-link font-semibold">
                 letras para copiar y pegar
               </Link>{' '}
               que más te guste, simplemente presiona el botón «Copiar». El texto estilizado quedará guardado en el portapapeles de tu dispositivo.
@@ -301,7 +284,7 @@ export default function LetrasCursivasPage() {
             </p>
             <p className="seo-paragraph">
               Esta diferencia es importante: cuando utilizas un{' '}
-              <Link href="/conversor-de-letras/" className="seo-link font-semibold">
+              <Link href="/conversor-de-letras" className="seo-link font-semibold">
                 conversor de letras
               </Link>{' '}
               basado en Unicode, no estás instalando una nueva fuente en tu teléfono. En realidad, el texto se transforma en caracteres diferentes que pueden conservar ese aspecto cuando los copias y pegas.
@@ -323,7 +306,7 @@ export default function LetrasCursivasPage() {
                 </p>
                 <p className="text-xs text-slate-400">
                   Explora nuestra sección de{' '}
-                  <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link font-semibold">
+                  <Link href="/letras-cursivas/letras-cursivas-elegantes" className="seo-link font-semibold">
                     letras cursivas elegantes
                   </Link>
                   .
@@ -351,7 +334,7 @@ export default function LetrasCursivasPage() {
                 </p>
                 <p className="text-xs text-slate-400">
                   Visita la lista completa de{' '}
-                  <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="seo-link font-semibold">
+                  <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="seo-link font-semibold">
                     letras cursivas para copiar y pegar
                   </Link>
                   .
@@ -393,7 +376,7 @@ export default function LetrasCursivasPage() {
             </div>
 
             <div className="silo-cta-box mt-6">
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="silo-cta-link">
+              <Link href="/letras-cursivas/abecedario-cursivo" className="silo-cta-link">
                 Explora el abecedario cursivo completo <ArrowRight size={16} />
               </Link>
             </div>
@@ -576,16 +559,16 @@ export default function LetrasCursivasPage() {
                   Puedes utilizar letras cursivas en biografías, nombres, publicaciones y leyendas de Instagram. Para biografías, una combinación limpia suele funcionar mejor: texto normal + elemento cursivo + símbolos.
                 </p>
                 <div className="flex flex-col gap-1 text-xs pt-2 border-t border-slate-800">
-                  <Link href="/letras-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram" className="seo-link font-medium">
                     • Letras para Instagram
                   </Link>
-                  <Link href="/letras-para-instagram/letras-cursivas-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-cursivas-para-instagram" className="seo-link font-medium">
                     • Letras Cursivas para Instagram
                   </Link>
-                  <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-para-bio" className="seo-link font-medium">
                     • Letras para bio
                   </Link>
-                  <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/simbolos-para-instagram" className="seo-link font-medium">
                     • Símbolos para Instagram
                   </Link>
                 </div>
@@ -612,7 +595,7 @@ export default function LetrasCursivasPage() {
                 <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Un nombre corto es uno de los mejores casos de uso. Por ejemplo, transforma <em>Carlos</em> en 𝒞𝒶𝓇𝓁ℴ𝓈 o 𝓒𝒶𝓇𝓁ℴ𝓈 para destacar tu perfil.
                 </p>
-                <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link text-xs font-medium">
+                <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link text-xs font-medium">
                   • Ver letras para nombres
                 </Link>
               </div>
@@ -625,7 +608,7 @@ export default function LetrasCursivasPage() {
                 <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Crea nicknames elegantes en juegos online como Free Fire y Roblox.
                 </p>
-                <Link href="/nombres-para-free-fire/" className="seo-link text-xs font-medium">
+                <Link href="/nombres-para-free-fire" className="seo-link text-xs font-medium">
                   • Ir a Nombres para Free Fire
                 </Link>
               </div>
@@ -684,7 +667,7 @@ export default function LetrasCursivasPage() {
           <section className="silo-nav-block mb-8">
             <h3 className="silo-nav-title">Herramientas Relacionadas del SILO</h3>
             <div className="silo-links-grid">
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="silo-card-link">
+              <Link href="/letras-cursivas/abecedario-cursivo" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#818cf8' }}>Abecedario</span>
                   <h4 className="silo-card-heading">Abecedario Cursivo</h4>
@@ -693,7 +676,7 @@ export default function LetrasCursivasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#6366f1' }}>Copiar y Pegar</span>
                   <h4 className="silo-card-heading">Copiar y Pegar Cursivas</h4>
@@ -702,7 +685,7 @@ export default function LetrasCursivasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-elegantes" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#ec4899' }}>Elegantes</span>
                   <h4 className="silo-card-heading">Cursivas Elegantes</h4>
@@ -711,7 +694,7 @@ export default function LetrasCursivasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Conversor Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>

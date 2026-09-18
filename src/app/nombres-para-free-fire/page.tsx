@@ -10,7 +10,6 @@ import FreeFireFaqSection from '@/components/free-fire/FreeFireFaqSection';
 import { FREE_FIRE_FAQ_ITEMS } from '@/data/freeFireData';
 import {
   ReadingProgress,
-  TableOfContents,
   ExamplePreviewCard,
   CopyButton,
   TipBox,
@@ -48,13 +47,13 @@ export const metadata: Metadata = {
   description:
     'Crea nombres para Free Fire chidos, insanos y originales. Genera tu nick, usa símbolos, copia y pega y encuentra tu estilo ideal.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire'
   },
   openGraph: {
     title: 'Nombres para Free Fire: Nicks Chidos para Copiar',
     description:
       'Genera nombres chidos, insanos y originales para Free Fire, personalízalos con letras y símbolos y copia tu nick en segundos.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -70,18 +69,6 @@ export const metadata: Metadata = {
     follow: true
   }
 };
-
-const FREE_FIRE_TOC_ITEMS = [
-  { id: 'encuentra-tu-nombre', title: 'Encuentra tu nombre para Free Fire' },
-  { id: 'generador-de-nombres', title: 'Generador de nombres para Free Fire' },
-  { id: 'tipos-de-nombres', title: 'Tipos de nombres para Free Fire' },
-  { id: 'que-son-unicode', title: '¿Qué son las letras Unicode?' },
-  { id: 'cuadros-compatibilidad', title: '¿Por qué aparecen como cuadros?' },
-  { id: 'como-cambiar', title: 'Cómo cambiar tu nombre en Free Fire' },
-  { id: 'ideas-rapidas', title: 'Ideas rápidas según tu estilo de juego' },
-  { id: 'unicode-vs-fuentes', title: 'Nicks Unicode vs. Fuentes Tradicionales' },
-  { id: 'faq', title: 'Preguntas frecuentes' }
-];
 
 export default function NombresParaFreeFirePage() {
   const breadcrumbSchema = {
@@ -122,7 +109,7 @@ export default function NombresParaFreeFirePage() {
     headline: 'Nombres para Free Fire: crea y copia tu nick',
     description:
       'Guía definitiva y generador interactivo de nombres para Free Fire. Crea apodos insanos, chidos, tryhard y aesthetic con letras Unicode y símbolos para copiar y pegar.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
@@ -221,26 +208,25 @@ export default function NombresParaFreeFirePage() {
 
           <TipBox title="Explora todas las opciones para Free Fire">
             En esta guía encontrarás{' '}
-            <Link href="/nombres-para-free-fire/nombres/" className="text-pink-400 underline hover:text-pink-300 font-semibold">
+            <Link href="/nombres-para-free-fire/nombres" className="text-pink-400 underline hover:text-pink-300 font-semibold">
               nombres para Free Fire
             </Link>
             , estilos chidos,{' '}
-            <Link href="/nombres-para-free-fire/nombres-insanos/" className="text-pink-400 underline hover:text-pink-300 font-semibold">
+            <Link href="/nombres-para-free-fire/nombres-insanos" className="text-pink-400 underline hover:text-pink-300 font-semibold">
               nombres para Free Fire insanos
             </Link>
             , opciones aesthetic, ideas para{' '}
-            <Link href="/nombres-para-free-fire/clanes/" className="text-pink-400 underline hover:text-pink-300 font-semibold">
+            <Link href="/nombres-para-free-fire/clanes" className="text-pink-400 underline hover:text-pink-300 font-semibold">
               nombres para clanes
             </Link>{' '}
             y dúos,{' '}
-            <Link href="/nombres-para-free-fire/simbolos/" className="text-pink-400 underline hover:text-pink-300 font-semibold">
+            <Link href="/nombres-para-free-fire/simbolos" className="text-pink-400 underline hover:text-pink-300 font-semibold">
               símbolos para Free Fire
             </Link>{' '}
             y consejos para crear un nick personalizado. Además, te explicamos qué son las letras Unicode y qué debes revisar antes de gastar una tarjeta de cambio de nombre o diamantes.
           </TipBox>
 
           {/* Table of Contents for easy scanning */}
-          <TableOfContents items={FREE_FIRE_TOC_ITEMS} />
         </header>
 
         <hr className="article-section-divider" />
@@ -371,7 +357,7 @@ export default function NombresParaFreeFirePage() {
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Visualmente intensos y decorados con marcos y símbolos (ej. <span className="font-mono text-amber-300">꧁༺ 𝕾𝖍𝖆𝖉𝖔𝖜 ༻꧂</span>). Explora nuestra sección de{' '}
-                <Link href="/nombres-para-free-fire/nombres-insanos/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/nombres-insanos" className="text-pink-400 hover:underline font-semibold">
                   nombres insanos
                 </Link>.
               </p>
@@ -401,11 +387,11 @@ export default function NombresParaFreeFirePage() {
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Nombres vinculados para parejas (ej. <em>Luna / Sol, Alpha / Omega</em>) o etiquetas de equipo. Consulta nuestras guías sobre{' '}
-                <Link href="/nombres-para-free-fire/apodos/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/apodos" className="text-pink-400 hover:underline font-semibold">
                   apodos para Free Fire
                 </Link>{' '}
                 y{' '}
-                <Link href="/nombres-para-free-fire/clanes/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/clanes" className="text-pink-400 hover:underline font-semibold">
                   nombres para clanes
                 </Link>.
               </p>

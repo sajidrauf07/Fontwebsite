@@ -10,7 +10,6 @@ import InstagramCaptionsSection from '@/components/instagram/InstagramCaptionsSe
 import { FAQSection } from '@/components/seo/FAQSection';
 import {
   ReadingProgress,
-  TableOfContents,
   ExamplePreviewCard,
   CopyButton,
   TipBox,
@@ -44,13 +43,13 @@ export const metadata: Metadata = {
   description:
     'Crea letras para Instagram bonitas y gratis. Genera estilos cursivos, negrita, góticos y aesthetic para copiar y pegar en tu perfil, bio y publicaciones.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram'
   },
   openGraph: {
     title: 'Letras para Instagram: Bonitas, Gratis y para Copiar',
     description:
       'Crea textos con estilo para tu bio, nombre, publicaciones y comentarios. Descubre cómo copiar y pegar letras especiales en Instagram.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'article'
@@ -108,19 +107,6 @@ const INSTAGRAM_FAQ_ITEMS = [
     question: '¿Puedo usar letras bonitas para una cuenta de negocio?',
     answer: 'Sí, pero con moderación. Para un negocio es mejor que el nombre, los servicios y la información importante sean fáciles de leer. Los estilos especiales pueden utilizarse como complemento visual.'
   }
-];
-
-const INSTAGRAM_TOC_ITEMS = [
-  { id: 'guia-instagram', title: 'Introducción' },
-  { id: 'que-son-letras-instagram', title: '¿Qué son las letras para Instagram?' },
-  { id: 'como-usar', title: 'Cómo poner letras bonitas paso a paso' },
-  { id: 'donde-usar', title: '¿Dónde puedes usar letras especiales?' },
-  { id: 'estilos-populares', title: 'Los estilos más populares' },
-  { id: 'como-elegir', title: 'Cómo elegir la mejor letra según tu perfil' },
-  { id: 'como-funcionan', title: '¿Cómo funcionan realmente las fuentes?' },
-  { id: 'consejos', title: 'Consejos para usar letras sin exagerar' },
-  { id: 'faq', title: 'Preguntas frecuentes' },
-  { id: 'conclusion', title: 'Conclusión' }
 ];
 
 export default function LetrasParaInstagramPage() {
@@ -212,7 +198,6 @@ export default function LetrasParaInstagramPage() {
 
           {/* PAS INTRODUCTION & PROBLEM STATEMENT */}
           <ReadingProgress />
-          <TableOfContents items={INSTAGRAM_TOC_ITEMS} />
 
           <article className="seo-card-section mb-12" id="guia-instagram">
             <p className="lead-text" style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#E2E8F0' }}>
@@ -274,7 +259,7 @@ export default function LetrasParaInstagramPage() {
               El estándar internacional Unicode incluye conjuntos de caracteres alfanuméricos con diferentes estilos visuales, como negrita, cursiva, script, Fraktur, doble trazo y sans serif. La especificación técnica documentada en el <a href="https://www.unicode.org/reports/tr25/" target="_blank" rel="noopener noreferrer" className="seo-link inline-flex items-center gap-1">Unicode Technical Report #25 <ExternalLink size={14} /></a> detalla cómo estos caracteres fueron estructurados originalmente para usos técnicos y matemáticos.
             </p>
             <p className="mt-4">
-              Por eso puedes <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="seo-link">copiar y pegar</Link> un resultado desde un sitio web y pegarlo en determinados campos de Instagram sin instalar una nueva fuente.
+              Por eso puedes <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="seo-link">copiar y pegar</Link> un resultado desde un sitio web y pegarlo en determinados campos de Instagram sin instalar una nueva fuente.
             </p>
           </section>
 
@@ -295,7 +280,7 @@ export default function LetrasParaInstagramPage() {
 
               <StepItem stepNumber={2} title="Elige un estilo">
                 <p>
-                  Una vez generado el texto, revisa las diferentes opciones. Puedes encontrar estilos como <Link href="/letras-cursivas/" className="seo-link">letras cursivas</Link>, negritas, góticas, versalitas, monoespaciadas, en círculos o decorativas.
+                  Una vez generado el texto, revisa las diferentes opciones. Puedes encontrar estilos como <Link href="/letras-cursivas" className="seo-link">letras cursivas</Link>, negritas, góticas, versalitas, monoespaciadas, en círculos o decorativas.
                 </p>
               </StepItem>
 
@@ -327,7 +312,7 @@ export default function LetrasParaInstagramPage() {
               <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                 <h3 className="text-lg font-bold text-indigo-300 mb-2">Biografía (Bio)</h3>
                 <p className="text-sm text-slate-300 mb-2">
-                  La bio es uno de los lugares más populares. Explora más opciones en nuestra sección dedicada a <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link">letras para bio</Link>.
+                  La bio es uno de los lugares más populares. Explora más opciones en nuestra sección dedicada a <Link href="/letras-para-instagram/letras-para-bio" className="seo-link">letras para bio</Link>.
                 </p>
                 <div className="p-3 bg-indigo-950/40 rounded border border-indigo-900/50 font-mono text-sm text-indigo-200">
                   Fotógrafo 📸<br />
@@ -339,7 +324,7 @@ export default function LetrasParaInstagramPage() {
               <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                 <h3 className="text-lg font-bold text-indigo-300 mb-2">Nombre visible del perfil</h3>
                 <p className="text-sm text-slate-300 mb-2">
-                  Puedes experimentar con caracteres especiales en el nombre visible de tu perfil. Para más ideas, visita <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link">letras para nombres</Link>. Recuerda que esto es diferente del <code>@nombredeusuario</code>.
+                  Puedes experimentar con caracteres especiales en el nombre visible de tu perfil. Para más ideas, visita <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link">letras para nombres</Link>. Recuerda que esto es diferente del <code>@nombredeusuario</code>.
                 </p>
               </div>
 
@@ -353,7 +338,7 @@ export default function LetrasParaInstagramPage() {
               <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                 <h3 className="text-lg font-bold text-indigo-300 mb-2">Comentarios y Historias / Notas</h3>
                 <p className="text-sm text-slate-300">
-                  Puedes usar expresiones cortas como <em>𝓠𝓾é 𝓫𝓸𝓷𝓲𝓽𝓸 ✨</em> o <em>𝐌𝐞 𝐞𝐧𝐜𝐚𝐧𝐭𝐚 🔥</em>. Para historias y composiciones visuales, también puedes apoyarte en <Link href="/letras-para-instagram/letras-cursivas-para-instagram/" className="seo-link">letras cursivas para Instagram</Link> y <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link">símbolos para Instagram</Link>.
+                  Puedes usar expresiones cortas como <em>𝓠𝓾é 𝓫𝓸𝓷𝓲𝓽𝓸 ✨</em> o <em>𝐌𝐞 𝐞𝐧𝐜𝐚𝐧𝐭𝐚 🔥</em>. Para historias y composiciones visuales, también puedes apoyarte en <Link href="/letras-para-instagram/letras-cursivas-para-instagram" className="seo-link">letras cursivas para Instagram</Link> y <Link href="/letras-para-instagram/simbolos-para-instagram" className="seo-link">símbolos para Instagram</Link>.
                 </p>
               </div>
             </div>
@@ -372,7 +357,7 @@ export default function LetrasParaInstagramPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
               <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
                 <h3 className="text-base font-bold text-indigo-300 mb-1">Letras cursivas</h3>
-                <p className="text-xs text-slate-400 mb-2">Asociadas con estética manuscrita, elegante y creativa. Consulta nuestro <Link href="/letras-cursivas/abecedario-cursivo/" className="seo-link">abecedario cursivo</Link>.</p>
+                <p className="text-xs text-slate-400 mb-2">Asociadas con estética manuscrita, elegante y creativa. Consulta nuestro <Link href="/letras-cursivas/abecedario-cursivo" className="seo-link">abecedario cursivo</Link>.</p>
                 <span className="text-lg text-emerald-300 font-mono">𝓛𝓮𝓽𝓻𝓪𝓼 𝓹𝓪𝓻𝓪 𝓘𝓷𝓼𝓽𝓪𝓰𝓻𝓪𝓶</span>
               </div>
 
@@ -384,7 +369,7 @@ export default function LetrasParaInstagramPage() {
 
               <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
                 <h3 className="text-base font-bold text-indigo-300 mb-1">Letras góticas</h3>
-                <p className="text-xs text-slate-400 mb-2">Aspecto oscuro y llamativo para gaming y música. Ver ejemplos en <Link href="/nombres-para-free-fire/nombres/" className="seo-link">nombres para Free Fire</Link>.</p>
+                <p className="text-xs text-slate-400 mb-2">Aspecto oscuro y llamativo para gaming y música. Ver ejemplos en <Link href="/nombres-para-free-fire/nombres" className="seo-link">nombres para Free Fire</Link>.</p>
                 <span className="text-lg text-emerald-300 font-mono">𝔏𝔢𝔱𝔯𝔞𝔰 𝔤𝔬́𝔱𝔦𝔠𝔞𝔰</span>
               </div>
 
@@ -430,7 +415,7 @@ export default function LetrasParaInstagramPage() {
                 <tbody className="divide-y divide-slate-800 text-sm">
                   <tr>
                     <td className="p-3 font-medium text-slate-200">Bio elegante o marca personal</td>
-                    <td className="p-3 text-emerald-400">Cursiva, Script, <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link">letras cursivas elegantes</Link></td>
+                    <td className="p-3 text-emerald-400">Cursiva, Script, <Link href="/letras-cursivas/letras-cursivas-elegantes" className="seo-link">letras cursivas elegantes</Link></td>
                     <td className="p-3 text-indigo-300">Alta legibilidad y sofisticación</td>
                   </tr>
                   <tr>
@@ -440,7 +425,7 @@ export default function LetrasParaInstagramPage() {
                   </tr>
                   <tr>
                     <td className="p-3 font-medium text-slate-200">Gaming y streaming</td>
-                    <td className="p-3 text-emerald-400">Gótica (Fraktur), negrita matemática, <Link href="/nombres-para-free-fire/simbolos/" className="seo-link">símbolos decorativos</Link></td>
+                    <td className="p-3 text-emerald-400">Gótica (Fraktur), negrita matemática, <Link href="/nombres-para-free-fire/simbolos" className="seo-link">símbolos decorativos</Link></td>
                     <td className="p-3 text-indigo-300">Personalidad e impacto gráfico</td>
                   </tr>
                   <tr>
@@ -486,7 +471,7 @@ export default function LetrasParaInstagramPage() {
 
             <h3 className="text-xl font-bold text-white mt-6 mb-3">Compatibilidad y accesibilidad</h3>
             <p>
-              Los lectores de pantalla pronunciarán los nombres formales de los puntos de código Unicode. Por ello, la recomendación de accesibilidad es estilizar palabras cortas y conservar texto normal para los datos de contacto principales. Si deseas conocer más sobre este funcionamiento, consulta nuestro artículo sobre <Link href="/conversor-de-letras/texto-con-estilos/" className="seo-link">texto con estilos</Link> y <Link href="/conversor-de-letras/como-cambiar-las-letras/" className="seo-link">cómo cambiar las letras</Link>.
+              Los lectores de pantalla pronunciarán los nombres formales de los puntos de código Unicode. Por ello, la recomendación de accesibilidad es estilizar palabras cortas y conservar texto normal para los datos de contacto principales. Si deseas conocer más sobre este funcionamiento, consulta nuestro artículo sobre <Link href="/conversor-de-letras/texto-con-estilos" className="seo-link">texto con estilos</Link> y <Link href="/conversor-de-letras/como-cambiar-las-letras" className="seo-link">cómo cambiar las letras</Link>.
             </p>
           </section>
 
@@ -525,7 +510,7 @@ export default function LetrasParaInstagramPage() {
                 </p>
               </div>
               <Link
-                href="/conversor-de-letras/"
+                href="/conversor-de-letras"
                 className="cp-card-copy-btn"
                 style={{ textDecoration: 'none', justifyContent: 'space-between' }}
               >
@@ -545,7 +530,7 @@ export default function LetrasParaInstagramPage() {
                 </p>
               </div>
               <Link
-                href="/letras-cursivas/letras-cursivas-elegantes/"
+                href="/letras-cursivas/letras-cursivas-elegantes"
                 className="cp-card-copy-btn copied"
                 style={{ textDecoration: 'none', justifyContent: 'space-between' }}
               >
@@ -588,7 +573,7 @@ export default function LetrasParaInstagramPage() {
           <section className="silo-nav-block">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/letras-para-instagram/letras-cursivas-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram/letras-cursivas-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#c084fc' }}>Herramienta Cursivas</span>
                   <h4 className="silo-card-heading">Letras Cursivas para Instagram</h4>
@@ -597,7 +582,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/simbolos-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram/simbolos-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#fbbf24' }}>Herramienta Símbolos</span>
                   <h4 className="silo-card-heading">Símbolos para Instagram</h4>
@@ -606,7 +591,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/letras-para-nombres/" className="silo-card-link">
+              <Link href="/letras-para-instagram/letras-para-nombres" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#818cf8' }}>Herramienta de Nombres</span>
                   <h4 className="silo-card-heading">Letras para Nombres</h4>
@@ -615,7 +600,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/letras-para-bio/" className="silo-card-link">
+              <Link href="/letras-para-instagram/letras-para-bio" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#f43f5e' }}>Herramienta de Bio</span>
                   <h4 className="silo-card-heading">Letras para Bio</h4>
@@ -624,7 +609,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -633,7 +618,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta de Copia</span>
                   <h4 className="silo-card-heading">Letras para Copiar y Pegar</h4>
@@ -642,7 +627,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/texto-con-estilos/" className="silo-card-link">
+              <Link href="/conversor-de-letras/texto-con-estilos" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta Estilos</span>
                   <h4 className="silo-card-heading">Texto con Estilos</h4>
@@ -651,7 +636,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/como-cambiar-las-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras/como-cambiar-las-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Guía Práctica</span>
                   <h4 className="silo-card-heading">Cómo Cambiar las Letras</h4>
@@ -660,7 +645,7 @@ export default function LetrasParaInstagramPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO Cursiva</span>
                   <h4 className="silo-card-heading">Letras Cursivas</h4>

@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   ExamplePreviewCard,
@@ -94,18 +93,6 @@ const MASTER_ARTICLE_FAQS: FAQItem[] = [
   }
 ];
 
-const ARTICLE_TOC_ITEMS = [
-  { id: 'que-son-las-letras-bonitas', title: 'Letras Bonitas para Copiar y Pegar' },
-  { id: 'como-usar-el-generador', title: '¿Cómo usar el generador de letras bonitas?' },
-  { id: 'estilos-de-letras', title: 'Más de 350 estilos de letras para explorar' },
-  { id: 'explicacion-tecnica-unicode', title: 'Explicación técnica: ¿Qué son y cómo funcionan?' },
-  { id: 'donde-puedes-usar', title: '¿Dónde puedes usar letras bonitas?' },
-  { id: 'letras-bonitas-para-copiar', title: 'Letras bonitas con Ñ y acentos' },
-  { id: 'por-que-se-ven-diferentes', title: '¿Por qué algunas letras se ven diferentes y cómo elegir?' },
-  { id: 'preguntas-frecuentes', title: 'Preguntas Frecuentes sobre Letras Bonitas' },
-  { id: 'conclusion', title: 'Conclusión y Recomendaciones' }
-];
-
 export const SEOContent: React.FC = () => {
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -152,7 +139,7 @@ export const SEOContent: React.FC = () => {
           <p className="article-paragraph">
             En <strong>Letras Bonitas</strong> encontrarás una colección amplia de estilos pensados para diferentes situaciones. Puedes buscar una apariencia elegante para tu perfil, una opción cursiva para una frase, un estilo llamativo para un nombre de juego o una variante sencilla para{' '}
             <Link
-              href="/conversor-de-letras/letras-para-copiar-y-pegar/"
+              href="/conversor-de-letras/letras-para-copiar-y-pegar"
               className="seo-link"
             >
               letras para copiar y pegar
@@ -165,7 +152,6 @@ export const SEOContent: React.FC = () => {
           </TipBox>
 
           {/* Table of Contents for easy scanning */}
-          <TableOfContents items={ARTICLE_TOC_ITEMS} />
 
           {/* Interactive UI Demo Showcase */}
           <div className="my-8">
@@ -292,15 +278,15 @@ export const SEOContent: React.FC = () => {
                 tag="Cursiva"
               />
               <div className="flex flex-wrap gap-2 mt-2">
-                <Link href="/letras-cursivas/" className="seo-link-pill">
+                <Link href="/letras-cursivas" className="seo-link-pill">
                   <span>Letras cursivas</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/letras-cursivas/abecedario-cursivo/" className="seo-link-pill">
+                <Link href="/letras-cursivas/abecedario-cursivo" className="seo-link-pill">
                   <span>Abecedario cursivo</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link-pill">
+                <Link href="/letras-cursivas/letras-cursivas-elegantes" className="seo-link-pill">
                   <span>Cursivas elegantes</span>
                   <ChevronRight size={14} />
                 </Link>
@@ -336,7 +322,7 @@ export const SEOContent: React.FC = () => {
                 tag="Gótico"
               />
               <div className="mt-2">
-                <Link href="/conversor-de-letras/" className="seo-link-pill">
+                <Link href="/conversor-de-letras" className="seo-link-pill">
                   <span>Explorar en conversor de letras</span>
                   <ChevronRight size={14} />
                 </Link>
@@ -491,19 +477,19 @@ export const SEOContent: React.FC = () => {
                 Puedes probar diferentes estilos para biografías, nombres, publicaciones, captions y comentarios. Destaca los encabezados de tu bio con letras elegantes o cursivas para una primera impresión atractiva.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
-                <Link href="/letras-para-instagram/" className="seo-link-pill">
+                <Link href="/letras-para-instagram" className="seo-link-pill">
                   <span>Letras para Instagram</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link-pill">
+                <Link href="/letras-para-instagram/letras-para-bio" className="seo-link-pill">
                   <span>Letras para Bio</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link-pill">
+                <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link-pill">
                   <span>Letras para Nombres</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link-pill">
+                <Link href="/letras-para-instagram/simbolos-para-instagram" className="seo-link-pill">
                   <span>Símbolos para Instagram</span>
                   <ChevronRight size={14} />
                 </Link>
@@ -532,19 +518,19 @@ export const SEOContent: React.FC = () => {
                 Experimenta con estilos góticos, negritas, pequeños, decorados y gaming para crear un nickname más llamativo en Free Fire y otros videojuegos.
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
-                <Link href="/nombres-para-free-fire/" className="seo-link-pill">
+                <Link href="/nombres-para-free-fire" className="seo-link-pill">
                   <span>Nombres para Free Fire</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/nombres-para-free-fire/apodos/" className="seo-link-pill">
+                <Link href="/nombres-para-free-fire/apodos" className="seo-link-pill">
                   <span>Apodos para Free Fire</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/nombres-para-free-fire/clanes/" className="seo-link-pill">
+                <Link href="/nombres-para-free-fire/clanes" className="seo-link-pill">
                   <span>Nombres para Clanes</span>
                   <ChevronRight size={14} />
                 </Link>
-                <Link href="/nombres-para-free-fire/simbolos/" className="seo-link-pill">
+                <Link href="/nombres-para-free-fire/simbolos" className="seo-link-pill">
                   <span>Símbolos para Free Fire</span>
                   <ChevronRight size={14} />
                 </Link>

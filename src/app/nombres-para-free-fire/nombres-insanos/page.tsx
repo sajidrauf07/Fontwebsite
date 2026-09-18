@@ -19,31 +19,21 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
-
-const INSANOS_TOC_ITEMS = [
-  { id: 'generador-insano', label: 'Generador de nombres insanos' },
-  { id: 'insanos-aleatorios', label: 'Generador aleatorio de nicks' },
-  { id: 'decorador-insano', label: 'Decorador con marcos y símbolos' },
-  { id: 'catalogo-insano', label: 'Ideas de nombres insanos por nicho' },
-  { id: 'compatibilidad-insana', label: '¿Funcionan estos nombres en Free Fire?' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
 
 export const metadata: Metadata = {
   title: 'Nombres Insanos para Free Fire | Generador y Nombres para Copiar',
   description:
     'Genera nombres insanos, llamativos y estilosos para Free Fire. Copia y pega apodos savage, dark, pro y con símbolos para tu nick de Free Fire gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos'
   },
   openGraph: {
     title: 'Nombres Insanos para Free Fire | Generador y Nombres para Copiar',
     description:
       'Descubre y copia ideas de nombres insanos originales con símbolos Pro y estilos de letras avanzadas para Free Fire.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres-insanos',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -118,7 +108,7 @@ export default function NombresInsanosPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-free-fire/" className="breadcrumb-link">Nombres para Free Fire</Link>
+          <Link href="/nombres-para-free-fire" className="breadcrumb-link">Nombres para Free Fire</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Nombres Insanos para Free Fire</span>
         </div>
@@ -157,7 +147,6 @@ export default function NombresInsanosPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={INSANOS_TOC_ITEMS} />
 
           {/* Primary Interactive Subcategory Tool */}
           <main id="main-content">
@@ -279,7 +268,7 @@ export default function NombresInsanosPage() {
                   </p>
                 </div>
                 <Link
-                  href="/nombres-para-free-fire/"
+                  href="/nombres-para-free-fire"
                   className="cp-card-copy-btn copied"
                   style={{ textDecoration: 'none', justifyContent: 'space-between' }}
                 >
@@ -299,7 +288,7 @@ export default function NombresInsanosPage() {
                   </p>
                 </div>
                 <Link
-                  href="/nombres-para-free-fire/nombres/"
+                  href="/nombres-para-free-fire/nombres"
                   className="cp-card-copy-btn"
                   style={{ textDecoration: 'none', justifyContent: 'space-between' }}
                 >
@@ -326,7 +315,7 @@ export default function NombresInsanosPage() {
             <section className="silo-nav-block">
               <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
               <div className="silo-links-grid">
-                <Link href="/nombres-para-free-fire/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Pillar Principal</span>
                     <h4 className="silo-card-heading">Generador Free Fire</h4>
@@ -335,7 +324,7 @@ export default function NombresInsanosPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/nombres/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/nombres" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres para Free Fire</h4>
@@ -344,7 +333,7 @@ export default function NombresInsanosPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/letras-para-instagram/letras-para-nombres/" className="silo-card-link">
+                <Link href="/letras-para-instagram/letras-para-nombres" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#818cf8' }}>SILO Instagram</span>
                     <h4 className="silo-card-heading">Letras para Nombres</h4>
@@ -353,7 +342,7 @@ export default function NombresInsanosPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/letras-para-instagram/simbolos-para-instagram/" className="silo-card-link">
+                <Link href="/letras-para-instagram/simbolos-para-instagram" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#fbbf24' }}>Herramienta Símbolos</span>
                     <h4 className="silo-card-heading">Símbolos para Instagram</h4>
@@ -362,7 +351,7 @@ export default function NombresInsanosPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/conversor-de-letras/" className="silo-card-link">
+                <Link href="/conversor-de-letras" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">Pillar Principal</span>
                     <h4 className="silo-card-heading">Conversor de Letras</h4>

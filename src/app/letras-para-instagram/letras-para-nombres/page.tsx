@@ -34,41 +34,24 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   TipBox,
   ToolCTA
 } from '@/components/article';
 
-const NOMBRES_TOC_ITEMS = [
-  { id: 'generador-nombres', label: 'Generador de nombres bonitos' },
-  { id: 'guia-nombres', label: 'Por qué personalizar tu nombre' },
-  { id: 'crea-tu-nombre', label: 'Crea tu nombre con letras bonitas' },
-  { id: 'que-son-nombres', label: '¿Qué son las letras para nombres?' },
-  { id: 'paso-a-paso', label: 'Cómo crear tu nombre paso a paso' },
-  { id: 'mejores-estilos', label: 'Los mejores estilos de letras' },
-  { id: 'ejemplos-nombres', label: 'Ejemplos de nombres estilizados' },
-  { id: 'instagram-gaming', label: 'Nombres para Instagram y videojuegos' },
-  { id: 'acentos-espanol', label: 'Nombres con Ñ, acentos y apellidos' },
-  { id: 'matriz-estilos', label: 'Elegir el estilo correcto' },
-  { id: 'unicode-vs-fuentes', label: 'Letras Unicode vs fuentes tradicionales' },
-  { id: 'errores-comunes', label: 'Errores comunes y cómo evitarlos' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
-
 export const metadata: Metadata = {
   title: 'Letras para Nombres Bonitos: Copia y Pega Estilos',
   description:
     'Crea letras para nombres bonitas y originales. Prueba estilos cursivos, góticos, aesthetic y más, copia tu favorito y úsalo donde quieras.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres'
   },
   openGraph: {
     title: 'Letras para Nombres Bonitos: Copia y Pega Estilos',
     description:
       'Personaliza tu nombre con estilos cursivos, góticos, aesthetic y especiales listos para copiar y pegar.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -217,7 +200,7 @@ export default function LetrasParaNombresPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/letras-para-instagram/" className="breadcrumb-link">Letras para Instagram</Link>
+          <Link href="/letras-para-instagram" className="breadcrumb-link">Letras para Instagram</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Letras para Nombres</span>
         </div>
@@ -252,7 +235,6 @@ export default function LetrasParaNombresPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={NOMBRES_TOC_ITEMS} />
 
           {/* PRIMARY INTERACTIVE NAME GENERATOR TOOL */}
           <main id="main-content">
@@ -272,7 +254,7 @@ export default function LetrasParaNombresPage() {
                 El problema es que buscar estilos uno por uno puede ser tardado. Además, no todas las letras decorativas se ven igual en todos los dispositivos y algunas pueden hacer que un nombre sea difícil de leer.
               </p>
               <p className="mt-4">
-                La solución es utilizar letras para nombres listas para <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="seo-link">copiar y pegar</Link>. Con nuestro conversor puedes escribir tu nombre una sola vez, comparar diferentes estilos y elegir la versión que mejor represente tu personalidad.
+                La solución es utilizar letras para nombres listas para <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="seo-link">copiar y pegar</Link>. Con nuestro conversor puedes escribir tu nombre una sola vez, comparar diferentes estilos y elegir la versión que mejor represente tu personalidad.
               </p>
               <p className="mt-4">
                 En esta guía encontrarás cómo funcionan estos estilos, qué opciones puedes probar, cómo usar nombres con símbolos y cómo elegir una versión que se vea bonita sin perder legibilidad.
@@ -339,7 +321,7 @@ export default function LetrasParaNombresPage() {
                 Las letras para nombres son caracteres y estilos de texto que puedes utilizar para personalizar visualmente un nombre en entornos digitales.
               </p>
               <p className="mt-3">
-                En internet suelen buscarse como <em>letras bonitas</em>, <em>letras aesthetic</em>, <Link href="/letras-cursivas/" className="seo-link">letras cursivas</Link>, <em>letras elegantes</em>, <em>letras góticas</em> o <em>fuentes para nombres</em>.
+                En internet suelen buscarse como <em>letras bonitas</em>, <em>letras aesthetic</em>, <Link href="/letras-cursivas" className="seo-link">letras cursivas</Link>, <em>letras elegantes</em>, <em>letras góticas</em> o <em>fuentes para nombres</em>.
               </p>
               <p className="mt-4">
                 Aunque muchas personas les llaman "fuentes", técnicamente no siempre se trata de una fuente instalada en tu celular o computadora.
@@ -364,7 +346,7 @@ export default function LetrasParaNombresPage() {
                 El estándar Unicode asigna identificadores binarios únicos a miles de símbolos. Algunos de los estilos alfanuméricos utilizados pertenecen al bloque de <a href="https://www.unicode.org/reports/tr25/" target="_blank" rel="noopener noreferrer" className="seo-link inline-flex items-center gap-1">Mathematical Alphanumeric Symbols <ExternalLink size={14} /></a>, que incluye alfabetos en negrita, cursiva, script, Fraktur, doble trazo y sans-serif.
               </p>
               <p className="mt-4">
-                Esto permite crear resultados visualmente diferentes sin convertir tu nombre en una imagen estática. Para aprender más sobre este proceso, consulta nuestra guía sobre <Link href="/conversor-de-letras/texto-con-estilos/" className="seo-link">texto con estilos</Link> y <Link href="/conversor-de-letras/como-cambiar-las-letras/" className="seo-link">cómo cambiar las letras</Link>.
+                Esto permite crear resultados visualmente diferentes sin convertir tu nombre en una imagen estática. Para aprender más sobre este proceso, consulta nuestra guía sobre <Link href="/conversor-de-letras/texto-con-estilos" className="seo-link">texto con estilos</Link> y <Link href="/conversor-de-letras/como-cambiar-las-letras" className="seo-link">cómo cambiar las letras</Link>.
               </p>
             </section>
 
@@ -435,7 +417,7 @@ export default function LetrasParaNombresPage() {
                 <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                   <h3 className="text-lg font-bold text-indigo-300 mb-2">Cursivas</h3>
                   <p className="text-sm text-slate-300 mb-3">
-                    Transmiten elegancia y fluidez. Ideales para perfiles personales, moda y fotografía. Explora también nuestras páginas de <Link href="/letras-cursivas/abecedario-cursivo/" className="seo-link">abecedario cursivo</Link> y <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link">letras cursivas elegantes</Link>.
+                    Transmiten elegancia y fluidez. Ideales para perfiles personales, moda y fotografía. Explora también nuestras páginas de <Link href="/letras-cursivas/abecedario-cursivo" className="seo-link">abecedario cursivo</Link> y <Link href="/letras-cursivas/letras-cursivas-elegantes" className="seo-link">letras cursivas elegantes</Link>.
                   </p>
                   <div className="text-base font-mono text-emerald-300">Ejemplos: 𝓛𝓾𝓷𝓪 | 𝓜𝓪𝓻𝓲𝓪 | 𝓢𝓸𝓯𝓲𝓪</div>
                 </div>
@@ -535,10 +517,10 @@ export default function LetrasParaNombresPage() {
               </div>
               <h2>Letras para nombres de Instagram y videojuegos</h2>
               <p>
-                En <Link href="/letras-para-instagram/" className="seo-link">letras para Instagram</Link>, puedes personalizar el campo de <strong>Nombre visible</strong> con fuentes estéticas. Recuerda que la biografía se complementa con herramientas como <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link">letras para bio</Link>.
+                En <Link href="/letras-para-instagram" className="seo-link">letras para Instagram</Link>, puedes personalizar el campo de <strong>Nombre visible</strong> con fuentes estéticas. Recuerda que la biografía se complementa con herramientas como <Link href="/letras-para-instagram/letras-para-bio" className="seo-link">letras para bio</Link>.
               </p>
               <p className="mt-4">
-                En cuanto a videojuegos como Free Fire o Roblox, puedes explorar generadores especializados en <Link href="/nombres-para-free-fire/nombres/" className="seo-link">nombres para Free Fire</Link> y <Link href="/nombres-para-free-fire/apodos/" className="seo-link">apodos para Free Fire</Link>.
+                En cuanto a videojuegos como Free Fire o Roblox, puedes explorar generadores especializados en <Link href="/nombres-para-free-fire/nombres" className="seo-link">nombres para Free Fire</Link> y <Link href="/nombres-para-free-fire/apodos" className="seo-link">apodos para Free Fire</Link>.
               </p>
 
               <div className="p-4 bg-slate-900/70 border border-slate-800 rounded-xl my-4">
@@ -699,7 +681,7 @@ export default function LetrasParaNombresPage() {
             <section className="silo-nav-block">
               <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
               <div className="silo-links-grid">
-                <Link href="/letras-para-instagram/" className="silo-card-link">
+                <Link href="/letras-para-instagram" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#818cf8' }}>SILO Instagram</span>
                     <h4 className="silo-card-heading">Letras para Instagram</h4>
@@ -708,7 +690,7 @@ export default function LetrasParaNombresPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/letras-para-instagram/letras-para-bio/" className="silo-card-link">
+                <Link href="/letras-para-instagram/letras-para-bio" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f43f5e' }}>Herramienta de Bio</span>
                     <h4 className="silo-card-heading">Letras para Bio</h4>
@@ -717,7 +699,7 @@ export default function LetrasParaNombresPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/conversor-de-letras/" className="silo-card-link">
+                <Link href="/conversor-de-letras" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">Pillar Principal</span>
                     <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -726,7 +708,7 @@ export default function LetrasParaNombresPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/conversor-de-letras/texto-con-estilos/" className="silo-card-link">
+                <Link href="/conversor-de-letras/texto-con-estilos" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">Herramienta Estilos</span>
                     <h4 className="silo-card-heading">Texto con Estilos</h4>
@@ -735,7 +717,7 @@ export default function LetrasParaNombresPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/letras-cursivas/" className="silo-card-link">
+                <Link href="/letras-cursivas" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">SILO Cursiva</span>
                     <h4 className="silo-card-heading">Letras Cursivas</h4>

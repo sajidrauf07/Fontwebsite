@@ -36,36 +36,21 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
-
-const SIMBOLOS_INSTAGRAM_TOC_ITEMS = [
-  { id: 'main-tool', label: 'Herramienta de símbolos para Instagram' },
-  { id: 'simbolos-copiar', label: 'Símbolos populares para copiar' },
-  { id: 'que-son-simbolos', label: '¿Qué son los símbolos Unicode?' },
-  { id: 'simbolos-por-categoria', label: 'Símbolos por categoría' },
-  { id: 'simbolos-vs-emojis', label: 'Símbolos vs Emojis vs Letras Bonitas' },
-  { id: 'renderizado-glifos', label: '¿Por qué algunos símbolos se ven diferentes?' },
-  { id: 'como-copiar-pegar', label: 'Cómo copiar y pegar paso a paso' },
-  { id: 'estructura-bio', label: 'Cómo usar símbolos en la bio' },
-  { id: 'errores-comunes', label: '5 Errores comunes al usar símbolos' },
-  { id: 'combinar-conversor', label: 'Cómo combinar símbolos con texto' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
 
 export const metadata: Metadata = {
   title: 'Símbolos para Instagram: Copia y Pega Símbolos Bonitos',
   description:
     'Descubre símbolos para Instagram, corazones, estrellas, flechas y separadores. Copia y pega símbolos bonitos para tu bio, nombre y publicaciones.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram'
   },
   openGraph: {
     title: 'Símbolos para Instagram: Copia y Pega Símbolos Bonitos',
     description:
       'Corazones, estrellas, flechas, flores y símbolos aesthetic para personalizar tu bio, nombre y publicaciones de Instagram.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -127,7 +112,7 @@ export default function SimbolosParaInstagramPage() {
     headline: 'Símbolos para Instagram: copia y pega símbolos bonitos',
     description:
       'Guía completa y colección interactiva de símbolos para Instagram. Copia corazones, estrellas, flechas, separadores y símbolos aesthetic para bios, nombres y publicaciones.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
@@ -161,7 +146,7 @@ export default function SimbolosParaInstagramPage() {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
             <Link
-              href="/letras-para-instagram/"
+              href="/letras-para-instagram"
               className="hover:text-pink-400 transition-colors"
             >
               Letras para Instagram
@@ -207,7 +192,6 @@ export default function SimbolosParaInstagramPage() {
       {/* Main SEO Article Content */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
         {/* TABLE OF CONTENTS */}
-        <TableOfContents items={SIMBOLOS_INSTAGRAM_TOC_ITEMS} />
 
         {/* Intro & PAS Framework Section */}
         <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6">
@@ -222,11 +206,11 @@ export default function SimbolosParaInstagramPage() {
           </p>
           <p className="text-base sm:text-lg leading-relaxed font-medium text-pink-300">
             Además, podrás combinar los símbolos con{' '}
-            <Link href="/conversor-de-letras/texto-con-estilos/" className="text-pink-400 underline decoration-pink-500/40 hover:decoration-pink-400 transition-colors">
+            <Link href="/conversor-de-letras/texto-con-estilos" className="text-pink-400 underline decoration-pink-500/40 hover:decoration-pink-400 transition-colors">
               texto con estilos
             </Link>{' '}
             y{' '}
-            <Link href="/letras-para-instagram/" className="text-pink-400 underline decoration-pink-500/40 hover:decoration-pink-400 transition-colors">
+            <Link href="/letras-para-instagram" className="text-pink-400 underline decoration-pink-500/40 hover:decoration-pink-400 transition-colors">
               letras para Instagram
             </Link>{' '}
             para crear textos más originales. La idea es sencilla: elige, copia y pega.
@@ -436,7 +420,7 @@ export default function SimbolosParaInstagramPage() {
                   <td className="px-4 py-3">Caracteres matemáticos estilizados</td>
                   <td className="px-4 py-3 font-mono text-white">𝓐</td>
                   <td className="px-4 py-3">Destacar{' '}
-                    <Link href="/letras-para-instagram/letras-para-nombres/" className="text-pink-400 hover:underline">
+                    <Link href="/letras-para-instagram/letras-para-nombres" className="text-pink-400 hover:underline">
                       letras para nombres
                     </Link>{' '}
                     y títulos
@@ -581,7 +565,7 @@ export default function SimbolosParaInstagramPage() {
 
           <p className="text-slate-300">
             Si deseas explorar estructuras específicas para bios cortas o de negocios, consulta nuestra guía completa sobre{' '}
-            <Link href="/letras-para-instagram/letras-para-bio/" className="text-pink-400 underline hover:text-pink-300">
+            <Link href="/letras-para-instagram/letras-para-bio" className="text-pink-400 underline hover:text-pink-300">
               letras para bio de Instagram
             </Link>.
           </p>
@@ -653,7 +637,7 @@ export default function SimbolosParaInstagramPage() {
           </h2>
           <p>
             Para obtener el resultado más atractivo en tu perfil, puedes utilizar nuestro{' '}
-            <Link href="/conversor-de-letras/" className="text-pink-400 underline hover:text-pink-300">
+            <Link href="/conversor-de-letras" className="text-pink-400 underline hover:text-pink-300">
               conversor de letras
             </Link>{' '}
             principal y seguir este flujo recomendado:
@@ -662,7 +646,7 @@ export default function SimbolosParaInstagramPage() {
           <ol className="list-decimal list-inside space-y-3 text-slate-300">
             <li>Escribe tu nombre o frase en la caja de texto.</li>
             <li>Elige una tipografía estilizada como{' '}
-              <Link href="/letras-para-instagram/letras-cursivas-para-instagram/" className="text-pink-400 underline hover:text-pink-300">
+              <Link href="/letras-para-instagram/letras-cursivas-para-instagram" className="text-pink-400 underline hover:text-pink-300">
                 letras cursivas para Instagram
               </Link>{' '}
               o negritas.

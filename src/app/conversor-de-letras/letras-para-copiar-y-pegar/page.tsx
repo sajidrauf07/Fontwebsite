@@ -33,7 +33,6 @@ import {
 import { mapAlphabet } from '@/lib/unicode/transformations';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   ToolCTA
@@ -44,13 +43,13 @@ export const metadata: Metadata = {
   description:
     'Catálogo completo de letras para copiar y pegar en Instagram, WhatsApp, TikTok y videojuegos. Encuentra letras bonitas, cursivas, góticas y aesthetic gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar'
   },
   openGraph: {
     title: 'Letras para Copiar y Pegar | Fuentes Bonitas y Especiales',
     description:
       'Catálogo de letras, palabras y frases bonitas listas para copiar con un solo clic para tu perfil de Instagram, WhatsApp, TikTok y juegos.',
-    url: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -108,23 +107,6 @@ const COPIAR_PEGAR_FAQ_ITEMS = [
     question: '¿Las letras convertidas afectan la lectura en pantallas pequeñas?',
     answer: 'Si el estilo es demasiado ornamentado puede dificultar la lectura. Por eso recomendamos usar estilos limpios para frases largas y guardar estilos ornamentados para palabras clave.'
   }
-];
-
-const COPIAR_PEGAR_TOC_ITEMS = [
-  { id: 'herramienta-copiar-pegar', label: 'Herramienta de copia rápida' },
-  { id: 'letras-para-copiar', label: 'Abecedario de letras para copiar' },
-  { id: 'que-son', label: '¿Qué son las letras para copiar y pegar?' },
-  { id: 'como-copiar', label: 'Cómo copiar y pegar paso a paso' },
-  { id: 'catálogo-estilos', label: 'Principales estilos de letras' },
-  { id: 'mecanica-tecnica', label: 'Arquitectura técnica Unicode' },
-  { id: 'comparacion', label: 'Unicode vs Fuentes tradicionales' },
-  { id: 'plataformas', label: 'Dónde usar las letras para copiar' },
-  { id: 'matriz-seleccion', label: 'Matriz de recomendación' },
-  { id: 'ejemplos-practicos', label: 'Ejemplos listos para copiar' },
-  { id: 'diagnostico', label: 'Solución de problemas visuales' },
-  { id: 'errores', label: 'Errores comunes' },
-  { id: 'consejos-legibilidad', label: 'Consejos de legibilidad' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
 ];
 
 export default function LetrasParaCopiarYPegarPage() {
@@ -185,7 +167,7 @@ export default function LetrasParaCopiarYPegarPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/conversor-de-letras/" className="breadcrumb-link">Conversor de Letras</Link>
+          <Link href="/conversor-de-letras" className="breadcrumb-link">Conversor de Letras</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Letras para Copiar y Pegar</span>
         </div>
@@ -215,7 +197,6 @@ export default function LetrasParaCopiarYPegarPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={COPIAR_PEGAR_TOC_ITEMS} />
 
           {/* MAIN COPY & PASTE TOOL */}
           <CopyPasteTool />
@@ -241,7 +222,7 @@ export default function LetrasParaCopiarYPegarPage() {
               El verdadero problema es que copiar estilos confusos o mal diseñados puede provocar que tu nombre o biografía aparezca como una serie de cuadros vacíos (<code>□</code>) en los celulares de tus amigos o seguidores. Además, seleccionar cada carácter manualmente en teclados complicados resulta lento y frustrante.
             </p>
             <p>
-              La solución perfecta está en este catálogo interactivo de <strong>Letras Bonitas</strong>. Aquí puedes escribir cualquier texto o elegir entre nuestras colecciones preparadas para copiar con un solo clic letras cursivas, negritas, góticas, elegantes, aesthetic y decoradas que funcionan en cualquier dispositivo. También puedes explorar nuestro hub principal en el <Link href="/conversor-de-letras/">conversor de letras</Link> para acceder a más de 350 variantes tipográficas.
+              La solución perfecta está en este catálogo interactivo de <strong>Letras Bonitas</strong>. Aquí puedes escribir cualquier texto o elegir entre nuestras colecciones preparadas para copiar con un solo clic letras cursivas, negritas, góticas, elegantes, aesthetic y decoradas que funcionan en cualquier dispositivo. También puedes explorar nuestro hub principal en el <Link href="/conversor-de-letras">conversor de letras</Link> para acceder a más de 350 variantes tipográficas.
             </p>
           </section>
 
@@ -255,7 +236,7 @@ export default function LetrasParaCopiarYPegarPage() {
               Las letras para copiar y pegar son conjuntos de caracteres gráficos codificados según el estándar internacional <strong>Unicode</strong>. A diferencia de las fuentes tradicionales de diseño (como las fuentes Arial, Times New Roman o Calibri en formato <code>.ttf</code> u <code>.otf</code>), no requieren instalar archivos en tu computadora ni descargar aplicaciones adicionales en tu teléfono móvil.
             </p>
             <p>
-              Cuando usas una herramienta de este tipo, el sistema no cambia el archivo de fuente del dispositivo receptor. En su lugar, reemplaza las letras convencionales por símbolos alfanuméricos estilizados que forman parte del mapa universal de caracteres. Para profundizar en esta diferencia técnica, puedes revisar nuestra guía detallada sobre <Link href="/conversor-de-letras/texto-con-estilos/">texto con estilos</Link>.
+              Cuando usas una herramienta de este tipo, el sistema no cambia el archivo de fuente del dispositivo receptor. En su lugar, reemplaza las letras convencionales por símbolos alfanuméricos estilizados que forman parte del mapa universal de caracteres. Para profundizar en esta diferencia técnica, puedes revisar nuestra guía detallada sobre <Link href="/conversor-de-letras/texto-con-estilos">texto con estilos</Link>.
             </p>
             <p>
               Como bien señala el{' '}
@@ -295,7 +276,7 @@ export default function LetrasParaCopiarYPegarPage() {
                   title="Explora los estilos visuales"
                   badge="Paso 2"
                 >
-                  Revisa la vista previa instantánea con variantes como cursivas caligráficas (<i>{mapAlphabet('Letras', 'script')}</i>), negritas serif (<b>{mapAlphabet('Letras', 'boldSerif')}</b>), góticas (𝔏𝔢𝔱𝔯𝔞𝔰) o burbujas (Ⓛⓔⓣⓡⓐⓢ). Si quieres saber más sobre la conversión, lee <Link href="/conversor-de-letras/como-cambiar-las-letras/">cómo cambiar las letras</Link>.
+                  Revisa la vista previa instantánea con variantes como cursivas caligráficas (<i>{mapAlphabet('Letras', 'script')}</i>), negritas serif (<b>{mapAlphabet('Letras', 'boldSerif')}</b>), góticas (𝔏𝔢𝔱𝔯𝔞𝔰) o burbujas (Ⓛⓔⓣⓡⓐⓢ). Si quieres saber más sobre la conversión, lee <Link href="/conversor-de-letras/como-cambiar-las-letras">cómo cambiar las letras</Link>.
                 </StepItem>
                 <StepItem
                   stepNumber={3}
@@ -329,13 +310,13 @@ export default function LetrasParaCopiarYPegarPage() {
             <div style={{ marginTop: '1.25rem' }}>
               <h3>Letras cursivas para copiar</h3>
               <p>
-                Las fuentes caligráficas y manuscritas son la opción predilecta para perfiles personales, poesía, firmas y biografías en redes sociales. Puedes acceder a nuestro hub dedicado de <Link href="/letras-cursivas/">letras cursivas</Link> para explorar el catálogo completo.
+                Las fuentes caligráficas y manuscritas son la opción predilecta para perfiles personales, poesía, firmas y biografías en redes sociales. Puedes acceder a nuestro hub dedicado de <Link href="/letras-cursivas">letras cursivas</Link> para explorar el catálogo completo.
               </p>
               <div className="code-example-block">
                 Ejemplos: <i>{mapAlphabet('Estilo Cursivo', 'script')}</i> | <i>{mapAlphabet('Cursiva Elegante', 'boldScript')}</i> | <i>{mapAlphabet('Inclinada Fina', 'italic')}</i>
               </div>
               <p>
-                Si buscas fuentes cursivas refinadas para marcas o eventos especiales, visita <Link href="/letras-cursivas/letras-cursivas-elegantes/">letras cursivas elegantes</Link>. Para copiar frases y términos específicos en cursiva, consulta <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/">letras cursivas para copiar y pegar</Link>. Si necesitas el alfabeto completo cursivo de la A a la Z, disponemos de <Link href="/letras-cursivas/abecedario-cursivo/">abecedario cursivo</Link>.
+                Si buscas fuentes cursivas refinadas para marcas o eventos especiales, visita <Link href="/letras-cursivas/letras-cursivas-elegantes">letras cursivas elegantes</Link>. Para copiar frases y términos específicos en cursiva, consulta <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar">letras cursivas para copiar y pegar</Link>. Si necesitas el alfabeto completo cursivo de la A a la Z, disponemos de <Link href="/letras-cursivas/abecedario-cursivo">abecedario cursivo</Link>.
               </p>
             </div>
 
@@ -476,7 +457,7 @@ export default function LetrasParaCopiarYPegarPage() {
             <div style={{ marginTop: '1rem' }}>
               <h3>Instagram</h3>
               <p>
-                Personaliza tus perfiles sociales explorando nuestro hub principal de <Link href="/letras-para-instagram/">letras para Instagram</Link>. Puedes destacar tu nombre de perfil con <Link href="/letras-para-instagram/letras-para-nombres/">letras para nombres</Link>, redactar biografías creativas usando <Link href="/letras-para-instagram/letras-para-bio/">letras para bio</Link>, o añadir toques artísticos con <Link href="/letras-para-instagram/simbolos-para-instagram/">símbolos para Instagram</Link> y <Link href="/letras-para-instagram/letras-cursivas-para-instagram/">letras cursivas para Instagram</Link>.
+                Personaliza tus perfiles sociales explorando nuestro hub principal de <Link href="/letras-para-instagram">letras para Instagram</Link>. Puedes destacar tu nombre de perfil con <Link href="/letras-para-instagram/letras-para-nombres">letras para nombres</Link>, redactar biografías creativas usando <Link href="/letras-para-instagram/letras-para-bio">letras para bio</Link>, o añadir toques artísticos con <Link href="/letras-para-instagram/simbolos-para-instagram">símbolos para Instagram</Link> y <Link href="/letras-para-instagram/letras-cursivas-para-instagram">letras cursivas para Instagram</Link>.
               </p>
             </div>
 
@@ -500,11 +481,11 @@ export default function LetrasParaCopiarYPegarPage() {
                 Los jugadores apasionados suelen personalizar sus nicknames de combate con fuentes oscuras o agresivas. Explora nuestras páginas especializadas:
               </p>
               <ul className="seo-list">
-                <li>Descubre las mejores combinaciones en <Link href="/nombres-para-free-fire/">nombres para Free Fire</Link>.</li>
-                <li>Genera apodos originales en <Link href="/nombres-para-free-fire/apodos/">apodos para Free Fire</Link>.</li>
-                <li>Diseña nombres de equipos en <Link href="/nombres-para-free-fire/clanes/">clanes para Free Fire</Link>.</li>
-                <li>Añade elementos de combate con <Link href="/nombres-para-free-fire/simbolos/">símbolos para Free Fire</Link>.</li>
-                <li>Si buscas estilos intimidantes, revisa <Link href="/nombres-para-free-fire/nombres-insanos/">nombres insanos para Free Fire</Link>.</li>
+                <li>Descubre las mejores combinaciones en <Link href="/nombres-para-free-fire">nombres para Free Fire</Link>.</li>
+                <li>Genera apodos originales en <Link href="/nombres-para-free-fire/apodos">apodos para Free Fire</Link>.</li>
+                <li>Diseña nombres de equipos en <Link href="/nombres-para-free-fire/clanes">clanes para Free Fire</Link>.</li>
+                <li>Añade elementos de combate con <Link href="/nombres-para-free-fire/simbolos">símbolos para Free Fire</Link>.</li>
+                <li>Si buscas estilos intimidantes, revisa <Link href="/nombres-para-free-fire/nombres-insanos">nombres insanos para Free Fire</Link>.</li>
               </ul>
             </div>
           </section>
@@ -700,7 +681,7 @@ export default function LetrasParaCopiarYPegarPage() {
           <section className="silo-nav-block">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -709,7 +690,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO de Cursivas</span>
                   <h4 className="silo-card-heading">Letras Cursivas</h4>
@@ -718,7 +699,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta Cursiva</span>
                   <h4 className="silo-card-heading">Letras Cursivas para Copiar</h4>
@@ -727,7 +708,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-elegantes" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Estilo Elegante</span>
                   <h4 className="silo-card-heading">Letras Cursivas Elegantes</h4>
@@ -736,7 +717,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="silo-card-link">
+              <Link href="/letras-cursivas/abecedario-cursivo" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Abecedario</span>
                   <h4 className="silo-card-heading">Abecedario Cursivo</h4>
@@ -745,7 +726,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Redes</span>
                   <h4 className="silo-card-heading">Letras para Instagram</h4>
@@ -754,7 +735,7 @@ export default function LetrasParaCopiarYPegarPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/nombres-para-free-fire/" className="silo-card-link">
+              <Link href="/nombres-para-free-fire" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Gaming</span>
                   <h4 className="silo-card-heading">Nombres para Free Fire</h4>

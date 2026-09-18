@@ -122,7 +122,7 @@ export default function CursiveAlphabetCopySection() {
 
       {/* Deep Link to Abecedario Cursivo SILO Page */}
       <div className="cac-deep-link-box">
-        <Link href="/letras-cursivas/abecedario-cursivo/" className="cac-deep-link">
+        <Link href="/letras-cursivas/abecedario-cursivo" className="cac-deep-link">
           <span>Ver el abecedario cursivo completo con selector de 6 estilos manuscritos</span>
           <ArrowRight size={16} />
         </Link>

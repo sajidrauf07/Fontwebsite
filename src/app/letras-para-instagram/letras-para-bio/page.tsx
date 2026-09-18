@@ -22,7 +22,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   TipBox,
@@ -30,29 +29,18 @@ import {
   ToolCTA
 } from '@/components/article';
 
-const BIO_TOC_ITEMS = [
-  { id: 'generador-bio-instagram', label: 'Generador de bio con vista previa' },
-  { id: 'ejemplos-bio', label: 'Ejemplos de letras para bio' },
-  { id: 'titulos-bio', label: 'Títulos y encabezados' },
-  { id: 'separadores-bio', label: 'Separadores y símbolos decorativos' },
-  { id: 'como-poner-bio', label: 'Cómo poner letras bonitas en la bio' },
-  { id: 'consejos-bio', label: 'Consejos para una bio clara y estética' },
-  { id: 'como-funcionan', label: '¿Cómo funcionan estas letras Unicode?' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
-
 export const metadata: Metadata = {
   title: 'Letras para Bio de Instagram | Fuentes Bonitas para Copiar',
   description:
     'Crea letras bonitas, fuentes cursivas, elegantes y aesthetic para tu bio de Instagram. Generador de texto para biografía con vista previa y copiado en un clic.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio'
   },
   openGraph: {
     title: 'Letras para Bio de Instagram | Fuentes Bonitas y Elegantes',
     description:
       'Transforma el texto de tu biografía de Instagram con letras cursivas, versalitas y estéticas. Vista previa de perfil y copiado instantáneo.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-bio',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -193,7 +181,7 @@ export default function LetrasParaBioPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/letras-para-instagram/" className="breadcrumb-link">Letras para Instagram</Link>
+          <Link href="/letras-para-instagram" className="breadcrumb-link">Letras para Instagram</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Letras para Bio</span>
         </div>
@@ -229,7 +217,6 @@ export default function LetrasParaBioPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={BIO_TOC_ITEMS} />
 
           {/* MAIN BIO GENERATOR & PREVIEW */}
           <BioGenerator />
@@ -332,7 +319,7 @@ export default function LetrasParaBioPage() {
               Visita nuestro hub principal de Instagram con fuentes para nombres, destacados, historias y símbolos estéticos.
             </p>
             <Link
-              href="/letras-para-instagram/"
+              href="/letras-para-instagram"
               className="cp-copy-all-btn copied"
               style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.75rem' }}
             >
@@ -400,7 +387,7 @@ export default function LetrasParaBioPage() {
           <section className="silo-nav-block">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/letras-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO Instagram</span>
                   <h4 className="silo-card-heading">Letras para Instagram</h4>
@@ -409,7 +396,7 @@ export default function LetrasParaBioPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -418,7 +405,7 @@ export default function LetrasParaBioPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta de Copia</span>
                   <h4 className="silo-card-heading">Letras para Copiar y Pegar</h4>
@@ -427,7 +414,7 @@ export default function LetrasParaBioPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/texto-con-estilos/" className="silo-card-link">
+              <Link href="/conversor-de-letras/texto-con-estilos" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta Estilos</span>
                   <h4 className="silo-card-heading">Texto con Estilos</h4>
@@ -436,7 +423,7 @@ export default function LetrasParaBioPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO Cursiva</span>
                   <h4 className="silo-card-heading">Letras Cursivas</h4>

@@ -64,7 +64,7 @@ export default function CopyPasteSection() {
 
       <div style={{ marginTop: '1.25rem' }}>
         <Link
-          href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/"
+          href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar"
           className="silo-cta-link"
         >
           <span>Ver catálogo de letras cursivas para copiar y pegar</span>

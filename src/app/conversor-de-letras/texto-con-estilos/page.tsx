@@ -31,7 +31,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   ToolCTA
@@ -42,13 +41,13 @@ export const metadata: Metadata = {
   description:
     'Convierte texto normal en estilos de letras bonitas, cursivas, góticas y decoradas. Elige tu estilo, copia y pega fácilmente en Instagram, TikTok, WhatsApp y juegos.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos'
   },
   openGraph: {
     title: 'Texto con Estilos: Letras Bonitas para Copiar y Pegar',
     description:
       'Descubre cómo crear texto estilizado con caracteres Unicode, elegir el mejor estilo y copiarlo para tus redes, perfiles y nombres.',
-    url: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'article'
@@ -106,20 +105,6 @@ const TEXTO_CON_ESTILOS_FAQ_ITEMS = [
     question: '¿Cuál es el mejor estilo?',
     answer: 'No existe un estilo universalmente mejor. Depende del objetivo. Para una apariencia elegante puedes probar cursiva; para algo más fuerte, negrita; para una estética oscura, gótica; y para perfiles informales, puedes experimentar con estilos aesthetic o decorativos.'
   }
-];
-
-const TEXTO_CON_ESTILOS_TOC_ITEMS = [
-  { id: 'generador-texto-estilos', label: 'Herramienta de texto con estilos' },
-  { id: 'introduccion', label: 'Introducción al texto con estilos' },
-  { id: 'que-es', label: '¿Qué es el texto con estilos?' },
-  { id: 'como-funciona', label: '¿Cómo funciona el conversor?' },
-  { id: 'comparativa-fuentes', label: 'Texto estilizado vs fuentes instaladas' },
-  { id: 'pasos-conversion', label: 'Cómo convertir texto paso a paso' },
-  { id: 'tipos-estilos', label: 'Tipos de texto con estilos' },
-  { id: 'donde-usar', label: 'Dónde usar texto con estilos' },
-  { id: 'estudio-instagram', label: 'Texto con estilos para Instagram' },
-  { id: 'compatibilidad-tecnica', label: 'Compatibilidad y accesibilidad' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
 ];
 
 export default function TextoConEstilosPage() {
@@ -180,7 +165,7 @@ export default function TextoConEstilosPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/conversor-de-letras/" className="breadcrumb-link">Conversor de Letras</Link>
+          <Link href="/conversor-de-letras" className="breadcrumb-link">Conversor de Letras</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Texto con Estilos</span>
         </div>
@@ -206,7 +191,6 @@ export default function TextoConEstilosPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={TEXTO_CON_ESTILOS_TOC_ITEMS} />
 
           {/* MAIN STYLED TEXT TOOL */}
           <StyledTextTool />
@@ -220,7 +204,7 @@ export default function TextoConEstilosPage() {
               El problema es que buscar letras especiales una por una puede ser lento, confuso y poco práctico. Además, muchas personas hablan de “fuentes” cuando en realidad están utilizando caracteres especiales de Unicode. La diferencia parece pequeña, pero entenderla te ayuda a saber qué estás copiando, dónde puedes usarlo y por qué algunos estilos pueden comportarse de forma distinta.
             </p>
             <p className="mt-4">
-              La solución es utilizar un <Link href="/conversor-de-letras/" className="seo-link">conversor de letras</Link> con estilos. Escribes una palabra o frase, revisas diferentes variantes y copias la que mejor se adapte a tu objetivo. En Letras Bonitas puedes usar el conversor para experimentar con diferentes estilos y preparar texto para tus perfiles, nombres, mensajes y otros espacios donde se admita texto Unicode.
+              La solución es utilizar un <Link href="/conversor-de-letras" className="seo-link">conversor de letras</Link> con estilos. Escribes una palabra o frase, revisas diferentes variantes y copias la que mejor se adapte a tu objetivo. En Letras Bonitas puedes usar el conversor para experimentar con diferentes estilos y preparar texto para tus perfiles, nombres, mensajes y otros espacios donde se admita texto Unicode.
             </p>
             <p className="mt-4">
               En esta guía encontrarás cómo funciona, qué tipos de estilos existen, dónde puedes utilizarlos, cuáles son sus limitaciones y cómo elegir una opción que se vea bien sin sacrificar la legibilidad.
@@ -258,7 +242,7 @@ export default function TextoConEstilosPage() {
               <span className="text-indigo-300">Variante estilizada:</span> <strong className="text-indigo-100">𝐇𝐨𝐥𝐚</strong>
             </div>
             <p>
-              También puedes encontrar estilos que parecen <Link href="/letras-cursivas/" className="seo-link">letras cursivas</Link>, góticos, de doble trazo, pequeños, encerrados en círculos o acompañados de símbolos decorativos.
+              También puedes encontrar estilos que parecen <Link href="/letras-cursivas" className="seo-link">letras cursivas</Link>, góticos, de doble trazo, pequeños, encerrados en círculos o acompañados de símbolos decorativos.
             </p>
             <p className="mt-4">
               La clave está en que muchas de estas variantes no son una fuente que hayas instalado en tu dispositivo. Son caracteres codificados de una manera diferente.
@@ -267,7 +251,7 @@ export default function TextoConEstilosPage() {
               <strong className="text-indigo-300">Unicode</strong> es el estándar internacional que permite representar texto y símbolos de manera consistente entre diferentes sistemas informáticos. Dentro de Unicode existen conjuntos de caracteres que pueden tener apariencia matemática, caligráfica, gótica o de otros estilos. Por ejemplo, el bloque oficial de <a href="https://www.unicode.org/reports/tr25/" target="_blank" rel="noopener noreferrer" className="seo-link inline-flex items-center gap-1">Unicode y los caracteres alfanuméricos matemáticos <ExternalLink size={14} /></a> contiene variantes como negrita, cursiva, script, Fraktur, doble trazo y sans serif.
             </p>
             <p className="mt-4">
-              Por eso, cuando utilizas un generador de letras, normalmente no estás “cambiando la fuente” de una palabra como lo harías en Word. Estás obteniendo una cadena de caracteres alternativa que puedes <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="seo-link">copiar y pegar</Link> libremente en internet.
+              Por eso, cuando utilizas un generador de letras, normalmente no estás “cambiando la fuente” de una palabra como lo harías en Word. Estás obteniendo una cadena de caracteres alternativa que puedes <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="seo-link">copiar y pegar</Link> libremente en internet.
             </p>
           </section>
 
@@ -356,7 +340,7 @@ export default function TextoConEstilosPage() {
               Cuando seleccionas un diseño como <code>𝓜𝓲 𝓹𝓮𝓻𝓯𝓲𝓵</code> y presionas “Copiar”, el portapapeles de tu teléfono o computadora almacena la secuencia binaria de esos caracteres Unicode. Al pegarlo en Instagram o WhatsApp, el sistema operativo reconoce el código y dibuja la letra correspondiente.
             </p>
             <p className="mt-3">
-              Si quieres saber más sobre este método, consulta nuestra guía sobre <Link href="/conversor-de-letras/como-cambiar-las-letras/" className="seo-link">cómo cambiar las letras</Link> paso a paso.
+              Si quieres saber más sobre este método, consulta nuestra guía sobre <Link href="/conversor-de-letras/como-cambiar-las-letras" className="seo-link">cómo cambiar las letras</Link> paso a paso.
             </p>
           </section>
 
@@ -479,7 +463,7 @@ export default function TextoConEstilosPage() {
               <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                 <h3 className="text-lg font-bold text-indigo-300 mb-2">Texto cursivo y caligráfico</h3>
                 <p className="text-sm text-slate-300 mb-3">
-                  Aportan una estética manuscrita, sofisticada y elegante. Para profundizar en este estilo, explora nuestras secciones de <Link href="/letras-cursivas/abecedario-cursivo/" className="seo-link">abecedario cursivo</Link> y <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="seo-link">letras cursivas elegantes</Link>.
+                  Aportan una estética manuscrita, sofisticada y elegante. Para profundizar en este estilo, explora nuestras secciones de <Link href="/letras-cursivas/abecedario-cursivo" className="seo-link">abecedario cursivo</Link> y <Link href="/letras-cursivas/letras-cursivas-elegantes" className="seo-link">letras cursivas elegantes</Link>.
                 </p>
                 <div className="text-base font-mono text-emerald-300">
                   Ejemplo elegante: 𝓣𝓮𝔁𝓽𝓸 𝓔𝓵𝓮𝓰𝓪𝓷𝓽𝓮 | Cursiva simple: 𝑇𝑒𝑥𝑡𝑜 𝐶𝑢𝑟𝑠𝑖𝑣𝑜
@@ -529,7 +513,7 @@ export default function TextoConEstilosPage() {
               <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
                 <h3 className="text-lg font-bold text-indigo-300 mb-2">Estilos decorativos con símbolos</h3>
                 <p className="text-sm text-slate-300 mb-3">
-                  Letras acompañadas de marcos, alas, estrellas y símbolos especiales. Descubre más alternativas en <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link">símbolos para Instagram</Link>.
+                  Letras acompañadas de marcos, alas, estrellas y símbolos especiales. Descubre más alternativas en <Link href="/letras-para-instagram/simbolos-para-instagram" className="seo-link">símbolos para Instagram</Link>.
                 </p>
                 <div className="text-base font-mono text-emerald-300">
                   Ejemplo: ✦ Nombre ✦ | ꧁ Nombre ꧂
@@ -555,7 +539,7 @@ export default function TextoConEstilosPage() {
                   <span>Instagram</span>
                 </div>
                 <p className="text-sm text-slate-300">
-                  Usa fuentes especiales en tu biografía, nombre visible y descripciones. Visita nuestra sección de <Link href="/letras-para-instagram/" className="seo-link">letras para Instagram</Link>, <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link">letras para bio</Link> y <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link">letras para nombres</Link>.
+                  Usa fuentes especiales en tu biografía, nombre visible y descripciones. Visita nuestra sección de <Link href="/letras-para-instagram" className="seo-link">letras para Instagram</Link>, <Link href="/letras-para-instagram/letras-para-bio" className="seo-link">letras para bio</Link> y <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link">letras para nombres</Link>.
                 </p>
               </div>
 
@@ -585,7 +569,7 @@ export default function TextoConEstilosPage() {
                   <span>Videojuegos y Discord</span>
                 </div>
                 <p className="text-sm text-slate-300">
-                  Crea apodos llamativos para Free Fire, Roblox y Discord. Explora nuestras guías especializadas de <Link href="/nombres-para-free-fire/" className="seo-link">nombres para Free Fire</Link>, <Link href="/nombres-para-free-fire/apodos/" className="seo-link">apodos para Free Fire</Link> y <Link href="/nombres-para-free-fire/simbolos/" className="seo-link">símbolos para Free Fire</Link>.
+                  Crea apodos llamativos para Free Fire, Roblox y Discord. Explora nuestras guías especializadas de <Link href="/nombres-para-free-fire" className="seo-link">nombres para Free Fire</Link>, <Link href="/nombres-para-free-fire/apodos" className="seo-link">apodos para Free Fire</Link> y <Link href="/nombres-para-free-fire/simbolos" className="seo-link">símbolos para Free Fire</Link>.
                 </p>
               </div>
             </div>
@@ -717,7 +701,7 @@ export default function TextoConEstilosPage() {
                 </p>
               </div>
               <Link
-                href="/conversor-de-letras/letras-para-copiar-y-pegar/"
+                href="/conversor-de-letras/letras-para-copiar-y-pegar"
                 className="cp-card-copy-btn"
                 style={{ textDecoration: 'none', justifyContent: 'space-between' }}
               >
@@ -737,7 +721,7 @@ export default function TextoConEstilosPage() {
                 </p>
               </div>
               <Link
-                href="/conversor-de-letras/"
+                href="/conversor-de-letras"
                 className="cp-card-copy-btn copied"
                 style={{ textDecoration: 'none', justifyContent: 'space-between' }}
               >
@@ -781,7 +765,7 @@ export default function TextoConEstilosPage() {
           <section className="silo-nav-block">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -790,7 +774,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta de Copia</span>
                   <h4 className="silo-card-heading">Letras para Copiar y Pegar</h4>
@@ -799,7 +783,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/como-cambiar-las-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras/como-cambiar-las-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Guía Práctica</span>
                   <h4 className="silo-card-heading">Cómo Cambiar las Letras</h4>
@@ -808,7 +792,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO Cursiva</span>
                   <h4 className="silo-card-heading">Letras Cursivas</h4>
@@ -817,7 +801,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="silo-card-link">
+              <Link href="/letras-cursivas/abecedario-cursivo" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Abecedario Completo</span>
                   <h4 className="silo-card-heading">Abecedario Cursivo</h4>
@@ -826,7 +810,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Manuscrita Copiable</span>
                   <h4 className="silo-card-heading">Letras Cursivas para Copiar y Pegar</h4>
@@ -835,7 +819,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-elegantes" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Estilo Elegante</span>
                   <h4 className="silo-card-heading">Letras Cursivas Elegantes</h4>
@@ -844,7 +828,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Redes Sociales</span>
                   <h4 className="silo-card-heading">Letras para Instagram</h4>
@@ -853,7 +837,7 @@ export default function TextoConEstilosPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/nombres-para-free-fire/" className="silo-card-link">
+              <Link href="/nombres-para-free-fire" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Gaming</span>
                   <h4 className="silo-card-heading">Nombres para Free Fire</h4>

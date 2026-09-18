@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
 
@@ -32,13 +31,13 @@ export const metadata: Metadata = {
   description:
     'Descubre el abecedario cursivo completo de A a Z, con mayúsculas y minúsculas para copiar y pegar, además de ejemplos y consejos de uso.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo'
   },
   openGraph: {
     title: 'Abecedario Cursivo: Letras A-Z para Copiar y Pegar',
     description:
       'Encuentra letras cursivas mayúsculas y minúsculas, aprende cómo funcionan y descubre cómo utilizarlas en redes sociales, nombres y diseños.',
-    url: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -127,18 +126,6 @@ const ALPHABET_TABLE_DATA = [
   { char: 'Z', lower: '𝓏', upper: '𝒵' }
 ];
 
-const ABECEDARIO_TOC_ITEMS = [
-  { id: 'abecedario-tool', label: 'Herramienta interactiva del abecedario' },
-  { id: 'abecedario-completo', label: 'Tabla del abecedario cursivo A a Z' },
-  { id: 'mayusculas-minusculas', label: 'Mayúsculas y minúsculas cursivas' },
-  { id: 'guia-individual', label: 'Catálogo de letras de la A a la Z' },
-  { id: 'que-es-abecedario', label: '¿Qué es y cómo funciona el abecedario?' },
-  { id: 'comparativa-fuente', label: 'Abecedario cursivo vs fuente tradicional' },
-  { id: 'donde-utilizar', label: 'Dónde utilizar letras cursivas' },
-  { id: 'limitaciones', label: 'Limitaciones y consejos de uso' },
-  { id: 'preguntas-frecuentes', label: 'Preguntas frecuentes' }
-];
-
 export default function AbecedarioCursivoPage() {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -197,7 +184,7 @@ export default function AbecedarioCursivoPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/letras-cursivas/" className="breadcrumb-link">Letras Cursivas</Link>
+          <Link href="/letras-cursivas" className="breadcrumb-link">Letras Cursivas</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Abecedario Cursivo</span>
         </div>
@@ -227,7 +214,6 @@ export default function AbecedarioCursivoPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={ABECEDARIO_TOC_ITEMS} />
 
           {/* Image Plan 1 Visual Demonstration Banner */}
           <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
@@ -561,16 +547,16 @@ export default function AbecedarioCursivoPage() {
                   Destaca en biografías, nombres de usuario, comentarios e historias. Evita convertir todo el texto en caracteres especiales para mantener excelente legibilidad.
                 </p>
                 <div className="flex flex-col gap-1.5 text-xs pt-3 border-t border-slate-800">
-                  <Link href="/letras-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram" className="seo-link font-medium">
                     • letras para Instagram
                   </Link>
-                  <Link href="/letras-para-instagram/letras-cursivas-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-cursivas-para-instagram" className="seo-link font-medium">
                     • letras cursivas para Instagram
                   </Link>
-                  <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-para-bio" className="seo-link font-medium">
                     • letras para bio
                   </Link>
-                  <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link font-medium">
                     • letras para nombres
                   </Link>
                 </div>
@@ -598,10 +584,10 @@ export default function AbecedarioCursivoPage() {
                   Combina iniciales cursivas en nicknames para Free Fire o Roblox (ejemplo: <em>𝓓𝓻𝓪𝓰𝓸𝓷</em>, <em>𝓢𝓱𝒶𝒹ℴ𝓌</em>).
                 </p>
                 <div className="flex flex-col gap-1 text-xs pt-2 border-t border-slate-800">
-                  <Link href="/nombres-para-free-fire/" className="seo-link font-medium">
+                  <Link href="/nombres-para-free-fire" className="seo-link font-medium">
                     • nombres para Free Fire
                   </Link>
-                  <Link href="/nombres-para-free-fire/apodos/" className="seo-link font-medium">
+                  <Link href="/nombres-para-free-fire/apodos" className="seo-link font-medium">
                     • apodos para Free Fire
                   </Link>
                 </div>
@@ -674,7 +660,7 @@ export default function AbecedarioCursivoPage() {
           <section className="silo-nav-block mb-8">
             <h3 className="silo-nav-title">Navegación del SILO en Letras Bonitas</h3>
             <div className="silo-links-grid">
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#818cf8' }}>Pillar Cursiva</span>
                   <h4 className="silo-card-heading">letras cursivas</h4>
@@ -683,7 +669,7 @@ export default function AbecedarioCursivoPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#6366f1' }}>Copiar y Pegar</span>
                   <h4 className="silo-card-heading">letras cursivas para copiar y pegar</h4>
@@ -692,7 +678,7 @@ export default function AbecedarioCursivoPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-elegantes" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#ec4899' }}>Elegantes</span>
                   <h4 className="silo-card-heading">letras cursivas elegantes</h4>
@@ -701,7 +687,7 @@ export default function AbecedarioCursivoPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Conversor Universal</span>
                   <h4 className="silo-card-heading">conversor de letras</h4>

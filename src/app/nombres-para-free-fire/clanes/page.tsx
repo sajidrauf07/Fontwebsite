@@ -20,32 +20,21 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
-
-const CLANES_TOC_ITEMS = [
-  { id: 'generador-clanes', label: 'Generador de nombres para clanes' },
-  { id: 'generador-tags', label: 'Generador de tags y siglas' },
-  { id: 'clanes-aleatorios', label: 'Generador aleatorio de clanes' },
-  { id: 'decorador-clanes', label: 'Decorador con marcos y símbolos' },
-  { id: 'catalogo-clanes', label: 'Ideas de nombres por temática' },
-  { id: 'compatibilidad-clanes', label: '¿Funcionan estos nombres en Free Fire?' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
 
 export const metadata: Metadata = {
   title: 'Nombres para Clanes de Free Fire | Originales y para Copiar',
   description:
     'Encuentra y crea nombres originales para clanes de Free Fire. Generador de nombres de clan, tags de equipo y símbolos pro para copiar gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes'
   },
   openGraph: {
     title: 'Nombres para Clanes de Free Fire | Originales y para Copiar',
     description:
       'Descubre y crea nombres de clanes originales con símbolos Pro y tags de equipo para Free Fire.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -120,7 +109,7 @@ export default function ClanesSubcategoryPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-free-fire/" className="breadcrumb-link">Nombres para Free Fire</Link>
+          <Link href="/nombres-para-free-fire" className="breadcrumb-link">Nombres para Free Fire</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Nombres para Clanes de Free Fire</span>
         </div>
@@ -159,7 +148,6 @@ export default function ClanesSubcategoryPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={CLANES_TOC_ITEMS} />
 
           {/* Primary Interactive Subcategory Tool */}
           <main id="main-content">
@@ -286,7 +274,7 @@ export default function ClanesSubcategoryPage() {
                   </p>
                 </div>
                 <Link
-                  href="/nombres-para-free-fire/"
+                  href="/nombres-para-free-fire"
                   className="cp-card-copy-btn copied"
                   style={{ textDecoration: 'none', justifyContent: 'space-between', background: '#10B981' }}
                 >
@@ -306,7 +294,7 @@ export default function ClanesSubcategoryPage() {
                   </p>
                 </div>
                 <Link
-                  href="/nombres-para-free-fire/apodos/"
+                  href="/nombres-para-free-fire/apodos"
                   className="cp-card-copy-btn"
                   style={{ textDecoration: 'none', justifyContent: 'space-between' }}
                 >
@@ -333,7 +321,7 @@ export default function ClanesSubcategoryPage() {
             <section className="silo-nav-block">
               <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
               <div className="silo-links-grid">
-                <Link href="/nombres-para-free-fire/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Pillar Principal</span>
                     <h4 className="silo-card-heading">Generador Free Fire</h4>
@@ -342,7 +330,7 @@ export default function ClanesSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/nombres/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/nombres" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres para Free Fire</h4>
@@ -351,7 +339,7 @@ export default function ClanesSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/nombres-insanos/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/nombres-insanos" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres Insanos</h4>
@@ -360,7 +348,7 @@ export default function ClanesSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/apodos/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/apodos" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#0ea5e9' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Apodos para Free Fire</h4>
@@ -369,7 +357,7 @@ export default function ClanesSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/letras-para-instagram/letras-para-nombres/" className="silo-card-link">
+                <Link href="/letras-para-instagram/letras-para-nombres" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#818cf8' }}>SILO Instagram</span>
                     <h4 className="silo-card-heading">Letras para Nombres</h4>
@@ -378,7 +366,7 @@ export default function ClanesSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/conversor-de-letras/" className="silo-card-link">
+                <Link href="/conversor-de-letras" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">Pillar Principal</span>
                     <h4 className="silo-card-heading">Conversor de Letras</h4>

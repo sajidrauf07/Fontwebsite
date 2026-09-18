@@ -19,31 +19,21 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
-
-const SIMBOLOS_FF_TOC_ITEMS = [
-  { id: 'libreria-simbolos', label: 'Librería interactiva de símbolos' },
-  { id: 'combinador-simbolos', label: 'Combinador de símbolos' },
-  { id: 'decora-tu-nombre', label: 'Decorador de nombres con símbolos' },
-  { id: 'colecciones-tematicas', label: 'Colecciones temáticas de símbolos' },
-  { id: 'compatibilidad-simbolos', label: '¿Funcionan todos en Free Fire?' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
 
 export const metadata: Metadata = {
   title: 'Símbolos para Free Fire | Bonitos, Especiales y para Copiar',
   description:
     'Encuentra y copia los mejores símbolos para Free Fire. Símbolos de coronas, estrellas, kanjis, corchetes, calaveras y decorativos para tu nick gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos'
   },
   openGraph: {
     title: 'Símbolos para Free Fire | Bonitos, Especiales y para Copiar',
     description:
       'Catálogo completo y herramienta de combinación de símbolos bonitos, especiales y pro para Free Fire.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -118,7 +108,7 @@ export default function SimbolosSubcategoryPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-free-fire/" className="breadcrumb-link">Nombres para Free Fire</Link>
+          <Link href="/nombres-para-free-fire" className="breadcrumb-link">Nombres para Free Fire</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Símbolos para Free Fire</span>
         </div>
@@ -157,7 +147,6 @@ export default function SimbolosSubcategoryPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={SIMBOLOS_FF_TOC_ITEMS} />
 
           {/* Primary Interactive Symbol Discovery Tool */}
           <main id="main-content">
@@ -279,7 +268,7 @@ export default function SimbolosSubcategoryPage() {
                   </p>
                 </div>
                 <Link
-                  href="/nombres-para-free-fire/"
+                  href="/nombres-para-free-fire"
                   className="cp-card-copy-btn copied"
                   style={{ textDecoration: 'none', justifyContent: 'space-between', background: '#F59E0B', color: '#000' }}
                 >
@@ -299,7 +288,7 @@ export default function SimbolosSubcategoryPage() {
                   </p>
                 </div>
                 <Link
-                  href="/letras-para-instagram/simbolos-para-instagram/"
+                  href="/letras-para-instagram/simbolos-para-instagram"
                   className="cp-card-copy-btn"
                   style={{ textDecoration: 'none', justifyContent: 'space-between' }}
                 >
@@ -326,7 +315,7 @@ export default function SimbolosSubcategoryPage() {
             <section className="silo-nav-block">
               <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
               <div className="silo-links-grid">
-                <Link href="/nombres-para-free-fire/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Pillar Principal</span>
                     <h4 className="silo-card-heading">Generador Free Fire</h4>
@@ -335,7 +324,7 @@ export default function SimbolosSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/nombres/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/nombres" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres para Free Fire</h4>
@@ -344,7 +333,7 @@ export default function SimbolosSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/nombres-insanos/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/nombres-insanos" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#f59e0b' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres Insanos</h4>
@@ -353,7 +342,7 @@ export default function SimbolosSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/apodos/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/apodos" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#0ea5e9' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Apodos para Free Fire</h4>
@@ -362,7 +351,7 @@ export default function SimbolosSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/nombres-para-free-fire/clanes/" className="silo-card-link">
+                <Link href="/nombres-para-free-fire/clanes" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag" style={{ color: '#10b981' }}>Subcategoría</span>
                     <h4 className="silo-card-heading">Nombres para Clanes</h4>
@@ -371,7 +360,7 @@ export default function SimbolosSubcategoryPage() {
                   <ArrowRight size={18} className="silo-card-arrow" />
                 </Link>
 
-                <Link href="/conversor-de-letras/" className="silo-card-link">
+                <Link href="/conversor-de-letras" className="silo-card-link">
                   <div className="silo-card-content">
                     <span className="silo-card-tag">Pillar Principal</span>
                     <h4 className="silo-card-heading">Conversor de Letras</h4>

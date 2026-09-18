@@ -29,37 +29,21 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA
 } from '@/components/article';
-
-const CURSIVE_INSTAGRAM_TOC_ITEMS = [
-  { id: 'generador-cursivas', label: 'Generador de letras cursivas' },
-  { id: 'listas-copiar', label: 'Estilos listos para copiar y pegar' },
-  { id: 'que-son', label: '¿Qué son las letras cursivas para Instagram?' },
-  { id: 'donde-usar', label: 'Dónde y por qué usar letras cursivas' },
-  { id: 'tipos-cursiva', label: 'Tipos de letras cursivas disponibles' },
-  { id: 'como-poner', label: 'Cómo poner letras cursivas paso a paso' },
-  { id: 'nombres-instagram', label: 'Letras cursivas para nombres' },
-  { id: 'compatibilidad-espanol', label: 'Acentos y letra Ñ en español' },
-  { id: 'resolucion-problemas', label: '¿Por qué algunas no se ven bien?' },
-  { id: 'tabla-comparativa', label: 'Texto Unicode vs fuentes tradicionales' },
-  { id: 'matriz-estilos', label: 'Selección de estilo por propósito' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
 
 export const metadata: Metadata = {
   title: 'Letras Cursivas para Instagram: Copia y Pega',
   description:
     'Crea letras cursivas para Instagram, copia y pega estilos bonitos en tu bio, nombres y publicaciones. Aprende cómo funcionan y evita errores.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/'
+    canonical: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram'
   },
   openGraph: {
     title: 'Letras Cursivas para Instagram: Copia y Pega',
     description:
       'Genera texto cursivo, elige tu estilo favorito y úsalo en tu bio, nombres, captions y comentarios de Instagram.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -121,7 +105,7 @@ export default function LetrasCursivasParaInstagramPage() {
     headline: 'Letras Cursivas para Instagram: Copia y Pega Estilos Bonitos',
     description:
       'Guía completa sobre cómo transformar texto normal en letras cursivas elegantes para Instagram. Copia fuentes Unicode manuscritas para bios, nombres y publicaciones.',
-    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram/',
+    url: 'https://theletrasbonitas.com/letras-para-instagram/letras-cursivas-para-instagram',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
@@ -155,7 +139,7 @@ export default function LetrasCursivasParaInstagramPage() {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
             <Link
-              href="/letras-para-instagram/"
+              href="/letras-para-instagram"
               className="hover:text-pink-400 transition-colors"
             >
               Letras para Instagram
@@ -201,7 +185,6 @@ export default function LetrasCursivasParaInstagramPage() {
       {/* Main SEO Article Content */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
         {/* TABLE OF CONTENTS */}
-        <TableOfContents items={CURSIVE_INSTAGRAM_TOC_ITEMS} />
 
         {/* Intro & PAS Framework Section */}
         <section className="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 sm:p-8 space-y-6">
@@ -330,7 +313,7 @@ export default function LetrasCursivasParaInstagramPage() {
               </h3>
               <p className="text-sm text-slate-300">
                 La bio es el lugar ideal para destacar tu profesión o nicho (ej. <span className="font-mono text-white">𝒞𝓇𝑒𝒶𝓉𝒾𝓋𝒶 • 𝒟𝒾𝓈𝑒ñ𝑜</span>) combinando texto estilizado con frases sencillas en{' '}
-                <Link href="/letras-para-instagram/letras-para-bio/" className="text-pink-400 hover:underline">
+                <Link href="/letras-para-instagram/letras-para-bio" className="text-pink-400 hover:underline">
                   letras para bio
                 </Link>.
               </p>
@@ -342,7 +325,7 @@ export default function LetrasCursivasParaInstagramPage() {
               </h3>
               <p className="text-sm text-slate-300">
                 Puedes darle elegancia a tu nombre de perfil (ej. <span className="font-mono text-white">𝓢𝓸𝓯í𝓪 𝓜𝓪𝓻𝓽í𝓷𝓮𝓔</span>) mediante nuestras opciones de{' '}
-                <Link href="/letras-para-instagram/letras-para-nombres/" className="text-pink-400 hover:underline">
+                <Link href="/letras-para-instagram/letras-para-nombres" className="text-pink-400 hover:underline">
                   letras para nombres
                 </Link>.
               </p>
@@ -406,7 +389,7 @@ export default function LetrasCursivasParaInstagramPage() {
               <h3 className="font-bold text-white text-base mb-1">4. Cursiva Decorada con Símbolos</h3>
               <p className="text-sm text-slate-300 mb-2">
                 Combina palabras cursivas con estrellas o corazones de nuestra sección de{' '}
-                <Link href="/letras-para-instagram/simbolos-para-instagram/" className="text-pink-400 hover:underline">
+                <Link href="/letras-para-instagram/simbolos-para-instagram" className="text-pink-400 hover:underline">
                   símbolos para Instagram
                 </Link>.
               </p>

@@ -26,7 +26,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   StepGuide,
   StepItem,
   ToolCTA
@@ -37,13 +36,13 @@ export const metadata: Metadata = {
   description:
     'Genera letras cursivas elegantes para copiar y pegar en tus redes sociales, perfiles, nombres y mensajes. Fuentes caligráficas finas, sofisticadas y manuscritas gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
+    canonical: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes'
   },
   openGraph: {
     title: 'Letras Cursivas Elegantes para Copiar y Pegar',
     description:
       'Conversor interactivo de fuentes cursivas elegantes, caligráficas y finas para copiar y pegar en Instagram, WhatsApp y perfiles de lujo.',
-    url: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/',
+    url: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -101,16 +100,6 @@ const FAQ_ITEMS = [
     q: '¿Es posible combinar cursiva elegante con marcos y símbolos?',
     a: '¡Por supuesto! Nuestras herramientas incluyen plantillas con marcos ornamentales y símbolos delicados como flores y estrellas.'
   }
-];
-
-const ELEGANT_CURSIVE_TOC_ITEMS = [
-  { id: 'generador-elegante', label: 'Generador de cursiva elegante' },
-  { id: 'como-usar', label: 'Cómo usar las letras elegantes' },
-  { id: 'que-son', label: '¿Qué son las letras cursivas elegantes?' },
-  { id: 'comparativa-fuentes', label: 'Unicode elegante vs fuentes tradicionales' },
-  { id: 'donde-usar', label: 'Dónde usar letras cursivas elegantes' },
-  { id: 'compatibilidad-espanol', label: 'Acentos y letra Ñ en español' },
-  { id: 'preguntas-frecuentes', label: 'Preguntas frecuentes' }
 ];
 
 export default function ElegantCursivePage() {
@@ -171,7 +160,7 @@ export default function ElegantCursivePage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/letras-cursivas/" className="breadcrumb-link">Letras Cursivas</Link>
+          <Link href="/letras-cursivas" className="breadcrumb-link">Letras Cursivas</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Letras Cursivas Elegantes</span>
         </div>
@@ -197,7 +186,6 @@ export default function ElegantCursivePage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={ELEGANT_CURSIVE_TOC_ITEMS} />
 
           {/* MAIN ELEGANT CURSIVE GENERATOR */}
           <ElegantCursiveGenerator />
@@ -394,14 +382,14 @@ export default function ElegantCursivePage() {
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Añade un toque refinado a tu marca personal o perfil profesional. Descubre más en nuestras guías de{' '}
-                  <Link href="/letras-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram" className="seo-link font-medium">
                     letras para Instagram
                   </Link>,{' '}
-                  <Link href="/letras-para-instagram/letras-para-bio/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-para-bio" className="seo-link font-medium">
                     letras para bio
                   </Link>{' '}
                   y{' '}
-                  <Link href="/letras-para-instagram/simbolos-para-instagram/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/simbolos-para-instagram" className="seo-link font-medium">
                     símbolos para Instagram
                   </Link>.
                 </p>
@@ -424,7 +412,7 @@ export default function ElegantCursivePage() {
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed mb-3">
                   Aporta distinción a tu apodo o firma visual. Revisa la sección de{' '}
-                  <Link href="/letras-para-instagram/letras-para-nombres/" className="seo-link font-medium">
+                  <Link href="/letras-para-instagram/letras-para-nombres" className="seo-link font-medium">
                     letras para nombres
                   </Link>.
                 </p>
@@ -484,7 +472,7 @@ export default function ElegantCursivePage() {
           <section className="silo-nav-block mb-8">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#818cf8' }}>SILO Principal</span>
                   <h4 className="silo-card-heading">letras cursivas</h4>
@@ -493,7 +481,7 @@ export default function ElegantCursivePage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/abecedario-cursivo/" className="silo-card-link">
+              <Link href="/letras-cursivas/abecedario-cursivo" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#6366f1' }}>Abecedario</span>
                   <h4 className="silo-card-heading">abecedario cursivo</h4>
@@ -502,7 +490,7 @@ export default function ElegantCursivePage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag" style={{ color: '#ec4899' }}>Copiar y Pegar</span>
                   <h4 className="silo-card-heading">letras cursivas para copiar y pegar</h4>
@@ -511,7 +499,7 @@ export default function ElegantCursivePage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Conversor Universal</span>
                   <h4 className="silo-card-heading">conversor de letras</h4>

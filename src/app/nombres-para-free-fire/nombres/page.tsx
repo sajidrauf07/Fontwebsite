@@ -30,7 +30,6 @@ import {
 } from 'lucide-react';
 import {
   ReadingProgress,
-  TableOfContents,
   ToolCTA,
   TipBox,
   InfoBox,
@@ -39,30 +38,18 @@ import {
   StepItem
 } from '@/components/article';
 
-const FF_NOMBRES_TOC_ITEMS = [
-  { id: 'main-tool', label: 'Generador de nombres para Free Fire' },
-  { id: 'nombres-listos', label: 'Nombres listos para copiar y pegar' },
-  { id: 'hombre-mujer', label: 'Nombres para hombre y mujer' },
-  { id: 'duos-escuadras', label: 'Nombres para dúos, escuadras y clanes' },
-  { id: 'crear-propio', label: 'Cómo crear tu propio nombre' },
-  { id: 'unicode-eeat', label: 'Qué son las letras y símbolos Unicode' },
-  { id: 'como-copiar-pegar', label: 'Cómo copiar y pegar en Free Fire' },
-  { id: 'ideas-rapidas', label: 'Ideas rápidas según tu estilo' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
-];
-
 export const metadata: Metadata = {
   title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
   description:
     'Encuentra nombres para Free Fire: nicks insanos, pro, cortos, con símbolos y estilos. Crea, copia y personaliza tu próximo nombre.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres'
   },
   openGraph: {
     title: 'Nombres para Free Fire: Nicks, Símbolos y Copiar',
     description:
       'Crea un nickname único para Free Fire con ideas, símbolos, letras bonitas y estilos listos para copiar y personalizar.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -124,7 +111,7 @@ export default function NombresSubcategoryPage() {
     headline: 'Nombres para Free Fire: ideas, nicks y nombres para copiar y pegar',
     description:
       'Catálogo interactivo y guía completa de nombres para Free Fire. Nicks insanos, pro, cortos, aesthetic, con símbolos, para dúos y clanes listos para copiar y pegar.',
-    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/',
+    url: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
@@ -158,7 +145,7 @@ export default function NombresSubcategoryPage() {
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
             <Link
-              href="/nombres-para-free-fire/"
+              href="/nombres-para-free-fire"
               className="hover:text-pink-400 transition-colors"
             >
               Nombres para Free Fire
@@ -226,14 +213,13 @@ export default function NombresSubcategoryPage() {
 
           <TipBox title="Variedad y Creatividad para tu Nick">
             En esta guía encontrarás ideas de diferentes estilos en nuestra página principal de{' '}
-            <Link href="/nombres-para-free-fire/" className="text-pink-400 underline hover:text-pink-300 font-semibold">
+            <Link href="/nombres-para-free-fire" className="text-pink-400 underline hover:text-pink-300 font-semibold">
               nombres para Free Fire
             </Link>
             , consejos para crear tu propio nickname y una forma práctica de convertir una palabra sencilla en un nombre con personalidad. También veremos cómo copiar y pegar un nombre y qué debes revisar antes de utilizar caracteres especiales.
           </TipBox>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={FF_NOMBRES_TOC_ITEMS} />
         </header>
 
         <hr className="article-section-divider" />
@@ -260,7 +246,7 @@ export default function NombresSubcategoryPage() {
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Si buscas un nombre con una vibra agresiva, competitiva o imponente, puedes probar estas combinaciones de nuestra sección especializada de{' '}
-                <Link href="/nombres-para-free-fire/nombres-insanos/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/nombres-insanos" className="text-pink-400 hover:underline font-semibold">
                   nombres insanos para Free Fire
                 </Link>:
               </p>
@@ -343,7 +329,7 @@ export default function NombresSubcategoryPage() {
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Los caracteres decorativos transforman la estética visual del nombre. Revisa también nuestro catálogo de{' '}
-                <Link href="/nombres-para-free-fire/simbolos/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/simbolos" className="text-pink-400 hover:underline font-semibold">
                   símbolos para Free Fire
                 </Link>:
               </p>
@@ -451,7 +437,7 @@ export default function NombresSubcategoryPage() {
               <h3 className="font-bold text-white text-base">Nombres para Dúos y Parejas</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Pares opuestos o complementarios: <em>Dark亗 / Light亗</em>, <em>King★ / Queen★</em>, <em>Moon✦ / Sun✦</em>, <em>Fire⚡ / Ice⚡</em>. Visita nuestra guía de{' '}
-                <Link href="/nombres-para-free-fire/apodos/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/apodos" className="text-pink-400 hover:underline font-semibold">
                   apodos para Free Fire
                 </Link>.
               </p>
@@ -461,7 +447,7 @@ export default function NombresSubcategoryPage() {
               <h3 className="font-bold text-white text-base">Nombres para Escuadras y Clanes</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Abreviaturas o tags de clan: <span className="font-mono text-amber-300">亗NEX亗 Alex</span>, <span className="font-mono text-amber-300">亗NEX亗 Leo</span>, <span className="font-mono text-amber-300">NX・Shadow</span>. Revisa las ideas de{' '}
-                <Link href="/nombres-para-free-fire/clanes/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/nombres-para-free-fire/clanes" className="text-pink-400 hover:underline font-semibold">
                   nombres para clanes
                 </Link>.
               </p>
@@ -497,7 +483,7 @@ export default function NombresSubcategoryPage() {
               <h3 className="font-bold text-white text-sm">2. Añade letras estilizadas</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Usa nuestro conversor para ver variantes Unicode cursivas, negritas o versalitas (
-                <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="text-pink-400 hover:underline font-semibold">
+                <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="text-pink-400 hover:underline font-semibold">
                   letras para copiar y pegar
                 </Link>
                 ).
@@ -554,11 +540,11 @@ export default function NombresSubcategoryPage() {
             </p>
             <p>
               Una fuente tradicional modifica la visualización dentro de un programa editor. En cambio, las variantes Unicode son caracteres de texto reales que se pueden copiar y pegar en{' '}
-              <Link href="/conversor-de-letras/texto-con-estilos/" className="text-pink-400 hover:underline font-semibold">
+              <Link href="/conversor-de-letras/texto-con-estilos" className="text-pink-400 hover:underline font-semibold">
                 texto con estilos
               </Link>{' '}
               y redes como{' '}
-              <Link href="/letras-para-instagram/" className="text-pink-400 hover:underline font-semibold">
+              <Link href="/letras-para-instagram" className="text-pink-400 hover:underline font-semibold">
                 letras para Instagram
               </Link>.
             </p>

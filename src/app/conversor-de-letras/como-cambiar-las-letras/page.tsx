@@ -31,7 +31,6 @@ import {
 import { mapAlphabet } from '@/lib/unicode/transformations';
 import {
   ReadingProgress,
-  TableOfContents,
   TipBox,
   WarningBox,
   ToolCTA
@@ -42,13 +41,13 @@ export const metadata: Metadata = {
   description:
     'Aprende cómo cambiar las letras de tu texto paso a paso. Tutorial completo para transformar tus fuentes a estilos cursivos, negritas y aesthetic copiables.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/'
+    canonical: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras'
   },
   openGraph: {
     title: 'Cómo Cambiar las Letras | Guía y Conversor Online',
     description:
       'Tutorial sencillo y conversor gratuito para cambiar la fuente de tus textos a caracteres Unicode bonitos y copiables.',
-    url: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/',
+    url: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras',
     siteName: 'Letras Bonitas',
     locale: 'es_ES',
     type: 'website'
@@ -106,19 +105,6 @@ const CAMBIAR_LETRAS_FAQ_ITEMS = [
     question: '¿Qué hacer si una letra cambiada se ve como cuadro?',
     answer: 'Significa que el dispositivo receptor no soporta ese símbolo específico. Elige una variante cursiva o negrita más estándar en nuestro generador.'
   }
-];
-
-const CAMBIAR_LETRAS_TOC_ITEMS = [
-  { id: 'pasos', label: 'Cómo cambiar las letras paso a paso' },
-  { id: 'metodos', label: 'Los 3 métodos principales' },
-  { id: 'mecanica-unicode', label: 'Mecánica técnica Unicode' },
-  { id: 'comparativa-fuentes', label: 'Fuentes nativas vs Unicode' },
-  { id: 'tutorial-plataformas', label: 'Guía según la plataforma' },
-  { id: 'estilos-disponibles', label: 'Estilos tipográficos populares' },
-  { id: 'matriz-estilos', label: 'Matriz de recomendación' },
-  { id: 'solucion-problemas', label: 'Por qué no se ven en algunos móviles' },
-  { id: 'errores-y-consejos', label: 'Errores comunes y consejos' },
-  { id: 'faq', label: 'Preguntas frecuentes' }
 ];
 
 export default function ComoCambiarLasLetrasPage() {
@@ -179,7 +165,7 @@ export default function ComoCambiarLasLetrasPage() {
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">Inicio</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/conversor-de-letras/" className="breadcrumb-link">Conversor de Letras</Link>
+          <Link href="/conversor-de-letras" className="breadcrumb-link">Conversor de Letras</Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
           <span className="breadcrumb-current">Cómo Cambiar las Letras</span>
         </div>
@@ -209,7 +195,6 @@ export default function ComoCambiarLasLetrasPage() {
           </header>
 
           {/* TABLE OF CONTENTS */}
-          <TableOfContents items={CAMBIAR_LETRAS_TOC_ITEMS} />
 
           {/* QUICK ANSWER CALLOUT */}
           <div className="my-8">
@@ -235,7 +220,7 @@ export default function ComoCambiarLasLetrasPage() {
               El problema es que instalar aplicaciones de teclados desconocidos en tu teléfono puede comprometer tu privacidad, consumir memoria de almacenamiento y ralentizar tu dispositivo. Además, intentar modificar archivos de sistema o copiar caracteres defectuosos provoca que tus amigos solo vean rectángulos vacíos (<code>□</code>).
             </p>
             <p>
-              La solución más inteligente y rápida consiste en utilizar esta guía práctica y nuestro <Link href="/conversor-de-letras/">conversor de letras</Link> en línea. En pocos segundos aprenderás la tecnología exacta detrás del cambio de fuentes, cómo realizar la conversión con un solo clic y cómo pegar tus textos estilizados en cualquier plataforma digital sin descargar ningún programa. También puedes consultar nuestro catálogo de <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/">letras para copiar y pegar</Link> con combinaciones listas para usar.
+              La solución más inteligente y rápida consiste en utilizar esta guía práctica y nuestro <Link href="/conversor-de-letras">conversor de letras</Link> en línea. En pocos segundos aprenderás la tecnología exacta detrás del cambio de fuentes, cómo realizar la conversión con un solo clic y cómo pegar tus textos estilizados en cualquier plataforma digital sin descargar ningún programa. También puedes consultar nuestro catálogo de <Link href="/conversor-de-letras/letras-para-copiar-y-pegar">letras para copiar y pegar</Link> con combinaciones listas para usar.
             </p>
           </section>
 
@@ -304,7 +289,7 @@ export default function ComoCambiarLasLetrasPage() {
               contiene conjuntos de letras alfabéticas estilizadas en cursiva, negrita, Fraktur (gótica), doble trazo y monoespacio.
             </p>
             <p>
-              Por esta razón, cuando utilizas <strong>Letras Bonitas</strong> para transformar la palabra <code>Hola</code> en <code>𝓗𝓸𝓵𝓪</code>, la aplicación sustituye los caracteres de tu teclado por puntos de código Unicode alternativos. Dado que estos caracteres forman parte del mapa mundial de computación, cualquier smartphone o navegador moderno los entiende y los dibuja al instante. Descubre más ejemplos en nuestra sección sobre <Link href="/conversor-de-letras/texto-con-estilos/">texto con estilos</Link>.
+              Por esta razón, cuando utilizas <strong>Letras Bonitas</strong> para transformar la palabra <code>Hola</code> en <code>𝓗𝓸𝓵𝓪</code>, la aplicación sustituye los caracteres de tu teclado por puntos de código Unicode alternativos. Dado que estos caracteres forman parte del mapa mundial de computación, cualquier smartphone o navegador moderno los entiende y los dibuja al instante. Descubre más ejemplos en nuestra sección sobre <Link href="/conversor-de-letras/texto-con-estilos">texto con estilos</Link>.
             </p>
           </section>
 
@@ -324,15 +309,15 @@ export default function ComoCambiarLasLetrasPage() {
             <div style={{ marginTop: '1.25rem' }}>
               <h3>1. Cómo cambiar las letras en Instagram</h3>
               <p>
-                Instagram no cuenta con un selector de fuentes dentro de la biografía o descripciones. Para cambiar las letras en tu cuenta explora nuestro hub dedicado de <Link href="/letras-para-instagram/">letras para Instagram</Link>:
+                Instagram no cuenta con un selector de fuentes dentro de la biografía o descripciones. Para cambiar las letras en tu cuenta explora nuestro hub dedicado de <Link href="/letras-para-instagram">letras para Instagram</Link>:
               </p>
               <ol className="seo-list" style={{ listStyleType: 'decimal', paddingLeft: '1.25rem' }}>
                 <li>Abre el conversor de Letras Bonitas en el navegador de tu móvil.</li>
                 <li>Escribe tu nombre de usuario o biografía.</li>
-                <li>Elige un estilo sobrio como <Link href="/letras-para-instagram/letras-para-bio/">letras para bio</Link> o destacable como <Link href="/letras-para-instagram/letras-para-nombres/">letras para nombres</Link>.</li>
+                <li>Elige un estilo sobrio como <Link href="/letras-para-instagram/letras-para-bio">letras para bio</Link> o destacable como <Link href="/letras-para-instagram/letras-para-nombres">letras para nombres</Link>.</li>
                 <li>Toca el botón «Copiar».</li>
                 <li>Abre Instagram, ve a tu perfil, presiona "Editar Perfil" y pega el texto en la casilla deseada.</li>
-                <li>Guarda los cambios. También puedes añadir acentos con <Link href="/letras-para-instagram/simbolos-para-instagram/">símbolos para Instagram</Link> y <Link href="/letras-para-instagram/letras-cursivas-para-instagram/">letras cursivas para Instagram</Link>.</li>
+                <li>Guarda los cambios. También puedes añadir acentos con <Link href="/letras-para-instagram/simbolos-para-instagram">símbolos para Instagram</Link> y <Link href="/letras-para-instagram/letras-cursivas-para-instagram">letras cursivas para Instagram</Link>.</li>
               </ol>
             </div>
 
@@ -360,11 +345,11 @@ export default function ComoCambiarLasLetrasPage() {
                 Para destacar tu nickname en el campo de batalla, consulta nuestras secciones especializadas:
               </p>
               <ul className="seo-list">
-                <li>Aprende las mejores técnicas en <Link href="/nombres-para-free-fire/">nombres para Free Fire</Link>.</li>
-                <li>Combina tus letras con <Link href="/nombres-para-free-fire/apodos/">apodos para Free Fire</Link>.</li>
-                <li>Genera nombres colectivos en <Link href="/nombres-para-free-fire/clanes/">clanes para Free Fire</Link>.</li>
-                <li>Agrega armas y adornos con <Link href="/nombres-para-free-fire/simbolos/">símbolos para Free Fire</Link>.</li>
-                <li>Si buscas nombres agresivos, revisa <Link href="/nombres-para-free-fire/nombres-insanos/">nombres insanos para Free Fire</Link>.</li>
+                <li>Aprende las mejores técnicas en <Link href="/nombres-para-free-fire">nombres para Free Fire</Link>.</li>
+                <li>Combina tus letras con <Link href="/nombres-para-free-fire/apodos">apodos para Free Fire</Link>.</li>
+                <li>Genera nombres colectivos en <Link href="/nombres-para-free-fire/clanes">clanes para Free Fire</Link>.</li>
+                <li>Agrega armas y adornos con <Link href="/nombres-para-free-fire/simbolos">símbolos para Free Fire</Link>.</li>
+                <li>Si buscas nombres agresivos, revisa <Link href="/nombres-para-free-fire/nombres-insanos">nombres insanos para Free Fire</Link>.</li>
               </ul>
             </div>
           </section>
@@ -385,13 +370,13 @@ export default function ComoCambiarLasLetrasPage() {
             <div style={{ marginTop: '1.25rem' }}>
               <h3>Letras cursivas y manuscritas</h3>
               <p>
-                Aportan elegancia, delicadeza y sofisticación. Explora nuestro hub principal de <Link href="/letras-cursivas/">letras cursivas</Link> para ver todas las variantes caligráficas.
+                Aportan elegancia, delicadeza y sofisticación. Explora nuestro hub principal de <Link href="/letras-cursivas">letras cursivas</Link> para ver todas las variantes caligráficas.
               </p>
               <div className="code-example-block">
                 Ejemplos: <i>{mapAlphabet('Cambiar Cursiva', 'script')}</i> | <i>{mapAlphabet('Manuscrita Elegante', 'boldScript')}</i>
               </div>
               <p>
-                Para firmas y marcas refinadas te recomendamos ver <Link href="/letras-cursivas/letras-cursivas-elegantes/">letras cursivas elegantes</Link>. Si quieres frases listas para redes, consulta <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar/">letras cursivas para copiar y pegar</Link>. Si necesitas el alfabeto completo A-Z, disponemos de <Link href="/letras-cursivas/abecedario-cursivo/">abecedario cursivo</Link>.
+                Para firmas y marcas refinadas te recomendamos ver <Link href="/letras-cursivas/letras-cursivas-elegantes">letras cursivas elegantes</Link>. Si quieres frases listas para redes, consulta <Link href="/letras-cursivas/letras-cursivas-para-copiar-y-pegar">letras cursivas para copiar y pegar</Link>. Si necesitas el alfabeto completo A-Z, disponemos de <Link href="/letras-cursivas/abecedario-cursivo">abecedario cursivo</Link>.
               </p>
             </div>
 
@@ -548,7 +533,7 @@ export default function ComoCambiarLasLetrasPage() {
           <section className="silo-nav-block">
             <h3 className="silo-nav-title">Navegación del SILO y Herramientas Relacionadas</h3>
             <div className="silo-links-grid">
-              <Link href="/conversor-de-letras/" className="silo-card-link">
+              <Link href="/conversor-de-letras" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Principal</span>
                   <h4 className="silo-card-heading">Conversor de Letras</h4>
@@ -557,7 +542,7 @@ export default function ComoCambiarLasLetrasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar/" className="silo-card-link">
+              <Link href="/conversor-de-letras/letras-para-copiar-y-pegar" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Herramienta de Copia</span>
                   <h4 className="silo-card-heading">Letras para Copiar y Pegar</h4>
@@ -566,7 +551,7 @@ export default function ComoCambiarLasLetrasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/conversor-de-letras/texto-con-estilos/" className="silo-card-link">
+              <Link href="/conversor-de-letras/texto-con-estilos" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Texto Estilizado</span>
                   <h4 className="silo-card-heading">Texto con Estilos</h4>
@@ -575,7 +560,7 @@ export default function ComoCambiarLasLetrasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/" className="silo-card-link">
+              <Link href="/letras-cursivas" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">SILO Cursiva</span>
                   <h4 className="silo-card-heading">Letras Cursivas</h4>
@@ -584,7 +569,7 @@ export default function ComoCambiarLasLetrasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-cursivas/letras-cursivas-elegantes/" className="silo-card-link">
+              <Link href="/letras-cursivas/letras-cursivas-elegantes" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Estilo Elegante</span>
                   <h4 className="silo-card-heading">Letras Cursivas Elegantes</h4>
@@ -593,7 +578,7 @@ export default function ComoCambiarLasLetrasPage() {
                 <ArrowRight size={18} className="silo-card-arrow" />
               </Link>
 
-              <Link href="/letras-para-instagram/" className="silo-card-link">
+              <Link href="/letras-para-instagram" className="silo-card-link">
                 <div className="silo-card-content">
                   <span className="silo-card-tag">Pillar Redes</span>
                   <h4 className="silo-card-heading">Letras para Instagram</h4>
