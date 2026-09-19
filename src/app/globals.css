@@ -294,6 +294,13 @@ body {
   overflow-wrap: break-word;
 }
 
+.gradient-text {
+  background: linear-gradient(135deg, #F472B6 0%, #C084FC 50%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
 .hero-tagline {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 600;
@@ -315,20 +322,36 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
 }
 
 .highlight-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
   font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.highlight-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: var(--text-main);
+  transform: translateY(-1px);
 }
 
 .highlight-item svg {
   color: var(--primary-emerald);
+  flex-shrink: 0;
 }
 
 /* Main Generator Section */
@@ -6420,6 +6443,17 @@ html[data-theme="light"] .breadcrumb-link:hover {
 }
 
 html[data-theme="light"] .breadcrumb-current {
+  color: #0F172A;
+}
+
+html[data-theme="light"] .highlight-item {
+  background: #F1F5F9;
+  border-color: rgba(15, 23, 42, 0.08);
+  color: #475569;
+}
+
+html[data-theme="light"] .highlight-item:hover {
+  background: #E2E8F0;
   color: #0F172A;
 }
 

@@ -20,6 +20,7 @@ import {
   BookOpen,
   AlertTriangle,
   Zap,
+  ShieldCheck,
   FileText,
   Search,
   ExternalLink,
@@ -122,7 +123,7 @@ export default function SimbolosParaInstagramPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+    <div className="min-h-screen pb-16">
       <ReadingProgress />
       <script
         type="application/ld+json"
@@ -137,57 +138,63 @@ export default function SimbolosParaInstagramPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Header & Hero */}
-      <header className="bg-slate-950 border-b border-slate-800/80 pt-8 pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-2">
-            <Link href="/" className="hover:text-pink-400 transition-colors">
-              Inicio
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <Link
-              href="/letras-para-instagram"
-              className="hover:text-pink-400 transition-colors"
-            >
-              Letras para Instagram
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <span className="text-pink-400 font-medium">Símbolos para Instagram</span>
-          </nav>
+      {/* Breadcrumbs Navigation */}
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/letras-para-instagram" className="breadcrumb-link">
+            Letras para Instagram
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Símbolos para Instagram</span>
+        </div>
+      </nav>
 
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs sm:text-sm font-medium mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Colección Unicode Aesthetic y Separadores</span>
+      {/* Hero Section & Master Interactive Generator */}
+      <header className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Sparkles size={16} className="sparkle-icon" />
+            <span>Colección Unicode Aesthetic y Separadores</span>
+          </div>
+
+          <h1 className="hero-h1">
+            Símbolos para Instagram: <span className="gradient-text">copia y pega símbolos bonitos</span>
+          </h1>
+
+          <p className="hero-tagline">
+            Corazones, estrellas, flechas, flores y símbolos aesthetic para personalizar tu perfil al instante.
+          </p>
+
+          <p className="hero-description">
+            Personaliza tu bio, nombre de usuario y publicaciones de Instagram con más de 200 símbolos bonitos organizados por categorías.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>100% Caracteres Unicode Copiables</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-              Símbolos para Instagram: copia y pega símbolos bonitos
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6">
-              Corazones, estrellas, flechas, flores y símbolos aesthetic para personalizar tu bio, nombre y publicaciones de Instagram.
-            </p>
-            <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-800/60 pt-4">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                100% Caracteres Unicode Copiables
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Sin Instalar Aplicaciones
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Optimizado para Móviles y Computadora
-              </span>
+            <div className="highlight-item">
+              <Zap size={16} />
+              <span>Copiado Directo con 1 Clic</span>
             </div>
+            <div className="highlight-item">
+              <ShieldCheck size={16} />
+              <span>Sin Instalar Aplicaciones</span>
+            </div>
+          </div>
+
+          {/* Main Interactive Tool Container */}
+          <div className="w-full max-w-5xl mx-auto mt-4" id="main-tool">
+            <MainSymbolTool />
           </div>
         </div>
       </header>
-
-      {/* Main Interactive Tool Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6" id="main-tool">
-        <MainSymbolTool />
-      </div>
 
       {/* Main SEO Article Content */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">

@@ -121,8 +121,7 @@ export default function NombresSubcategoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
-      <ReadingProgress />
+    <div className="min-h-screen pb-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -136,57 +135,63 @@ export default function NombresSubcategoryPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Header & Hero */}
-      <header className="bg-slate-950 border-b border-slate-800/80 pt-8 pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-2">
-            <Link href="/" className="hover:text-pink-400 transition-colors">
-              Inicio
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <Link
-              href="/nombres-para-free-fire"
-              className="hover:text-pink-400 transition-colors"
-            >
-              Nombres para Free Fire
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <span className="text-pink-400 font-medium">Nombres para Copiar</span>
-          </nav>
+      {/* Breadcrumbs Navigation */}
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/nombres-para-free-fire" className="breadcrumb-link">
+            Nombres para Free Fire
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Nombres para Copiar</span>
+        </div>
+      </nav>
 
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs sm:text-sm font-medium mb-4">
-              <Flame className="w-4 h-4 text-orange-400" />
-              <span>Colección de Nicks Insanos, Pro, Aesthetic y Símbolos</span>
+      {/* Hero Section & Interactive Generator */}
+      <header className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Flame size={16} className="sparkle-icon text-orange-400" />
+            <span>Colección de Nicks Insanos, Pro, Aesthetic y Símbolos</span>
+          </div>
+
+          <h1 className="hero-h1">
+            Nombres para Free Fire: <span className="gradient-text">ideas, nicks y nombres para copiar y pegar</span>
+          </h1>
+
+          <p className="hero-tagline">
+            Crea un nickname único para Free Fire y FF MAX con ideas, símbolos y estilos listos en 1 clic.
+          </p>
+
+          <p className="hero-description">
+            Personaliza tu apodo con símbolos bélicos, letras góticas, caracteres invisibles y tags para destacar en tu clan y salas.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Copiado Instantáneo con 1 Clic</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-              Nombres para Free Fire: ideas, nicks y nombres para copiar y pegar
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6">
-              Crea un nickname único para Free Fire con ideas, símbolos, letras bonitas y estilos listos para copiar y personalizar.
-            </p>
-            <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-800/60 pt-4">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Copiado Instantáneo con 1 Clic
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Compatibles con Android y iOS
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Estilos Unicode e Insanos
-              </span>
+            <div className="highlight-item">
+              <Zap size={16} />
+              <span>Compatibles con Android y iOS</span>
             </div>
+            <div className="highlight-item">
+              <Sparkles size={16} />
+              <span>Estilos Unicode e Insanos</span>
+            </div>
+          </div>
+
+          {/* Interactive Tool Component */}
+          <div className="w-full max-w-5xl mx-auto mt-4" id="main-tool">
+            <FreeFireNamesSubcategoryGenerator />
           </div>
         </div>
       </header>
-
-      {/* Interactive Tool Component */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6" id="main-tool">
-        <FreeFireNamesSubcategoryGenerator />
-      </div>
 
       {/* Main SEO Article Content */}
       <article className="article-prose-container max-w-4xl mx-auto px-4 sm:px-6 mt-16 text-slate-300 leading-relaxed">

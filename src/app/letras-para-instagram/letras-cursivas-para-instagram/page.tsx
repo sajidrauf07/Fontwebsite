@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   BookOpen,
   Zap,
+  ShieldCheck,
   FileText,
   Search,
   ExternalLink,
@@ -115,7 +116,7 @@ export default function LetrasCursivasParaInstagramPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 pb-16">
+    <div className="min-h-screen pb-16">
       <ReadingProgress />
       <script
         type="application/ld+json"
@@ -130,57 +131,63 @@ export default function LetrasCursivasParaInstagramPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Header & Hero */}
-      <header className="bg-slate-950 border-b border-slate-800/80 pt-8 pb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <nav className="flex items-center space-x-2 text-xs sm:text-sm text-slate-400 mb-6 overflow-x-auto whitespace-nowrap pb-2">
-            <Link href="/" className="hover:text-pink-400 transition-colors">
-              Inicio
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <Link
-              href="/letras-para-instagram"
-              className="hover:text-pink-400 transition-colors"
-            >
-              Letras para Instagram
-            </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
-            <span className="text-pink-400 font-medium">Letras Cursivas para Instagram</span>
-          </nav>
+      {/* Breadcrumbs Navigation */}
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/letras-para-instagram" className="breadcrumb-link">
+            Letras para Instagram
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Letras Cursivas para Instagram</span>
+        </div>
+      </nav>
 
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs sm:text-sm font-medium mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Estilos Cursivos, Caligráficos e Itálicos Unicode</span>
+      {/* Hero Section & Master Interactive Generator */}
+      <header className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Sparkles size={16} className="sparkle-icon" />
+            <span>Estilos Cursivos, Caligráficos e Itálicos Unicode</span>
+          </div>
+
+          <h1 className="hero-h1">
+            Letras Cursivas para Instagram: <span className="gradient-text">Copia y Pega Estilos Bonitos</span>
+          </h1>
+
+          <p className="hero-tagline">
+            Convierte tu texto en elegantes letras cursivas, manuscritas y caligráficas al instante.
+          </p>
+
+          <p className="hero-description">
+            Genera texto cursivo, elige tu estilo favorito y úsalo en tu biografía, nombre de usuario, captions, historias y comentarios de Instagram sin descargar aplicaciones.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Compatibles con iOS, Android y Web</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-              Letras Cursivas para Instagram: Copia y Pega Estilos Bonitos
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed mb-6">
-              Genera texto cursivo, elige tu estilo favorito y úsalo en tu bio, nombres, captions y comentarios de Instagram.
-            </p>
-            <div className="flex flex-wrap gap-4 text-xs sm:text-sm text-slate-400 border-t border-slate-800/60 pt-4">
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Compatibles con iOS, Android y Web
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Copiado Directo de 1 Clic
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Sin Descargar Aplicaciones
-              </span>
+            <div className="highlight-item">
+              <Zap size={16} />
+              <span>Copiado Directo con 1 Clic</span>
             </div>
+            <div className="highlight-item">
+              <ShieldCheck size={16} />
+              <span>Sin Descargar Aplicaciones</span>
+            </div>
+          </div>
+
+          {/* Main Interactive Tool Container */}
+          <div className="w-full max-w-5xl mx-auto mt-4" id="generador-cursivas">
+            <CursiveInstagramGenerator />
           </div>
         </div>
       </header>
-
-      {/* Main Interactive Tool Container */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6" id="generador-cursivas">
-        <CursiveInstagramGenerator />
-      </div>
 
       {/* Main SEO Article Content */}
       <article className="max-w-3xl mx-auto px-4 sm:px-6 mt-16 space-y-16 text-slate-300 leading-relaxed">
