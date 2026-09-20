@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Sliders, X } from 'lucide-react';
 
 export interface CookiePreferences {
   necessary: boolean; // Always true
@@ -93,22 +94,20 @@ export default function CookiePreferencesModal() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="cookie-preferences-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in"
+      className="lb-cookie-modal-overlay"
     >
-      <div className="relative w-full max-w-xl max-h-[90vh] flex flex-col rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] shadow-2xl text-[var(--text-primary)] overflow-hidden">
+      <div className="lb-cookie-modal-card">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-5 border-b border-[var(--border-primary)] bg-[var(--bg-card)]">
-          <div className="flex items-center gap-2.5">
-            <div className="p-2 rounded-lg bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
+        <div className="lb-cookie-modal-header">
+          <div className="flex items-center gap-2.5" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+            <div className="lb-cookie-icon-wrapper">
+              <Sliders size={18} style={{ width: 18, height: 18, flexShrink: 0 }} />
             </div>
             <div>
-              <h2 id="cookie-preferences-title" className="text-lg font-bold text-[var(--text-primary)]">
+              <h2 id="cookie-preferences-title" className="text-lg font-bold" style={{ fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-main)' }}>
                 Centro de Preferencias de Cookies
               </h2>
-              <p className="text-xs text-[var(--text-muted)]">
+              <p className="text-xs" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                 Controla la información y tecnologías que se almacenan en tu dispositivo.
               </p>
             </div>
@@ -116,16 +115,14 @@ export default function CookiePreferencesModal() {
           <button
             onClick={() => setIsOpen(false)}
             aria-label="Cerrar modal de preferencias"
-            className="p-1.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors"
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: 6, display: 'flex', alignItems: 'center' }}
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X size={18} style={{ width: 18, height: 18, flexShrink: 0 }} />
           </button>
         </div>
 
         {/* Modal Body: Category list */}
-        <div className="flex-1 overflow-y-auto p-5 space-y-4 text-xs sm:text-sm">
+        <div className="lb-cookie-modal-body">
           <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
             En Letras Bonitas respetamos tu privacidad. Conforme a las directrices de protección de datos en México y estándares internacionales, puedes elegir qué tecnologías no esenciales deseas autorizar. Consulta nuestra{' '}
             <Link href="/politica-de-cookies" className="text-[var(--accent-primary)] underline hover:text-[var(--accent-secondary)]">

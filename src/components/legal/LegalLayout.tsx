@@ -70,7 +70,7 @@ export default function LegalLayout({
         {/* Header editorial */}
         <header className="mb-10 pb-8 border-b border-[var(--border-primary)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] border border-[var(--accent-primary)]/25 mb-4">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-3.5 h-3.5" width={14} height={14} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
             {badge}
@@ -82,21 +82,21 @@ export default function LegalLayout({
 
           <div className="flex flex-wrap items-center gap-4 text-xs text-[var(--text-muted)] mb-6">
             <div className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[var(--accent-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-[var(--accent-primary)]" width={16} height={16} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               <span>Última actualización: <strong>{LEGAL_CONFIG.lastUpdated}</strong></span>
             </div>
             <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[var(--accent-emerald)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-[var(--accent-emerald)]" width={16} height={16} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>Jurisdicción de referencia: <strong>{LEGAL_CONFIG.country}</strong></span>
             </div>
             <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[var(--accent-primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 text-[var(--accent-primary)]" width={16} height={16} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
               <span>{LEGAL_CONFIG.cleanDomain}</span>
@@ -174,7 +174,7 @@ export default function LegalLayout({
             {/* Informational Disclaimer Footer Box */}
             <div className="mt-12 p-5 rounded-xl bg-[var(--bg-card)] border border-[var(--border-primary)] text-xs text-[var(--text-muted)] space-y-2">
               <div className="flex items-center gap-2 font-semibold text-[var(--text-secondary)]">
-                <svg className="w-4 h-4 text-[var(--accent-amber)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-[var(--accent-amber)] flex-shrink-0" width={16} height={16} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Aviso de Transparencia e Información Legal</span>
