@@ -5883,6 +5883,89 @@ html[data-theme="light"] .tlb-emblem-badge {
   box-shadow: 0 0 6px #10B981;
 }
 
+/* Footer Social Channels */
+.footer-social-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94A3B8;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.footer-social-link svg {
+  transition: transform 0.2s ease;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+.footer-social-link:hover svg {
+  transform: scale(1.1);
+}
+
+.footer-social-link.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  border-color: transparent;
+  box-shadow: 0 4px 18px rgba(214, 36, 159, 0.45);
+}
+
+.footer-social-link.youtube:hover {
+  background: #FF0000;
+  border-color: #FF0000;
+  box-shadow: 0 4px 18px rgba(255, 0, 0, 0.45);
+}
+
+.footer-social-link.facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  box-shadow: 0 4px 18px rgba(24, 119, 242, 0.45);
+}
+
+/* Light Mode Social Links */
+html[data-theme="light"] .footer-social-heading {
+  color: #64748B;
+}
+
+html[data-theme="light"] .footer-social-link {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #475569;
+}
+
+html[data-theme="light"] .footer-social-link:hover {
+  color: #FFFFFF;
+}
+
 .footer-silo-column {
   display: flex;
   flex-direction: column;
@@ -8928,4 +9011,147 @@ html[data-theme="light"] .lb-cookie-btn-secondary:hover {
   justify-content: space-between;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Video Tutorial Embed Card (Mobile & Desktop Responsive)
+   ========================================================================== */
+.video-tutorial-card {
+  margin: 2.25rem 0 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.video-tutorial-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+.video-tutorial-header {
+  margin-bottom: 1.25rem;
+}
+
+.video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #F87171;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.video-badge svg {
+  color: #EF4444;
+  flex-shrink: 0;
+}
+
+.video-tutorial-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.video-tutorial-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.video-embed-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.video-embed-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Light Mode */
+html[data-theme="light"] .video-tutorial-card {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .video-tutorial-title {
+  color: #0F172A;
+}
+
+html[data-theme="light"] .video-tutorial-desc {
+  color: #475569;
+}
+
+html[data-theme="light"] .video-embed-wrapper {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.video-tutorial-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.video-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  color: #FCA5A5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.video-watch-btn:hover {
+  background: #EF4444;
+  border-color: #EF4444;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.video-watch-btn svg {
+  flex-shrink: 0;
+}
+
+html[data-theme="light"] .video-watch-btn {
+  background: #FEE2E2;
+  border-color: #FCA5A5;
+  color: #B91C1C;
+}
+
+html[data-theme="light"] .video-watch-btn:hover {
+  background: #EF4444;
+  border-color: #EF4444;
+  color: #FFFFFF;
 }
