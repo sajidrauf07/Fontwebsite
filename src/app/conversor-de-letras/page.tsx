@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import LetterConverter from '@/components/letter-converter/LetterConverter';
 import PopularStylesSection from '@/components/letter-converter/PopularStylesSection';
@@ -274,6 +275,23 @@ export default function ConversorDeLetrasPage() {
               Utilizar un conversor de letras debería ser rápido. No necesitas conocer códigos Unicode ni saber programación.
             </p>
 
+            {/* Real Tool Screenshot 1: Interface & Generator Controls */}
+            <figure className="article-figure">
+              <div className="article-image-container">
+                <Image
+                  src="/images/generador-conversor-letras-interfaz.png"
+                  alt="Captura real del conversor de letras en theletrasbonitas.com mostrando panel de escritura, filtros por categoría y pruebas rápidas"
+                  width={1060}
+                  height={540}
+                  className="article-mockup-image"
+                  priority={false}
+                />
+              </div>
+              <figcaption className="article-figcaption">
+                <strong>Figura 1:</strong> Interfaz interactiva de <span className="text-white font-medium">theletrasbonitas.com/conversor-de-letras</span> con selector de categorías (populares, cursivas, elegantes, negritas, góticas), barra de búsqueda y panel de escritura en tiempo real.
+              </figcaption>
+            </figure>
+
             <StepGuide>
               <StepItem stepNumber={1} title="Escribe o pega tu texto">
                 <p>
@@ -334,6 +352,23 @@ export default function ConversorDeLetrasPage() {
             <p>
               Un buen conversor no debería limitarse a una sola apariencia. Diferentes usuarios buscan diferentes estilos para transmitir distintas emociones.
             </p>
+
+            {/* Real Tool Screenshot 2: Visual Results & Copying Action */}
+            <figure className="article-figure">
+              <div className="article-image-container">
+                <Image
+                  src="/images/copiar-conversor-letras-estilos.png"
+                  alt="Catálogo visual del conversor de letras con estilos en negrita, cursiva e itálica listos para copiar con un clic"
+                  width={1060}
+                  height={580}
+                  className="article-mockup-image"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="article-figcaption">
+                <strong>Figura 2:</strong> Catálogo de estilos tipográficos generados en vivo con feedback visual instantáneo de copiado en 1 clic para pegar en Instagram, TikTok o WhatsApp.
+              </figcaption>
+            </figure>
 
             <div style={{ marginTop: '1.25rem' }}>
               <h3>Letras cursivas</h3>
