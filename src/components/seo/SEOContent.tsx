@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Sparkles,
   Type,
@@ -199,6 +200,23 @@ export const SEOContent: React.FC = () => {
           <p className="article-paragraph">
             Utilizar un generador de este tipo no debería ser complicado. Sigue estos 4 sencillos pasos para obtener tu texto personalizado en segundos:
           </p>
+
+          {/* Real Tool Screenshot 1: Interface & Generator Controls */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/generador-letras-bonitas-interfaz.png"
+                alt="Captura real de la herramienta generadora de letras bonitas en theletrasbonitas.com mostrando entrada de texto y filtros de estilos"
+                width={1050}
+                height={520}
+                className="article-mockup-image"
+                priority={false}
+              />
+            </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 1:</strong> Interfaz interactiva en vivo en <span className="text-white font-medium">theletrasbonitas.com</span> con panel de escritura, sugerencias rápidas y selector de más de 350 estilos tipográficos.
+            </figcaption>
+          </figure>
 
           <StepGuide>
             <StepItem
@@ -608,6 +626,23 @@ export const SEOContent: React.FC = () => {
           <p className="article-paragraph">
             La principal ventaja de este tipo de herramienta es la facilidad. No tienes que buscar caracteres uno por uno ni volver a escribir el texto. El proceso se resume en: <strong>Escribe → Explora → Elige → Copia → Pega</strong>.
           </p>
+
+          {/* Real Tool Screenshot 2: Visual Results & Copying Action */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/copiar-letras-bonitas-estilos.png"
+                alt="Muestra del catálogo de fuentes en Letras Bonitas con botón de copiado instantáneo al portapapeles"
+                width={1050}
+                height={520}
+                className="article-mockup-image"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 2:</strong> Catálogo tipográfico en vivo (cursivas, góticas, corazones, gamer y versalitas) con feedback visual de copiado en un clic listo para redes sociales y nicks.
+            </figcaption>
+          </figure>
 
           <h3 className="article-h3 mt-8">Letras bonitas con Ñ y acentos</h3>
 
