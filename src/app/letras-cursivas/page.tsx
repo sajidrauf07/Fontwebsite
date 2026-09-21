@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { CursiveGenerator } from '@/components/cursive/CursiveGenerator';
 import { CursiveAlphabetPreview } from '@/components/cursive/CursiveAlphabetPreview';
@@ -207,37 +208,22 @@ export default function LetrasCursivasPage() {
         <div className="seo-container">
           <ReadingProgress />
 
-          {/* Image Plan 1 Visual Demonstration Card */}
-          <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-1">
-                <span className="text-xs uppercase tracking-wider font-bold text-indigo-400 block mb-1">
-                  Generador de Letras Cursivas en Acción
-                </span>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  Escribe tu texto y elige tu estilo cursivo favorito
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  Solo escribe o pega tu texto en el generador, explora los estilos disponibles y elige el que más te guste. Después, pulsa Copiar y úsalo donde quieras.
-                </p>
-              </div>
-              <div className="w-full md:w-auto flex justify-center">
-                <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 flex flex-col gap-2.5 min-w-[260px] text-xs">
-                  <div className="flex justify-between items-center bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-                    <span className="font-mono text-amber-300">𝓛𝓮𝓽𝓻𝒶𝓼 𝓒𝓾𝓻𝓼𝓲𝓿𝒶𝓼</span>
-                    <span className="bg-indigo-600 text-white px-2 py-0.5 rounded text-[10px] font-bold">Copiado</span>
-                  </div>
-                  <div className="flex justify-between items-center bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
-                    <span className="font-mono text-indigo-300">𝑳𝒆𝒕𝒓𝒂𝒔 𝑪𝒖𝒓𝒔𝒊𝒗𝒂𝒔</span>
-                    <span className="bg-slate-800 text-slate-300 px-2 py-0.5 rounded text-[10px]">Copiar</span>
-                  </div>
-                </div>
-              </div>
+          {/* Real Tool Screenshot 1: Interface & Generator Controls */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/generador-letras-cursivas-interfaz.png"
+                alt="Captura real de la herramienta generadora de letras cursivas en theletrasbonitas.com mostrando panel de escritura y botones de acción"
+                width={1050}
+                height={520}
+                className="article-mockup-image"
+                priority={false}
+              />
             </div>
-            <p className="text-xs text-slate-400 text-center mt-4 italic">
-              Genera y copia diferentes estilos de letras cursivas desde tu navegador.
-            </p>
-          </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 1:</strong> Interfaz en vivo de <span className="text-white font-medium">theletrasbonitas.com/letras-cursivas</span> con entrada de texto instantánea, selección de ejemplos y opciones de copiado rápido.
+            </figcaption>
+          </figure>
 
           {/* H2: Generador de Letras Cursivas */}
           <section className="seo-card-section mb-8" id="generador-cursivas">
@@ -513,37 +499,22 @@ export default function LetrasCursivasPage() {
             </div>
           </section>
 
-          {/* Image Plan 2 Visual Demonstration Card */}
-          <div className="my-8 p-6 bg-slate-900/90 rounded-2xl border border-indigo-500/30 shadow-xl relative overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-1">
-                <span className="text-xs uppercase tracking-wider font-bold text-indigo-400 block mb-1">
-                  Comparación de Fuentes Cursivas Unicode
-                </span>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  Prueba diferentes variantes antes de copiar tu texto
-                </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  Compara la legibilidad entre cursiva fina, cursiva en negrita y estilos decorativos para elegir la combinación ideal.
-                </p>
-              </div>
-              <div className="w-full md:w-auto flex justify-center">
-                <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 flex flex-col gap-2 min-w-[260px] text-xs">
-                  <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
-                    <span className="text-slate-400 text-[10px] block">Cursiva Fina</span>
-                    <span className="font-mono text-indigo-300 text-sm">𝒞𝒶𝓇𝓁ℴ𝓈</span>
-                  </div>
-                  <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
-                    <span className="text-slate-400 text-[10px] block">Cursiva Manuscrita</span>
-                    <span className="font-mono text-amber-300 text-sm">𝓒𝒶𝓇𝓁ℴ𝓈</span>
-                  </div>
-                </div>
-              </div>
+          {/* Real Tool Screenshot 2: Visual Results & Copying Action */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/copiar-letras-cursivas-estilos.png"
+                alt="Catálogo visual de fuentes cursivas en theletrasbonitas.com con botón de copiado activo en un clic"
+                width={1050}
+                height={580}
+                className="article-mockup-image"
+                loading="lazy"
+              />
             </div>
-            <p className="text-xs text-slate-400 text-center mt-4 italic">
-              Compara diferentes estilos cursivos antes de elegir el texto que quieres copiar.
-            </p>
-          </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 2:</strong> Catálogo interactivo de estilos cursivos (clásica, fina, con destellos, negrita, floral y mariposa) con confirmación visual instantánea de copiado al portapapeles.
+            </figcaption>
+          </figure>
 
           {/* Social Media & Gaming Use Cases */}
           <section className="seo-card-section mb-8" id="redes-juegos">
