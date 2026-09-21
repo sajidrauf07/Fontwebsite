@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import InstagramFontGenerator from '@/components/instagram/InstagramFontGenerator';
 import InstagramBioSection from '@/components/instagram/InstagramBioSection';
@@ -244,10 +245,27 @@ export default function LetrasParaInstagramPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', margin: '1.25rem 0' }}>
               <ExamplePreviewCard text="𝑀𝑖 𝑚𝑢𝑛𝑑𝑜" label="Cursiva Simple" tags={['Instagram', 'Cursiva']} copyable />
-              <ExamplePreviewCard text="𝐌𝐢 𝐦𝐮𝐧𝐝𝑜" label="Negrita Matemática" tags={['Instagram', 'Negrita']} copyable />
+              <ExamplePreviewCard text="𝐌𝐢 𝐦𝐮𝐧𝑑𝑜" label="Negrita Matemática" tags={['Instagram', 'Negrita']} copyable />
               <ExamplePreviewCard text="𝓜𝓲 𝓶𝓾𝓷𝓭𝓸" label="Manuscrito Caligráfico" tags={['Instagram', 'Caligráfico']} copyable />
-              <ExamplePreviewCard text="𝕄𝕚 𝕞𝕦𝑛𝕕𝕠" label="Doble Trazo" tags={['Instagram', 'Aesthetic']} copyable />
+              <ExamplePreviewCard text="𝕄𝕚 𝕞𝕦𝕟𝕕𝕠" label="Doble Trazo" tags={['Instagram', 'Aesthetic']} copyable />
             </div>
+
+            {/* Real Tool Screenshot 2: Visual Results & Copying Action */}
+            <figure className="article-figure">
+              <div className="article-image-container">
+                <Image
+                  src="/images/copiar-letras-instagram-estilos.png"
+                  alt="Muestra del catálogo de fuentes para Instagram con botón de copiado en 1 clic listo para biografía y nombre"
+                  width={1060}
+                  height={580}
+                  className="article-mockup-image"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="article-figcaption">
+                <strong>Figura 2:</strong> Catálogo de fuentes en vivo para Instagram (cursiva bold, fina caligráfica, itálica, negrita) con confirmación de copiado instantáneo al portapapeles.
+              </figcaption>
+            </figure>
 
             <p>
               Aunque visualmente parecen diferentes tipografías, técnicamente no siempre se trata de una fuente instalada en Instagram.
@@ -270,6 +288,23 @@ export default function LetrasParaInstagramPage() {
             </div>
             <h2>Cómo poner letras bonitas en Instagram paso a paso</h2>
             <p>El proceso es bastante sencillo e intuitivo:</p>
+
+            {/* Real Tool Screenshot 1: Interface & Generator Controls */}
+            <figure className="article-figure">
+              <div className="article-image-container">
+                <Image
+                  src="/images/generador-letras-instagram-interfaz.png"
+                  alt="Captura real del generador de letras para Instagram en theletrasbonitas.com mostrando panel de escritura y filtros"
+                  width={1060}
+                  height={540}
+                  className="article-mockup-image"
+                  priority={false}
+                />
+              </div>
+              <figcaption className="article-figcaption">
+                <strong>Figura 1:</strong> Interfaz interactiva de <span className="text-white font-medium">theletrasbonitas.com/letras-para-instagram</span> con panel de escritura para biografías y nombres, botones de acción rápida y selector de estilos.
+              </figcaption>
+            </figure>
 
             <StepGuide>
               <StepItem stepNumber={1} title="Escribe tu texto">
