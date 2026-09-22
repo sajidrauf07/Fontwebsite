@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import GameNameGenerator from '@/components/nombres-para-juegos/GameNameGenerator';
 import GameNameIdeasSection from '@/components/nombres-para-juegos/GameNameIdeasSection';
@@ -31,20 +32,22 @@ import {
   HelpCircle,
   Dices,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Smile,
+  Moon
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Nombres para Juegos: Nicks Chidos para Copiar y Crear',
+  title: 'Nombres para Juegos: Generador de Nicks Chidos',
   description:
-    'Crea nombres para juegos con nuestro generador. Encuentra nicks gamer, aesthetic, cortos y chidos para copiar, personalizar y probar.',
+    'Crea nombres para juegos con nuestro generador gratis. Encuentra nicks gamer, chidos, aesthetic y originales para copiar y personalizar.',
   alternates: {
     canonical: 'https://theletrasbonitas.com/nombres-para-juegos/'
   },
   openGraph: {
-    title: 'Nombres para Juegos: Nicks Chidos para Copiar y Crear',
+    title: 'Nombres para Juegos: Generador de Nicks Chidos',
     description:
-      'Crea nombres para juegos con nuestro generador. Encuentra nicks gamer, aesthetic, cortos y chidos para copiar, personalizar y probar.',
+      'Crea nombres para juegos con nuestro generador gratis. Encuentra nicks gamer, chidos, aesthetic y originales para copiar y personalizar.',
     url: 'https://theletrasbonitas.com/nombres-para-juegos/',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
@@ -52,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nombres para Juegos: Nicks Chidos para Copiar y Crear',
+    title: 'Nombres para Juegos: Generador de Nicks Chidos',
     description:
-      'Generador de nombres para juegos: crea nicks gamer, aesthetic, pro y de clanes listos para copiar y pegar.'
+      'Generador de nombres para juegos: crea nicks gamer, chidos, aesthetic, pro y de clanes listos para copiar y pegar.'
   },
   robots: {
     index: true,
@@ -110,9 +113,9 @@ export default function NombresParaJuegosPage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Nombres para Juegos: Nicks Chidos para Copiar y Crear',
+    headline: 'Nombres para Juegos: Generador de Nicks Chidos',
     description:
-      'Guía completa y generador interactivo de nombres para juegos. Aprende a crear nicks gamer, aesthetic, elegantes y competitivos con símbolos y caracteres Unicode.',
+      'Guía completa y generador interactivo de nombres para juegos. Aprende a crear nicks gamer, chidos, aesthetic, elegantes y competitivos con símbolos y caracteres Unicode.',
     url: 'https://theletrasbonitas.com/nombres-para-juegos/',
     inLanguage: 'es-MX',
     publisher: {
@@ -141,7 +144,7 @@ export default function NombresParaJuegosPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      {/* Breadcrumbs */}
+      {/* 1. Breadcrumbs */}
       <nav className="breadcrumb-nav" aria-label="Breadcrumb">
         <div className="breadcrumb-container">
           <Link href="/" className="breadcrumb-link">
@@ -152,7 +155,7 @@ export default function NombresParaJuegosPage() {
         </div>
       </nav>
 
-      {/* Hero Section - Tool Centric First Viewport */}
+      {/* 2 & 3. Hero Section & PAS Introduction */}
       <section className="hero-section silo-hero text-center">
         <div className="hero-backdrop" />
         <div className="hero-container">
@@ -162,21 +165,21 @@ export default function NombresParaJuegosPage() {
           </div>
 
           <h1 className="hero-h1">
-            Nombres para Juegos: Nicks Chidos para Copiar y Crear
+            Nombres para Juegos
           </h1>
 
           <p className="hero-tagline">
-            ¿Buscas un nombre para juegos que se vea bien, sea fácil de recordar y represente tu estilo? Aquí puedes crear tu propio nick en segundos.
+            ¿Buscas un nombre para juegos que se vea chido, sea fácil de recordar y represente tu estilo en cada partida?
           </p>
 
-          <p style={{ maxWidth: '680px', margin: '-0.5rem auto 1.25rem', fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-            Escribe una palabra o apodo, elige un estilo y genera diferentes opciones listas para copiar y pegar. Puedes probar nombres gamer, aesthetic, elegantes, cortos, divertidos, competitivos y muchas otras combinaciones. Si todavía no tienes una idea, también puedes generar opciones sin escribir una palabra.
+          <p style={{ maxWidth: '700px', margin: '-0.5rem auto 1.25rem', fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            Elegir un apodo gamer puede ser tardado: muchos ya están ocupados, otros no se leen bien en el lobby o terminan con símbolos rotos. Con nuestro generador interactivo puedes escribir tu apodo, elegir tu estilo favorito y copiar combinaciones listas para usar en segundos.
           </p>
 
           <div className="hero-highlights">
             <div className="highlight-item">
               <CheckCircle2 size={16} />
-              <span>10 Estilos Exclusivos</span>
+              <span>10 Categorías Especializadas</span>
             </div>
             <div className="highlight-item">
               <CheckCircle2 size={16} />
@@ -184,92 +187,96 @@ export default function NombresParaJuegosPage() {
             </div>
             <div className="highlight-item">
               <CheckCircle2 size={16} />
-              <span>Compatibilidad Multiplataforma</span>
+              <span>100% Gratis y Sin Registro</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Interactive Generator Tool in First Viewport */}
+      {/* 4. MAIN INTERACTIVE GENERATOR IN FIRST VIEWPORT */}
       <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator />
       </div>
 
-      {/* Main Article Content */}
+      {/* Main SEO Article Content */}
       <article className="article-prose-container max-w-4xl mx-auto px-4 sm:px-6 mt-16 text-slate-300 leading-relaxed">
         <ReadingProgress />
 
-        {/* Section 1: Explicación del Generador */}
-        <section id="sobre-el-generador">
+        {/* 5. Quick explanation: Cómo usar el generador */}
+        <section id="como-usar">
           <div className="article-category-pill">
             <Sparkles size={14} className="text-indigo-400" aria-hidden="true" />
-            <span>Herramienta en Vivo</span>
+            <span>Paso a Paso</span>
           </div>
 
           <h2 className="article-h2">
-            Generador de Nombres para Juegos
+            Cómo usar el generador de nombres para juegos
           </h2>
 
           <p className="article-lead-paragraph">
-            Crea tu nick personalizado usando una palabra que te guste. Solo necesitas introducir tu apodo base o nombre y elegir una de nuestras categorías temáticas.
+            Crear tu nuevo apodo gamer en Letras Bonitas es un proceso rápido e intuitivo. No necesitas instalar programas ni configurar nada en tu celular o computadora.
           </p>
 
-          <div className="game-feature-box" style={{ margin: '1.5rem 0' }}>
-            <h3 className="game-feature-title">
-              <Lightbulb size={16} color="#FBBF24" />
-              ¿Cómo funciona?
-            </h3>
-            <ul style={{ fontSize: '0.9rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
-              <li>
-                <strong>Escribe tu nombre o palabra:</strong> Ejemplo: <em>Nova, Luna, Rayo, Nexo</em>.
-              </li>
-              <li>
-                <strong>Elige un estilo:</strong> Gamer, Aesthetic, Pro, Elegante, Fantasía, Gracioso, Oscuro, Minimalista, Competitivo o Clan.
-              </li>
-              <li>
-                <strong>Pulsa "Generar nombres" o "Otra tanda":</strong> Obtendrás decenas de opciones con sufijos, prefijos, combinaciones y símbolos.
-              </li>
-              <li>
-                <strong>Pulsa Copiar:</strong> Cuando encuentres una que te guste, pulsa Copiar y podrás pegarla donde quieras.
-              </li>
-            </ul>
-          </div>
+          {/* Screenshot 1: Interface & Controls */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/generador-nombres-juegos-interfaz.png"
+                alt="Captura del generador interactivo de nombres para juegos en theletrasbonitas.com mostrando caja de texto y selector de categorías"
+                width={1060}
+                height={540}
+                className="article-mockup-image"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 1:</strong> Interfaz del generador en <span className="text-white font-medium">theletrasbonitas.com/nombres-para-juegos</span> con opciones de generación rápida, sugerencias y biblioteca de categorías gamer.
+            </figcaption>
+          </figure>
 
-          <TipBox title="¿No sabes qué escribir?">
-            <p>
-              No pasa nada. Puedes dejar el campo vacío y explorar ideas generadas por estilo.
-            </p>
-            <p className="mt-2">
-              También puedes empezar con una palabra muy sencilla como{' '}
-              <span className="font-mono text-pink-300">Nova</span>,{' '}
-              <span className="font-mono text-pink-300">Luna</span>,{' '}
-              <span className="font-mono text-pink-300">Nexo</span>,{' '}
-              <span className="font-mono text-pink-300">Rayo</span>,{' '}
-              <span className="font-mono text-pink-300">Astro</span>,{' '}
-              <span className="font-mono text-pink-300">Zen</span>,{' '}
-              <span className="font-mono text-pink-300">Fénix</span>,{' '}
-              <span className="font-mono text-pink-300">Aura</span>,{' '}
-              <span className="font-mono text-pink-300">Vortex</span> o{' '}
-              <span className="font-mono text-pink-300">Pixel</span>. Una palabra corta suele ser una buena base porque deja más espacio para personalizar el resultado.
-            </p>
-          </TipBox>
+          <StepGuide>
+            <StepItem
+              number="01"
+              label="PASO 1"
+              title="Escribe una palabra o apodo base"
+              description="Introduce tu nombre o palabra favorita en la caja de texto. Si no sabes qué poner, presiona 'Nombre aleatorio' para inspirarte con una base lista."
+            />
+            <StepItem
+              number="02"
+              label="PASO 2"
+              title="Elige tu categoría o estilo"
+              description="Selecciona entre Gamer, Chidos, Aesthetic, Elegantes, Cortos, Divertidos, Oscuros, Competitivos, Minimalistas o Clan según la vibra de tu perfil."
+            />
+            <StepItem
+              number="03"
+              label="PASO 3"
+              title="Explora las opciones generadas"
+              description="Revisa las tarjetas con combinaciones de símbolos, marcos y variaciones alfanuméricas diseñadas para verse nítidas en pantalla."
+            />
+            <StepItem
+              number="04"
+              label="PASO 4"
+              title="Copia en 1 clic y prueba en tu juego"
+              description="Toca el botón 'Copiar' para guardar el nick en tu portapapeles y pégalo directamente en el campo de cambio de nombre de tu videojuego."
+            />
+          </StepGuide>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 2: Nombres para Juegos para Copiar y Pegar */}
+        {/* 6 & 7. Nombres para juegos para copiar y pegar */}
         <section id="nombres-para-copiar-y-pegar">
           <div className="article-category-pill">
             <Crown size={14} className="text-amber-400" aria-hidden="true" />
-            <span>Inspiración Rápida</span>
+            <span>Colección Lista para Usar</span>
           </div>
 
           <h2 className="article-h2">
-            Nombres para Juegos para Copiar y Pegar
+            Nombres para juegos para copiar y pegar
           </h2>
 
           <p className="article-paragraph">
-            Si necesitas una idea rápida, aquí tienes algunas opciones que puedes utilizar como inspiración directa para tus partidas. Haz clic en <strong>Copiar</strong> para llevarlas a tu juego al instante:
+            Si buscas una opción lista sin necesidad de inventar combinaciones desde cero, aquí tienes una selección organizada por estilos. Puedes copiar cualquiera de estos nicks con solo pulsar el botón:
           </p>
 
           {/* Interactive Niche Ideas Component */}
@@ -278,445 +285,352 @@ export default function NombresParaJuegosPage() {
 
         <hr className="article-section-divider" />
 
-        {/* Section 3: Cómo crear un buen nombre para juegos */}
-        <section id="como-crear">
+        {/* 8. Nombres gamer */}
+        <section id="nombres-gamer">
           <div className="article-category-pill">
-            <Lightbulb size={14} className="text-amber-400" aria-hidden="true" />
-            <span>Guía de Diseño</span>
+            <Gamepad2 size={14} className="text-emerald-400" aria-hidden="true" />
+            <span>Estilo Clásico</span>
           </div>
 
           <h2 className="article-h2">
-            Cómo crear un buen nombre para juegos
+            Nombres gamer
           </h2>
 
           <p className="article-paragraph">
-            Crear un nick no significa simplemente juntar dos palabras al azar. Una buena idea debe funcionar visualmente y ser fácil de reconocer por tus compañeros y rivales.
+            Un buen nombre gamer se caracteriza por transmitir fuerza, rapidez y seguridad durante la partida. Palabras como <em>Nova, Rush, Vortex, Shadow, Kael, Titan</em> o <em>Astro</em> funcionan muy bien como base porque son cortas, contundentes y fáciles de pronunciar por llamada de voz en Discord o en el chat de escuadra.
           </p>
 
-          <StepGuide>
-            <StepItem
-              number="01"
-              label="PASO 1"
-              title="Empieza con una palabra que te guste"
-              description="Piensa en una palabra relacionada con tu personalidad, estilo o intereses: un apodo, una palabra corta, un animal, un concepto o un lugar ficticio. Por ejemplo, si eliges Nova, puedes convertirla en NovaX, NovaZen o 亗Nova亗."
-            />
-            <StepItem
-              number="02"
-              label="PASO 2"
-              title="Elige un estilo definido"
-              description="El estilo cambia completamente la apariencia: minimalista (Nova), gamer (NovaX), decorado (『Nova』), aesthetic (NovaAura) o divertido (CasiNova). Elige primero la sensación y luego modifica."
-            />
-            <StepItem
-              number="03"
-              label="PASO 3"
-              title="No utilices demasiados símbolos"
-              description="Los símbolos pueden hacer que un nombre destaque, pero demasiados pueden dificultar su lectura. Una estructura sencilla como ★Nova★ suele ser mucho más legible que una combinación excesivamente cargada."
-            />
-            <StepItem
-              number="04"
-              label="PASO 4"
-              title="Comprueba el resultado antes de confirmarlo"
-              description="Pega el nombre copiado en el campo de tu juego para asegurarte de que no aparezcan cuadros vacíos (□), que no supere el límite de caracteres y que se lea nítido en el lobby."
-            />
-          </StepGuide>
-
-          <WarningBox title="Comprobación de compatibilidad en tu plataforma">
-            Cada juego cuenta con filtros y restricciones de texto propias. Por ejemplo, títulos como Minecraft, Valorant, League of Legends o Roblox manejan sistemas de compatibilidad diferentes a los de juegos móviles. Siempre comprueba el resultado en el juego antes de gastar tarjetas o monedas de cambio.
-          </WarningBox>
+          <p className="article-paragraph">
+            Para darles un toque extra, puedes acompañarlas con terminaciones en mayúsculas como <span className="font-mono text-emerald-300">NovaX</span>, <span className="font-mono text-emerald-300">ShadowRush</span>, o marcos sutiles como <span className="font-mono text-emerald-300">『Titan』</span>.
+          </p>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 4: Nombres para Juegos según tu estilo */}
-        <section id="segun-tu-estilo">
+        {/* 9. Nombres chidos para juegos */}
+        <section id="nombres-chidos">
           <div className="article-category-pill">
-            <Layers size={14} className="text-cyan-400" aria-hidden="true" />
-            <span>Categorías Detalladas</span>
+            <Flame size={14} className="text-orange-400" aria-hidden="true" />
+            <span>Identidad Mexicana</span>
           </div>
 
           <h2 className="article-h2">
-            Nombres para Juegos según tu estilo
+            Nombres chidos para juegos
           </h2>
 
           <p className="article-paragraph">
-            No todos buscan el mismo tipo de nick. Elegir una categoría antes de generar nombres puede ayudarte a encontrar una opción más rápido:
+            En México y Latinoamérica, un apodo "chido" es aquel que tiene personalidad propia y llama la atención sin verse sobrecargado. Combina palabras comunes con títulos respetados: <em>ElPatrón, DonRayo, LoboMex, FénixPro, ShadowKing</em> o <em>CapitánNova</em>.
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', margin: '1.5rem 0' }}>
-            {/* Gamer y Competitivos */}
+          <p className="article-paragraph">
+            Si te gusta este estilo, te recomendamos visitar nuestra sección especializada de{' '}
+            <Link href="/nombres-para-juegos/nombres-chidos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              nombres chidos para juegos
+            </Link>
+            , donde reunimos cientos de opciones con sabor regional y creatividad.
+          </p>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 10. Nombres aesthetic para juegos */}
+        <section id="nombres-aesthetic">
+          <div className="article-category-pill">
+            <Sparkles size={14} className="text-pink-400" aria-hidden="true" />
+            <span>Visual y Armonioso</span>
+          </div>
+
+          <h2 className="article-h2">
+            Nombres aesthetic para juegos
+          </h2>
+
+          <p className="article-paragraph">
+            La estética aesthetic prioriza la delicadeza visual, el equilibrio y la armonía tipográfica. En lugar de símbolos agresivos, recurre a conceptos sobre la naturaleza, el cosmos y los tonos suaves: <em>Luna, Aura, Nube, Bruma, Velvet, Bloom, Star</em>.
+          </p>
+
+          <p className="article-paragraph">
+            Se complementan con estrellas finas (✧), lunas (☾) o caracteres en cursiva suave como <span className="font-mono text-pink-300">•.¸♡ Luna ♡¸.•</span> o <span className="font-mono text-pink-300">✧NovaBloom✧</span>.
+          </p>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 11. Nombres cortos para juegos */}
+        <section id="nombres-cortos">
+          <div className="article-category-pill">
+            <Zap size={14} className="text-amber-400" aria-hidden="true" />
+            <span>Compactos y Prácticos</span>
+          </div>
+
+          <h2 className="article-h2">
+            Nombres cortos para juegos
+          </h2>
+
+          <p className="article-paragraph">
+            Muchos jugadores veteranos prefieren nicks de 3 a 5 letras porque son limpios, rápidos de escribir al agregar amigos y destacan con elegancia en las tablas de clasificación. Ejemplos populares incluyen <em>Nox, Zyn, Kiro, Ryu, Nexo, Vex, Zen, Kael, Lux, Ziro</em>.
+          </p>
+
+          <p className="article-paragraph">
+            Si tu favorito ya fue registrado en tu juego, puedes consultar nuestra lista completa de{' '}
+            <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              nicks para juegos
+            </Link>{' '}
+            para encontrar variantes inteligentes con números o terminaciones sutiles.
+          </p>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 12. Nombres elegantes para juegos */}
+        <section id="nombres-elegantes">
+          <div className="article-category-pill">
+            <Crown size={14} className="text-amber-400" aria-hidden="true" />
+            <span>Distinción y Porte</span>
+          </div>
+
+          <h2 className="article-h2">
+            Nombres elegantes para juegos
+          </h2>
+
+          <p className="article-paragraph">
+            Para quienes buscan proyectar prestigio, los nombres elegantes emplean términos asociados a la realeza, la nobleza o el misticismo: <em>NovaElite, LunaRoyal, NexoLux, AuraPrime, ZenRoyal, NovaCrown</em>.
+          </p>
+
+          <p className="article-paragraph">
+            Un detalle visual como una corona imperial (<span className="font-mono text-amber-300">♛ Nova ♛</span>) o corchetes refinados (<span className="font-mono text-amber-300">⟦ NovaLux ⟧</span>) eleva de inmediato la presencia de tu perfil.
+          </p>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 13. Nombres divertidos para juegos */}
+        <section id="nombres-divertidos">
+          <div className="article-category-pill">
+            <Smile size={14} className="text-rose-400" aria-hidden="true" />
+            <span>Humor y Amistad</span>
+          </div>
+
+          <h2 className="article-h2">
+            Nombres divertidos para juegos
+          </h2>
+
+          <p className="article-paragraph">
+            No todas las partidas tienen que ser tryhard. Si juegas para relajarte con tu grupo de amigos, un nombre con sentido del humor le quita tensión al juego y provoca risas en el lobby: <em>CasiPro, NoEraYo, PingAlto, ModoSiesta, PanConLag, CeroDrama, DonDespiste</em>.
+          </p>
+
+          <p className="article-paragraph">
+            Además, suelen ser los nicks que los rivales recuerdan con mayor facilidad al terminar la ronda.
+          </p>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 14. Cómo crear un buen nombre para tu juego */}
+        <section id="como-crear">
+          <div className="article-category-pill">
+            <Lightbulb size={14} className="text-amber-400" aria-hidden="true" />
+            <span>Principios de Diseño</span>
+          </div>
+
+          <h2 className="article-h2">
+            Cómo crear un buen nombre para tu juego
+          </h2>
+
+          <p className="article-paragraph">
+            Un nick memorable no se elige al azar. Te recomendamos considerar estos cuatro factores antes de fijar tu decisión:
+          </p>
+
+          <div className="game-grid-2" style={{ margin: '1.5rem 0' }}>
             <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ color: '#34D399' }}>
-                <Swords size={18} /> Nombres gamer y competitivos
+              <h3 className="game-feature-title">
+                <CheckCircle2 size={16} color="#10B981" /> 1. Pronunciación sencilla
               </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
-                Los nombres gamer suelen buscar una apariencia directa y memorable. Puedes combinar conceptos como <em>Nova, Rush, Zero, Nexo, Titan, Astro, Prime, Vortex, Pulse</em> o <em>Shadow</em>:
+              <p className="game-feature-desc">
+                Si juegas en equipo con chat de voz, tus compañeros deben poder llamarte en medio de una jugada rápida sin trabarse.
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['NovaRush', 'TitanZero', 'NexoPrime', 'AstroVex', 'VortexNova', 'ZeroPulse'].map((name) => (
-                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#34D399', fontSize: '0.85rem', fontWeight: 600 }}>
-                    {name}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Aesthetic */}
             <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ color: '#F472B6' }}>
-                <Sparkles size={18} /> Nombres aesthetic
+              <h3 className="game-feature-title">
+                <CheckCircle2 size={16} color="#10B981" /> 2. Coherencia con tu estilo
               </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
-                Suelen utilizar palabras suaves, limpias o visualmente agradables como <em>Luna, Aura, Nova, Bloom, Sky, Zen, Mist, Nube, Star, Velvet</em>:
+              <p className="game-feature-desc">
+                Si eres francotirador, busca palabras ágiles como <em>Flash, Aim, Ghost</em>. Si juegas de tanque, prefiere <em>Titan, Golem,盾</em>.
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['LunaAura', 'NovaBloom', 'SkyNexa', 'AuraZen', 'LunaMist', 'NovaSky'].map((name) => (
-                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#F472B6', fontSize: '0.85rem', fontWeight: 600 }}>
-                    {name}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Cortos */}
             <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ color: '#FBBF24' }}>
-                <Zap size={18} /> Nombres cortos
+              <h3 className="game-feature-title">
+                <CheckCircle2 size={16} color="#10B981" /> 3. Equilibrio visual
               </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
-                Si prefieres algo sencillo, prueba con una palabra de pocas letras (<em>Nox, Vex, Zen, Lux, Ryu, Zyn, Kiro, Nexo, Nyx, Ziro</em>). Si están ocupados, añade una variación mínima:
+              <p className="game-feature-desc">
+                Los marcos decorativos deben resaltar el nombre, no ahogarlo. Una decoración simple suele verse más profesional que diez símbolos juntos.
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {['NoxX', 'Nexo7', 'ZynX', 'KiroZen', 'LuxNova'].map((name) => (
-                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#FBBF24', fontSize: '0.85rem', fontWeight: 600 }}>
-                    {name}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            {/* Equipos y Clanes */}
             <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ color: '#38BDF8' }}>
-                <Users size={18} /> Nombres para equipos y clanes
+              <h3 className="game-feature-title">
+                <CheckCircle2 size={16} color="#10B981" /> 4. Identidad para tu clan
               </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
-                Si el nombre será utilizado por varias personas, conviene pensar en una identidad colectiva:
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
-                {['Nova Crew', 'Zenith', 'Nexo Team', 'Vortex', 'Astro Squad', 'Nova Union'].map((name) => (
-                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#38BDF8', fontSize: '0.85rem', fontWeight: 600 }}>
-                    {name}
-                  </span>
-                ))}
-              </div>
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
-                Para más ideas específicas, puedes consultar nuestra sección dedicada a{' '}
+              <p className="game-feature-desc">
+                Si buscas un nombre para tu escuadra, revisa nuestra sección de{' '}
                 <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                   nombres para clanes
+                </Link>{' '}
+                o explora apodos compartidos en{' '}
+                <Link href="/nombres-para-juegos/apodos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                  apodos para juegos
                 </Link>.
               </p>
             </div>
           </div>
-
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-            También puedes descubrir más opciones estilizadas en nuestra categoría de{' '}
-            <Link href="/nombres-para-juegos/nombres-chidos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-              nombres chidos para juegos
-            </Link>.
-          </p>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 5: Diferencia entre nick, apodo y nombre gamer */}
-        <section id="diferencias-conceptuales">
+        {/* 15. Cómo personalizar un nombre gamer */}
+        <section id="como-personalizar">
           <div className="article-category-pill">
-            <HelpCircle size={14} className="text-sky-400" aria-hidden="true" />
-            <span>Conceptos Clave</span>
+            <Swords size={14} className="text-indigo-400" aria-hidden="true" />
+            <span>Técnicas de Personalización</span>
           </div>
 
           <h2 className="article-h2">
-            ¿Qué diferencia hay entre un nick, un apodo y un nombre gamer?
+            Cómo personalizar un nombre gamer
           </h2>
 
           <p className="article-paragraph">
-            Aunque muchas personas utilizan estos términos como sinónimos, pueden tener pequeños matices:
+            Cuando encuentras un estilo en el generador que te gusta, puedes darle tu toque final mediante tres métodos principales:
           </p>
 
-          <div className="game-grid-3" style={{ margin: '1.5rem 0' }}>
-            <div className="game-feature-box">
-              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Nick</strong>
-              <p className="game-feature-desc" style={{ margin: 0 }}>
-                Es el nombre que utilizas como identificador técnico dentro de una plataforma o videojuego.
-              </p>
+          {/* Screenshot 2: Real Tool Results & Copying Action */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/copiar-nombres-juegos-estilos.png"
+                alt="Catálogo interactivo con estilos de nombres para juegos con coronas y corchetes con confirmación de copiado en 1 clic"
+                width={1060}
+                height={580}
+                className="article-mockup-image"
+                loading="lazy"
+              />
             </div>
-            <div className="game-feature-box">
-              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Apodo</strong>
-              <p className="game-feature-desc" style={{ margin: 0 }}>
-                Puede ser una forma corta o alternativa con la que te llaman tus amigos o tu comunidad.
-              </p>
-            </div>
-            <div className="game-feature-box">
-              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Nombre Gamer</strong>
-              <p className="game-feature-desc" style={{ margin: 0 }}>
-                Es una expresión más amplia para una identidad competitiva completa dentro de comunidades virtuales.
-              </p>
-            </div>
-          </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 2:</strong> Catálogo de estilos en vivo para nombres de juegos con botón de copiado instantáneo y confirmación visual al portapapeles.
+            </figcaption>
+          </figure>
 
-          <p className="article-paragraph">
-            En la práctica, las búsquedas se mezclan bastante. Por eso, si buscas formatos más cortos, te recomendamos explorar{' '}
-            <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-              nicks para juegos
-            </Link>{' '}
-            o revisar alternativas en{' '}
-            <Link href="/nombres-para-juegos/apodos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-              apodos para juegos
-            </Link>.
-          </p>
+          <ul style={{ fontSize: '0.9rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: '1.25rem 0', lineHeight: 1.7 }}>
+            <li>
+              <strong>Añadir un tag de equipo o clan:</strong> Puedes colocar un prefijo corto entre corchetes, por ejemplo <span className="font-mono text-indigo-300">[MX] Shadow</span> o <span className="font-mono text-indigo-300">『FF』Nova</span>.
+            </li>
+            <li>
+              <strong>Cambiar a letras cursivas o góticas:</strong> Si deseas transformar toda tu frase o biografía, apóyate en nuestro{' '}
+              <Link href="/conversor-de-letras/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                conversor de letras
+              </Link>{' '}
+              o en las opciones de{' '}
+              <Link href="/letras-para-instagram/letras-para-nombres/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                letras para nombres
+              </Link>.
+            </li>
+            <li>
+              <strong>Combinar dos palabras clave:</strong> Une tu palabra favorita con otra complementaria (ej. <em>Nova + Zen = NovaZen</em>).
+            </li>
+          </ul>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 6: Cómo hacer un nombre único */}
-        <section id="como-hacer-unico">
+        {/* 16. Símbolos y caracteres especiales */}
+        <section id="simbolos-especiales">
           <div className="article-category-pill">
             <Star size={14} className="text-amber-400" aria-hidden="true" />
-            <span>Originalidad</span>
+            <span>Símbolos Populares</span>
           </div>
 
           <h2 className="article-h2">
-            Cómo hacer un nombre único
+            Símbolos y caracteres especiales para juegos
           </h2>
 
           <p className="article-paragraph">
-            No existe una fórmula mágica que garantice que un nombre estará disponible en todos los juegos. Sin embargo, puedes aumentar drásticamente tus posibilidades probando estas tres técnicas:
+            Los símbolos más codiciados por la comunidad gamer incluyen la corona tailandesa (<span className="font-mono text-amber-300">亗</span>), las alas ornamentales (<span className="font-mono text-indigo-300">꧁ ꧂</span>), los corchetes dobles (<span className="font-mono text-indigo-300">『 』</span>), el rayo de energía (<span className="font-mono text-amber-300">⚡</span>) y la cruz de espadas (<span className="font-mono text-rose-300">乂</span>).
           </p>
 
-          <div className="game-grid-3" style={{ margin: '1.5rem 0' }}>
-            <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
-                <Check size={15} color="#10B981" /> 1. Combina dos palabras
-              </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
-                Dos palabras cortas suelen ser suficientes para crear algo fresco:
-              </p>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
-                <div>Nova + Zen = <strong>NovaZen</strong></div>
-                <div>Luna + Nex = <strong>LunaNex</strong></div>
-                <div>Astro + Lux = <strong>AstroLux</strong></div>
-              </div>
-            </div>
-
-            <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
-                <Check size={15} color="#10B981" /> 2. Cambia una parte pequeña
-              </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
-                Si tu nombre favorito ya está ocupado, añade una terminación:
-              </p>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
-                <div>Nova → <strong>NovaX</strong></div>
-                <div>Nova → <strong>Nova7</strong></div>
-                <div>Nova → <strong>NovaCore</strong></div>
-              </div>
-            </div>
-
-            <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
-                <Check size={15} color="#10B981" /> 3. Utiliza un estilo visual
-              </h3>
-              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
-                Cambia su presentación gráfica mediante símbolos o Unicode:
-              </p>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
-                <div><strong>𝓝𝓸𝓿𝓪</strong> (Cursiva)</div>
-                <div><strong>『Nova』</strong> (Corchetes)</div>
-                <div><strong>亗Nova亗</strong> (Corona)</div>
-              </div>
-            </div>
-          </div>
-
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-            Si deseas explorar transformaciones tipográficas de todo tu texto, puedes utilizar nuestro{' '}
-            <Link href="/conversor-de-letras/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-              conversor de letras
+          <p className="article-paragraph">
+            Para títulos populares de disparos, consulta nuestra guía dedicada a los{' '}
+            <Link href="/nombres-para-free-fire/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              nombres para Free Fire
             </Link>{' '}
-            o revisar{' '}
-            <Link href="/letras-para-instagram/letras-para-nombres/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-              letras para nombres
+            y explora el catálogo de{' '}
+            <Link href="/nombres-para-free-fire/nombres/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              nombres con símbolos para Free Fire
             </Link>.
           </p>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 7: Compatibilidad de símbolos */}
-        <section id="compatibilidad-simbolos">
+        {/* 17. Unicode y compatibilidad */}
+        <section id="unicode-compatibilidad">
           <div className="article-category-pill">
             <ShieldAlert size={14} className="text-rose-400" aria-hidden="true" />
             <span>Soporte Técnico</span>
           </div>
 
           <h2 className="article-h2">
-            ¿Los nombres con símbolos funcionan en todos los juegos?
+            Unicode y compatibilidad en videojuegos
           </h2>
 
-          <p className="article-lead-paragraph">
-            No necesariamente.
-          </p>
-
           <p className="article-paragraph">
-            Los caracteres Unicode pueden mostrarse de forma diferente según el juego, sistema operativo, dispositivo o campo de texto. Algunos servicios aceptan una amplia variedad de caracteres especiales, mientras que otros restringen estrictamente el conjunto a letras y números convencionales.
+            Es fundamental aclarar un punto técnico importante: <strong>las letras bonitas que ves en este sitio no son fuentes tipográficas instaladas en tu celular o en tu juego</strong>, sino caracteres del estándar universal <strong>Unicode</strong>.
           </p>
 
-          <InfoBox title="La mejor práctica recomendada:">
-            <ol className="list-decimal pl-5 space-y-1.5 text-xs sm:text-sm">
-              <li>Generar el nombre en nuestro generador.</li>
-              <li>Copiarlo con el botón de 1 clic.</li>
-              <li>Pegarlo en el campo correspondiente del juego.</li>
-              <li>Comprobar cómo aparece en pantalla (sin recuadros vacíos □).</li>
-              <li>Confirmarlo solamente después de verificarlo.</li>
-            </ol>
+          <InfoBox title="¿Por qué algunos juegos muestran recuadros vacíos (□)?">
+            <p>
+              Cuando un juego móvil o de PC no tiene incorporada la tipografía adecuada para dibujar un glifo Unicode específico, el sistema muestra un carácter de sustitución conocido como "tofu" o recuadro vacío.
+            </p>
+            <p className="mt-2">
+              <strong>Recomendación clave:</strong> Siempre pega tu nick en el buscador interno o en el campo de prueba de tu juego antes de pagar diamantes, Riot Points o tarjetas de cambio de nombre oficiales.
+            </p>
           </InfoBox>
         </section>
 
         <hr className="article-section-divider" />
 
-        {/* Section 8: Nombre corto vs decorado */}
-        <section id="corto-vs-decorado">
+        {/* 18. Errores comunes al elegir un nombre */}
+        <section id="errores-comunes">
           <div className="article-category-pill">
-            <Layers size={14} className="text-purple-400" aria-hidden="true" />
-            <span>Comparativa</span>
+            <ShieldAlert size={14} className="text-rose-400" aria-hidden="true" />
+            <span>Consejos de Seguridad</span>
           </div>
 
           <h2 className="article-h2">
-            ¿Es mejor un nombre corto o uno decorado?
-          </h2>
-
-          <p className="article-paragraph">
-            Depende del resultado y la impresión que quieras conseguir:
-          </p>
-
-          <div className="game-grid-2" style={{ margin: '1.5rem 0' }}>
-            <div className="game-feature-box">
-              <h3 className="game-feature-title">
-                <Zap size={15} color="#FBBF24" /> Un nombre corto suele ser:
-              </h3>
-              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
-                <li>Más fácil de recordar y pronunciar por llamada de voz.</li>
-                <li>Más sencillo de escribir al buscar amigos.</li>
-                <li>Más legible en el marcador durante una partida intensa.</li>
-              </ul>
-            </div>
-
-            <div className="game-feature-box">
-              <h3 className="game-feature-title">
-                <Sparkles size={15} color="#818CF8" /> Un nombre decorado puede:
-              </h3>
-              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
-                <li>Destacar visualmente frente a los demás jugadores.</li>
-                <li>Transmitir una personalidad más marcada y original.</li>
-                <li>Combinarse con marcos y símbolos épicos como coronas o alas.</li>
-              </ul>
-            </div>
-          </div>
-
-          <p className="article-paragraph">
-            Una buena estrategia es crear primero una versión simple (<em>Nova</em>) y después probar una versión decorada (<em>『Nova』</em> o <em>★NovaZen★</em>). Así puedes comparar diferentes opciones sin perder la esencia original.
-          </p>
-        </section>
-
-        <hr className="article-section-divider" />
-
-        {/* Section 9: Plataformas */}
-        <section id="plataformas">
-          <div className="article-category-pill">
-            <Gamepad2 size={14} className="text-emerald-400" aria-hidden="true" />
-            <span>Ecosistema Gamer</span>
-          </div>
-
-          <h2 className="article-h2">
-            Nombres para Juegos en diferentes plataformas
-          </h2>
-
-          <p className="article-paragraph">
-            Un buen nick puede servir para diferentes tipos de videojuegos y comunidades, pero no todos manejan las mismas restricciones. Puedes utilizar estas ideas para:
-          </p>
-
-          <ul style={{ fontSize: '0.9rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: '1rem 0', lineHeight: 1.7 }}>
-            <li>Videojuegos multijugador y battle royale (Free Fire, PUBG, Fortnite, COD Mobile).</li>
-            <li>Juegos competitivos de PC y consola (Valorant, LoL, CS2, Overwatch).</li>
-            <li>Comunidades online, servidores de Discord y plataformas de streaming.</li>
-            <li>Equipos, gremios, clanes y escuadras de esports.</li>
-          </ul>
-
-          <div className="game-feature-box" style={{ margin: '1.5rem 0' }}>
-            <h3 className="game-feature-title" style={{ marginBottom: '0.75rem' }}>
-              <Gamepad2 size={16} color="#818CF8" /> Guías especializadas por plataforma
-            </h3>
-            <div style={{ fontSize: '0.88rem', color: '#CBD5E1', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              <div>
-                👉 Si necesitas un nombre para el battle royale de Garena, visita nuestra sección de{' '}
-                <Link href="/nombres-para-free-fire/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                  nombres para Free Fire
-                </Link>.
-              </div>
-              <div>
-                👉 Si buscas una identidad grupal, consulta{' '}
-                <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                  nombres para clanes
-                </Link>.
-              </div>
-              <div>
-                👉 Y si buscas ideas cortas y minimalistas, explora{' '}
-                <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                  nicks para juegos
-                </Link>.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <hr className="article-section-divider" />
-
-        {/* Section 10: Consejos rápidos y errores comunes */}
-        <section id="consejos-y-errores">
-          <div className="article-category-pill">
-            <Lightbulb size={14} className="text-amber-400" aria-hidden="true" />
-            <span>Recomendaciones</span>
-          </div>
-
-          <h2 className="article-h2">
-            Consejos rápidos y errores comunes al elegir tu nombre
+            Errores comunes al elegir un nombre para juegos
           </h2>
 
           <div className="game-grid-2" style={{ margin: '1.5rem 0' }}>
-            {/* Consejos */}
-            <div className="game-feature-box">
-              <h3 className="game-feature-title" style={{ color: '#34D399' }}>
-                <CheckCircle2 size={16} color="#34D399" /> Preguntas antes de elegir:
-              </h3>
-              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
-                <li><strong>¿Se entiende fácilmente?</strong> Si tienes que explicar cómo se lee, quizá sea demasiado complicado.</li>
-                <li><strong>¿Es fácil de recordar?</strong> Debería reconocerse tras verlo un par de veces.</li>
-                <li><strong>¿Se ve bien sin símbolos?</strong> Si la respuesta es sí, tienes una base sólida.</li>
-                <li><strong>¿Cumple el límite de caracteres?</strong> Verifica la longitud máxima de tu juego.</li>
-                <li><strong>¿Representa tu estilo de juego?</strong> Debe encajar con la identidad que quieres proyectar.</li>
-              </ul>
-            </div>
-
-            {/* Errores comunes */}
             <div className="game-feature-box">
               <h3 className="game-feature-title" style={{ color: '#FB7185' }}>
-                <ShieldAlert size={16} color="#FB7185" /> Errores a evitar:
+                <ShieldAlert size={16} color="#FB7185" /> Errores frecuentes:
               </h3>
               <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
-                <li><strong>Demasiados símbolos:</strong> Más adornos no siempre significa un mejor resultado visual.</li>
-                <li><strong>Nombres excesivamente largos:</strong> Pueden quedar cortados en la interfaz de la partida.</li>
-                <li><strong>Copiar a un streamer popular:</strong> Puede que ya esté ocupado o sea difícil diferenciarte.</li>
-                <li><strong>No verificar la compatibilidad:</strong> Un carácter puede verse bien en el navegador y fallar en el juego.</li>
-                <li><strong>Añadir números sin sentido:</strong> Añadir muchos dígitos al azar resta impacto y elegancia.</li>
+                <li><strong>Saturar de símbolos:</strong> Hace que el nombre sea ilegible y difícil de buscar para tus amigos.</li>
+                <li><strong>Exceder el límite de caracteres:</strong> La mayoría de los juegos permiten entre 12 y 16 caracteres máximos.</li>
+                <li><strong>Copiar a creadores famosos:</strong> Te resta originalidad y puede generar confusiones.</li>
+                <li><strong>No verificar la compatibilidad:</strong> Puede lucir bien en el navegador pero fallar en el motor del juego.</li>
+              </ul>
+            </div>
+
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#34D399' }}>
+                <CheckCircle2 size={16} color="#34D399" /> Buenas prácticas:
+              </h3>
+              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
+                <li><strong>Probar en el lobby:</strong> Asegúrate de que tus amigos lean tu nombre sin problemas.</li>
+                <li><strong>Mantener una base reconocible:</strong> Si cambias de juego, conserva tu raíz (ej. <em>Shadow</em>).</li>
+                <li><strong>Guardar en favoritos:</strong> Usa la estrella de nuestra herramienta para no perder tus mejores opciones.</li>
+                <li><strong>Elegir algo con significado:</strong> Tu apodo te acompañará durante cientos de horas de juego.</li>
               </ul>
             </div>
           </div>
@@ -724,45 +638,13 @@ export default function NombresParaJuegosPage() {
 
         <hr className="article-section-divider" />
 
-        {/* Section 11: FAQ Section */}
-        <section id="preguntas-frecuentes">
-          <div className="article-category-pill">
-            <HelpCircle size={14} className="text-indigo-400" aria-hidden="true" />
-            <span>Dudas Habituales</span>
-          </div>
-
-          <h2 className="article-h2">
-            Preguntas frecuentes sobre nombres para juegos
-          </h2>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', margin: '1.5rem 0' }}>
-            {JUEGOS_FAQ_ITEMS.map((faq, index) => (
-              <details
-                key={index}
-                className="game-feature-box"
-                style={{ cursor: 'pointer' }}
-              >
-                <summary style={{ fontWeight: 700, color: '#FFF', fontSize: '0.92rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', listStyle: 'none' }}>
-                  <span>{faq.question}</span>
-                  <ChevronRight size={16} color="#818CF8" style={{ flexShrink: 0, marginLeft: '0.5rem' }} />
-                </summary>
-                <p style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.88rem', color: '#CBD5E1', lineHeight: 1.65, margin: '0.75rem 0 0' }}>
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        <hr className="article-section-divider" />
-
-        {/* Section 12: Hub de Enlaces Internos */}
+        {/* 19. Related tools/pages */}
         <section id="explora-mas" style={{ padding: '1.75rem', borderRadius: '16px', background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 27, 75, 0.5))', border: '1px solid rgba(99, 102, 241, 0.25)', margin: '2rem 0' }}>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFF', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Sparkles size={18} color="#818CF8" /> Explora más ideas en Letras Bonitas
+            <Sparkles size={18} color="#818CF8" /> Explora más herramientas en Letras Bonitas
           </h2>
           <p style={{ fontSize: '0.88rem', color: '#CBD5E1', marginBottom: '1.25rem' }}>
-            Si todavía estás buscando inspiración, continúa navegando por nuestras herramientas y categorías especializadas:
+            Continúa navegando por nuestras secciones especializadas para personalizar tu presencia en juegos y redes sociales:
           </p>
 
           <div className="game-grid-2">
@@ -831,7 +713,41 @@ export default function NombresParaJuegosPage() {
           </div>
         </section>
 
-        {/* Section 13: Conclusión */}
+        <hr className="article-section-divider" />
+
+        {/* 20. FAQ Section */}
+        <section id="preguntas-frecuentes">
+          <div className="article-category-pill">
+            <HelpCircle size={14} className="text-indigo-400" aria-hidden="true" />
+            <span>Dudas Habituales</span>
+          </div>
+
+          <h2 className="article-h2">
+            Preguntas frecuentes sobre nombres para juegos
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', margin: '1.5rem 0' }}>
+            {JUEGOS_FAQ_ITEMS.map((faq, index) => (
+              <details
+                key={index}
+                className="game-feature-box"
+                style={{ cursor: 'pointer' }}
+              >
+                <summary style={{ fontWeight: 700, color: '#FFF', fontSize: '0.92rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', listStyle: 'none' }}>
+                  <span>{faq.question}</span>
+                  <ChevronRight size={16} color="#818CF8" style={{ flexShrink: 0, marginLeft: '0.5rem' }} />
+                </summary>
+                <p style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.88rem', color: '#CBD5E1', lineHeight: 1.65, margin: '0.75rem 0 0' }}>
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <hr className="article-section-divider" />
+
+        {/* 21. Conclusion */}
         <section id="conclusion" style={{ margin: '2rem 0 4rem' }}>
           <div className="article-category-pill">
             <CheckCircle2 size={14} className="text-emerald-400" aria-hidden="true" />
@@ -843,15 +759,15 @@ export default function NombresParaJuegosPage() {
           </h2>
 
           <p className="article-paragraph">
-            Elegir un nombre para juegos no tiene que ser complicado. Empieza con una palabra sencilla, decide qué estilo representa mejor lo que buscas y genera varias alternativas. Después compara los resultados, copia tu favorita y comprueba cómo aparece en el juego antes de confirmarla.
+            Elegir un buen nombre para juegos no tiene que ser una tarea complicada ni frustrante. Empieza con una palabra que te represente, experimenta con distintas categorías en el generador y encuentra la combinación exacta que encaje con tu estilo de juego.
           </p>
 
           <p className="article-paragraph">
-            Si quieres un nombre corto, prueba una combinación minimalista. Si buscas algo más visual, añade un detalle decorativo. Y si vas a utilizar el nombre para un equipo, piensa en una opción que todos puedan recordar fácilmente.
+            Ya sea que busques un apodo minimalista de pocas letras, una estética limpia o un marco decorado con coronas y alas, lo verdaderamente importante es que te sientas cómodo con tu identidad en cada partida.
           </p>
 
           <p className="article-paragraph" style={{ fontWeight: 700, color: '#FFF' }}>
-            Lo importante es encontrar un nombre que sea fácil de recordar, que se vea bien y que funcione correctamente en la plataforma donde vas a utilizarlo. Escribe tu palabra arriba y empieza a crear tu nuevo nick.
+            Sube al generador, escribe tu palabra o genera una opción aleatoria y copia tu nuevo nick gamer en segundos.
           </p>
 
           <div style={{ marginTop: '2rem', textAlign: 'center' }}>

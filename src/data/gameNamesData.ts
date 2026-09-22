@@ -8,18 +8,19 @@ export interface GameCategory {
 
 export const GAME_CATEGORIES: GameCategory[] = [
   { id: 'gamer', name: 'Gamer', icon: '🎮', badge: 'Gamer', description: 'Nicks intensos y directos para partidas competitivas' },
+  { id: 'chidos', name: 'Chidos', icon: '🔥', badge: 'Chidos', description: 'Nombres con personalidad que destacan en el lobby' },
   { id: 'aesthetic', name: 'Aesthetic', icon: '✨', badge: 'Aesthetic', description: 'Estilos limpios, armoniosos y visualmente suaves' },
-  { id: 'elegante', name: 'Elegante', icon: '👑', badge: 'Elegante', description: 'Nombres distinguidos con un toque regio y sofisticado' },
-  { id: 'pro', name: 'Pro', icon: '⚡', badge: 'Pro', description: 'Apodos tryhard y enérgicos de alto nivel' },
-  { id: 'fantasia', name: 'Fantasía', icon: '🌌', badge: 'Fantasía', description: 'Inspirados en mundos místicos, magia y leyendas' },
-  { id: 'gracioso', name: 'Gracioso', icon: '😄', badge: 'Gracioso', description: 'Nombres ingeniosos y cómicos para jugar con amigos' },
-  { id: 'oscuro', name: 'Oscuro', icon: '🌙', badge: 'Oscuro', description: 'Nicks misteriosos, sombríos y góticos' },
-  { id: 'minimalista', name: 'Minimalista', icon: '🧊', badge: 'Minimal', description: 'Combinaciones cortas, directas y sin sobrecarga' },
-  { id: 'competitivo', name: 'Competitivo', icon: '🏆', badge: 'Ranked', description: 'Ideal para torneos, tablas de clasificación y PvP' },
-  { id: 'clan', name: 'Clan', icon: '👥', badge: 'Clan', description: 'Identidades y tags diseñadas para equipos y escuadras' }
+  { id: 'elegantes', name: 'Elegantes', icon: '👑', badge: 'Elegante', description: 'Nombres distinguidos con un toque regio y sofisticado' },
+  { id: 'cortos', name: 'Cortos', icon: '⚡', badge: 'Corto', description: 'Palabras de 3 a 5 letras fáciles de recordar' },
+  { id: 'divertidos', name: 'Divertidos', icon: '😄', badge: 'Divertido', description: 'Nombres ingeniosos y cómicos para jugar con amigos' },
+  { id: 'oscuros', name: 'Oscuros', icon: '🌙', badge: 'Oscuro', description: 'Nicks misteriosos, sombríos y góticos' },
+  { id: 'competitivos', name: 'Competitivos', icon: '🏆', badge: 'Ranked', description: 'Ideal para torneos, tablas de clasificación y PvP' },
+  { id: 'minimalistas', name: 'Minimalistas', icon: '🧊', badge: 'Minimal', description: 'Combinaciones directas, limpias y sin sobrecarga' },
+  { id: 'clan', name: 'Clan', icon: '👥', badge: 'Clan', description: 'Identidades y tags diseñadas para escuadras y gremios' }
 ];
 
 export const QUICK_BASE_WORDS = [
+  'Shadow',
   'Nova',
   'Luna',
   'Rayo',
@@ -27,9 +28,15 @@ export const QUICK_BASE_WORDS = [
   'Astro',
   'Zen',
   'Fénix',
-  'Aura',
   'Vortex',
-  'Pixel'
+  'Kael'
+];
+
+export const RANDOM_GAMER_NAMES = [
+  'Shadow', 'Nova', 'Titan', 'Vortex', 'Kael', 'Ryu', 'Zyn', 'Ares', 'Nyx', 'Raze',
+  'Fénix', 'Aura', 'Pixel', 'Trueno', 'Sombra', 'Lobo', 'Kiro', 'Vanta', 'Eclipse', 'Ziro',
+  'Ghost', 'Frost', 'Blaze', 'Reaper', 'Zenith', 'Crono', 'Specter', 'Draco', 'Hydra', 'Blitz',
+  'AimGod', 'Alpha', 'Omega', 'Valkyrie', 'Falcon', 'Raven', 'Venom', 'Storm', 'Cipher', 'Viper'
 ];
 
 export interface SymbolWrapper {
@@ -41,70 +48,70 @@ export interface SymbolWrapper {
 }
 
 export const GAME_SYMBOL_WRAPPERS: SymbolWrapper[] = [
-  { id: 'w-coronas', prefix: '亗', suffix: '亗', styleName: 'Corona 亗', categories: ['gamer', 'pro', 'elegante'] },
-  { id: 'w-corchetes', prefix: '『', suffix: '』', styleName: 'Corchete Gótico', categories: ['gamer', 'elegante', 'minimalista'] },
-  { id: 'w-alas', prefix: '꧁', suffix: '꧂', styleName: 'Alas Reales', categories: ['gamer', 'pro', 'fantasia'] },
-  { id: 'w-estrellas', prefix: '★', suffix: '★', styleName: 'Estrellas', categories: ['gamer', 'pro', 'aesthetic'] },
-  { id: 'w-destellos', prefix: '✦', suffix: '✦', styleName: 'Destellos', categories: ['aesthetic', 'fantasia', 'elegante'] },
-  { id: 'w-shime', prefix: '〆', suffix: '', styleName: 'Shime 〆', categories: ['gamer', 'pro', 'minimalista'] },
-  { id: 'w-tsu', prefix: '', suffix: 'ツ', styleName: 'Smile ツ', categories: ['gamer', 'gracioso', 'aesthetic'] },
-  { id: 'w-me', prefix: '', suffix: 'メ', styleName: 'Katakana メ', categories: ['gamer', 'pro'] },
-  { id: 'w-cruces', prefix: '乂', suffix: '乂', styleName: 'Espadas 乂', categories: ['gamer', 'pro', 'oscuro'] },
-  { id: 'w-noma', prefix: '', suffix: '々', styleName: 'Iteración 々', categories: ['gamer', 'pro', 'minimalista'] },
-  { id: 'w-rayo', prefix: '⚡', suffix: '⚡', styleName: 'Energía Rayo', categories: ['pro', 'gamer', 'competitivo'] },
-  { id: 'w-cuadrados', prefix: '【', suffix: '】', styleName: 'Marco Tryhard', categories: ['gamer', 'pro', 'competitivo'] },
-  { id: 'w-espaciado-corona', prefix: '亗 ', suffix: ' 亗', styleName: 'Corona Espaciada', categories: ['gamer', 'pro'] },
-  { id: 'w-calavera', prefix: '☬', suffix: '☬', styleName: 'Emblema Místico', categories: ['fantasia', 'oscuro', 'clan'] },
-  { id: 'w-alas-epic', prefix: '༺', suffix: '༻', styleName: 'Alas Épicas', categories: ['gamer', 'fantasia', 'pro'] },
-  { id: 'w-alas-dobles', prefix: '꧁༺', suffix: '༻꧂', styleName: 'Alas Legendarias', categories: ['gamer', 'pro', 'fantasia'] },
-  { id: 'w-cara-x', prefix: '×͜× ', suffix: '', styleName: 'Dead Face ×͜×', categories: ['gamer', 'pro', 'oscuro'] },
-  { id: 'w-corazon-soft', prefix: '•.¸♡ ', suffix: ' ♡¸.•', styleName: 'Corazón Dulce', categories: ['aesthetic', 'gracioso'] },
-  { id: 'w-nubes', prefix: '°•.˜”*°• ', suffix: ' •°*”˜.•°', styleName: 'Marco Estelar', categories: ['aesthetic', 'fantasia'] },
-  { id: 'w-realeza', prefix: '♛ ', suffix: ' ♛', styleName: 'Corona Imperial', categories: ['elegante', 'pro', 'clan'] },
+  { id: 'w-coronas', prefix: '亗', suffix: '亗', styleName: 'Corona 亗', categories: ['gamer', 'chidos', 'competitivos'] },
+  { id: 'w-corchetes', prefix: '『', suffix: '』', styleName: 'Corchete Gótico', categories: ['gamer', 'chidos', 'elegantes'] },
+  { id: 'w-alas', prefix: '꧁', suffix: '꧂', styleName: 'Alas Reales', categories: ['gamer', 'chidos', 'oscuros'] },
+  { id: 'w-estrellas', prefix: '★', suffix: '★', styleName: 'Estrellas', categories: ['gamer', 'chidos', 'aesthetic'] },
+  { id: 'w-destellos', prefix: '✦', suffix: '✦', styleName: 'Destellos', categories: ['aesthetic', 'elegantes', 'chidos'] },
+  { id: 'w-shime', prefix: '〆', suffix: '', styleName: 'Shime 〆', categories: ['gamer', 'competitivos', 'minimalistas'] },
+  { id: 'w-tsu', prefix: '', suffix: 'ツ', styleName: 'Smile ツ', categories: ['gamer', 'divertidos', 'aesthetic'] },
+  { id: 'w-me', prefix: '', suffix: 'メ', styleName: 'Katakana メ', categories: ['gamer', 'competitivos'] },
+  { id: 'w-cruces', prefix: '乂', suffix: '乂', styleName: 'Espadas 乂', categories: ['gamer', 'oscuros', 'chidos'] },
+  { id: 'w-noma', prefix: '', suffix: '々', styleName: 'Iteración 々', categories: ['gamer', 'competitivos', 'minimalistas'] },
+  { id: 'w-rayo', prefix: '⚡', suffix: '⚡', styleName: 'Energía Rayo', categories: ['gamer', 'competitivos', 'chidos'] },
+  { id: 'w-cuadrados', prefix: '【', suffix: '】', styleName: 'Marco Tryhard', categories: ['gamer', 'competitivos'] },
+  { id: 'w-espaciado-corona', prefix: '亗 ', suffix: ' 亗', styleName: 'Corona Espaciada', categories: ['gamer', 'chidos', 'elegantes'] },
+  { id: 'w-calavera', prefix: '☬', suffix: '☬', styleName: 'Emblema Místico', categories: ['oscuros', 'clan', 'chidos'] },
+  { id: 'w-alas-epic', prefix: '༺', suffix: '༻', styleName: 'Alas Épicas', categories: ['gamer', 'chidos', 'oscuros'] },
+  { id: 'w-alas-dobles', prefix: '꧁༺', suffix: '༻꧂', styleName: 'Alas Legendarias', categories: ['gamer', 'chidos', 'oscuros'] },
+  { id: 'w-cara-x', prefix: '×͜× ', suffix: '', styleName: 'Dead Face ×͜×', categories: ['gamer', 'oscuros', 'divertidos'] },
+  { id: 'w-corazon-soft', prefix: '•.¸♡ ', suffix: ' ♡¸.•', styleName: 'Corazón Dulce', categories: ['aesthetic', 'divertidos'] },
+  { id: 'w-nubes', prefix: '°•.˜”*°• ', suffix: ' •°*”˜.•°', styleName: 'Marco Estelar', categories: ['aesthetic', 'elegantes'] },
+  { id: 'w-realeza', prefix: '♛ ', suffix: ' ♛', styleName: 'Corona Imperial', categories: ['elegantes', 'clan', 'chidos'] },
   { id: 'w-flor', prefix: '🌸 ', suffix: ' 🌸', styleName: 'Sakura Flor', categories: ['aesthetic'] },
-  { id: 'w-chispas', prefix: '┊✨ ', suffix: ' ✨┊', styleName: 'Vara de Luz', categories: ['aesthetic', 'fantasia'] },
-  { id: 'w-luna', prefix: '☾ ', suffix: ' ☽', styleName: 'Luna Creciente', categories: ['aesthetic', 'oscuro', 'fantasia'] },
-  { id: 'w-diamante', prefix: '◈ ', suffix: ' ◈', styleName: 'Diamante Rombo', categories: ['elegante', 'minimalista'] },
-  { id: 'w-brackets-soft', prefix: '〖', suffix: '〗', styleName: 'Llaves Suaves', categories: ['gamer', 'aesthetic'] },
-  { id: 'w-clan-tag', prefix: '[', suffix: ']', styleName: 'Tag de Clan', categories: ['clan', 'competitivo', 'minimalista'] }
+  { id: 'w-chispas', prefix: '┊✨ ', suffix: ' ✨┊', styleName: 'Vara de Luz', categories: ['aesthetic', 'elegantes'] },
+  { id: 'w-luna', prefix: '☾ ', suffix: ' ☽', styleName: 'Luna Creciente', categories: ['aesthetic', 'oscuros'] },
+  { id: 'w-diamante', prefix: '◈ ', suffix: ' ◈', styleName: 'Diamante Rombo', categories: ['elegantes', 'minimalistas'] },
+  { id: 'w-brackets-soft', prefix: '〖', suffix: '〗', styleName: 'Llaves Suaves', categories: ['gamer', 'aesthetic', 'chidos'] },
+  { id: 'w-clan-tag', prefix: '[', suffix: ']', styleName: 'Tag de Clan', categories: ['clan', 'competitivos', 'minimalistas'] }
 ];
 
 export const CATEGORY_AFFIXES: Record<string, { prefixes: string[]; suffixes: string[] }> = {
   gamer: {
-    prefixes: ['Titan', 'Shadow', 'Pixel', 'Zero', 'Vortex', 'Astro', 'Cyber', 'Echo', 'Neon', 'Hyper'],
+    prefixes: ['Titan', 'Shadow', 'Pixel', 'Zero', 'Vortex', 'Astro', 'Cyber', 'Neon', 'Hyper', 'Delta'],
     suffixes: ['X', 'Zen', 'Rush', 'Nex', 'Vibe', 'Core', 'Wave', 'Lux', 'Sky', 'Zone', 'Nox', 'Prime', '99', 'GG']
+  },
+  chidos: {
+    prefixes: ['El', 'Don', 'Capitan', 'Sr', 'Rey', 'Lobo', 'Fenix', 'Master', 'Lord', 'Puma'],
+    suffixes: ['Chido', 'King', 'Boss', 'Pro', 'God', 'Crack', 'Boy', 'Mex', 'Master', 'X', 'Top', 'Real']
   },
   aesthetic: {
     prefixes: ['Luna', 'Aura', 'Soft', 'Nube', 'Bruma', 'Star', 'Velvet', 'Sky', 'Rose', 'Honey'],
     suffixes: ['Aura', 'Luna', 'Zen', 'Sky', 'Bloom', 'Mist', 'Vibe', 'Glow', 'Pink', 'Cloud', 'Soul']
   },
-  elegante: {
+  elegantes: {
     prefixes: ['Royal', 'Lord', 'Sir', 'Saint', 'Grand', 'Aura', 'Lux', 'Pure', 'Noble', 'Don'],
     suffixes: ['Elite', 'Royal', 'Lux', 'Crown', 'Prestige', 'Prime', 'Imperial', 'Majesty', 'Gold', 'Classic']
   },
-  pro: {
-    prefixes: ['Pro', 'Apex', 'Hyper', 'Master', 'Omega', 'Ultra', 'True', 'Alpha', 'Max', 'Top'],
-    suffixes: ['Aim', 'Rush', 'Ace', 'Clutch', 'Flash', 'God', '7', '99', 'FPS', 'X', 'Pro', 'Shot']
+  cortos: {
+    prefixes: ['N', 'Z', 'V', 'K', 'R', 'X', 'A'],
+    suffixes: ['X', '7', 'z', '_', '.', '0', '9', 'k']
   },
-  fantasia: {
-    prefixes: ['Mythic', 'Astral', 'Dragon', 'Rune', 'Valkyrie', 'Titan', 'Arcane', 'Eldritch', 'Chrono', 'Solar'],
-    suffixes: ['Fénix', 'Drake', 'Lore', 'Myst', 'Soul', 'Spell', 'Aether', 'Rune', 'Knight', 'Spirit']
-  },
-  gracioso: {
+  divertidos: {
     prefixes: ['Casi', 'NoEra', 'Don', 'Tio', 'Senor', 'Mister', 'El', 'Doctor', 'Super', 'Chef'],
     suffixes: ['ConLag', 'SinPrisa', 'PingAlto', 'ModoSiesta', 'PanConLag', 'CeroDrama', 'OtroIntento', 'CasiGano', 'UyPerdon', 'ModoRelax']
   },
-  oscuro: {
+  oscuros: {
     prefixes: ['Shadow', 'Dark', 'Void', 'Nox', 'Ghost', 'Grim', 'Phantom', 'Abyss', 'Bleak', 'Hollow'],
     suffixes: ['Vanta', 'Nox', 'Reaper', 'Ghost', 'Void', 'Dark', 'Specter', 'Crypt', 'Shade', 'Doom']
   },
-  minimalista: {
-    prefixes: ['', '_', '.', 'x', 'i'],
-    suffixes: ['', 'X', '7', 'z', '_', '.', '0']
-  },
-  competitivo: {
+  competitivos: {
     prefixes: ['Apex', 'Aim', 'Clutch', 'Rush', 'Rank', 'Ace', 'Elite', 'Velo', 'Force', 'Strike'],
     suffixes: ['Aim', 'Clutch', 'Ace', 'Rush', 'Ranked', 'FPS', 'Tryhard', 'Main', 'Carry', 'Diff']
+  },
+  minimalistas: {
+    prefixes: ['', '_', '.', 'x', 'i'],
+    suffixes: ['', 'X', '7', 'z', '_', '.', '0']
   },
   clan: {
     prefixes: ['Team', 'Clan', 'Squad', 'Crew', 'Union', 'Order', 'Guild', 'Force', 'Dynasty', 'Alliance'],
@@ -119,53 +126,52 @@ export const CURATED_CATEGORY_PRESETS: Record<string, string[]> = {
     'ZeroNova', 'NexoPrime', 'VantaX', 'AstroVex', 'ZenRush',
     '亗Nova亗', '『Nexo』', '꧁Vortex꧂', '★Rayo★', 'Novaツ'
   ],
+  chidos: [
+    'ShadowKing', 'NovaCrack', 'ElTitan', 'RayoBoss', 'FenixPro',
+    '亗Shadow亗', '『NovaKing』', '★DonRayo★', 'LoboMex', 'VortexGod',
+    'AstroCrack', 'ReyShadow', 'NovaMaster', 'PumaZen', 'FenixChido',
+    'TitanReal', 'GhostMex', 'CapitanNova', 'ShadowBoss', 'MasterZen'
+  ],
   aesthetic: [
     'LunaAura', 'NovaLuna', 'AuraNexa', 'SoftNova', 'LunaZen',
     'NubeNova', 'AuraSky', 'NovaBloom', 'BrumaZen', 'LunaVibe',
     'NexoAura', 'AstroLuna', '•.¸♡ Luna ♡¸.•', '✧Nova✧', '☾Aura☽',
     'StarNova', 'VelvetZen', 'HoneyNexa', 'CloudNova', 'RoseLuna'
   ],
-  elegante: [
+  elegantes: [
     'NovaElite', 'LunaRoyal', 'NexoLux', 'AuraPrime', 'ZenRoyal',
     'NovaCrown', 'LuxNova', 'EliteNex', 'RoyalZen', 'NovaPrestige',
     '♛Nova♛', '⟦Luna⟧', 'ImperialZen', '◈Nexo◈', 'GrandNova',
     'SaintAura', 'LordVex', 'NobleNova', 'PrimeZen', 'LuxRoyal'
   ],
-  pro: [
-    'NovaAim', 'RushNova', 'ApexZen', 'NovaClutch', 'AceNova',
-    '⚡Nova⚡', '【Nova】', 'Nova7', 'FlashZen', 'ProNexo',
-    '亗ProNova亗', 'NovaFPS', 'OmegaZen', 'HyperNova', 'TryhardNex',
-    'AimGod', 'RushZen', 'ClutchNova', 'Nova99', 'TopGunNova'
-  ],
-  fantasia: [
-    'NovaFénix', 'AstralZen', 'MythicNova', 'RuneNexo', 'DragonNova',
-    'ValkyrieZen', 'NovaTitan', 'ArcaneNova', 'ChronoZen', 'SolarNova',
-    '꧁༺Fénix༻꧂', '☬Nova☬', 'AetherZen', 'NovaLore', 'SpiritNexo',
-    'EldritchNova', 'DrakeZen', 'MystNova', 'RuneZen', 'ShadowDragon'
-  ],
-  gracioso: [
-    'CasiPro', 'NoEraYo', 'PingAlto', 'ModoSiesta', 'PanConLag',
-    'CeroDrama', 'OtroIntento', 'CasiGano', 'SinPrisa', 'DonDespiste',
-    'UyPerdón', 'ModoRelax', 'CasiNova', 'NoEraNova', 'NovaConLag',
-    'DoctorLag', 'SuperLento', 'TioPing', 'CeroKills', 'AbreCofres'
-  ],
-  oscuro: [
-    'ShadowNova', 'DarkZen', 'VoidNexo', 'NovaVanta', 'NoxNova',
-    'GhostZen', 'GrimNova', 'PhantomNexo', 'AbyssNova', 'NovaReaper',
-    '×͜× Nova', '乂DarkZen乂', 'VoidReaper', 'NoxVanta', 'BleakNova',
-    'HollowZen', 'SpecterNova', 'CryptNexo', 'DarkShade', 'DoomNova'
-  ],
-  minimalista: [
+  cortos: [
     'Nox', 'Nova', 'Zyn', 'Kiro', 'Ryu',
     'Nexo', 'Vex', 'Zen', 'Kael', 'Lux',
     'Ziro', 'Ares', 'Nyx', 'Raze', 'Vanta',
     'NoxX', 'Nexo7', 'ZynX', 'KiroZen', 'LuxNova'
   ],
-  competitivo: [
+  divertidos: [
+    'CasiPro', 'NoEraYo', 'PingAlto', 'ModoSiesta', 'PanConLag',
+    'CeroDrama', 'OtroIntento', 'CasiGano', 'SinPrisa', 'DonDespiste',
+    'UyPerdón', 'ModoRelax', 'CasiNova', 'NoEraNova', 'NovaConLag',
+    'DoctorLag', 'SuperLento', 'TioPing', 'CeroKills', 'AbreCofres'
+  ],
+  oscuros: [
+    'ShadowNova', 'DarkZen', 'VoidNexo', 'NovaVanta', 'NoxNova',
+    'GhostZen', 'GrimNova', 'PhantomNexo', 'AbyssNova', 'NovaReaper',
+    '×͜× Nova', '乂DarkZen乂', 'VoidReaper', 'NoxVanta', 'BleakNova',
+    'HollowZen', 'SpecterNova', 'CryptNexo', 'DarkShade', 'DoomNova'
+  ],
+  competitivos: [
     'NovaAim', 'TitanZero', 'NexoPrime', 'AstroVex', 'VortexNova',
     'ZeroPulse', 'ShadowNex', 'PrimeNova', 'ClutchNova', 'NovaRush',
     'AceZen', 'NovaRanked', 'CarryNova', 'NovaDiff', 'ApexStrike',
     'ForceNova', 'TryhardZen', 'VeloNova', 'StrikeNex', 'RankOneNova'
+  ],
+  minimalistas: [
+    'Nox', 'Nova', 'Zyn', 'Kiro', 'Ryu',
+    'Nexo', 'Vex', 'Zen', 'Kael', 'Lux',
+    '_Nova_', '.Nova.', 'NovaX', 'Nova7', 'Nvx'
   ],
   clan: [
     'Nova Crew', 'Zenith Team', 'Nexo Squad', 'Vortex Union', 'Astro Squad',
@@ -246,7 +252,7 @@ export const UNICODE_TEXT_TRANSFORMS = [
     name: 'Doble Trazo',
     transform: (text: string) => {
       const normal = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      const doubleStruck = '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡';
+      const doubleStruck = '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝢢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡';
       return text.split('').map((c) => {
         const i = normal.indexOf(c);
         return i !== -1 ? Array.from(doubleStruck)[i] || c : c;
@@ -257,7 +263,7 @@ export const UNICODE_TEXT_TRANSFORMS = [
     name: 'Monospace',
     transform: (text: string) => {
       const normal = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      const mono = '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿';
+      const mono = '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣𝙰𝙱𝙲𝙳𝙴𝔽𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉𝟶𝟷𝟸𝟹𝟺𝟻𝟼𝟽𝟾𝟿';
       return text.split('').map((c) => {
         const i = normal.indexOf(c);
         return i !== -1 ? Array.from(mono)[i] || c : c;
@@ -268,43 +274,35 @@ export const UNICODE_TEXT_TRANSFORMS = [
 
 export const JUEGOS_FAQ_ITEMS = [
   {
-    question: '¿Cómo puedo crear un nombre para juegos?',
-    answer: 'Escribe una palabra que quieras utilizar como base, selecciona un estilo (gamer, aesthetic, pro, clan, etc.) y genera diferentes combinaciones. Después puedes copiar la opción que más te guste y probarla en tu juego.'
+    question: '¿Qué son los nombres para juegos?',
+    answer: 'Un nombre para juegos (o nick gamer) es el identificador único que utilizas en videojuegos, servidores y comunidades online para representar tu identidad, estilo de combate y personalidad en las partidas.'
   },
   {
-    question: '¿Puedo generar nombres sin escribir mi nombre?',
-    answer: 'Sí. Puedes dejar el campo vacío y explorar ideas generadas por diferentes estilos automáticamente con un solo clic.'
+    question: '¿Cómo puedo crear un nombre gamer?',
+    answer: 'Escribe una palabra que te guste como base (un apodo, un animal o concepto), selecciona un estilo en nuestro generador (gamer, chidos, aesthetic, pro, clan) y genera decenas de combinaciones con símbolos y caracteres estilizados.'
   },
   {
     question: '¿Puedo copiar los nombres directamente?',
-    answer: 'Sí. Cada resultado incluye un botón de copiar para que puedas llevarlo directamente al portapapeles y pegarlo en cualquier juego o red social.'
+    answer: 'Sí. Cada resultado cuenta con un botón de copiado en 1 clic que guarda el texto estilizado en tu portapapeles con confirmación visual instantánea.'
   },
   {
-    question: '¿Los nombres con símbolos funcionan en todos los juegos?',
-    answer: 'No siempre. Cada juego puede tener reglas diferentes para los caracteres permitidos. Comprueba el resultado dentro del juego antes de confirmarlo definitivamente.'
+    question: '¿Por qué algunos símbolos no aparecen correctamente?',
+    answer: 'Ocurre cuando el motor de un videojuego o el sistema operativo del dispositivo no tiene instalada la tipografía para renderizar un carácter Unicode concreto, mostrando un recuadro vacío (□). Por eso recomendamos probar tu nick antes de confirmar cambios oficiales.'
   },
   {
-    question: '¿Qué es un nick gamer?',
-    answer: 'Es el nombre o identificador que utilizas como identidad dentro de una comunidad, plataforma online o videojuego.'
+    question: '¿Los nombres generados son gratuitos?',
+    answer: 'Sí, todas las opciones y estilos generados son 100% gratuitos y libres de usar en cualquier juego, consola, PC o celular.'
   },
   {
-    question: '¿Qué nombre puedo usar si el que quiero ya está ocupado?',
-    answer: 'Puedes mantener la palabra principal y crear una pequeña variación. Por ejemplo, si Nova está ocupado, puedes probar NovaX, NovaZen, NovaLux o una combinación con números o símbolos.'
+    question: '¿Puedo usar una palabra propia?',
+    answer: 'Por supuesto. Puedes ingresar tu propio nombre, apodo de la vida real o cualquier palabra gamer en la caja de texto y el generador la preservará combinándola con estilos y marcos.'
   },
   {
-    question: '¿Es mejor utilizar un nombre corto?',
-    answer: 'Un nombre corto suele ser más fácil de leer, pronunciar y recordar durante las partidas, aunque depende de tus preferencias y del límite de caracteres de la plataforma.'
+    question: '¿Cómo puedo hacer un nombre más original?',
+    answer: 'Combina dos palabras cortas (ej. Nova + Zen = NovaZen), utiliza variantes ortográficas o añade decoraciones sutiles como corchetes 『』, coronas 亗 o caracteres en versalitas.'
   },
   {
-    question: '¿Puedo crear nombres para clanes?',
-    answer: 'Sí. Para nombres destinados a grupos o equipos, es mejor pensar en una palabra o tag que funcione para todos los integrantes. Puedes consultar nuestra sección específica de nombres para clanes.'
-  },
-  {
-    question: '¿Puedo utilizar letras bonitas en un nombre gamer?',
-    answer: 'Sí, cuando la plataforma acepta los caracteres utilizados. Las letras estilizadas suelen basarse en caracteres Unicode, por lo que la compatibilidad puede variar entre títulos.'
-  },
-  {
-    question: '¿Tengo que instalar algo?',
-    answer: 'No. El generador funciona 100% en tu navegador web de forma instantánea y gratuita, tanto en celulares como en computadoras.'
+    question: '¿Funcionan los caracteres Unicode en todos los juegos?',
+    answer: 'No siempre. Juegos para celular como Free Fire o PUBG aceptan una gran variedad de símbolos, mientras que otros como Valorant o League of Legends pueden restringir caracteres especiales. Verifica siempre la vista previa en el juego.'
   }
 ];

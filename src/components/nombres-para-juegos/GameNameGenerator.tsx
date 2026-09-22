@@ -12,11 +12,14 @@ import {
   RefreshCw,
   AlertCircle,
   Gamepad2,
-  CheckCircle2
+  CheckCircle2,
+  Flame,
+  Shuffle
 } from 'lucide-react';
 import {
   GAME_CATEGORIES,
   QUICK_BASE_WORDS,
+  RANDOM_GAMER_NAMES,
   GAME_SYMBOL_WRAPPERS,
   CATEGORY_AFFIXES,
   CURATED_CATEGORY_PRESETS,
@@ -31,7 +34,7 @@ interface GeneratedNick {
 }
 
 export default function GameNameGenerator() {
-  const [inputText, setInputText] = useState('Nova');
+  const [inputText, setInputText] = useState('Shadow');
   const deferredInputText = useDeferredValue(inputText);
   const [selectedCategory, setSelectedCategory] = useState<string>('gamer');
   const [searchFilter, setSearchFilter] = useState('');
@@ -101,11 +104,19 @@ export default function GameNameGenerator() {
     }
   };
 
+  // Trigger random name generation
+  const handleRandomName = () => {
+    const randomIndex = Math.floor(Math.random() * RANDOM_GAMER_NAMES.length);
+    const randomWord = RANDOM_GAMER_NAMES[randomIndex];
+    setInputText(randomWord);
+    setGenerationSeed((prev) => prev + 1);
+  };
+
   const cleanBase = useMemo(() => {
     return deferredInputText.trim().slice(0, 30);
   }, [deferredInputText]);
 
-  // Generate deterministic variations without duplicates
+  // Generate deterministic variations without duplicates (capped at 25-30 per batch)
   const generatedList = useMemo(() => {
     const list: GeneratedNick[] = [];
     const seen = new Set<string>();
@@ -150,7 +161,7 @@ export default function GameNameGenerator() {
       });
     }
 
-    shuffledWrappers.forEach((wrap) => {
+    shuffledWrappers.slice(0, 10).forEach((wrap) => {
       addNick(`${wrap.prefix}${cleanBase}${wrap.suffix}`, catData.name, wrap.styleName);
     });
 
@@ -158,13 +169,13 @@ export default function GameNameGenerator() {
     const suffixes = affixes.suffixes;
     const prefixes = affixes.prefixes;
 
-    suffixes.forEach((suffix) => {
+    suffixes.slice(0, 6).forEach((suffix) => {
       if (suffix) {
         addNick(`${cleanBase}${suffix}`, catData.name, `Sufijo ${suffix}`);
       }
     });
 
-    prefixes.forEach((prefix) => {
+    prefixes.slice(0, 4).forEach((prefix) => {
       if (prefix) {
         addNick(`${prefix}${cleanBase}`, catData.name, `Prefijo ${prefix}`);
       }
@@ -172,7 +183,7 @@ export default function GameNameGenerator() {
 
     // 3. Combined Prefix + Suffix
     if (prefixes.length > 0 && suffixes.length > 0) {
-      for (let i = 0; i < Math.min(6, prefixes.length); i++) {
+      for (let i = 0; i < 3; i++) {
         const p = prefixes[(i + generationSeed) % prefixes.length];
         const s = suffixes[(i + generationSeed * 2) % suffixes.length];
         if (p && s) {
@@ -182,7 +193,7 @@ export default function GameNameGenerator() {
     }
 
     // 4. Unicode Typography Transforms
-    UNICODE_TEXT_TRANSFORMS.forEach((trans) => {
+    UNICODE_TEXT_TRANSFORMS.slice(0, 5).forEach((trans) => {
       try {
         const transformed = trans.transform(cleanBase);
         addNick(transformed, catData.name, trans.name);
@@ -192,7 +203,7 @@ export default function GameNameGenerator() {
     });
 
     // 5. Stylized combinations (Symbol + Affix)
-    const topSymbols = ['亗', '『', '★', '⚡', '✦'];
+    const topSymbols = ['亗', '『', '★', '⚡'];
     topSymbols.forEach((sym) => {
       const suff = suffixes[(generationSeed + 1) % suffixes.length] || 'X';
       if (sym === '『') {
@@ -202,7 +213,7 @@ export default function GameNameGenerator() {
       }
     });
 
-    return list;
+    return list.slice(0, 28);
   }, [cleanBase, selectedCategory, generationSeed]);
 
   // Filter list by search query and favorites
@@ -232,7 +243,7 @@ export default function GameNameGenerator() {
 
   return (
     <div className="cp-panel" id="generador-de-nombres">
-      {/* Tool Header & Badge */}
+      {/* Tool Top Header & Small Label */}
       <div
         style={{
           display: 'flex',
@@ -257,42 +268,70 @@ export default function GameNameGenerator() {
               color: '#A5B4FC',
               fontSize: '0.78rem',
               fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
               marginBottom: '0.65rem'
             }}
           >
             <Gamepad2 size={14} color="#818CF8" />
-            <span>Generador de Nombres para Juegos</span>
+            <span>GENERADOR GRATIS</span>
           </div>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF', margin: '0 0 0.35rem 0', letterSpacing: '-0.02em' }}>
-            Crea tu nick personalizado
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFF', margin: '0 0 0.35rem 0', letterSpacing: '-0.02em' }}>
+            Nombres para Juegos
           </h2>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: 0 }}>
-            Escribe una palabra o apodo, elige tu estilo y copia el nick que más te guste en 1 clic.
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, maxWidth: '640px', lineHeight: 1.5 }}>
+            Crea nombres para juegos originales, chidos y con estilo. Genera opciones, personalízalas y copia tu favorita en segundos.
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setGenerationSeed((prev) => prev + 1)}
-          className="cp-copy-all-btn"
-          style={{
-            background: 'rgba(30, 41, 59, 0.85)',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            color: '#F1F5F9',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            padding: '0.6rem 1.15rem',
-            borderRadius: '10px',
-            cursor: 'pointer',
-            fontSize: '0.85rem',
-            fontWeight: 700
-          }}
-          title="Generar nueva tanda de combinaciones"
-        >
-          <RefreshCw size={14} color="#818CF8" />
-          <span>Otra tanda</span>
-        </button>
+        {/* Action Controls: Random & Otra Tanda */}
+        <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
+          <button
+            type="button"
+            onClick={handleRandomName}
+            className="cp-copy-all-btn"
+            style={{
+              background: 'rgba(236, 72, 153, 0.15)',
+              border: '1px solid rgba(236, 72, 153, 0.35)',
+              color: '#F472B6',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.55rem 1rem',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '0.85rem',
+              fontWeight: 700
+            }}
+            title="Generar un nombre aleatorio de nuestra base de datos"
+          >
+            <Shuffle size={14} color="#F472B6" />
+            <span>Nombre aleatorio</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setGenerationSeed((prev) => prev + 1)}
+            className="cp-copy-all-btn"
+            style={{
+              background: 'rgba(30, 41, 59, 0.85)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              color: '#F1F5F9',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.55rem 1rem',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '0.85rem',
+              fontWeight: 700
+            }}
+            title="Generar nueva tanda de combinaciones"
+          >
+            <RefreshCw size={14} color="#818CF8" />
+            <span>Mostrar otra tanda</span>
+          </button>
+        </div>
       </div>
 
       {/* Main Text Input Field */}
@@ -316,7 +355,7 @@ export default function GameNameGenerator() {
             }}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-            placeholder="Ejemplo: Nova, Luna, Rayo, Nexo..."
+            placeholder="Escribe una palabra o nombre... (ej. Shadow)"
             maxLength={35}
             aria-label="Escribe tu nombre o palabra para juegos"
           />
@@ -374,7 +413,7 @@ export default function GameNameGenerator() {
       <div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.65rem' }}>
           <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            Elige un estilo:
+            Elige una categoría:
           </span>
           <span style={{ fontSize: '0.82rem', color: '#818CF8' }}>
             {activeCategoryObj.icon} {activeCategoryObj.description}
@@ -418,7 +457,7 @@ export default function GameNameGenerator() {
             className="cp-search-input"
             value={searchFilter}
             onChange={(e) => setSearchFilter(e.target.value)}
-            placeholder={`Buscar entre nombres ${activeCategoryObj.name.toLowerCase()}...`}
+            placeholder={`Filtrar nombres ${activeCategoryObj.name.toLowerCase()}...`}
           />
           {searchFilter && (
             <button
@@ -432,17 +471,29 @@ export default function GameNameGenerator() {
           )}
         </div>
 
-        {favorites.length > 0 && (
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
           <button
             type="button"
-            className={`cp-tag-chip fav-chip ${showOnlyFavorites ? 'active' : ''}`}
-            onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', padding: '0.55rem 1rem', fontSize: '0.85rem' }}
+            onClick={() => setGenerationSeed((prev) => prev + 1)}
+            className="cp-tag-chip"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', padding: '0.55rem 0.9rem', fontSize: '0.85rem' }}
           >
-            <Star size={14} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
-            <span>Mis Favoritos ({favorites.length})</span>
+            <Sparkles size={13} color="#818CF8" />
+            <span>Generar nombres</span>
           </button>
-        )}
+
+          {favorites.length > 0 && (
+            <button
+              type="button"
+              className={`cp-tag-chip fav-chip ${showOnlyFavorites ? 'active' : ''}`}
+              onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', padding: '0.55rem 1rem', fontSize: '0.85rem' }}
+            >
+              <Star size={14} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
+              <span>Mis Favoritos ({favorites.length})</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Results Header */}
