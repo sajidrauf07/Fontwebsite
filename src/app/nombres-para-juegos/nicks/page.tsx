@@ -261,7 +261,7 @@ export default function NicksParaJuegosPage() {
   };
 
   return (
-    <div className="cp-container" style={{ paddingTop: '1.5rem', paddingBottom: '3.5rem' }}>
+    <div className="silo-page">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -277,100 +277,69 @@ export default function NicksParaJuegosPage() {
       />
 
       {/* 1. Breadcrumb */}
-      <nav aria-label="Migas de pan" style={{ marginBottom: '1.25rem' }}>
-        <ol
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            fontSize: '0.85rem',
-            color: 'var(--text-muted)'
-          }}
-        >
-          <li>
-            <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li>
-            <Link href="/nombres-para-juegos/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Nombres para Juegos
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li aria-current="page" style={{ color: '#F1F5F9', fontWeight: 600 }}>
-            Nicks para Juegos
-          </li>
-        </ol>
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+            Nombres para Juegos
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Nicks para Juegos</span>
+        </div>
       </nav>
 
-      {/* 2. Header & H1 */}
-      <header style={{ marginBottom: '1.75rem' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            background: 'rgba(236, 72, 153, 0.12)',
-            border: '1px solid rgba(236, 72, 153, 0.3)',
-            padding: '0.3rem 0.85rem',
-            borderRadius: '999px',
-            color: '#F472B6',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            marginBottom: '0.85rem'
-          }}
-        >
-          <Sparkles size={14} color="#F472B6" />
-          <span>Generador de Nicks Online</span>
-        </div>
-        <h1
-          style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.75rem)',
-            fontWeight: 900,
-            letterSpacing: '-0.03em',
-            color: '#FFFFFF',
-            lineHeight: 1.15,
-            margin: '0 0 0.85rem 0'
-          }}
-        >
-          Nicks para Juegos
-        </h1>
-        <p
-          style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '780px',
-            margin: 0
-          }}
-        >
-          ¿Cansado de que tu nombre favorito ya esté ocupado o de terminar con números aleatorios como{' '}
-          <strong style={{ color: '#F1F5F9' }}>Gamer8291</strong>? Un buen nick es tu firma en el campo de batalla.
-          Usa nuestro generador de nicks para juegos interactivo para crear combinaciones originales, chidas y estéticas
-          con letras especiales y símbolos para copiar y pegar en segundos.
-        </p>
-      </header>
+      {/* 2 & 3. Hero Section Centered */}
+      <section className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Sparkles size={16} className="sparkle-icon" color="#F472B6" />
+            <span>Generador de Nicks Online</span>
+          </div>
 
-      {/* 3. Main Interactive Tool */}
-      <section aria-label="Herramienta generadora de nicks" style={{ marginBottom: '3.5rem' }}>
+          <h1 className="hero-h1">
+            Nicks para Juegos
+          </h1>
+
+          <p className="hero-tagline">
+            Crea combinaciones originales, chidas y estéticas para cada partida
+          </p>
+
+          <p className="hero-description">
+            ¿Cansado de que tu nombre favorito ya esté ocupado o de terminar con números aleatorios como Gamer8291? Un buen nick es tu firma en el campo de batalla. Personaliza tu apodo con letras especiales y símbolos para copiar y pegar en segundos.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Nicks Gamer Pro</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Copiado en 1 Clic</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Compatibilidad Universal</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Generator Centered in First Viewport */}
+      <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator
           badgeLabel="GENERADOR DE NICKS"
           title="Generador de Nicks para Juegos"
           subtitle="Escribe tu palabra o alias, selecciona tu estilo preferido y copia al instante el mejor nick para Free Fire, Roblox, COD Mobile, Fortnite y más."
           defaultInput="Viper"
         />
-      </section>
+      </div>
+
+      <div className="cp-container" style={{ paddingTop: '2.5rem', paddingBottom: '3.5rem' }}>
 
       {/* 4. Quick How-To Section */}
       <section className="game-feature-box" style={{ marginBottom: '3rem' }}>
@@ -744,6 +713,7 @@ export default function NicksParaJuegosPage() {
           <span>Generar mi Nick Ahora</span>
         </a>
       </section>
+      </div>
     </div>
   );
 }

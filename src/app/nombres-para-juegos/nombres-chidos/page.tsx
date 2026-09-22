@@ -11,6 +11,7 @@ import {
   HelpCircle,
   Crown,
   Smile,
+  CheckCircle2,
   ArrowRight
 } from 'lucide-react';
 import GameNameGenerator from '@/components/nombres-para-juegos/GameNameGenerator';
@@ -199,7 +200,7 @@ export default function NombresChidosPage() {
   };
 
   return (
-    <div className="cp-container" style={{ paddingTop: '1.5rem', paddingBottom: '3.5rem' }}>
+    <div className="silo-page">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -215,98 +216,69 @@ export default function NombresChidosPage() {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Migas de pan" style={{ marginBottom: '1.25rem' }}>
-        <ol
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            fontSize: '0.85rem',
-            color: 'var(--text-muted)'
-          }}
-        >
-          <li>
-            <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li>
-            <Link href="/nombres-para-juegos/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Nombres para Juegos
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li aria-current="page" style={{ color: '#F1F5F9', fontWeight: 600 }}>
-            Nombres Chidos
-          </li>
-        </ol>
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+            Nombres para Juegos
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Nombres Chidos</span>
+        </div>
       </nav>
 
-      {/* Header */}
-      <header style={{ marginBottom: '1.75rem' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            background: 'rgba(236, 72, 153, 0.12)',
-            border: '1px solid rgba(236, 72, 153, 0.3)',
-            padding: '0.3rem 0.85rem',
-            borderRadius: '999px',
-            color: '#F472B6',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            marginBottom: '0.85rem'
-          }}
-        >
-          <Flame size={14} color="#F472B6" />
-          <span>Generador de Nombres Chidos</span>
-        </div>
-        <h1
-          style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.75rem)',
-            fontWeight: 900,
-            letterSpacing: '-0.03em',
-            color: '#FFFFFF',
-            lineHeight: 1.15,
-            margin: '0 0 0.85rem 0'
-          }}
-        >
-          Nombres Chidos para Juegos
-        </h1>
-        <p
-          style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '780px',
-            margin: 0
-          }}
-        >
-          ¿Quieres un nombre con verdadera personalidad para tus partidas? Crea los nombres más chidos con letras estilizadas,
-          adornos gamer y símbolos pro listos para copiar y usar en Free Fire, Roblox, Call of Duty, Fortnite y más.
-        </p>
-      </header>
+      {/* Hero Section Centered */}
+      <section className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Flame size={16} className="sparkle-icon" color="#F472B6" />
+            <span>Generador de Nombres Chidos</span>
+          </div>
 
-      {/* Generator Tool */}
-      <section aria-label="Generador de nombres chidos" style={{ marginBottom: '3.5rem' }}>
+          <h1 className="hero-h1">
+            Nombres Chidos para Juegos
+          </h1>
+
+          <p className="hero-tagline">
+            Crea los nombres más chidos, con estilo y símbolos para tus partidas
+          </p>
+
+          <p className="hero-description">
+            ¿Quieres un nombre con verdadera personalidad para tus partidas? Crea los nombres más chidos con letras estilizadas, adornos gamer y símbolos pro listos para copiar y usar en Free Fire, Roblox, Call of Duty, Fortnite y más.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Nombres con Onda Mex</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Copiado Rápido en 1 Clic</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>100% Gratis y Compatible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Generator Tool Centered in First Viewport */}
+      <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator
           badgeLabel="NOMBRES CHIDOS"
           title="Generador de Nombres Chidos"
           subtitle="Escribe tu palabra, selecciona la categoría que más te guste y copia al instante nombres chidos y con estilo para tus videojuegos."
           defaultInput="Furia"
         />
-      </section>
+      </div>
+
+      <div className="cp-container" style={{ paddingTop: '2.5rem', paddingBottom: '3.5rem' }}>
 
       {/* Curated Ideas */}
       <section style={{ marginBottom: '3.5rem' }}>
@@ -433,6 +405,7 @@ export default function NombresChidosPage() {
 
         <SEOArticleFaqAccordion faqs={CHIDOS_FAQ_ITEMS} />
       </section>
+      </div>
     </div>
   );
 }

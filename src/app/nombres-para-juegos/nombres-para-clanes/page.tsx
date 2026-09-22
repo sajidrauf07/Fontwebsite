@@ -10,6 +10,7 @@ import {
   Flame,
   Zap,
   HelpCircle,
+  CheckCircle2,
   ArrowRight
 } from 'lucide-react';
 import GameNameGenerator from '@/components/nombres-para-juegos/GameNameGenerator';
@@ -198,7 +199,7 @@ export default function NombresParaClanesPage() {
   };
 
   return (
-    <div className="cp-container" style={{ paddingTop: '1.5rem', paddingBottom: '3.5rem' }}>
+    <div className="silo-page">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -214,98 +215,69 @@ export default function NombresParaClanesPage() {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Migas de pan" style={{ marginBottom: '1.25rem' }}>
-        <ol
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            fontSize: '0.85rem',
-            color: 'var(--text-muted)'
-          }}
-        >
-          <li>
-            <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li>
-            <Link href="/nombres-para-juegos/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Nombres para Juegos
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li aria-current="page" style={{ color: '#F1F5F9', fontWeight: 600 }}>
-            Nombres para Clanes
-          </li>
-        </ol>
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+            Nombres para Juegos
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Nombres para Clanes</span>
+        </div>
       </nav>
 
-      {/* Header */}
-      <header style={{ marginBottom: '1.75rem' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            background: 'rgba(236, 72, 153, 0.12)',
-            border: '1px solid rgba(236, 72, 153, 0.3)',
-            padding: '0.3rem 0.85rem',
-            borderRadius: '999px',
-            color: '#F472B6',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            marginBottom: '0.85rem'
-          }}
-        >
-          <Users size={14} color="#F472B6" />
-          <span>Generador de Escuadras y Gremios</span>
-        </div>
-        <h1
-          style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.75rem)',
-            fontWeight: 900,
-            letterSpacing: '-0.03em',
-            color: '#FFFFFF',
-            lineHeight: 1.15,
-            margin: '0 0 0.85rem 0'
-          }}
-        >
-          Nombres para Clanes
-        </h1>
-        <p
-          style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '780px',
-            margin: 0
-          }}
-        >
-          Une a tu equipo bajo una sola bandera. Genera nombres de clanes imponentes, gremios y escuadras gamer
-          con tags de clan, corchetes elegantes y símbolos de batalla listos para copiar y pegar.
-        </p>
-      </header>
+      {/* Hero Section Centered */}
+      <section className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Users size={16} className="sparkle-icon" color="#F472B6" />
+            <span>Generador de Escuadras y Gremios</span>
+          </div>
 
-      {/* Generator Tool */}
-      <section aria-label="Generador de nombres de clanes" style={{ marginBottom: '3.5rem' }}>
+          <h1 className="hero-h1">
+            Nombres para Clanes
+          </h1>
+
+          <p className="hero-tagline">
+            Une a tu equipo bajo una sola bandera con tags y símbolos imponentes
+          </p>
+
+          <p className="hero-description">
+            Genera nombres de clanes imponentes, gremios y escuadras gamer con tags de clan, corchetes elegantes y símbolos de batalla listos para copiar y pegar.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Tags de Clan Listos</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Copiado Rápido en 1 Clic</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>100% Gratis y Compatible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Generator Tool Centered in First Viewport */}
+      <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator
           badgeLabel="GENERADOR DE CLANES"
           title="Generador de Nombres para Clanes"
           subtitle="Escribe el nombre de tu clan o equipo, elige el estilo visual y copia al instante combinaciones listas para liderar las salas."
           defaultInput="Immortal"
         />
-      </section>
+      </div>
+
+      <div className="cp-container" style={{ paddingTop: '2.5rem', paddingBottom: '3.5rem' }}>
 
       {/* Curated Clan Ideas */}
       <section style={{ marginBottom: '3.5rem' }}>
@@ -464,6 +436,7 @@ export default function NombresParaClanesPage() {
 
         <SEOArticleFaqAccordion faqs={CLANES_FAQ_ITEMS} />
       </section>
+      </div>
     </div>
   );
 }

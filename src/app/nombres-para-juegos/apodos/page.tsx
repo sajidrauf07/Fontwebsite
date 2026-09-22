@@ -211,7 +211,7 @@ export default function ApodosParaJuegosPage() {
   };
 
   return (
-    <div className="cp-container" style={{ paddingTop: '1.5rem', paddingBottom: '3.5rem' }}>
+    <div className="silo-page">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -227,98 +227,69 @@ export default function ApodosParaJuegosPage() {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Migas de pan" style={{ marginBottom: '1.25rem' }}>
-        <ol
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            listStyle: 'none',
-            padding: 0,
-            margin: 0,
-            fontSize: '0.85rem',
-            color: 'var(--text-muted)'
-          }}
-        >
-          <li>
-            <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Inicio
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li>
-            <Link href="/nombres-para-juegos/" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
-              Nombres para Juegos
-            </Link>
-          </li>
-          <li>
-            <ChevronRight size={13} />
-          </li>
-          <li aria-current="page" style={{ color: '#F1F5F9', fontWeight: 600 }}>
-            Apodos para Juegos
-          </li>
-        </ol>
+      <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+        <div className="breadcrumb-container">
+          <Link href="/" className="breadcrumb-link">
+            Inicio
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+            Nombres para Juegos
+          </Link>
+          <ChevronRight size={14} className="breadcrumb-sep" />
+          <span className="breadcrumb-current">Apodos para Juegos</span>
+        </div>
       </nav>
 
-      {/* Header */}
-      <header style={{ marginBottom: '1.75rem' }}>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            background: 'rgba(99, 102, 241, 0.12)',
-            border: '1px solid rgba(99, 102, 241, 0.3)',
-            padding: '0.3rem 0.85rem',
-            borderRadius: '999px',
-            color: '#818CF8',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-            marginBottom: '0.85rem'
-          }}
-        >
-          <Sparkles size={14} color="#818CF8" />
-          <span>Generador de Apodos Gamer</span>
-        </div>
-        <h1
-          style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.75rem)',
-            fontWeight: 900,
-            letterSpacing: '-0.03em',
-            color: '#FFFFFF',
-            lineHeight: 1.15,
-            margin: '0 0 0.85rem 0'
-          }}
-        >
-          Apodos para Juegos
-        </h1>
-        <p
-          style={{
-            fontSize: '1.05rem',
-            color: 'var(--text-muted)',
-            lineHeight: 1.6,
-            maxWidth: '780px',
-            margin: 0
-          }}
-        >
-          Encuentra el apodo perfecto para tu estilo de juego. Ya sea que busques infundir respeto como líder de escuadra,
-          divertirte con tus compas o lucir una estética limpia y misteriosa, genera y personaliza tu apodo gamer con nuestro generador gratis.
-        </p>
-      </header>
+      {/* Hero Section Centered */}
+      <section className="hero-section silo-hero text-center">
+        <div className="hero-backdrop" />
+        <div className="hero-container">
+          <div className="hero-badge">
+            <Sparkles size={16} className="sparkle-icon" color="#818CF8" />
+            <span>Generador de Apodos Gamer</span>
+          </div>
 
-      {/* Generator Tool */}
-      <section aria-label="Generador de apodos" style={{ marginBottom: '3.5rem' }}>
+          <h1 className="hero-h1">
+            Apodos para Juegos
+          </h1>
+
+          <p className="hero-tagline">
+            Encuentra el apodo perfecto para tu estilo de juego en cada partida
+          </p>
+
+          <p className="hero-description">
+            Ya sea que busques infundir respeto como líder de escuadra, divertirte con tus compas o lucir una estética limpia y misteriosa, genera y personaliza tu apodo gamer con nuestro generador gratis.
+          </p>
+
+          <div className="hero-highlights">
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Apodos Pro y Chidos</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>Copiado Rápido en 1 Clic</span>
+            </div>
+            <div className="highlight-item">
+              <CheckCircle2 size={16} />
+              <span>100% Gratis y Compatible</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Generator Tool Centered in First Viewport */}
+      <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator
           badgeLabel="GENERADOR DE APODOS"
           title="Generador de Apodos para Juegos"
           subtitle="Ingresa tu palabra o apodo favorito, selecciona tu estilo preferido y copia al instante la mejor opción para tus partidas."
           defaultInput="Titan"
         />
-      </section>
+      </div>
+
+      <div className="cp-container" style={{ paddingTop: '2.5rem', paddingBottom: '3.5rem' }}>
 
       {/* Curated Ideas */}
       <section style={{ marginBottom: '3.5rem' }}>
@@ -476,6 +447,7 @@ export default function ApodosParaJuegosPage() {
 
         <SEOArticleFaqAccordion faqs={APODOS_FAQ_ITEMS} />
       </section>
+      </div>
     </div>
   );
 }
