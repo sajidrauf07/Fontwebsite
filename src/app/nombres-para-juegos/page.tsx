@@ -2,17 +2,15 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import GameNameGenerator from '@/components/nombres-para-juegos/GameNameGenerator';
+import GameNameIdeasSection from '@/components/nombres-para-juegos/GameNameIdeasSection';
 import { JUEGOS_FAQ_ITEMS } from '@/data/gameNamesData';
 import {
   ReadingProgress,
-  ExamplePreviewCard,
-  CopyButton,
   TipBox,
   InfoBox,
   WarningBox,
   StepGuide,
-  StepItem,
-  ToolCTA
+  StepItem
 } from '@/components/article';
 import {
   Gamepad2,
@@ -171,7 +169,7 @@ export default function NombresParaJuegosPage() {
             ¿Buscas un nombre para juegos que se vea bien, sea fácil de recordar y represente tu estilo? Aquí puedes crear tu propio nick en segundos.
           </p>
 
-          <p className="text-slate-300 text-sm max-w-2xl mx-auto -mt-2 mb-4 leading-relaxed">
+          <p style={{ maxWidth: '680px', margin: '-0.5rem auto 1.25rem', fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
             Escribe una palabra o apodo, elige un estilo y genera diferentes opciones listas para copiar y pegar. Puedes probar nombres gamer, aesthetic, elegantes, cortos, divertidos, competitivos y muchas otras combinaciones. Si todavía no tienes una idea, también puedes generar opciones sin escribir una palabra.
           </p>
 
@@ -193,7 +191,7 @@ export default function NombresParaJuegosPage() {
       </section>
 
       {/* Main Interactive Generator Tool in First Viewport */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 -mt-6">
+      <div style={{ maxWidth: '1160px', margin: '-1.5rem auto 0', padding: '0 1rem' }}>
         <GameNameGenerator />
       </div>
 
@@ -216,12 +214,12 @@ export default function NombresParaJuegosPage() {
             Crea tu nick personalizado usando una palabra que te guste. Solo necesitas introducir tu apodo base o nombre y elegir una de nuestras categorías temáticas.
           </p>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 my-6 space-y-3">
-            <h3 className="text-white font-bold text-sm flex items-center gap-2">
-              <Lightbulb size={16} className="text-amber-400" />
+          <div className="game-feature-box" style={{ margin: '1.5rem 0' }}>
+            <h3 className="game-feature-title">
+              <Lightbulb size={16} color="#FBBF24" />
               ¿Cómo funciona?
             </h3>
-            <ul className="text-xs sm:text-sm text-slate-300 space-y-2 list-disc pl-5">
+            <ul style={{ fontSize: '0.9rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
               <li>
                 <strong>Escribe tu nombre o palabra:</strong> Ejemplo: <em>Nova, Luna, Rayo, Nexo</em>.
               </li>
@@ -271,98 +269,11 @@ export default function NombresParaJuegosPage() {
           </h2>
 
           <p className="article-paragraph">
-            Si necesitas una idea rápida, aquí tienes algunas opciones que puedes utilizar como inspiración directa para tus partidas:
+            Si necesitas una idea rápida, aquí tienes algunas opciones que puedes utilizar como inspiración directa para tus partidas. Haz clic en <strong>Copiar</strong> para llevarlas a tu juego al instante:
           </p>
 
-          {/* Subsección: Nombres Cortos */}
-          <div className="my-6 p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Zap className="w-4 h-4 text-amber-400" /> Nombres cortos
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mb-4">
-              Los nombres cortos son fáciles de escribir y recordar. Además, suelen darte más espacio si después quieres añadir un símbolo o algún detalle visual.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-              {['Nox', 'Nova', 'Zyn', 'Kiro', 'Ryu', 'Nexo', 'Vex', 'Zen', 'Kael', 'Lux', 'Ziro', 'Ares', 'Nyx', 'Raze', 'Vanta'].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs">
-                  <span className="font-mono font-bold text-indigo-300">{item}</span>
-                  <CopyButton text={item} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Subsección: Nombres Gamer */}
-          <div className="my-6 p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Gamepad2 className="w-4 h-4 text-indigo-400" /> Nombres gamer
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mb-4">
-              Puedes utilizar estas ideas directamente o tomar una como punto de partida para crear una versión personalizada:
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-              {['NovaX', 'NexoRush', 'RayoZen', 'TitanNova', 'VortexX', 'AstroNex', 'ShadowZen', 'PixelRush', 'NovaCore', 'RayoNox', 'ZeroNova', 'NexoPrime', 'VantaX', 'AstroVex', 'ZenRush'].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs">
-                  <span className="font-mono font-bold text-emerald-300">{item}</span>
-                  <CopyButton text={item} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Subsección: Nombres Aesthetic */}
-          <div className="my-6 p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-purple-400" /> Nombres aesthetic
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mb-4">
-              Si prefieres una identidad más limpia y visual, prueba combinaciones sencillas. No necesitas llenar el nombre de símbolos para conseguir un resultado atractivo. Una palabra sencilla puede funcionar muy bien por sí sola:
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-              {['LunaAura', 'NovaLuna', 'AuraNexa', 'SoftNova', 'LunaZen', 'NubeNova', 'AuraSky', 'NovaBloom', 'BrumaZen', 'LunaVibe', 'NexoAura', 'AstroLuna'].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs">
-                  <span className="font-mono font-bold text-purple-300">{item}</span>
-                  <CopyButton text={item} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Subsección: Nombres Elegantes */}
-          <div className="my-6 p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Crown className="w-4 h-4 text-amber-400" /> Nombres elegantes
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mb-4">
-              Para un estilo más limpio y sofisticado, una buena combinación normalmente utiliza una o dos palabras fuertes en lugar de mezclar demasiados elementos:
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-              {['NovaElite', 'LunaRoyal', 'NexoLux', 'AuraPrime', 'ZenRoyal', 'NovaCrown', 'LuxNova', 'EliteNex', 'RoyalZen', 'NovaPrestige'].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs">
-                  <span className="font-mono font-bold text-amber-300">{item}</span>
-                  <CopyButton text={item} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Subsección: Nombres Graciosos */}
-          <div className="my-6 p-5 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-              <Flame className="w-4 h-4 text-rose-400" /> Nombres graciosos
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mb-4">
-              Si juegas con amigos, un nombre divertido puede darle personalidad a tu perfil sin necesidad de recurrir a caracteres complicados:
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-              {['CasiPro', 'NoEraYo', 'PingAlto', 'ModoSiesta', 'PanConLag', 'CeroDrama', 'OtroIntento', 'CasiGano', 'SinPrisa', 'DonDespiste', 'UyPerdón', 'ModoRelax'].map((item) => (
-                <div key={item} className="flex items-center justify-between p-2 rounded-lg bg-slate-950/80 border border-slate-800/80 text-xs">
-                  <span className="font-mono font-bold text-rose-300">{item}</span>
-                  <CopyButton text={item} />
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Interactive Niche Ideas Component */}
+          <GameNameIdeasSection />
         </section>
 
         <hr className="article-section-divider" />
@@ -431,77 +342,74 @@ export default function NombresParaJuegosPage() {
             No todos buscan el mismo tipo de nick. Elegir una categoría antes de generar nombres puede ayudarte a encontrar una opción más rápido:
           </p>
 
-          <div className="space-y-6 my-6">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', margin: '1.5rem 0' }}>
             {/* Gamer y Competitivos */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-base flex items-center gap-2 mb-2">
-                <Swords className="w-4 h-4 text-emerald-400" /> Nombres gamer y competitivos
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#34D399' }}>
+                <Swords size={18} /> Nombres gamer y competitivos
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
                 Los nombres gamer suelen buscar una apariencia directa y memorable. Puedes combinar conceptos como <em>Nova, Rush, Zero, Nexo, Titan, Astro, Prime, Vortex, Pulse</em> o <em>Shadow</em>:
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-emerald-300">
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">NovaRush</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">TitanZero</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">NexoPrime</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">AstroVex</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">VortexNova</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">ZeroPulse</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {['NovaRush', 'TitanZero', 'NexoPrime', 'AstroVex', 'VortexNova', 'ZeroPulse'].map((name) => (
+                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#34D399', fontSize: '0.85rem', fontWeight: 600 }}>
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
 
             {/* Aesthetic */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-base flex items-center gap-2 mb-2">
-                <Sparkles className="w-4 h-4 text-purple-400" /> Nombres aesthetic
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#F472B6' }}>
+                <Sparkles size={18} /> Nombres aesthetic
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
                 Suelen utilizar palabras suaves, limpias o visualmente agradables como <em>Luna, Aura, Nova, Bloom, Sky, Zen, Mist, Nube, Star, Velvet</em>:
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-purple-300">
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">LunaAura</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">NovaBloom</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">SkyNexa</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">AuraZen</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">LunaMist</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">NovaSky</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {['LunaAura', 'NovaBloom', 'SkyNexa', 'AuraZen', 'LunaMist', 'NovaSky'].map((name) => (
+                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#F472B6', fontSize: '0.85rem', fontWeight: 600 }}>
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
 
             {/* Cortos */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-base flex items-center gap-2 mb-2">
-                <Zap className="w-4 h-4 text-amber-400" /> Nombres cortos
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#FBBF24' }}>
+                <Zap size={18} /> Nombres cortos
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
                 Si prefieres algo sencillo, prueba con una palabra de pocas letras (<em>Nox, Vex, Zen, Lux, Ryu, Zyn, Kiro, Nexo, Nyx, Ziro</em>). Si están ocupados, añade una variación mínima:
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-amber-300">
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">NoxX</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Nexo7</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">ZynX</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">KiroZen</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">LuxNova</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {['NoxX', 'Nexo7', 'ZynX', 'KiroZen', 'LuxNova'].map((name) => (
+                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#FBBF24', fontSize: '0.85rem', fontWeight: 600 }}>
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
 
             {/* Equipos y Clanes */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-base flex items-center gap-2 mb-2">
-                <Users className="w-4 h-4 text-cyan-400" /> Nombres para equipos y clanes
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#38BDF8' }}>
+                <Users size={18} /> Nombres para equipos y clanes
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-3 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.85rem' }}>
                 Si el nombre será utilizado por varias personas, conviene pensar en una identidad colectiva:
               </p>
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-cyan-300 mb-3">
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Nova Crew</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Zenith</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Nexo Team</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Vortex</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Astro Squad</span>
-                <span className="p-1.5 px-2.5 rounded-lg bg-slate-950 border border-slate-800">Nova Union</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.85rem' }}>
+                {['Nova Crew', 'Zenith', 'Nexo Team', 'Vortex', 'Astro Squad', 'Nova Union'].map((name) => (
+                  <span key={name} style={{ padding: '0.35rem 0.75rem', borderRadius: '8px', background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,255,255,0.06)', fontFamily: 'monospace', color: '#38BDF8', fontSize: '0.85rem', fontWeight: 600 }}>
+                    {name}
+                  </span>
+                ))}
               </div>
-              <p className="text-xs text-slate-400">
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
                 Para más ideas específicas, puedes consultar nuestra sección dedicada a{' '}
                 <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                   nombres para clanes
@@ -510,7 +418,7 @@ export default function NombresParaJuegosPage() {
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-slate-400 mt-4">
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
             También puedes descubrir más opciones estilizadas en nuestra categoría de{' '}
             <Link href="/nombres-para-juegos/nombres-chidos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               nombres chidos para juegos
@@ -535,22 +443,22 @@ export default function NombresParaJuegosPage() {
             Aunque muchas personas utilizan estos términos como sinónimos, pueden tener pequeños matices:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <strong className="text-white block mb-1 text-sm font-bold">Nick</strong>
-              <p className="text-xs text-slate-400 leading-relaxed">
+          <div className="game-grid-3" style={{ margin: '1.5rem 0' }}>
+            <div className="game-feature-box">
+              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Nick</strong>
+              <p className="game-feature-desc" style={{ margin: 0 }}>
                 Es el nombre que utilizas como identificador técnico dentro de una plataforma o videojuego.
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <strong className="text-white block mb-1 text-sm font-bold">Apodo</strong>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="game-feature-box">
+              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Apodo</strong>
+              <p className="game-feature-desc" style={{ margin: 0 }}>
                 Puede ser una forma corta o alternativa con la que te llaman tus amigos o tu comunidad.
               </p>
             </div>
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <strong className="text-white block mb-1 text-sm font-bold">Nombre Gamer</strong>
-              <p className="text-xs text-slate-400 leading-relaxed">
+            <div className="game-feature-box">
+              <strong style={{ color: '#FFF', display: 'block', marginBottom: '0.35rem', fontSize: '0.95rem' }}>Nombre Gamer</strong>
+              <p className="game-feature-desc" style={{ margin: 0 }}>
                 Es una expresión más amplia para una identidad competitiva completa dentro de comunidades virtuales.
               </p>
             </div>
@@ -585,43 +493,43 @@ export default function NombresParaJuegosPage() {
             No existe una fórmula mágica que garantice que un nombre estará disponible en todos los juegos. Sin embargo, puedes aumentar drásticamente tus posibilidades probando estas tres técnicas:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-2 flex items-center gap-1.5">
-                <Check size={14} className="text-emerald-400" /> 1. Combina dos palabras
+          <div className="game-grid-3" style={{ margin: '1.5rem 0' }}>
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
+                <Check size={15} color="#10B981" /> 1. Combina dos palabras
               </h3>
-              <p className="text-xs text-slate-300 mb-2 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
                 Dos palabras cortas suelen ser suficientes para crear algo fresco:
               </p>
-              <div className="text-xs font-mono text-indigo-300 space-y-1">
+              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
                 <div>Nova + Zen = <strong>NovaZen</strong></div>
                 <div>Luna + Nex = <strong>LunaNex</strong></div>
                 <div>Astro + Lux = <strong>AstroLux</strong></div>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-2 flex items-center gap-1.5">
-                <Check size={14} className="text-emerald-400" /> 2. Cambia una parte pequeña
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
+                <Check size={15} color="#10B981" /> 2. Cambia una parte pequeña
               </h3>
-              <p className="text-xs text-slate-300 mb-2 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
                 Si tu nombre favorito ya está ocupado, añade una terminación:
               </p>
-              <div className="text-xs font-mono text-indigo-300 space-y-1">
+              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
                 <div>Nova → <strong>NovaX</strong></div>
                 <div>Nova → <strong>Nova7</strong></div>
                 <div>Nova → <strong>NovaCore</strong></div>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-2 flex items-center gap-1.5">
-                <Check size={14} className="text-emerald-400" /> 3. Utiliza un estilo visual
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ fontSize: '0.9rem' }}>
+                <Check size={15} color="#10B981" /> 3. Utiliza un estilo visual
               </h3>
-              <p className="text-xs text-slate-300 mb-2 leading-relaxed">
+              <p className="game-feature-desc" style={{ marginBottom: '0.65rem' }}>
                 Cambia su presentación gráfica mediante símbolos o Unicode:
               </p>
-              <div className="text-xs font-mono text-indigo-300 space-y-1">
+              <div style={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#A5B4FC', lineHeight: 1.6 }}>
                 <div><strong>𝓝𝓸𝓿𝓪</strong> (Cursiva)</div>
                 <div><strong>『Nova』</strong> (Corchetes)</div>
                 <div><strong>亗Nova亗</strong> (Corona)</div>
@@ -629,7 +537,7 @@ export default function NombresParaJuegosPage() {
             </div>
           </div>
 
-          <p className="text-xs text-slate-400">
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
             Si deseas explorar transformaciones tipográficas de todo tu texto, puedes utilizar nuestro{' '}
             <Link href="/conversor-de-letras/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               conversor de letras
@@ -690,23 +598,23 @@ export default function NombresParaJuegosPage() {
             Depende del resultado y la impresión que quieras conseguir:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-2 flex items-center gap-2">
-                <Zap size={14} className="text-amber-400" /> Un nombre corto suele ser:
+          <div className="game-grid-2" style={{ margin: '1.5rem 0' }}>
+            <div className="game-feature-box">
+              <h3 className="game-feature-title">
+                <Zap size={15} color="#FBBF24" /> Un nombre corto suele ser:
               </h3>
-              <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-5">
+              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
                 <li>Más fácil de recordar y pronunciar por llamada de voz.</li>
                 <li>Más sencillo de escribir al buscar amigos.</li>
                 <li>Más legible en el marcador durante una partida intensa.</li>
               </ul>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-2 flex items-center gap-2">
-                <Sparkles size={14} className="text-indigo-400" /> Un nombre decorado puede:
+            <div className="game-feature-box">
+              <h3 className="game-feature-title">
+                <Sparkles size={15} color="#818CF8" /> Un nombre decorado puede:
               </h3>
-              <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-5">
+              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
                 <li>Destacar visualmente frente a los demás jugadores.</li>
                 <li>Transmitir una personalidad más marcada y original.</li>
                 <li>Combinarse con marcos y símbolos épicos como coronas o alas.</li>
@@ -736,34 +644,36 @@ export default function NombresParaJuegosPage() {
             Un buen nick puede servir para diferentes tipos de videojuegos y comunidades, pero no todos manejan las mismas restricciones. Puedes utilizar estas ideas para:
           </p>
 
-          <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-slate-300 my-4">
+          <ul style={{ fontSize: '0.9rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: '1rem 0', lineHeight: 1.7 }}>
             <li>Videojuegos multijugador y battle royale (Free Fire, PUBG, Fortnite, COD Mobile).</li>
             <li>Juegos competitivos de PC y consola (Valorant, LoL, CS2, Overwatch).</li>
             <li>Comunidades online, servidores de Discord y plataformas de streaming.</li>
             <li>Equipos, gremios, clanes y escuadras de esports.</li>
           </ul>
 
-          <p className="article-paragraph">
-            Si juegas títulos específicos, visita nuestras guías especializadas:
-          </p>
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 my-4 space-y-2 text-xs sm:text-sm">
-            <div>
-              👉 Si necesitas un nombre para el battle royale de Garena, visita nuestra sección de{' '}
-              <Link href="/nombres-para-free-fire/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                nombres para Free Fire
-              </Link>.
-            </div>
-            <div>
-              👉 Si buscas una identidad grupal, consulta{' '}
-              <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                nombres para clanes
-              </Link>.
-            </div>
-            <div>
-              👉 Y si buscas ideas cortas y minimalistas, explora{' '}
-              <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
-                nicks para juegos
-              </Link>.
+          <div className="game-feature-box" style={{ margin: '1.5rem 0' }}>
+            <h3 className="game-feature-title" style={{ marginBottom: '0.75rem' }}>
+              <Gamepad2 size={16} color="#818CF8" /> Guías especializadas por plataforma
+            </h3>
+            <div style={{ fontSize: '0.88rem', color: '#CBD5E1', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
+              <div>
+                👉 Si necesitas un nombre para el battle royale de Garena, visita nuestra sección de{' '}
+                <Link href="/nombres-para-free-fire/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                  nombres para Free Fire
+                </Link>.
+              </div>
+              <div>
+                👉 Si buscas una identidad grupal, consulta{' '}
+                <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                  nombres para clanes
+                </Link>.
+              </div>
+              <div>
+                👉 Y si buscas ideas cortas y minimalistas, explora{' '}
+                <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                  nicks para juegos
+                </Link>.
+              </div>
             </div>
           </div>
         </section>
@@ -781,13 +691,13 @@ export default function NombresParaJuegosPage() {
             Consejos rápidos y errores comunes al elegir tu nombre
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+          <div className="game-grid-2" style={{ margin: '1.5rem 0' }}>
             {/* Consejos */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
-                <CheckCircle2 size={16} className="text-emerald-400" /> Preguntas antes de elegir:
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#34D399' }}>
+                <CheckCircle2 size={16} color="#34D399" /> Preguntas antes de elegir:
               </h3>
-              <ul className="text-xs text-slate-300 space-y-2 list-disc pl-5">
+              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
                 <li><strong>¿Se entiende fácilmente?</strong> Si tienes que explicar cómo se lee, quizá sea demasiado complicado.</li>
                 <li><strong>¿Es fácil de recordar?</strong> Debería reconocerse tras verlo un par de veces.</li>
                 <li><strong>¿Se ve bien sin símbolos?</strong> Si la respuesta es sí, tienes una base sólida.</li>
@@ -797,11 +707,11 @@ export default function NombresParaJuegosPage() {
             </div>
 
             {/* Errores comunes */}
-            <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <h3 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
-                <ShieldAlert size={16} className="text-rose-400" /> Errores a evitar:
+            <div className="game-feature-box">
+              <h3 className="game-feature-title" style={{ color: '#FB7185' }}>
+                <ShieldAlert size={16} color="#FB7185" /> Errores a evitar:
               </h3>
-              <ul className="text-xs text-slate-300 space-y-2 list-disc pl-5">
+              <ul style={{ fontSize: '0.85rem', color: '#CBD5E1', paddingLeft: '1.25rem', margin: 0, lineHeight: 1.7 }}>
                 <li><strong>Demasiados símbolos:</strong> Más adornos no siempre significa un mejor resultado visual.</li>
                 <li><strong>Nombres excesivamente largos:</strong> Pueden quedar cortados en la interfaz de la partida.</li>
                 <li><strong>Copiar a un streamer popular:</strong> Puede que ya esté ocupado o sea difícil diferenciarte.</li>
@@ -825,20 +735,18 @@ export default function NombresParaJuegosPage() {
             Preguntas frecuentes sobre nombres para juegos
           </h2>
 
-          <div className="space-y-4 my-6">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', margin: '1.5rem 0' }}>
             {JUEGOS_FAQ_ITEMS.map((faq, index) => (
               <details
                 key={index}
-                className="group p-4 rounded-xl bg-slate-900/80 border border-slate-800 transition-colors open:border-indigo-500/40"
+                className="game-feature-box"
+                style={{ cursor: 'pointer' }}
               >
-                <summary className="font-bold text-white text-sm cursor-pointer list-none flex items-center justify-between">
+                <summary style={{ fontWeight: 700, color: '#FFF', fontSize: '0.92rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', listStyle: 'none' }}>
                   <span>{faq.question}</span>
-                  <ChevronRight
-                    size={16}
-                    className="text-indigo-400 transition-transform group-open:rotate-90 flex-shrink-0 ml-2"
-                  />
+                  <ChevronRight size={16} color="#818CF8" style={{ flexShrink: 0, marginLeft: '0.5rem' }} />
                 </summary>
-                <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed pt-2 border-t border-slate-800/80">
+                <p style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)', fontSize: '0.88rem', color: '#CBD5E1', lineHeight: 1.65, margin: '0.75rem 0 0' }}>
                   {faq.answer}
                 </p>
               </details>
@@ -849,75 +757,82 @@ export default function NombresParaJuegosPage() {
         <hr className="article-section-divider" />
 
         {/* Section 12: Hub de Enlaces Internos */}
-        <section id="explora-mas" className="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-indigo-950/30 border border-indigo-500/20 my-8">
-          <h2 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-indigo-400" /> Explora más ideas en Letras Bonitas
+        <section id="explora-mas" style={{ padding: '1.75rem', borderRadius: '16px', background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 27, 75, 0.5))', border: '1px solid rgba(99, 102, 241, 0.25)', margin: '2rem 0' }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFF', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <Sparkles size={18} color="#818CF8" /> Explora más ideas en Letras Bonitas
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mb-4">
+          <p style={{ fontSize: '0.88rem', color: '#CBD5E1', marginBottom: '1.25rem' }}>
             Si todavía estás buscando inspiración, continúa navegando por nuestras herramientas y categorías especializadas:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div className="game-grid-2">
             <Link
               href="/nombres-para-juegos/nicks/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-indigo-300">Nicks para Juegos</span>
-              <span className="text-slate-500 text-[11px]">Ideas cortas y adaptables →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Nicks para Juegos</span>
+              <span style={{ color: '#818CF8', fontSize: '0.78rem' }}>Ideas cortas →</span>
             </Link>
 
             <Link
               href="/nombres-para-juegos/apodos/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-indigo-300">Apodos para Juegos</span>
-              <span className="text-slate-500 text-[11px]">Variedad para todo jugador →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Apodos para Juegos</span>
+              <span style={{ color: '#818CF8', fontSize: '0.78rem' }}>Variedad para todo jugador →</span>
             </Link>
 
             <Link
               href="/nombres-para-juegos/nombres-para-clanes/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-indigo-300">Nombres para Clanes</span>
-              <span className="text-slate-500 text-[11px]">Para gremios y escuadras →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Nombres para Clanes</span>
+              <span style={{ color: '#818CF8', fontSize: '0.78rem' }}>Para gremios y escuadras →</span>
             </Link>
 
             <Link
               href="/nombres-para-juegos/nombres-chidos/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-indigo-300">Nombres Chidos para Juegos</span>
-              <span className="text-slate-500 text-[11px]">Gamer, aesthetic y más →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Nombres Chidos para Juegos</span>
+              <span style={{ color: '#818CF8', fontSize: '0.78rem' }}>Gamer, aesthetic y más →</span>
             </Link>
 
             <Link
               href="/nombres-para-free-fire/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-amber-300">Nombres para Free Fire</span>
-              <span className="text-slate-500 text-[11px]">Símbolos y nicks insanos →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Nombres para Free Fire</span>
+              <span style={{ color: '#F59E0B', fontSize: '0.78rem' }}>Símbolos y nicks insanos →</span>
             </Link>
 
             <Link
               href="/letras-para-instagram/letras-para-nombres/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/40 transition-colors flex items-center justify-between group"
+              className="game-item-card"
+              style={{ textDecoration: 'none' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-purple-300">Letras para Nombres</span>
-              <span className="text-slate-500 text-[11px]">Transforma cualquier palabra →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Letras para Nombres</span>
+              <span style={{ color: '#EC4899', fontSize: '0.78rem' }}>Transforma cualquier palabra →</span>
             </Link>
 
             <Link
               href="/conversor-de-letras/"
-              className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 transition-colors flex items-center justify-between group sm:col-span-2"
+              className="game-item-card"
+              style={{ textDecoration: 'none', gridColumn: '1 / -1' }}
             >
-              <span className="font-semibold text-slate-200 group-hover:text-cyan-300">Conversor de Letras Universal</span>
-              <span className="text-slate-500 text-[11px]">+350 estilos tipográficos Unicode en vivo →</span>
+              <span style={{ fontWeight: 600, color: '#F1F5F9', fontSize: '0.88rem' }}>Conversor de Letras Universal</span>
+              <span style={{ color: '#38BDF8', fontSize: '0.78rem' }}>+350 estilos tipográficos Unicode en vivo →</span>
             </Link>
           </div>
         </section>
 
         {/* Section 13: Conclusión */}
-        <section id="conclusion" className="mt-8 mb-16">
+        <section id="conclusion" style={{ margin: '2rem 0 4rem' }}>
           <div className="article-category-pill">
             <CheckCircle2 size={14} className="text-emerald-400" aria-hidden="true" />
             <span>Resumen Final</span>
@@ -932,19 +847,29 @@ export default function NombresParaJuegosPage() {
           </p>
 
           <p className="article-paragraph">
-            Si quieres un nombre corto, prueba una combinación minimalista. Si buscas algo más visual, añade un detalle decorativo. Y si vas a utilizar el nombre para un equipo, piensa en una opción que todos puedan reconocer fácilmente.
+            Si quieres un nombre corto, prueba una combinación minimalista. Si buscas algo más visual, añade un detalle decorativo. Y si vas a utilizar el nombre para un equipo, piensa en una opción que todos puedan recordar fácilmente.
           </p>
 
-          <p className="article-paragraph font-medium text-white">
+          <p className="article-paragraph" style={{ fontWeight: 700, color: '#FFF' }}>
             Lo importante es encontrar un nombre que sea fácil de recordar, que se vea bien y que funcione correctamente en la plataforma donde vas a utilizarlo. Escribe tu palabra arriba y empieza a crear tu nuevo nick.
           </p>
 
-          <div className="mt-8 text-center">
+          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
             <a
               href="#generador-de-nombres"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition-all shadow-lg hover:shadow-indigo-500/25"
+              className="cp-copy-all-btn"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.5rem',
+                fontSize: '0.95rem',
+                background: 'var(--gradient-brand)',
+                borderRadius: '12px',
+                textDecoration: 'none'
+              }}
             >
-              <Gamepad2 size={16} />
+              <Gamepad2 size={18} />
               <span>Subir al Generador de Nombres</span>
             </a>
           </div>

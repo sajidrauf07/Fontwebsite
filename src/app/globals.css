@@ -9222,3 +9222,157 @@ html[data-theme="light"] .article-figcaption strong {
   color: #E11D48;
 }
 
+/* ==========================================================================
+   NOMBRES PARA JUEGOS - CUSTOM STYLES
+   ========================================================================== */
+.game-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.game-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.game-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.game-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .game-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .game-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-grid-2,
+  .game-grid-3,
+  .game-grid-4,
+  .game-grid-5 {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.game-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.game-item-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.game-item-text {
+  font-family: monospace, sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #E0E7FF;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.game-copy-btn-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #A5B4FC;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.game-copy-btn-mini:hover {
+  background: var(--gradient-brand);
+  color: #FFF;
+  border-color: transparent;
+}
+
+.game-copy-btn-mini.copied {
+  background: #10B981;
+  color: #FFF;
+  border-color: transparent;
+}
+
+.game-feature-box {
+  padding: 1.25rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.game-feature-box:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.game-feature-title {
+  color: #FFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.game-feature-desc {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.55;
+}
+
+html[data-theme="light"] .game-item-card {
+  background: #F8FAFC;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light"] .game-item-text {
+  color: #1E293B;
+}
+
+html[data-theme="light"] .game-feature-box {
+  background: #F8FAFC;
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light"] .game-feature-title {
+  color: #0F172A;
+}
+
+html[data-theme="light"] .game-feature-desc {
+  color: #64748B;
+}
+
+

@@ -233,16 +233,40 @@ export default function GameNameGenerator() {
   return (
     <div className="cp-panel" id="generador-de-nombres">
       {/* Tool Header & Badge */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-2 border-b border-slate-800">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          paddingBottom: '1.25rem',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)'
+        }}
+      >
         <div>
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-2">
-            <Gamepad2 size={13} className="text-indigo-400" />
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.3rem 0.8rem',
+              borderRadius: '9999px',
+              background: 'rgba(99, 102, 241, 0.15)',
+              border: '1px solid rgba(99, 102, 241, 0.3)',
+              color: '#A5B4FC',
+              fontSize: '0.78rem',
+              fontWeight: 700,
+              marginBottom: '0.65rem'
+            }}
+          >
+            <Gamepad2 size={14} color="#818CF8" />
             <span>Generador de Nombres para Juegos</span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFF', margin: '0 0 0.35rem 0', letterSpacing: '-0.02em' }}>
             Crea tu nick personalizado
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: 0 }}>
             Escribe una palabra o apodo, elige tu estilo y copia el nick que más te guste en 1 clic.
           </p>
         </div>
@@ -250,25 +274,46 @@ export default function GameNameGenerator() {
         <button
           type="button"
           onClick={() => setGenerationSeed((prev) => prev + 1)}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 text-xs font-bold transition-all shadow-sm active:scale-95 self-start sm:self-auto"
-          title="Generar nueva tanda de variaciones"
+          className="cp-copy-all-btn"
+          style={{
+            background: 'rgba(30, 41, 59, 0.85)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
+            color: '#F1F5F9',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.45rem',
+            padding: '0.6rem 1.15rem',
+            borderRadius: '10px',
+            cursor: 'pointer',
+            fontSize: '0.85rem',
+            fontWeight: 700
+          }}
+          title="Generar nueva tanda de combinaciones"
         >
-          <RefreshCw size={14} className="text-indigo-400" />
+          <RefreshCw size={14} color="#818CF8" />
           <span>Otra tanda</span>
         </button>
       </div>
 
       {/* Main Text Input Field */}
       <div className="cp-input-block">
-        <label htmlFor="game-name-input" className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+        <label htmlFor="game-name-input" className="cp-label" style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
           Escribe tu nombre o palabra:
         </label>
-        <div className="relative flex items-center">
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
           <input
             id="game-name-input"
             type="text"
-            className="cp-textarea w-full text-base sm:text-lg font-semibold"
-            style={{ height: '52px', paddingTop: '12px', paddingBottom: '12px', paddingRight: cleanBase ? '44px' : '16px' }}
+            className="cp-textarea"
+            style={{
+              height: '52px',
+              paddingTop: '12px',
+              paddingBottom: '12px',
+              paddingRight: cleanBase ? '44px' : '16px',
+              fontSize: '1.05rem',
+              fontWeight: 600,
+              width: '100%'
+            }}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Ejemplo: Nova, Luna, Rayo, Nexo..."
@@ -278,20 +323,32 @@ export default function GameNameGenerator() {
           {cleanBase && (
             <button
               type="button"
-              className="absolute right-3 p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+              style={{
+                position: 'absolute',
+                right: '12px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: 'none',
+                borderRadius: '50%',
+                color: '#CBD5E1',
+                padding: '0.35rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
               onClick={() => setInputText('')}
               title="Borrar texto"
               aria-label="Borrar texto"
             >
-              <X size={16} />
+              <X size={15} />
             </button>
           )}
         </div>
 
         {/* Quick Word Presets */}
-        <div className="cp-quick-presets mt-3">
+        <div className="cp-quick-presets" style={{ marginTop: '0.85rem' }}>
           <span className="cp-quick-label">
-            <Sparkles size={12} /> Sugerencias rápidas:
+            <Sparkles size={13} /> Sugerencias rápidas:
           </span>
           <div className="cp-quick-chips">
             {QUICK_BASE_WORDS.map((word) => (
@@ -299,7 +356,12 @@ export default function GameNameGenerator() {
                 key={word}
                 type="button"
                 onClick={() => setInputText(word)}
-                className={cleanBase.toLowerCase() === word.toLowerCase() ? 'active font-bold text-indigo-300' : ''}
+                style={{
+                  background: cleanBase.toLowerCase() === word.toLowerCase() ? 'rgba(99, 102, 241, 0.25)' : undefined,
+                  borderColor: cleanBase.toLowerCase() === word.toLowerCase() ? '#818CF8' : undefined,
+                  color: cleanBase.toLowerCase() === word.toLowerCase() ? '#FFF' : undefined,
+                  fontWeight: cleanBase.toLowerCase() === word.toLowerCase() ? 700 : undefined
+                }}
               >
                 {word}
               </button>
@@ -310,16 +372,16 @@ export default function GameNameGenerator() {
 
       {/* Style & Category Selection Tabs */}
       <div>
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.65rem' }}>
+          <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Elige un estilo:
           </span>
-          <span className="text-xs text-slate-400">
+          <span style={{ fontSize: '0.82rem', color: '#818CF8' }}>
             {activeCategoryObj.icon} {activeCategoryObj.description}
           </span>
         </div>
 
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+        <div className="cp-categories-scroll">
           {GAME_CATEGORIES.map((cat) => {
             const isActive = selectedCategory === cat.id;
             return (
@@ -330,13 +392,13 @@ export default function GameNameGenerator() {
                   setSelectedCategory(cat.id);
                   setShowOnlyFavorites(false);
                 }}
-                className={`cp-tag-chip flex items-center gap-1.5 whitespace-nowrap text-xs font-semibold px-3.5 py-2 rounded-xl transition-all ${
-                  isActive ? 'active' : ''
-                }`}
+                className={`cp-tag-chip ${isActive ? 'active' : ''}`}
                 style={{
-                  background: isActive ? 'rgba(99, 102, 241, 0.25)' : undefined,
-                  borderColor: isActive ? '#818cf8' : undefined,
-                  color: isActive ? '#e0e7ff' : undefined
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.45rem',
+                  padding: '0.5rem 1rem',
+                  fontSize: '0.85rem'
                 }}
               >
                 <span>{cat.icon}</span>
@@ -348,8 +410,8 @@ export default function GameNameGenerator() {
       </div>
 
       {/* Filter & Search Bar */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
-        <div className="cp-search-wrapper flex-1">
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', flexWrap: 'wrap', paddingTop: '0.5rem' }}>
+        <div className="cp-search-wrapper" style={{ flex: 1, minWidth: '240px' }}>
           <Search size={15} className="cp-search-icon" />
           <input
             type="text"
@@ -373,29 +435,38 @@ export default function GameNameGenerator() {
         {favorites.length > 0 && (
           <button
             type="button"
-            className={`cp-tag-chip fav-chip self-start sm:self-auto text-xs py-2 px-3 ${
-              showOnlyFavorites ? 'active' : ''
-            }`}
+            className={`cp-tag-chip fav-chip ${showOnlyFavorites ? 'active' : ''}`}
             onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', padding: '0.55rem 1rem', fontSize: '0.85rem' }}
           >
-            <Star size={13} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
+            <Star size={14} fill={showOnlyFavorites ? 'currentColor' : 'none'} />
             <span>Mis Favoritos ({favorites.length})</span>
           </button>
         )}
       </div>
 
       {/* Results Header */}
-      <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+      <div
+        className="cp-results-header"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '0.5rem',
+          margin: '0.25rem 0'
+        }}
+      >
         <span>
           Mostrando <strong>{filteredList.length}</strong> opciones para{' '}
-          <span className="text-white font-semibold">"{cleanBase || activeCategoryObj.name}"</span>
+          <strong style={{ color: '#FFF' }}>"{cleanBase || activeCategoryObj.name}"</strong>
         </span>
-        <span className="text-slate-500 hidden sm:inline">
+        <span style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
           Haz clic en cualquier nombre o botón para copiar
         </span>
       </div>
 
-      {/* Results Grid */}
+      {/* Results Grid with Official cp-style-card styling */}
       <div className="cp-results-grid">
         {filteredList.map((item) => {
           const isCopied = copiedId === item.id;
@@ -404,18 +475,16 @@ export default function GameNameGenerator() {
           return (
             <div
               key={item.id}
-              className={`cp-style-card cursor-pointer group ${isCopied ? 'copied' : ''}`}
-              onClick={() => handleCopy(item.name, item.id)}
-              title="Haz clic para copiar"
+              className={`cp-style-card ${isCopied ? 'copied' : ''}`}
             >
               <div className="cp-card-header">
-                <span className="text-[10px] font-bold tracking-wide uppercase px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700/60">
+                <span className="cp-card-name" style={{ fontSize: '0.82rem', color: '#818CF8' }}>
                   {item.styleLabel}
                 </span>
 
                 <button
                   type="button"
-                  className="cp-fav-btn text-slate-500 hover:text-amber-400 transition-colors"
+                  className="cp-fav-btn"
                   onClick={(e) => toggleFavorite(item.name, e)}
                   title={isFavorite ? 'Quitar de favoritos' : 'Guardar en favoritos'}
                   aria-label="Favorito"
@@ -423,45 +492,46 @@ export default function GameNameGenerator() {
                   <Star
                     size={14}
                     fill={isFavorite ? '#F59E0B' : 'none'}
-                    color={isFavorite ? '#F59E0B' : 'currentColor'}
+                    color={isFavorite ? '#F59E0B' : 'var(--text-muted)'}
                   />
                 </button>
               </div>
 
-              {/* Display Result Name */}
+              {/* Display Result Name in full-width preview container */}
               <div
-                className="my-1.5 text-base sm:text-lg font-bold text-slate-100 group-hover:text-indigo-300 transition-colors break-words select-all"
-                style={{ minHeight: '28px' }}
+                className="cp-card-preview"
+                onClick={() => handleCopy(item.name, item.id)}
+                style={{ cursor: 'pointer' }}
+                title="Haz clic para copiar"
               >
-                {item.name}
+                <span
+                  className="cp-card-text"
+                  style={{
+                    fontSize: '1.15rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.02em',
+                    display: 'block'
+                  }}
+                >
+                  {item.name}
+                </span>
               </div>
 
               {/* Copy Action Button */}
-              <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
-                <span className="text-[11px] text-slate-500">
-                  {isCopied ? 'Listo para pegar' : activeCategoryObj.badge}
-                </span>
-
+              <div className="cp-card-actions" style={{ marginTop: '0.65rem' }}>
                 <button
                   type="button"
-                  className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg transition-all ${
-                    isCopied
-                      ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
-                      : 'bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/30'
-                  }`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleCopy(item.name, item.id);
-                  }}
+                  className={`cp-card-copy-btn ${isCopied ? 'copied' : ''}`}
+                  onClick={() => handleCopy(item.name, item.id)}
                 >
                   {isCopied ? (
                     <>
-                      <Check size={13} className="text-emerald-400" />
+                      <Check size={14} />
                       <span>¡Copiado!</span>
                     </>
                   ) : (
                     <>
-                      <Copy size={13} />
+                      <Copy size={14} />
                       <span>Copiar</span>
                     </>
                   )}
@@ -473,13 +543,14 @@ export default function GameNameGenerator() {
       </div>
 
       {filteredList.length === 0 && (
-        <div className="p-8 text-center bg-slate-900/60 rounded-xl border border-slate-800">
-          <p className="text-sm text-slate-400">
+        <div style={{ padding: '2.5rem', textAlign: 'center', background: 'rgba(15, 23, 42, 0.6)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>
             No se encontraron nombres con los filtros seleccionados.
           </p>
           <button
             type="button"
-            className="mt-3 text-xs text-indigo-400 underline font-semibold"
+            className="cp-copy-all-btn"
+            style={{ marginTop: '1rem', display: 'inline-flex' }}
             onClick={() => {
               setSearchFilter('');
               setShowOnlyFavorites(false);
@@ -491,11 +562,24 @@ export default function GameNameGenerator() {
       )}
 
       {/* Compatibility Notice Banner */}
-      <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-400 flex items-start gap-2.5">
-        <AlertCircle size={16} className="text-indigo-400 flex-shrink-0 mt-0.5" />
-        <p className="leading-relaxed">
-          <strong>Aviso de compatibilidad:</strong> Los nombres generados utilizan caracteres y símbolos del estándar <strong>Unicode</strong> universal, no fuentes tipográficas instaladas en el juego. Cada videojuego y sistema operativo renderiza o filtra los caracteres de forma distinta. Te aconsejamos comprobar siempre el nick pegándolo en el campo de prueba de tu juego antes de confirmar cambios definitivos.
-        </p>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          gap: '0.75rem',
+          padding: '0.9rem 1.15rem',
+          borderRadius: '12px',
+          background: 'rgba(15, 23, 42, 0.8)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          fontSize: '0.82rem',
+          color: 'var(--text-muted)',
+          lineHeight: 1.6
+        }}
+      >
+        <AlertCircle size={17} color="#818CF8" style={{ flexShrink: 0, marginTop: '2px' }} />
+        <div>
+          <strong style={{ color: '#FFF' }}>Aviso de compatibilidad:</strong> Los nombres generados utilizan caracteres y símbolos del estándar <strong>Unicode</strong> universal, no fuentes tipográficas instaladas en el juego. Cada videojuego y sistema operativo renderiza o filtra los caracteres de forma distinta. Te aconsejamos comprobar siempre el nick pegándolo en el campo de prueba de tu juego antes de confirmar cambios definitivos.
+        </div>
       </div>
     </div>
   );
