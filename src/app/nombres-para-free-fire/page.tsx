@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import FreeFireNameGenerator from '@/components/free-fire/FreeFireNameGenerator';
 import FreeFireRandomGenerator from '@/components/free-fire/FreeFireRandomGenerator';
@@ -294,6 +295,23 @@ export default function NombresParaFreeFirePage() {
             Si ya tienes una palabra o apodo, la forma más rápida de crear un nick es utilizar un generador interactivo. Sigue estos 3 sencillos pasos:
           </p>
 
+          {/* Mockup Screenshot 1: Interface & Generator Controls */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/generador-nombres-free-fire-interfaz.png"
+                alt="Captura de pantalla del generador interactivo de nombres para Free Fire con el nick personalizado I Love Muslim"
+                width={1060}
+                height={540}
+                className="article-mockup-image"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 1:</strong> Interfaz del generador en <span className="text-white font-medium">theletrasbonitas.com/nombres-para-free-fire</span> con el nick &ldquo;I Love Muslim&rdquo;, selector de modos y biblioteca de símbolos gamer.
+            </figcaption>
+          </figure>
+
           <StepGuide>
             <StepItem
               number="01"
@@ -406,6 +424,23 @@ export default function NombresParaFreeFirePage() {
               </p>
             </div>
           </div>
+
+          {/* Mockup Screenshot 2: Visual Results & Copying Action */}
+          <figure className="article-figure">
+            <div className="article-image-container">
+              <Image
+                src="/images/copiar-nombres-free-fire-estilos.png"
+                alt="Catálogo interactivo con combinaciones de estilos y símbolos para Free Fire con botón de copiado del nick I Love Muslim"
+                width={1060}
+                height={580}
+                className="article-mockup-image"
+                loading="lazy"
+              />
+            </div>
+            <figcaption className="article-figcaption">
+              <strong>Figura 2:</strong> Catálogo de estilos para Free Fire con coronas (亗), corchetes góticos y símbolos Kanji con confirmación de copiado en 1 clic listo para pegar en el juego.
+            </figcaption>
+          </figure>
 
           <FreeFireNameIdeasSection />
         </section>
