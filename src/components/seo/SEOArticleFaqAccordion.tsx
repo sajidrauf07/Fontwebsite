@@ -43,3 +43,5 @@ export const SEOArticleFaqAccordion: React.FC<SEOArticleFaqAccordionProps> = ({ 
     </div>
   );
 };
+
+export default SEOArticleFaqAccordion;

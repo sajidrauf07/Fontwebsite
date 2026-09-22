@@ -1,17 +1,35 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Copy, Check, Zap, Gamepad2, Sparkles, Crown, Flame } from 'lucide-react';
+import { Copy, Check, Zap, Gamepad2, Sparkles, Crown, Flame, Smile, Shield, Star } from 'lucide-react';
 
-interface IdeaCategory {
+export interface IdeaCategory {
   title: string;
-  icon: any;
+  icon?: any;
+  iconName?: 'gamepad' | 'zap' | 'flame' | 'sparkles' | 'crown' | 'smile' | 'shield' | 'star';
   color: 'cyan' | 'emerald' | 'pink' | 'amber';
   description: string;
   names: string[];
 }
 
-const GAME_NAME_CATEGORIES: IdeaCategory[] = [
+const resolveIcon = (cat: IdeaCategory) => {
+  if (cat.iconName) {
+    switch (cat.iconName) {
+      case 'gamepad': return Gamepad2;
+      case 'zap': return Zap;
+      case 'flame': return Flame;
+      case 'sparkles': return Sparkles;
+      case 'crown': return Crown;
+      case 'smile': return Smile;
+      case 'shield': return Shield;
+      case 'star': return Star;
+      default: return Gamepad2;
+    }
+  }
+  return cat.icon || Gamepad2;
+};
+
+const DEFAULT_CATEGORIES: IdeaCategory[] = [
   {
     title: 'Nombres cortos',
     icon: Zap,
@@ -49,7 +67,7 @@ const GAME_NAME_CATEGORIES: IdeaCategory[] = [
   }
 ];
 
-export default function GameNameIdeasSection() {
+export default function GameNameIdeasSection({ categories = DEFAULT_CATEGORIES }: { categories?: IdeaCategory[] } = {}) {
   const [copiedName, setCopiedName] = useState<string | null>(null);
 
   const handleCopy = async (text: string) => {
@@ -82,8 +100,8 @@ export default function GameNameIdeasSection() {
           gap: '1.25rem'
         }}
       >
-        {GAME_NAME_CATEGORIES.map((cat, idx) => {
-          const IconComp = cat.icon;
+        {categories.map((cat, idx) => {
+          const IconComp = resolveIcon(cat);
           return (
             <div key={idx} className={`niche-card niche-card-${cat.color}`}>
               <div className="niche-card-header">

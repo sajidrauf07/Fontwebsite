@@ -33,8 +33,20 @@ interface GeneratedNick {
   styleLabel: string;
 }
 
-export default function GameNameGenerator() {
-  const [inputText, setInputText] = useState('Shadow');
+interface GameNameGeneratorProps {
+  badgeLabel?: string;
+  title?: string;
+  subtitle?: string;
+  defaultInput?: string;
+}
+
+export default function GameNameGenerator({
+  badgeLabel = 'GENERADOR GRATIS',
+  title = 'Nombres para Juegos',
+  subtitle = 'Crea nombres para juegos originales, chidos y con estilo. Genera opciones, personalízalas y copia tu favorita en segundos.',
+  defaultInput = 'Shadow'
+}: GameNameGeneratorProps = {}) {
+  const [inputText, setInputText] = useState(defaultInput);
   const deferredInputText = useDeferredValue(inputText);
   const [selectedCategory, setSelectedCategory] = useState<string>('gamer');
   const [searchFilter, setSearchFilter] = useState('');
@@ -274,13 +286,13 @@ export default function GameNameGenerator() {
             }}
           >
             <Gamepad2 size={14} color="#818CF8" />
-            <span>GENERADOR GRATIS</span>
+            <span>{badgeLabel}</span>
           </div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#FFF', margin: '0 0 0.35rem 0', letterSpacing: '-0.02em' }}>
-            Nombres para Juegos
+            {title}
           </h2>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, maxWidth: '640px', lineHeight: 1.5 }}>
-            Crea nombres para juegos originales, chidos y con estilo. Genera opciones, personalízalas y copia tu favorita en segundos.
+            {subtitle}
           </p>
         </div>
 
