@@ -1863,7 +1863,47 @@ If the answer is no:
 
 Do not add it.
 
-The goal is a premium, fast, SEO-first, static Spanish utility website with genuinely useful tools, strong topical architecture, clean internal linking, excellent mobile UX and sustainable ad monetization.
+---
+
+# 80. SPECIAL RULE — CATEGORY / SUBCATEGORY PAGES
+
+If the TARGET URL is a category, subcategory, or supporting page such as:
+
+* `/simbolos/aesthetic/`
+* `/simbolos/flechas/`
+* `/simbolos/corazones/`
+
+DO NOT automatically build a text generator.
+
+First determine what the searcher actually wants.
+
+For collection/category keywords, evaluate whether the best primary experience is:
+
+* searchable symbol library
+* categorized symbol collection
+* copy-to-clipboard cards
+* filterable collection
+* favorites
+* random symbol
+* related symbol groups
+* generator
+* hybrid library + generator
+
+Choose the simplest experience that best satisfies search intent.
+
+For example:
+
+PRIMARY KEYWORD: Símbolos Aesthetic
+TARGET URL: /simbolos/aesthetic/
+
+The core experience is:
+SEARCH / BROWSE → AESTHETIC SYMBOL COLLECTION → CLICK SYMBOL → COPY → "¡Copiado!" → EXPLORE RELATED SYMBOLS
+
+Do not force a text-input generator if the SERP indicates that users primarily want ready-to-copy aesthetic symbols.
+
+The tool architecture must be determined by research, not by a fixed template.
+
+---
 
 END OF AGENTS.md
 
