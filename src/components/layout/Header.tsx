@@ -121,7 +121,8 @@ export const Header: React.FC = () => {
                       aria-current={pathname === silo.href ? 'page' : undefined}
                       onClick={() => setActiveDropdown(null)}
                     >
-                      <span>{silo.title}</span>
+                      <span className="desktop-title-full">{silo.title}</span>
+                      <span className="desktop-title-short">{silo.shortTitle || silo.title}</span>
                       {isSiloActive && <span className="active-nav-indicator" />}
                     </Link>
 

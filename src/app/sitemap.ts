@@ -25,6 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/nombres-para-free-fire/clanes',
     '/nombres-para-free-fire/simbolos',
     '/nombres-para-juegos',
+    '/nombres-para-juegos/nicks',
+    '/nombres-para-juegos/nombres-chidos',
+    '/nombres-para-juegos/apodos',
+    '/nombres-para-juegos/nombres-para-clanes',
     '/simbolos',
     '/simbolos/aesthetic',
     // Páginas Legales y de Transparencia

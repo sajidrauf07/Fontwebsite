@@ -12,7 +12,7 @@ export interface SiloNavItem {
   href: string;
   description: string;
   viewAllText: string;
-  colorTheme: 'violet' | 'cyan' | 'purple' | 'amber';
+  colorTheme: 'violet' | 'cyan' | 'purple' | 'amber' | 'pink' | 'emerald';
   children: SiloChildItem[];
 }
 
@@ -147,6 +147,70 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
         shortTitle: 'Símbolos FF',
         href: '/nombres-para-free-fire/simbolos/',
         description: 'Cruces, alas, coronas y caracteres especiales para FF.'
+      }
+    ]
+  },
+  {
+    id: 'simbolos',
+    title: 'Símbolos',
+    shortTitle: 'Símbolos',
+    href: '/simbolos/',
+    description: 'Catálogo universal de símbolos bonitos, aesthetic, gamer y de corazones.',
+    viewAllText: 'Ver todos los Símbolos',
+    colorTheme: 'pink',
+    children: [
+      {
+        title: 'Símbolos Aesthetic',
+        shortTitle: 'Aesthetic',
+        href: '/simbolos/aesthetic/',
+        description: 'Lazos coquette, lunas, estrellas, corazones suaves y separadores.'
+      },
+      {
+        title: 'Símbolos para Instagram',
+        shortTitle: 'Para Instagram',
+        href: '/letras-para-instagram/simbolos-para-instagram/',
+        description: 'Decoraciones y glifos especiales verificados para bios de IG.'
+      },
+      {
+        title: 'Símbolos para Free Fire',
+        shortTitle: 'Para Free Fire',
+        href: '/nombres-para-free-fire/simbolos/',
+        description: 'Coronas, rayos, espadas y caracteres especiales para juegos.'
+      }
+    ]
+  },
+  {
+    id: 'nombres-para-juegos',
+    title: 'Nombres para Juegos',
+    shortTitle: 'Juegos',
+    href: '/nombres-para-juegos/',
+    description: 'Generador de apodos, nicks chidos y nombres para clanes gamer.',
+    viewAllText: 'Ver todo Nombres para Juegos',
+    colorTheme: 'emerald',
+    children: [
+      {
+        title: 'Nicks para Juegos',
+        shortTitle: 'Nicks',
+        href: '/nombres-para-juegos/nicks/',
+        description: 'Generador avanzado de nicks competitivos para shooters y RPGs.'
+      },
+      {
+        title: 'Nombres Chidos',
+        shortTitle: 'Chidos',
+        href: '/nombres-para-juegos/nombres-chidos/',
+        description: 'Ideas originales, creativas y llamativas para gamers.'
+      },
+      {
+        title: 'Apodos para Juegos',
+        shortTitle: 'Apodos',
+        href: '/nombres-para-juegos/apodos/',
+        description: 'Apodos graciosos, intimidantes y para duplas.'
+      },
+      {
+        title: 'Nombres para Clanes',
+        shortTitle: 'Clanes',
+        href: '/nombres-para-juegos/nombres-para-clanes/',
+        description: 'Tags y nombres épicos para clanes, squads y gremios.'
       }
     ]
   }
