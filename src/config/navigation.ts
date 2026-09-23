@@ -164,18 +164,6 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
         shortTitle: 'Aesthetic',
         href: '/simbolos/aesthetic/',
         description: 'Lazos coquette, lunas, estrellas, corazones suaves y separadores.'
-      },
-      {
-        title: 'Símbolos para Instagram',
-        shortTitle: 'Para Instagram',
-        href: '/letras-para-instagram/simbolos-para-instagram/',
-        description: 'Decoraciones y glifos especiales verificados para bios de IG.'
-      },
-      {
-        title: 'Símbolos para Free Fire',
-        shortTitle: 'Para Free Fire',
-        href: '/nombres-para-free-fire/simbolos/',
-        description: 'Coronas, rayos, espadas y caracteres especiales para juegos.'
       }
     ]
   },
