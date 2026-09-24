@@ -173,12 +173,13 @@ export default function SimbolosAestheticPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="container" style={{ paddingBottom: '4rem' }}>
+      <div className="container" style={{ paddingBottom: '4rem', overflowX: 'hidden', maxWidth: '100%' }}>
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
           style={{
             display: 'flex',
+            flexWrap: 'wrap',
             alignItems: 'center',
             gap: '0.5rem',
             fontSize: '0.85rem',
@@ -235,7 +236,7 @@ export default function SimbolosAestheticPage() {
             <h1
               className="hero-h1"
               style={{
-                fontSize: 'clamp(2.1rem, 4.5vw, 3.2rem)',
+                fontSize: 'clamp(1.75rem, 5vw, 3.2rem)',
                 fontWeight: 900,
                 lineHeight: 1.15,
                 letterSpacing: '-0.03em',
@@ -324,7 +325,7 @@ export default function SimbolosAestheticPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
               gap: '1.25rem'
             }}
           >
@@ -515,7 +516,7 @@ export default function SimbolosAestheticPage() {
               <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#F472B6', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
                 Combinación Coquette Romántica
               </div>
-              <div style={{ fontSize: '1.1rem', color: '#FFF', letterSpacing: '0.15em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px' }}>
+              <div style={{ fontSize: 'clamp(0.95rem, 3vw, 1.1rem)', color: '#FFF', letterSpacing: '0.15em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%' }}>
                 ୨୧ ⋆ ｡ ˚ ᥫ᭡ ೀ 𐙚 ♡
               </div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0.5rem 0 0 0' }}>
@@ -527,7 +528,7 @@ export default function SimbolosAestheticPage() {
               <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#818CF8', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
                 Línea Divisoria Cósmica
               </div>
-              <div style={{ fontSize: '0.98rem', color: '#FFF', letterSpacing: '0.12em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px' }}>
+              <div style={{ fontSize: 'clamp(0.85rem, 2.5vw, 0.98rem)', color: '#FFF', letterSpacing: '0.12em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%' }}>
                 ─── ･ ｡ﾟ☆: *.☽ .* :☆ﾟ. ───
               </div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0.5rem 0 0 0' }}>
@@ -539,7 +540,7 @@ export default function SimbolosAestheticPage() {
               <div style={{ fontSize: '0.82rem', fontWeight: 700, color: '#38BDF8', textTransform: 'uppercase', marginBottom: '0.45rem' }}>
                 Encabezado con Flecha y Lista
               </div>
-              <div style={{ fontSize: '0.95rem', color: '#FFF', letterSpacing: '0.08em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px' }}>
+              <div style={{ fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)', color: '#FFF', letterSpacing: '0.08em', userSelect: 'all', background: 'rgba(30, 41, 59, 0.5)', padding: '0.65rem 0.95rem', borderRadius: '8px', wordBreak: 'break-word', overflowWrap: 'break-word', maxWidth: '100%' }}>
                 ╭┈─────── ೄྀ࿐ ˊˎ-<br />
                 ┊ ✦ Ciudad / País<br />
                 ┊ ✦ Pasión / Vocación<br />
@@ -580,7 +581,7 @@ export default function SimbolosAestheticPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
               gap: '1rem',
               marginTop: '1.25rem',
               marginBottom: '2.5rem'

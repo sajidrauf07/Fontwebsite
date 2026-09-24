@@ -151,10 +151,12 @@ export default function UniversalSymbolTool() {
       style={{
         background: 'var(--panel-bg, #0F172A)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: '20px',
-        padding: '1.75rem',
+        borderRadius: 'clamp(14px, 2.5vw, 20px)',
+        padding: 'clamp(1rem, 2.5vw, 1.75rem)',
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.45)',
-        position: 'relative'
+        position: 'relative',
+        width: '100%',
+        boxSizing: 'border-box'
       }}
     >
       {/* Header of Tool */}
@@ -348,7 +350,7 @@ export default function UniversalSymbolTool() {
             border: '1px solid rgba(255, 255, 255, 0.12)',
             borderRadius: '12px',
             color: '#FFFFFF',
-            fontSize: '0.95rem',
+            fontSize: '1rem',
             outline: 'none',
             boxSizing: 'border-box'
           }}
@@ -423,8 +425,8 @@ export default function UniversalSymbolTool() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
-          gap: '0.85rem',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(clamp(88px, 26vw, 130px), 1fr))',
+          gap: 'clamp(0.5rem, 1.5vw, 0.85rem)',
           marginBottom: '1.75rem'
         }}
       >
