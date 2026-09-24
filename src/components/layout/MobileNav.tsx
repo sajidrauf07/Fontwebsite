@@ -4,22 +4,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  X,
   ChevronDown,
-  Sparkles,
   ArrowRight,
   Compass,
   Home,
-  Check
+  Check,
+  Sparkles
 } from 'lucide-react';
 import {
   SILO_NAVIGATION,
   isPathActive,
-  getActiveSilo,
   type SiloNavItem
 } from '@/config/navigation';
-import { ThemeToggle } from './ThemeToggle';
-import { BrandLogo } from './BrandLogo';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -28,35 +24,28 @@ interface MobileNavProps {
 
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
-  const drawerRef = useRef<HTMLDivElement>(null);
-  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
-  // Determine active SILO on initial render or route change to auto-expand it
-  const [expandedSilos, setExpandedSilos] = useState<Record<string, boolean>>(() => {
-    const active = getActiveSilo(pathname);
-    return active ? { [active.id]: true } : {};
-  });
+  // Accordion state - all collapsed by default to keep the navigation compact and scannable
+  const [expandedSilos, setExpandedSilos] = useState<Record<string, boolean>>({});
 
-  // Auto-expand active silo whenever pathname changes
-  useEffect(() => {
-    const active = getActiveSilo(pathname);
-    if (active) {
-      setExpandedSilos(prev => ({ ...prev, [active.id]: true }));
-    }
-  }, [pathname]);
-
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll cleanly when mobile menu is open without layout shifts
   useEffect(() => {
     if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
-      // Focus close button on open
-      setTimeout(() => closeBtnRef.current?.focus(), 50);
-    } else {
-      document.body.style.overflow = '';
+
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isOpen]);
 
   // Handle escape key
@@ -81,107 +70,106 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="mobile-nav-portal"
+      id="mobile-nav-panel"
+      className="mobile-nav-overlay"
       role="dialog"
       aria-modal="true"
       aria-label="Menú de navegación principal"
+      ref={navRef}
     >
-      {/* Backdrop */}
+      {/* Semi-transparent Backdrop for outside taps */}
       <div
         className="mobile-nav-backdrop"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Drawer */}
-      <div className="mobile-nav-drawer" ref={drawerRef}>
-        {/* Drawer Header */}
-        <div className="mobile-drawer-header">
-          <BrandLogo onClick={onClose} size="sm" />
-
-          <div className="mobile-drawer-header-actions">
-            <ThemeToggle />
-            <button
-              ref={closeBtnRef}
-              onClick={onClose}
-              className="mobile-nav-close-btn"
-              aria-label="Cerrar menú de navegación"
-              type="button"
-            >
-              <X size={22} />
-            </button>
-          </div>
+      {/* Main Scrollable Sheet anchored below Header */}
+      <div className="mobile-nav-sheet">
+        {/* Featured Primary CTA: Ir al Generador Principal */}
+        <div className="mobile-nav-cta-card">
+          <a
+            href="/#generador"
+            onClick={onClose}
+            className="mobile-nav-cta-link"
+          >
+            <div className="mobile-nav-cta-icon-wrapper">
+              <Compass size={20} className="mobile-nav-cta-icon" />
+            </div>
+            <div className="mobile-nav-cta-info">
+              <span className="mobile-nav-cta-title">
+                Ir al Generador Principal
+                <Sparkles size={13} className="mobile-nav-cta-sparkle" />
+              </span>
+              <span className="mobile-nav-cta-desc">350+ fuentes para copiar y pegar</span>
+            </div>
+            <ArrowRight size={17} className="mobile-nav-cta-arrow" />
+          </a>
         </div>
 
-        {/* Drawer Body */}
-        <div className="mobile-drawer-body">
-          <nav className="mobile-silo-nav" aria-label="Navegación SILO móvil">
-            {/* Inicio Link */}
-            <div className="mobile-nav-root-item">
-              <Link
-                href="/"
-                onClick={onClose}
-                className={`mobile-nav-direct-link ${pathname === '/' ? 'active' : ''}`}
+        {/* Navigation List */}
+        <nav className="mobile-silo-nav" aria-label="Navegación de categorías móvil">
+          {/* Inicio Link */}
+          <div className="mobile-nav-root-item">
+            <Link
+              href="/"
+              onClick={onClose}
+              className={`mobile-nav-direct-link ${pathname === '/' ? 'active' : ''}`}
+            >
+              <div className="mobile-nav-link-left">
+                <span className="mobile-nav-icon-box">
+                  <Home size={16} />
+                </span>
+                <span className="mobile-nav-label">Inicio (Generador)</span>
+              </div>
+              {pathname === '/' && <span className="mobile-active-dot" aria-label="Página actual" />}
+            </Link>
+          </div>
+
+          {/* SILO Accordion Categories */}
+          {SILO_NAVIGATION.map((silo: SiloNavItem) => {
+            const isSiloActive = isPathActive(pathname, silo.href, false);
+            const isExpanded = !!expandedSilos[silo.id];
+
+            return (
+              <div
+                key={silo.id}
+                className={`mobile-silo-block ${isSiloActive ? 'is-active-silo' : ''} ${isExpanded ? 'is-expanded' : ''} theme-${silo.colorTheme}`}
               >
-                <div className="mobile-nav-link-left">
-                  <span className="mobile-nav-icon-box">
-                    <Home size={16} />
-                  </span>
-                  <span className="mobile-nav-label">Inicio (Generador)</span>
+                <div className="mobile-silo-row">
+                  {/* Left: Parent Link with Title & optional Active Badge */}
+                  <Link
+                    href={silo.href}
+                    onClick={onClose}
+                    className={`mobile-silo-parent-link ${isSiloActive ? 'active' : ''}`}
+                  >
+                    <span className="mobile-silo-title">{silo.title}</span>
+                    {isSiloActive && (
+                      <span className="mobile-silo-active-badge">Activo</span>
+                    )}
+                  </Link>
+
+                  {/* Right: Dedicated Expand/Collapse Chevron Button */}
+                  <button
+                    type="button"
+                    onClick={() => toggleSilo(silo.id)}
+                    className="mobile-silo-toggle-btn"
+                    aria-expanded={isExpanded}
+                    aria-controls={`mobile-silo-panel-${silo.id}`}
+                    aria-label={`${isExpanded ? 'Contraer' : 'Expandir'} subpáginas de ${silo.title}`}
+                  >
+                    <ChevronDown
+                      size={18}
+                      className={`mobile-silo-chevron ${isExpanded ? 'rotated' : ''}`}
+                    />
+                  </button>
                 </div>
-                {pathname === '/' && <span className="mobile-active-dot" aria-label="Página actual" />}
-              </Link>
-            </div>
 
-            {/* SILO Accordion Sections */}
-            {SILO_NAVIGATION.map((silo: SiloNavItem) => {
-              const isSiloActive = isPathActive(pathname, silo.href, false);
-              const isExpanded = !!expandedSilos[silo.id];
-
-              return (
-                <div
-                  key={silo.id}
-                  className={`mobile-silo-block ${isSiloActive ? 'is-active-silo' : ''} ${isExpanded ? 'is-expanded' : ''} theme-${silo.colorTheme}`}
-                >
-                  {/* Split Target Row */}
-                  <div className="mobile-silo-row">
-                    {/* Left: Direct link to parent SILO */}
-                    <Link
-                      href={silo.href}
-                      onClick={onClose}
-                      className={`mobile-silo-parent-link ${isSiloActive ? 'active' : ''}`}
-                    >
-                      <span className="mobile-silo-title">{silo.title}</span>
-                      {isSiloActive && (
-                        <span className="mobile-silo-active-badge">SILO Activo</span>
-                      )}
-                    </Link>
-
-                    {/* Right: Toggle Button for Accordion */}
-                    <button
-                      type="button"
-                      onClick={() => toggleSilo(silo.id)}
-                      className="mobile-silo-toggle-btn"
-                      aria-expanded={isExpanded}
-                      aria-controls={`mobile-silo-panel-${silo.id}`}
-                      aria-label={`${isExpanded ? 'Contraer' : 'Expandir'} subpáginas de ${silo.title}`}
-                    >
-                      <ChevronDown
-                        size={18}
-                        className={`mobile-silo-chevron ${isExpanded ? 'rotated' : ''}`}
-                      />
-                    </button>
-                  </div>
-
-                  {/* Supporting Children Links Accordion Panel */}
+                {/* Subpages Compact List (No bloated multi-line descriptions) */}
+                {isExpanded && (
                   <div
                     id={`mobile-silo-panel-${silo.id}`}
-                    className={`mobile-silo-panel ${isExpanded ? 'open' : 'closed'}`}
-                    style={{
-                      maxHeight: isExpanded ? '600px' : '0',
-                      opacity: isExpanded ? 1 : 0,
-                      visibility: isExpanded ? 'visible' : 'hidden'
-                    }}
+                    className="mobile-silo-panel open"
                   >
                     <ul className="mobile-silo-child-list">
                       {/* Overview Link for the Silo */}
@@ -208,12 +196,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                               className={`mobile-silo-child-link ${isChildActive ? 'current' : ''}`}
                             >
                               <span className="mobile-child-bullet" />
-                              <div className="mobile-child-info">
-                                <span className="mobile-child-text">{child.title}</span>
-                                {child.description && (
-                                  <span className="mobile-child-desc">{child.description}</span>
-                                )}
-                              </div>
+                              <span className="mobile-child-text">{child.title}</span>
                               {isChildActive && (
                                 <span className="mobile-current-check" title="Página actual">
                                   <Check size={14} />
@@ -225,22 +208,22 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                       })}
                     </ul>
                   </div>
-                </div>
-              );
-            })}
-          </nav>
-        </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
 
-        {/* Drawer Footer CTA */}
-        <div className="mobile-drawer-footer">
-          <a
-            href="/#generador"
-            onClick={onClose}
-            className="mobile-cta-btn"
-          >
-            <Compass size={18} />
-            <span>Ir al Generador Principal</span>
-          </a>
+        {/* Quick Footer Links inside Mobile Sheet */}
+        <div className="mobile-nav-sheet-footer">
+          <div className="mobile-sheet-footer-links">
+            <Link href="/simbolos/" onClick={onClose} className="mobile-sheet-link">Símbolos</Link>
+            <span className="mobile-sheet-dot">•</span>
+            <Link href="/politica-de-privacidad/" onClick={onClose} className="mobile-sheet-link">Privacidad</Link>
+            <span className="mobile-sheet-dot">•</span>
+            <Link href="/contacto/" onClick={onClose} className="mobile-sheet-link">Contacto</Link>
+          </div>
+          <p className="mobile-sheet-copy">The Letras Bonitas — Generador de Fuentes</p>
         </div>
       </div>
     </div>

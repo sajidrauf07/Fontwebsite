@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   Sparkles,
   ChevronDown,
   Menu,
+  X,
   Compass,
   ArrowRight,
   Check
@@ -27,13 +28,17 @@ export const Header: React.FC = () => {
   const headerRef = useRef<HTMLElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close dropdown on route change
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
+  // Close dropdown and mobile menu on route change
   useEffect(() => {
     setActiveDropdown(null);
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Click outside to close dropdown
+  // Click outside to close desktop dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
@@ -44,19 +49,32 @@ export const Header: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Escape key to close dropdown
+  // Escape key to close desktop dropdown and mobile menu
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setActiveDropdown(null);
+        setMobileMenuOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Automatically close mobile menu when viewport reaches desktop breakpoint (>= 1024px)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Desktop Hover handlers with grace delay
   const handleMouseEnter = (siloId: string) => {
+    if (window.innerWidth < 1024) return;
     if (hoverTimeoutRef.current) {
       clearTimeout(hoverTimeoutRef.current);
       hoverTimeoutRef.current = null;
@@ -81,11 +99,16 @@ export const Header: React.FC = () => {
     setActiveDropdown(prev => (prev === siloId ? null : siloId));
   };
 
+  const toggleMobileMenu = () => {
+    setActiveDropdown(null);
+    setMobileMenuOpen(prev => !prev);
+  };
+
   return (
-    <header className="site-header" ref={headerRef}>
+    <header className={`site-header ${mobileMenuOpen ? 'mobile-menu-active' : ''}`} ref={headerRef}>
       <div className="header-container">
         {/* Brand / Logo: TLB Monogram + The Letras Bonitas */}
-        <BrandLogo />
+        <BrandLogo onClick={() => setMobileMenuOpen(false)} />
 
         {/* Desktop Navigation */}
         <nav className="desktop-silo-nav" aria-label="Navegación principal">
@@ -209,28 +232,31 @@ export const Header: React.FC = () => {
         <div className="header-right-actions">
           <ThemeToggle />
 
+          {/* Desktop Only CTA */}
           <a href="/#generador" className="header-cta-btn">
             <Compass size={16} />
-            <span>Usar Generador</span>
+            <span className="desktop-cta-full">Usar Generador</span>
+            <span className="desktop-cta-short">Generador</span>
           </a>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Hamburger / Close Button */}
           <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="mobile-hamburger-btn"
-            aria-label="Abrir menú de navegación móvil"
+            onClick={toggleMobileMenu}
+            className={`mobile-hamburger-btn ${mobileMenuOpen ? 'is-open' : ''}`}
+            aria-label={mobileMenuOpen ? 'Cerrar menú de navegación móvil' : 'Abrir menú de navegación móvil'}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-panel"
             type="button"
           >
-            <Menu size={24} />
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Accessible Mobile Nav Drawer */}
+      {/* Accessible Mobile Nav Overlay */}
       <MobileNav
         isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
+        onClose={closeMobileMenu}
       />
     </header>
   );
