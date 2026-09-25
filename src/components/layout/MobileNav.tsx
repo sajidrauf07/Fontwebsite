@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -25,25 +26,29 @@ interface MobileNavProps {
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
-  // Accordion state - all collapsed by default to keep the navigation compact and scannable
-  const [expandedSilos, setExpandedSilos] = useState<Record<string, boolean>>({});
+  // Accordion state - expand all silos by default so all pages are immediately visible like in standard mobile navigations
+  const [expandedSilos, setExpandedSilos] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    SILO_NAVIGATION.forEach(silo => {
+      initial[silo.id] = true;
+    });
+    return initial;
+  });
 
-  // Lock body scroll cleanly when mobile menu is open without layout shifts
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock body scroll cleanly when mobile menu is open without layout shifts or unpinning headers
   useEffect(() => {
     if (isOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
 
       return () => {
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
-        window.scrollTo(0, scrollY);
+        document.body.style.overflow = originalOverflow;
       };
     }
   }, [isOpen]);
@@ -66,9 +71,19 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     }));
   };
 
-  if (!isOpen) return null;
+  const allExpanded = SILO_NAVIGATION.every(silo => !!expandedSilos[silo.id]);
+  const toggleAllSilos = () => {
+    const nextState = !allExpanded;
+    const updated: Record<string, boolean> = {};
+    SILO_NAVIGATION.forEach(silo => {
+      updated[silo.id] = nextState;
+    });
+    setExpandedSilos(updated);
+  };
 
-  return (
+  if (!isOpen || !mounted) return null;
+
+  return createPortal(
     <div
       id="mobile-nav-panel"
       className="mobile-nav-overlay"
@@ -126,6 +141,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             </Link>
           </div>
 
+          {/* Section Heading & Quick Toggle */}
+          <div className="mobile-nav-section-header">
+            <span className="mobile-nav-section-title">Categorías y Páginas</span>
+            <button
+              type="button"
+              onClick={toggleAllSilos}
+              className="mobile-nav-toggle-all-btn"
+            >
+              {allExpanded ? 'Contraer todo' : 'Expandir todo'}
+            </button>
+          </div>
+
           {/* SILO Accordion Categories */}
           {SILO_NAVIGATION.map((silo: SiloNavItem) => {
             const isSiloActive = isPathActive(pathname, silo.href, false);
@@ -143,7 +170,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                     onClick={onClose}
                     className={`mobile-silo-parent-link ${isSiloActive ? 'active' : ''}`}
                   >
+                    <span className="mobile-silo-bullet-indicator" />
                     <span className="mobile-silo-title">{silo.title}</span>
+                    <span className="mobile-silo-count-badge">
+                      {silo.children.length} {silo.children.length === 1 ? 'pág' : 'págs'}
+                    </span>
                     {isSiloActive && (
                       <span className="mobile-silo-active-badge">Activo</span>
                     )}
@@ -165,7 +196,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                   </button>
                 </div>
 
-                {/* Subpages Compact List (No bloated multi-line descriptions) */}
+                {/* Subpages Compact List */}
                 {isExpanded && (
                   <div
                     id={`mobile-silo-panel-${silo.id}`}
@@ -226,6 +257,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           <p className="mobile-sheet-copy">The Letras Bonitas — Generador de Fuentes</p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

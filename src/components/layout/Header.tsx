@@ -105,7 +105,8 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className={`site-header ${mobileMenuOpen ? 'mobile-menu-active' : ''}`} ref={headerRef}>
+    <>
+      <header className={`site-header ${mobileMenuOpen ? 'mobile-menu-active' : ''}`} ref={headerRef}>
       <div className="header-container">
         {/* Brand / Logo: TLB Monogram + The Letras Bonitas */}
         <BrandLogo onClick={() => setMobileMenuOpen(false)} />
@@ -252,12 +253,13 @@ export const Header: React.FC = () => {
           </button>
         </div>
       </div>
-
-      {/* Accessible Mobile Nav Overlay */}
-      <MobileNav
-        isOpen={mobileMenuOpen}
-        onClose={closeMobileMenu}
-      />
     </header>
-  );
+
+    {/* Accessible Mobile Nav Overlay outside header */}
+    <MobileNav
+      isOpen={mobileMenuOpen}
+      onClose={closeMobileMenu}
+    />
+  </>
+);
 };

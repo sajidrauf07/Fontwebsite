@@ -5474,6 +5474,8 @@ html[data-theme="light"] .tlb-emblem-badge {
   left: 0;
   right: 0;
   bottom: 0;
+  height: calc(100vh - var(--header-height, 64px));
+  height: calc(100dvh - var(--header-height, 64px));
   z-index: 10050;
   display: flex;
   flex-direction: column;
@@ -5483,6 +5485,8 @@ html[data-theme="light"] .tlb-emblem-badge {
 @media (max-width: 640px) {
   .mobile-nav-overlay {
     top: var(--header-height, 58px);
+    height: calc(100vh - var(--header-height, 58px));
+    height: calc(100dvh - var(--header-height, 58px));
   }
 }
 
@@ -5671,6 +5675,66 @@ html[data-theme="light"] .tlb-emblem-badge {
   border-radius: 9999px;
   background: #6366F1;
   box-shadow: 0 0 8px #6366F1;
+}
+
+/* --- Mobile Section Header & Toggle All --- */
+.mobile-nav-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.85rem 0 0.45rem;
+  padding: 0 0.25rem;
+}
+
+.mobile-nav-section-title {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+}
+
+.mobile-nav-toggle-all-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #818CF8;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-toggle-all-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  color: #A5B4FC;
+}
+
+.mobile-silo-bullet-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #6366F1;
+  flex-shrink: 0;
+}
+
+.theme-violet .mobile-silo-bullet-indicator { background: #8B5CF6; }
+.theme-cyan .mobile-silo-bullet-indicator { background: #06B6D4; }
+.theme-purple .mobile-silo-bullet-indicator { background: #A855F7; }
+.theme-amber .mobile-silo-bullet-indicator { background: #F59E0B; }
+.theme-pink .mobile-silo-bullet-indicator { background: #EC4899; }
+.theme-emerald .mobile-silo-bullet-indicator { background: #10B981; }
+
+.mobile-silo-count-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.12rem 0.45rem;
+  border-radius: 9999px;
+  margin-left: 0.35rem;
 }
 
 .mobile-silo-block {
@@ -6409,6 +6473,23 @@ html[data-theme="light"] .mobile-nav-direct-link {
   background: rgba(0, 0, 0, 0.02);
   border-color: rgba(0, 0, 0, 0.06);
   color: #0F172A;
+}
+
+html[data-theme="light"] .mobile-nav-section-title {
+  color: #64748B;
+}
+
+html[data-theme="light"] .mobile-nav-toggle-all-btn {
+  color: #4F46E5;
+}
+
+html[data-theme="light"] .mobile-nav-toggle-all-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+}
+
+html[data-theme="light"] .mobile-silo-count-badge {
+  color: #64748B;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 html[data-theme="light"] .mobile-silo-block {
