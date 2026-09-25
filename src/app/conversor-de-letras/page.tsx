@@ -129,7 +129,7 @@ export default function ConversorDeLetrasPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras'
       }
     ]
   };

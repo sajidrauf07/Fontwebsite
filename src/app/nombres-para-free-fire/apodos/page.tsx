@@ -64,13 +64,13 @@ export default function ApodosSubcategoryPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Apodos para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/apodos/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/apodos'
       }
     ]
   };

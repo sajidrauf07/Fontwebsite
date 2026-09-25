@@ -83,13 +83,13 @@ export default function LetrasParaNombresPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://theletrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras para Nombres',
-        item: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/letras-para-nombres'
       }
     ]
   };

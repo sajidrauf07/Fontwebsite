@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   description:
     'Crea los mejores nicks para juegos con nuestro generador online gratis. Encuentra nicks gamer, chidos, aesthetic, cortos y con símbolos para copiar y pegar.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nicks/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nicks'
   },
   openGraph: {
     title: 'Nicks para Juegos: Generador de Nicks Gamer y Chidos',
     description:
       'Genera nicks originales, chidos y con símbolos para Free Fire, Roblox, COD, Fortnite y más. Copia tu nick gamer en un clic.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nicks/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nicks',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -219,13 +219,13 @@ export default function NicksParaJuegosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nicks para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/nicks/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos/nicks'
       }
     ]
   };
@@ -234,7 +234,7 @@ export default function NicksParaJuegosPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Generador de Nicks para Juegos - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nicks/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nicks',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -283,7 +283,7 @@ export default function NicksParaJuegosPage() {
             Inicio
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+          <Link href="/nombres-para-juegos" className="breadcrumb-link">
             Nombres para Juegos
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
@@ -480,11 +480,11 @@ export default function NicksParaJuegosPage() {
             </h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', margin: 0 }}>
               En Free Fire son muy populares los símbolos de corona (亗), los caracteres en cruz (⚔), los espacios invisibles y los estilos pequeños (Small Caps). Si quieres ver más opciones especializadas, explora nuestra guía completa de{' '}
-              <Link href="/nombres-para-free-fire/" style={{ color: '#F59E0B', textDecoration: 'underline' }}>
+              <Link href="/nombres-para-free-fire" style={{ color: '#F59E0B', textDecoration: 'underline' }}>
                 Nombres para Free Fire
               </Link>{' '}
               y la colección de{' '}
-              <Link href="/nombres-para-free-fire/apodos/" style={{ color: '#F59E0B', textDecoration: 'underline' }}>
+              <Link href="/nombres-para-free-fire/apodos" style={{ color: '#F59E0B', textDecoration: 'underline' }}>
                 Apodos para Free Fire
               </Link>.
             </p>
@@ -579,7 +579,7 @@ export default function NicksParaJuegosPage() {
 
         <div className="game-grid-3">
           <Link
-            href="/nombres-para-juegos/"
+            href="/nombres-para-juegos"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -600,7 +600,7 @@ export default function NicksParaJuegosPage() {
           </Link>
 
           <Link
-            href="/nombres-para-free-fire/"
+            href="/nombres-para-free-fire"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -621,7 +621,7 @@ export default function NicksParaJuegosPage() {
           </Link>
 
           <Link
-            href="/conversor-de-letras/"
+            href="/conversor-de-letras"
             style={{
               display: 'flex',
               alignItems: 'center',

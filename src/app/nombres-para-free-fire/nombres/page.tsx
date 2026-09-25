@@ -81,13 +81,13 @@ export default function NombresSubcategoryPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres para Copiar',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/nombres'
       }
     ]
   };

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description:
     'Crea nombres para clanes originales, chidos y con símbolos para Free Fire, COD Mobile, Fortnite y PUBG. Generador de nombres para escuadras y gremios gratis.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes'
   },
   openGraph: {
     title: 'Nombres para Clanes: Generador de Nombres de Clanes y Teams',
     description:
       'Generador de nombres de clanes y escuadras gamer. Encuentra tags, símbolos y nombres imponentes listos para copiar y pegar.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -157,13 +157,13 @@ export default function NombresParaClanesPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres para Clanes',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes'
       }
     ]
   };
@@ -172,7 +172,7 @@ export default function NombresParaClanesPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Generador de Nombres para Clanes - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-para-clanes',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -221,7 +221,7 @@ export default function NombresParaClanesPage() {
             Inicio
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+          <Link href="/nombres-para-juegos" className="breadcrumb-link">
             Nombres para Juegos
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
@@ -342,7 +342,7 @@ export default function NombresParaClanesPage() {
 
         <div className="game-grid-3">
           <Link
-            href="/nombres-para-juegos/"
+            href="/nombres-para-juegos"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -362,7 +362,7 @@ export default function NombresParaClanesPage() {
           </Link>
 
           <Link
-            href="/nombres-para-juegos/nicks/"
+            href="/nombres-para-juegos/nicks"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -382,7 +382,7 @@ export default function NombresParaClanesPage() {
           </Link>
 
           <Link
-            href="/nombres-para-free-fire/clanes/"
+            href="/nombres-para-free-fire/clanes"
             style={{
               display: 'flex',
               alignItems: 'center',

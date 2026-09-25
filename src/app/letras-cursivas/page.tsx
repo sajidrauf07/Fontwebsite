@@ -138,7 +138,7 @@ export default function LetrasCursivasPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://theletrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas'
       }
     ]
   };

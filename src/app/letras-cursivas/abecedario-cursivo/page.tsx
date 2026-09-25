@@ -141,13 +141,13 @@ export default function AbecedarioCursivoPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://theletrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Abecedario Cursivo',
-        item: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/abecedario-cursivo'
       }
     ]
   };

@@ -66,13 +66,13 @@ export default function ClanesSubcategoryPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres para Clanes de Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/clanes'
       }
     ]
   };

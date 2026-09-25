@@ -65,13 +65,13 @@ export default function SimbolosSubcategoryPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Símbolos para Free Fire',
-        item: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos/'
+        item: 'https://theletrasbonitas.com/nombres-para-free-fire/simbolos'
       }
     ]
   };

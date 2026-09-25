@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   description:
     'Generador de nombres chidos para juegos online gratis. Encuentra nicks gamer originales, con símbolos, aesthetic y de combate para copiar y pegar.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos'
   },
   openGraph: {
     title: 'Nombres Chidos para Juegos: Generador y Nicks con Estilo',
     description:
       'Crea los nombres más chidos para tus videojuegos favoritos. Opciones originales con letras bonitas y símbolos listas para copiar.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -158,13 +158,13 @@ export default function NombresChidosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Nombres Chidos para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos'
       }
     ]
   };
@@ -173,7 +173,7 @@ export default function NombresChidosPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Generador de Nombres Chidos para Juegos - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/nombres-chidos',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -222,7 +222,7 @@ export default function NombresChidosPage() {
             Inicio
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+          <Link href="/nombres-para-juegos" className="breadcrumb-link">
             Nombres para Juegos
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
@@ -311,7 +311,7 @@ export default function NombresChidosPage() {
 
         <div className="game-grid-3">
           <Link
-            href="/nombres-para-juegos/"
+            href="/nombres-para-juegos"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -331,7 +331,7 @@ export default function NombresChidosPage() {
           </Link>
 
           <Link
-            href="/nombres-para-juegos/nicks/"
+            href="/nombres-para-juegos/nicks"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -351,7 +351,7 @@ export default function NombresChidosPage() {
           </Link>
 
           <Link
-            href="/conversor-de-letras/"
+            href="/conversor-de-letras"
             style={{
               display: 'flex',
               alignItems: 'center',

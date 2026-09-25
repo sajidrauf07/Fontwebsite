@@ -124,13 +124,13 @@ export default function LetrasParaCopiarYPegarPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras para Copiar y Pegar',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/letras-para-copiar-y-pegar'
       }
     ]
   };

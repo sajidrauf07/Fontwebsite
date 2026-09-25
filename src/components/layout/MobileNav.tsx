@@ -248,11 +248,11 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         {/* Quick Footer Links inside Mobile Sheet */}
         <div className="mobile-nav-sheet-footer">
           <div className="mobile-sheet-footer-links">
-            <Link href="/simbolos/" onClick={onClose} className="mobile-sheet-link">Símbolos</Link>
+            <Link href="/simbolos" onClick={onClose} className="mobile-sheet-link">Símbolos</Link>
             <span className="mobile-sheet-dot">•</span>
-            <Link href="/politica-de-privacidad/" onClick={onClose} className="mobile-sheet-link">Privacidad</Link>
+            <Link href="/politica-de-privacidad" onClick={onClose} className="mobile-sheet-link">Privacidad</Link>
             <span className="mobile-sheet-dot">•</span>
-            <Link href="/contacto/" onClick={onClose} className="mobile-sheet-link">Contacto</Link>
+            <Link href="/contacto" onClick={onClose} className="mobile-sheet-link">Contacto</Link>
           </div>
           <p className="mobile-sheet-copy">The Letras Bonitas — Generador de Fuentes</p>
         </div>

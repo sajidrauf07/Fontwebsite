@@ -117,13 +117,13 @@ export default function ElegantCursivePage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://theletrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras Cursivas Elegantes',
-        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-elegantes'
       }
     ]
   };

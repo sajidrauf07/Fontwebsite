@@ -122,13 +122,13 @@ export default function ComoCambiarLasLetrasPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Cómo Cambiar las Letras',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/como-cambiar-las-letras'
       }
     ]
   };

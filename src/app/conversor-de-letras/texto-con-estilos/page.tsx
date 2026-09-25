@@ -122,13 +122,13 @@ export default function TextoConEstilosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Conversor de Letras',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Texto con Estilos',
-        item: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos/'
+        item: 'https://theletrasbonitas.com/conversor-de-letras/texto-con-estilos'
       }
     ]
   };

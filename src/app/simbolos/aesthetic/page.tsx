@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     'Colección de símbolos aesthetic para copiar y pegar con un clic. Encuentra lazos coquette (୨୧, ೀ), lunas (☾), estrellas (⋆｡°✩), corazones suaves y separadores para tu bio.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/simbolos/aesthetic/'
+    canonical: 'https://theletrasbonitas.com/simbolos/aesthetic'
   },
   openGraph: {
     title: 'Símbolos Aesthetic para Copiar y Pegar: Lazos, Lunas y Corazones',
     description:
       'Catálogo interactivo de símbolos aesthetic gratis. Copia lazos coquette, destellos, lunas, corazones alados y separadores bonitos para Instagram, TikTok y WhatsApp.',
-    url: 'https://theletrasbonitas.com/simbolos/aesthetic/',
+    url: 'https://theletrasbonitas.com/simbolos/aesthetic',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -116,13 +116,13 @@ export default function SimbolosAestheticPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Símbolos',
-        item: 'https://theletrasbonitas.com/simbolos/'
+        item: 'https://theletrasbonitas.com/simbolos'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Símbolos Aesthetic',
-        item: 'https://theletrasbonitas.com/simbolos/aesthetic/'
+        item: 'https://theletrasbonitas.com/simbolos/aesthetic'
       }
     ]
   };
@@ -131,7 +131,7 @@ export default function SimbolosAestheticPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Catálogo de Símbolos Aesthetic para Copiar y Pegar - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/simbolos/aesthetic/',
+    url: 'https://theletrasbonitas.com/simbolos/aesthetic',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',

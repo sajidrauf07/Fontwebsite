@@ -83,13 +83,13 @@ export default function SimbolosParaInstagramPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://theletrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Símbolos para Instagram',
-        item: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram/simbolos-para-instagram'
       }
     ]
   };

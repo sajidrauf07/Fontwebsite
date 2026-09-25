@@ -21,26 +21,26 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'letras-cursivas',
     title: 'Letras Cursivas',
     shortTitle: 'Cursivas',
-    href: '/letras-cursivas/',
+    href: '/letras-cursivas',
     description: 'Fuentes manuscritas, caligráficas y elegantes para copiar y pegar.',
     viewAllText: 'Ver todas las Letras Cursivas',
     colorTheme: 'violet',
     children: [
       {
         title: 'Abecedario Cursivo',
-        href: '/letras-cursivas/abecedario-cursivo/',
+        href: '/letras-cursivas/abecedario-cursivo',
         description: 'Alfabeto completo de la A a la Z en mayúsculas y minúsculas.'
       },
       {
         title: 'Letras Cursivas para Copiar y Pegar',
         shortTitle: 'Copiar y Pegar',
-        href: '/letras-cursivas/letras-cursivas-para-copiar-y-pegar/',
+        href: '/letras-cursivas/letras-cursivas-para-copiar-y-pegar',
         description: 'Colección de palabras, frases y alfabetos listos con un clic.'
       },
       {
         title: 'Letras Cursivas Elegantes',
         shortTitle: 'Elegantes',
-        href: '/letras-cursivas/letras-cursivas-elegantes/',
+        href: '/letras-cursivas/letras-cursivas-elegantes',
         description: 'Estilos finos, caligráficos y premium para invitaciones y marcas.'
       }
     ]
@@ -49,7 +49,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'conversor-de-letras',
     title: 'Conversor de Letras',
     shortTitle: 'Conversor',
-    href: '/conversor-de-letras/',
+    href: '/conversor-de-letras',
     description: 'Transforma tu texto en más de 350 tipografías Unicode en vivo.',
     viewAllText: 'Ver todo el Conversor de Letras',
     colorTheme: 'cyan',
@@ -57,19 +57,19 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
       {
         title: 'Letras para Copiar y Pegar',
         shortTitle: 'Copiar y Pegar',
-        href: '/conversor-de-letras/letras-para-copiar-y-pegar/',
+        href: '/conversor-de-letras/letras-para-copiar-y-pegar',
         description: 'Catálogo universal de tipografías listas para cualquier app.'
       },
       {
         title: 'Cómo Cambiar las Letras',
         shortTitle: 'Cómo Cambiar',
-        href: '/conversor-de-letras/como-cambiar-las-letras/',
+        href: '/conversor-de-letras/como-cambiar-las-letras',
         description: 'Guía paso a paso y tutoriales de compatibilidad Unicode.'
       },
       {
         title: 'Texto con Estilos',
         shortTitle: 'Texto con Estilos',
-        href: '/conversor-de-letras/texto-con-estilos/',
+        href: '/conversor-de-letras/texto-con-estilos',
         description: 'Generador de textos bonitos decorados con símbolos aesthetic.'
       }
     ]
@@ -78,7 +78,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'letras-para-instagram',
     title: 'Letras para Instagram',
     shortTitle: 'Instagram',
-    href: '/letras-para-instagram/',
+    href: '/letras-para-instagram',
     description: 'Fuentes compatibles para tu bio, nombres de usuario y captions.',
     viewAllText: 'Ver todas las Letras para Instagram',
     colorTheme: 'purple',
@@ -86,25 +86,25 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
       {
         title: 'Letras para Bio',
         shortTitle: 'Para Bio',
-        href: '/letras-para-instagram/letras-para-bio/',
+        href: '/letras-para-instagram/letras-para-bio',
         description: 'Diseña tu biografía con vista previa interactiva de perfil.'
       },
       {
         title: 'Letras para Nombres',
         shortTitle: 'Para Nombres',
-        href: '/letras-para-instagram/letras-para-nombres/',
+        href: '/letras-para-instagram/letras-para-nombres',
         description: 'Personaliza tu nombre visible de Instagram con estilo único.'
       },
       {
         title: 'Símbolos para Instagram',
         shortTitle: 'Símbolos',
-        href: '/letras-para-instagram/simbolos-para-instagram/',
+        href: '/letras-para-instagram/simbolos-para-instagram',
         description: 'Decoraciones, estrellas, corazones y flechas compatibles.'
       },
       {
         title: 'Letras Cursivas para Instagram',
         shortTitle: 'Cursivas Instagram',
-        href: '/letras-para-instagram/letras-cursivas-para-instagram/',
+        href: '/letras-para-instagram/letras-cursivas-para-instagram',
         description: 'Tipografías itálicas y caligráficas probadas en Instagram.'
       }
     ]
@@ -113,7 +113,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'nombres-para-free-fire',
     title: 'Nombres para Free Fire',
     shortTitle: 'Free Fire',
-    href: '/nombres-para-free-fire/',
+    href: '/nombres-para-free-fire',
     description: 'Generador de nicks heroicos, símbolos insanos y tags de clanes.',
     viewAllText: 'Ver todo Nombres para Free Fire',
     colorTheme: 'amber',
@@ -121,31 +121,31 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
       {
         title: 'Nombres',
         shortTitle: 'Generador de Nicks',
-        href: '/nombres-para-free-fire/nombres/',
+        href: '/nombres-para-free-fire/nombres',
         description: 'Generador avanzado de nicks con filtros y decoraciones.'
       },
       {
         title: 'Nombres Insanos',
         shortTitle: 'Nicks Insanos',
-        href: '/nombres-para-free-fire/nombres-insanos/',
+        href: '/nombres-para-free-fire/nombres-insanos',
         description: 'Nicks intimidantes y agresivos estilo jugador veterano.'
       },
       {
         title: 'Apodos',
         shortTitle: 'Apodos',
-        href: '/nombres-para-free-fire/apodos/',
+        href: '/nombres-para-free-fire/apodos',
         description: 'Ideas y apodos originales para jugadores y duplas.'
       },
       {
         title: 'Clanes',
         shortTitle: 'Para Clanes',
-        href: '/nombres-para-free-fire/clanes/',
+        href: '/nombres-para-free-fire/clanes',
         description: 'Nombres para escuadras, gremios y clanes competitivos.'
       },
       {
         title: 'Símbolos',
         shortTitle: 'Símbolos FF',
-        href: '/nombres-para-free-fire/simbolos/',
+        href: '/nombres-para-free-fire/simbolos',
         description: 'Cruces, alas, coronas y caracteres especiales para FF.'
       }
     ]
@@ -154,7 +154,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'simbolos',
     title: 'Símbolos',
     shortTitle: 'Símbolos',
-    href: '/simbolos/',
+    href: '/simbolos',
     description: 'Catálogo universal de símbolos bonitos, aesthetic, gamer y de corazones.',
     viewAllText: 'Ver todos los Símbolos',
     colorTheme: 'pink',
@@ -162,7 +162,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
       {
         title: 'Símbolos Aesthetic',
         shortTitle: 'Aesthetic',
-        href: '/simbolos/aesthetic/',
+        href: '/simbolos/aesthetic',
         description: 'Lazos coquette, lunas, estrellas, corazones suaves y separadores.'
       }
     ]
@@ -171,7 +171,7 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     id: 'nombres-para-juegos',
     title: 'Nombres para Juegos',
     shortTitle: 'Juegos',
-    href: '/nombres-para-juegos/',
+    href: '/nombres-para-juegos',
     description: 'Generador de apodos, nicks chidos y nombres para clanes gamer.',
     viewAllText: 'Ver todo Nombres para Juegos',
     colorTheme: 'emerald',
@@ -179,25 +179,25 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
       {
         title: 'Nicks para Juegos',
         shortTitle: 'Nicks',
-        href: '/nombres-para-juegos/nicks/',
+        href: '/nombres-para-juegos/nicks',
         description: 'Generador avanzado de nicks competitivos para shooters y RPGs.'
       },
       {
         title: 'Nombres Chidos',
         shortTitle: 'Chidos',
-        href: '/nombres-para-juegos/nombres-chidos/',
+        href: '/nombres-para-juegos/nombres-chidos',
         description: 'Ideas originales, creativas y llamativas para gamers.'
       },
       {
         title: 'Apodos para Juegos',
         shortTitle: 'Apodos',
-        href: '/nombres-para-juegos/apodos/',
+        href: '/nombres-para-juegos/apodos',
         description: 'Apodos graciosos, intimidantes y para duplas.'
       },
       {
         title: 'Nombres para Clanes',
         shortTitle: 'Clanes',
-        href: '/nombres-para-juegos/nombres-para-clanes/',
+        href: '/nombres-para-juegos/nombres-para-clanes',
         description: 'Tags y nombres épicos para clanes, squads y gremios.'
       }
     ]

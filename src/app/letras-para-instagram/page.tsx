@@ -125,7 +125,7 @@ export default function LetrasParaInstagramPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras para Instagram',
-        item: 'https://theletrasbonitas.com/letras-para-instagram/'
+        item: 'https://theletrasbonitas.com/letras-para-instagram'
       }
     ]
   };

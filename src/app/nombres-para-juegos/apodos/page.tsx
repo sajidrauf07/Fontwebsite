@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   description:
     'Crea apodos para juegos originales, chidos y con estilo para copiar y pegar. Generador de apodos gamer para Free Fire, Roblox, COD, Fortnite y Discord.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/apodos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/apodos'
   },
   openGraph: {
     title: 'Apodos para Juegos: Generador de Apodos Gamer Chidos',
     description:
       'Encuentra los mejores apodos para juegos con letras bonitas y símbolos. Genera, personaliza y copia tu apodo gamer en segundos.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/apodos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/apodos',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -169,13 +169,13 @@ export default function ApodosParaJuegosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Apodos para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/apodos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos/apodos'
       }
     ]
   };
@@ -184,7 +184,7 @@ export default function ApodosParaJuegosPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Generador de Apodos para Juegos - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/apodos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos/apodos',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -233,7 +233,7 @@ export default function ApodosParaJuegosPage() {
             Inicio
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
-          <Link href="/nombres-para-juegos/" className="breadcrumb-link">
+          <Link href="/nombres-para-juegos" className="breadcrumb-link">
             Nombres para Juegos
           </Link>
           <ChevronRight size={14} className="breadcrumb-sep" />
@@ -353,7 +353,7 @@ export default function ApodosParaJuegosPage() {
 
         <div className="game-grid-3">
           <Link
-            href="/nombres-para-juegos/"
+            href="/nombres-para-juegos"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -373,7 +373,7 @@ export default function ApodosParaJuegosPage() {
           </Link>
 
           <Link
-            href="/nombres-para-juegos/nicks/"
+            href="/nombres-para-juegos/nicks"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -393,7 +393,7 @@ export default function ApodosParaJuegosPage() {
           </Link>
 
           <Link
-            href="/nombres-para-free-fire/apodos/"
+            href="/nombres-para-free-fire/apodos"
             style={{
               display: 'flex',
               alignItems: 'center',

@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   description:
     'Encuentra y copia más de 1,000 símbolos bonitos, aesthetic, gamer, de corazones, estrellas y flechas. Copia con 1 clic para Instagram, Free Fire, WhatsApp y más.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/simbolos/'
+    canonical: 'https://theletrasbonitas.com/simbolos'
   },
   openGraph: {
     title: 'Símbolos para Copiar y Pegar: Catálogo Bonito, Gamer y Aesthetic',
     description:
       'Catálogo interactivo de símbolos para copiar y pegar gratis. Símbolos para Instagram, nicks de Free Fire, bios aesthetic, corazones y flechas en un clic.',
-    url: 'https://theletrasbonitas.com/simbolos/',
+    url: 'https://theletrasbonitas.com/simbolos',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'website',
@@ -117,7 +117,7 @@ export default function SimbolosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Símbolos',
-        item: 'https://theletrasbonitas.com/simbolos/'
+        item: 'https://theletrasbonitas.com/simbolos'
       }
     ]
   };
@@ -126,7 +126,7 @@ export default function SimbolosPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Catálogo de Símbolos para Copiar y Pegar - Letras Bonitas',
-    url: 'https://theletrasbonitas.com/simbolos/',
+    url: 'https://theletrasbonitas.com/simbolos',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -543,7 +543,7 @@ export default function SimbolosPage() {
 
           <div className="game-grid-3">
             <Link
-              href="/letras-para-instagram/simbolos-para-instagram/"
+              href="/letras-para-instagram/simbolos-para-instagram"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -563,7 +563,7 @@ export default function SimbolosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-free-fire/simbolos/"
+              href="/nombres-para-free-fire/simbolos"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -583,7 +583,7 @@ export default function SimbolosPage() {
             </Link>
 
             <Link
-              href="/conversor-de-letras/"
+              href="/conversor-de-letras"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -603,7 +603,7 @@ export default function SimbolosPage() {
             </Link>
 
             <Link
-              href="/letras-cursivas/"
+              href="/letras-cursivas"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -623,7 +623,7 @@ export default function SimbolosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-juegos/"
+              href="/nombres-para-juegos"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -643,7 +643,7 @@ export default function SimbolosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-free-fire/"
+              href="/nombres-para-free-fire"
               style={{
                 display: 'flex',
                 alignItems: 'center',

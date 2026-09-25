@@ -121,13 +121,13 @@ export default function CursiveCopyPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Letras Cursivas',
-        item: 'https://theletrasbonitas.com/letras-cursivas/'
+        item: 'https://theletrasbonitas.com/letras-cursivas'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Letras Cursivas para Copiar y Pegar',
-        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar/'
+        item: 'https://theletrasbonitas.com/letras-cursivas/letras-cursivas-para-copiar-y-pegar'
       }
     ]
   };

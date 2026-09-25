@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   description:
     'Crea nombres para juegos con nuestro generador gratis. Encuentra nicks gamer, chidos, aesthetic y originales para copiar y personalizar.',
   alternates: {
-    canonical: 'https://theletrasbonitas.com/nombres-para-juegos/'
+    canonical: 'https://theletrasbonitas.com/nombres-para-juegos'
   },
   openGraph: {
     title: 'Nombres para Juegos: Generador de Nicks Chidos',
     description:
       'Crea nombres para juegos con nuestro generador gratis. Encuentra nicks gamer, chidos, aesthetic y originales para copiar y personalizar.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos',
     siteName: 'Letras Bonitas',
     locale: 'es_MX',
     type: 'article'
@@ -80,7 +80,7 @@ export default function NombresParaJuegosPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Nombres para Juegos',
-        item: 'https://theletrasbonitas.com/nombres-para-juegos/'
+        item: 'https://theletrasbonitas.com/nombres-para-juegos'
       }
     ]
   };
@@ -102,7 +102,7 @@ export default function NombresParaJuegosPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Generador de Nombres para Juegos',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos',
     applicationCategory: 'EntertainmentApplication',
     operatingSystem: 'All',
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -116,7 +116,7 @@ export default function NombresParaJuegosPage() {
     headline: 'Nombres para Juegos: Generador de Nicks Chidos',
     description:
       'Guía completa y generador interactivo de nombres para juegos. Aprende a crear nicks gamer, chidos, aesthetic, elegantes y competitivos con símbolos y caracteres Unicode.',
-    url: 'https://theletrasbonitas.com/nombres-para-juegos/',
+    url: 'https://theletrasbonitas.com/nombres-para-juegos',
     inLanguage: 'es-MX',
     publisher: {
       '@type': 'Organization',
@@ -324,7 +324,7 @@ export default function NombresParaJuegosPage() {
 
           <p className="article-paragraph">
             Si te gusta este estilo, te recomendamos visitar nuestra sección especializada de{' '}
-            <Link href="/nombres-para-juegos/nombres-chidos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+            <Link href="/nombres-para-juegos/nombres-chidos" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               nombres chidos para juegos
             </Link>
             , donde reunimos cientos de opciones con sabor regional y creatividad.
@@ -372,7 +372,7 @@ export default function NombresParaJuegosPage() {
 
           <p className="article-paragraph">
             Si tu favorito ya fue registrado en tu juego, puedes consultar nuestra lista completa de{' '}
-            <Link href="/nombres-para-juegos/nicks/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+            <Link href="/nombres-para-juegos/nicks" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               nicks para juegos
             </Link>{' '}
             para encontrar variantes inteligentes con números o terminaciones sutiles.
@@ -474,11 +474,11 @@ export default function NombresParaJuegosPage() {
               </h3>
               <p className="game-feature-desc">
                 Si buscas un nombre para tu escuadra, revisa nuestra sección de{' '}
-                <Link href="/nombres-para-juegos/nombres-para-clanes/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                <Link href="/nombres-para-juegos/nombres-para-clanes" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                   nombres para clanes
                 </Link>{' '}
                 o explora apodos compartidos en{' '}
-                <Link href="/nombres-para-juegos/apodos/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+                <Link href="/nombres-para-juegos/apodos" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                   apodos para juegos
                 </Link>.
               </p>
@@ -526,11 +526,11 @@ export default function NombresParaJuegosPage() {
             </li>
             <li>
               <strong>Cambiar a letras cursivas o góticas:</strong> Si deseas transformar toda tu frase o biografía, apóyate en nuestro{' '}
-              <Link href="/conversor-de-letras/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              <Link href="/conversor-de-letras" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                 conversor de letras
               </Link>{' '}
               o en las opciones de{' '}
-              <Link href="/letras-para-instagram/letras-para-nombres/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+              <Link href="/letras-para-instagram/letras-para-nombres" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
                 letras para nombres
               </Link>.
             </li>
@@ -559,11 +559,11 @@ export default function NombresParaJuegosPage() {
 
           <p className="article-paragraph">
             Para títulos populares de disparos, consulta nuestra guía dedicada a los{' '}
-            <Link href="/nombres-para-free-fire/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+            <Link href="/nombres-para-free-fire" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               nombres para Free Fire
             </Link>{' '}
             y explora el catálogo de{' '}
-            <Link href="/nombres-para-free-fire/nombres/" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
+            <Link href="/nombres-para-free-fire/nombres" className="text-indigo-400 hover:text-indigo-300 underline font-semibold">
               nombres con símbolos para Free Fire
             </Link>.
           </p>
@@ -649,7 +649,7 @@ export default function NombresParaJuegosPage() {
 
           <div className="game-grid-2">
             <Link
-              href="/nombres-para-juegos/nicks/"
+              href="/nombres-para-juegos/nicks"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -658,7 +658,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-juegos/apodos/"
+              href="/nombres-para-juegos/apodos"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -667,7 +667,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-juegos/nombres-para-clanes/"
+              href="/nombres-para-juegos/nombres-para-clanes"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -676,7 +676,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-juegos/nombres-chidos/"
+              href="/nombres-para-juegos/nombres-chidos"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -685,7 +685,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/nombres-para-free-fire/"
+              href="/nombres-para-free-fire"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -694,7 +694,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/letras-para-instagram/letras-para-nombres/"
+              href="/letras-para-instagram/letras-para-nombres"
               className="game-item-card"
               style={{ textDecoration: 'none' }}
             >
@@ -703,7 +703,7 @@ export default function NombresParaJuegosPage() {
             </Link>
 
             <Link
-              href="/conversor-de-letras/"
+              href="/conversor-de-letras"
               className="game-item-card"
               style={{ textDecoration: 'none', gridColumn: '1 / -1' }}
             >
