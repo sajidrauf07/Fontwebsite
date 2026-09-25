@@ -6136,48 +6136,82 @@ html[data-theme="light"] .footer-social-link:hover {
   display: none;
 }
 
-@media (max-width: 640px) {
+/* Hide bulky footer SILO accordion columns on mobile because all categories & pages are in the top mobile menu */
+@media (max-width: 1023px) {
   .footer-silo-column {
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    overflow: hidden;
+    display: none !important;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand-column {
+    align-items: center;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
 
-  .footer-column-header {
-    margin-bottom: 0;
-    padding: 0.9rem 1rem;
+  .footer-brand-desc {
+    max-width: 520px;
+    margin: 0 auto;
   }
 
-  .footer-accordion-toggle-btn {
-    display: inline-flex;
+  .footer-social-wrapper {
     align-items: center;
+  }
+}
+
+/* Mobile Quick Legal Links (Clean horizontal single-row links replacing bulky accordions) */
+.footer-mobile-quick-links {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .footer-mobile-quick-links {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    border: none;
-    background: rgba(255, 255, 255, 0.05);
+    align-items: center;
+    gap: 0.5rem 0.85rem;
+    margin: 1.5rem 0 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-quick-link {
+    font-size: 0.82rem;
     color: #94A3B8;
-    cursor: pointer;
+    text-decoration: none;
+    transition: color var(--transition-fast);
   }
 
-  .footer-chevron.rotated {
-    transform: rotate(180deg);
-    color: #818CF8;
+  .footer-quick-link:hover {
+    color: #FFFFFF;
   }
 
-  .footer-silo-links-wrapper.mobile-closed {
-    display: none;
+  .footer-quick-dot {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
   }
+}
 
-  .footer-silo-links-wrapper.mobile-open {
-    display: block;
-    padding: 0.5rem 1rem 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    background: rgba(0, 0, 0, 0.2);
-  }
+html[data-theme="light"] .footer-mobile-quick-links {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="light"] .footer-quick-link {
+  color: #64748B;
+}
+
+html[data-theme="light"] .footer-quick-link:hover {
+  color: #0F172A;
+}
+
+html[data-theme="light"] .footer-quick-dot {
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .footer-nav-list {

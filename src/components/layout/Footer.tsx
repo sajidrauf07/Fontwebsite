@@ -268,6 +268,19 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile-Only Clean Legal Links (Clean horizontal list replacing bulky mobile accordions) */}
+        <nav className="footer-mobile-quick-links" aria-label="Enlaces legales móviles">
+          <Link href="/politica-de-privacidad" className="footer-quick-link">Privacidad</Link>
+          <span className="footer-quick-dot">•</span>
+          <Link href="/terminos-y-condiciones" className="footer-quick-link">Términos</Link>
+          <span className="footer-quick-dot">•</span>
+          <Link href="/politica-de-cookies" className="footer-quick-link">Cookies</Link>
+          <span className="footer-quick-dot">•</span>
+          <Link href="/aviso-legal" className="footer-quick-link">Aviso Legal</Link>
+          <span className="footer-quick-dot">•</span>
+          <Link href="/contacto" className="footer-quick-link">Contacto</Link>
+        </nav>
+
         {/* Footer Bottom Bar: Copyright, Developer Credit & Subtle Utility Tagline */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
