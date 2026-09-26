@@ -164,6 +164,18 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
         shortTitle: 'Aesthetic',
         href: '/simbolos/aesthetic',
         description: 'Lazos coquette, lunas, estrellas, corazones suaves y separadores.'
+      },
+      {
+        title: 'Símbolos Bonitos',
+        shortTitle: 'Bonitos',
+        href: '/simbolos/bonitos',
+        description: 'Colección de corazones, flores, estrellas y símbolos lindos para copiar.'
+      },
+      {
+        title: 'Símbolos Especiales',
+        shortTitle: 'Especiales',
+        href: '/simbolos/especiales',
+        description: 'Rayos, coronas, cruces, flechas y caracteres para perfiles y nicks.'
       }
     ]
   },

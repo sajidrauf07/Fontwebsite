@@ -610,6 +610,50 @@ export default function SimbolosAestheticPage() {
             </Link>
 
             <Link
+              href="/simbolos/bonitos"
+              style={{
+                background: 'rgba(30, 41, 59, 0.6)',
+                border: '1px solid rgba(236, 72, 153, 0.3)',
+                borderRadius: '12px',
+                padding: '1.15rem',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'block',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFF', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span>Símbolos Bonitos</span>
+                <ArrowRight size={16} color="#EC4899" />
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
+                Corazones tiernos, estrellas brillantes, flores y símbolos lindos para copiar.
+              </p>
+            </Link>
+
+            <Link
+              href="/simbolos/especiales"
+              style={{
+                background: 'rgba(30, 41, 59, 0.6)',
+                border: '1px solid rgba(245, 158, 11, 0.3)',
+                borderRadius: '12px',
+                padding: '1.15rem',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'block',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#FFF', marginBottom: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span>Símbolos Especiales</span>
+                <ArrowRight size={16} color="#F59E0B" />
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
+                Rayos, coronas pro, cruces, flechas y caracteres para perfiles y nicks.
+              </p>
+            </Link>
+
+            <Link
               href="/letras-para-instagram/simbolos-para-instagram"
               style={{
                 background: 'rgba(30, 41, 59, 0.6)',

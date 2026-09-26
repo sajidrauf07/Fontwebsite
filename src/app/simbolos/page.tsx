@@ -543,6 +543,66 @@ export default function SimbolosPage() {
 
           <div className="game-grid-3">
             <Link
+              href="/simbolos/bonitos"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                background: 'rgba(15, 23, 42, 0.6)',
+                border: '1px solid rgba(236, 72, 153, 0.25)',
+                borderRadius: '12px',
+                padding: '1rem',
+                color: '#F1F5F9',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.92rem'
+              }}
+            >
+              <span>Símbolos Bonitos</span>
+              <ArrowRight size={16} color="#EC4899" />
+            </Link>
+
+            <Link
+              href="/simbolos/aesthetic"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                background: 'rgba(15, 23, 42, 0.6)',
+                border: '1px solid rgba(244, 114, 182, 0.25)',
+                borderRadius: '12px',
+                padding: '1rem',
+                color: '#F1F5F9',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.92rem'
+              }}
+            >
+              <span>Símbolos Aesthetic</span>
+              <ArrowRight size={16} color="#F472B6" />
+            </Link>
+
+            <Link
+              href="/simbolos/especiales"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                background: 'rgba(15, 23, 42, 0.6)',
+                border: '1px solid rgba(245, 158, 11, 0.25)',
+                borderRadius: '12px',
+                padding: '1rem',
+                color: '#F1F5F9',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.92rem'
+              }}
+            >
+              <span>Símbolos Especiales</span>
+              <ArrowRight size={16} color="#F59E0B" />
+            </Link>
+
+            <Link
               href="/letras-para-instagram/simbolos-para-instagram"
               style={{
                 display: 'flex',

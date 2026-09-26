@@ -31,6 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/nombres-para-juegos/nombres-para-clanes',
     '/simbolos',
     '/simbolos/aesthetic',
+    '/simbolos/bonitos',
+    '/simbolos/especiales',
     // Páginas Legales y de Transparencia
     '/politica-de-privacidad',
     '/terminos-y-condiciones',
