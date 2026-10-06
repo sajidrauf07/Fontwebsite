@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/nombres-para-juegos/nombres-chidos',
     '/nombres-para-juegos/apodos',
     '/nombres-para-juegos/nombres-para-clanes',
+    '/emojis',
     '/simbolos',
     '/simbolos/para-copiar-y-pegar',
     '/simbolos/aesthetic',

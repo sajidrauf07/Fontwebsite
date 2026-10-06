@@ -160,6 +160,12 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     colorTheme: 'pink',
     children: [
       {
+        title: 'Emojis para Copiar y Pegar',
+        shortTitle: 'Emojis',
+        href: '/emojis',
+        description: 'Colección de emojis Unicode organizados por categorías para copiar con 1 clic.'
+      },
+      {
         title: 'Símbolos para Copiar y Pegar',
         shortTitle: 'Copiar y Pegar',
         href: '/simbolos/para-copiar-y-pegar',
