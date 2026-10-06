@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/nombres-para-juegos/apodos',
     '/nombres-para-juegos/nombres-para-clanes',
     '/simbolos',
+    '/simbolos/para-copiar-y-pegar',
     '/simbolos/aesthetic',
     '/simbolos/bonitos',
     '/simbolos/especiales',

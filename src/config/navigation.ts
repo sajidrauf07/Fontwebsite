@@ -160,6 +160,12 @@ export const SILO_NAVIGATION: SiloNavItem[] = [
     colorTheme: 'pink',
     children: [
       {
+        title: 'Símbolos para Copiar y Pegar',
+        shortTitle: 'Copiar y Pegar',
+        href: '/simbolos/para-copiar-y-pegar',
+        description: 'Biblioteca completa de símbolos organizada para copiar con 1 clic.'
+      },
+      {
         title: 'Símbolos Aesthetic',
         shortTitle: 'Aesthetic',
         href: '/simbolos/aesthetic',
