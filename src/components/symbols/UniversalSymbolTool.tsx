@@ -21,6 +21,7 @@ import {
   UniversalSymbol,
   SymbolCategoryType
 } from '@/data/universalSymbolsData';
+import { copyToClipboard } from '@/lib/clipboard';
 
 export default function UniversalSymbolTool() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -58,23 +59,10 @@ export default function UniversalSymbolTool() {
   };
 
   const copySingleSymbol = async (item: UniversalSymbol) => {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(item.symbol);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = item.symbol;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(item.symbol);
+    if (success) {
       setCopiedId(item.id);
       setTimeout(() => setCopiedId(null), 1800);
-    } catch {
-      // Fallback
     }
   };
 
@@ -90,23 +78,10 @@ export default function UniversalSymbolTool() {
   const copyTray = async () => {
     if (selectedSymbols.length === 0) return;
     const textToCopy = selectedSymbols.join(' ');
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(textToCopy);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = textToCopy;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(textToCopy);
+    if (success) {
       setCopiedTray(true);
       setTimeout(() => setCopiedTray(false), 2000);
-    } catch {
-      // Fallback
     }
   };
 

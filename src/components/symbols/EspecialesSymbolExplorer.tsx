@@ -20,6 +20,7 @@ import {
   EspecialSymbol,
   EspecialCategoryType
 } from '@/data/especialesSymbolsData';
+import { copyToClipboard } from '@/lib/clipboard';
 
 export default function EspecialesSymbolExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -58,25 +59,12 @@ export default function EspecialesSymbolExplorer() {
   };
 
   const copySingleSymbol = async (item: EspecialSymbol) => {
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(item.symbol);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = item.symbol;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(item.symbol);
+    if (success) {
       setCopiedId(item.id);
       setTimeout(() => {
         setCopiedId(null);
       }, 1500);
-    } catch {
-      // Fallback
     }
   };
 
@@ -96,23 +84,10 @@ export default function EspecialesSymbolExplorer() {
   const copyTrayContent = async () => {
     if (selectedSymbols.length === 0) return;
     const fullText = selectedSymbols.join(' ');
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(fullText);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = fullText;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(fullText);
+    if (success) {
       setCopiedTray(true);
       setTimeout(() => setCopiedTray(false), 2000);
-    } catch {
-      // Fallback
     }
   };
 

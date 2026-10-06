@@ -22,6 +22,7 @@ import {
   SimboloParaCopiar,
   SimboloCategoryType
 } from '@/data/paraCopiarSimbolosData';
+import { copyToClipboard } from '@/lib/clipboard';
 
 export default function ParaCopiarSymbolExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -62,26 +63,13 @@ export default function ParaCopiarSymbolExplorer() {
   };
 
   const copySingleSymbol = async (item: SimboloParaCopiar) => {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(item.symbol);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = item.symbol;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(item.symbol);
+    if (success) {
       setCopiedId(item.id);
       setLiveAnnouncement(`Símbolo ${item.symbol} copiado al portapapeles`);
       setTimeout(() => {
         setCopiedId((curr) => (curr === item.id ? null : curr));
       }, 2000);
-    } catch {
-      // Fallback
     }
   };
 
@@ -99,24 +87,11 @@ export default function ParaCopiarSymbolExplorer() {
   const copyTray = async () => {
     if (selectedSymbols.length === 0) return;
     const fullText = selectedSymbols.join(' ');
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(fullText);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = fullText;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(fullText);
+    if (success) {
       setCopiedTray(true);
       setLiveAnnouncement('Combinación de símbolos copiada al portapapeles');
       setTimeout(() => setCopiedTray(false), 2200);
-    } catch {
-      // Fallback
     }
   };
 

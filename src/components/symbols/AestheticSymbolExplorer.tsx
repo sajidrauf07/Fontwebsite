@@ -19,6 +19,7 @@ import {
   AestheticSymbol,
   AestheticCategoryType
 } from '@/data/aestheticSymbolsData';
+import { copyToClipboard } from '@/lib/clipboard';
 
 export default function AestheticSymbolExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -57,23 +58,12 @@ export default function AestheticSymbolExplorer() {
   };
 
   const copySingleSymbol = async (item: AestheticSymbol) => {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        await navigator.clipboard.writeText(item.symbol);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = item.symbol;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(item.symbol);
+    if (success) {
       setCopiedId(item.id);
       setTimeout(() => {
         setCopiedId((curr) => (curr === item.id ? null : curr));
       }, 2000);
-    } catch {
-      // Fallback
     }
   };
 
@@ -90,21 +80,10 @@ export default function AestheticSymbolExplorer() {
   const copyTray = async () => {
     if (selectedSymbols.length === 0) return;
     const fullText = selectedSymbols.join(' ');
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard) {
-        await navigator.clipboard.writeText(fullText);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = fullText;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(fullText);
+    if (success) {
       setCopiedTray(true);
       setTimeout(() => setCopiedTray(false), 2200);
-    } catch {
-      // Fallback
     }
   };
 

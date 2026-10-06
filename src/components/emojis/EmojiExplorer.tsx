@@ -22,6 +22,7 @@ import {
   EmojiItem,
   EmojiCategoryType
 } from '@/data/emojisData';
+import { copyToClipboard } from '@/lib/clipboard';
 
 export default function EmojiExplorer() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -62,26 +63,13 @@ export default function EmojiExplorer() {
   };
 
   const copySingleEmoji = async (item: EmojiItem) => {
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(item.emoji);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = item.emoji;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(item.emoji);
+    if (success) {
       setCopiedId(item.id);
       setLiveAnnouncement(`Emoji ${item.emoji} (${item.name}) copiado al portapapeles`);
       setTimeout(() => {
         setCopiedId((curr) => (curr === item.id ? null : curr));
       }, 2000);
-    } catch {
-      // Fallback
     }
   };
 
@@ -99,24 +87,11 @@ export default function EmojiExplorer() {
   const copyTray = async () => {
     if (selectedEmojis.length === 0) return;
     const fullText = selectedEmojis.join(' ');
-    try {
-      if (typeof navigator !== 'undefined' && navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(fullText);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = fullText;
-        textarea.style.position = 'fixed';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-      }
+    const success = await copyToClipboard(fullText);
+    if (success) {
       setCopiedTray(true);
       setLiveAnnouncement('Combinación de emojis copiada al portapapeles');
       setTimeout(() => setCopiedTray(false), 2200);
-    } catch {
-      // Fallback
     }
   };
 
