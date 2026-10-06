@@ -758,15 +758,15 @@ export default function EmojiExplorer() {
                   }}
                 >
                   {isCopied ? (
-                    <>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
                       <Check size={12} />
                       ¡Copiado!
-                    </>
+                    </span>
                   ) : (
-                    <>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
                       <Copy size={11} />
                       Copiar
-                    </>
+                    </span>
                   )}
                 </button>
               </div>

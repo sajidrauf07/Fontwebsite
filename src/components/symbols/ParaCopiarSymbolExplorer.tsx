@@ -148,7 +148,7 @@ export default function ParaCopiarSymbolExplorer() {
   }, []);
 
   return (
-    <div className="symbol-explorer-root" style={{ width: '100%', position: 'relative' }}>
+    <div className="symbol-explorer-root" suppressHydrationWarning style={{ width: '100%', position: 'relative' }}>
       {/* Screen Reader Live Region for Accessibility */}
       <div aria-live="polite" aria-atomic="true" className="sr-only" style={{ position: 'absolute', width: '1px', height: '1px', overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>
         {liveAnnouncement}
@@ -761,15 +761,15 @@ export default function ParaCopiarSymbolExplorer() {
                   }}
                 >
                   {isCopied ? (
-                    <>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
                       <Check size={12} />
                       ¡Copiado!
-                    </>
+                    </span>
                   ) : (
-                    <>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
                       <Copy size={11} />
                       Copiar
-                    </>
+                    </span>
                   )}
                 </button>
               </div>

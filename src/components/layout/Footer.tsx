@@ -283,7 +283,7 @@ export const Footer: React.FC = () => {
 
         {/* Footer Bottom Bar: Copyright, Developer Credit & Subtle Utility Tagline */}
         <div className="footer-bottom-bar">
-          <p className="copyright-text">
+          <p className="copyright-text" suppressHydrationWarning>
             © {currentYear} Letras Bonitas. Todos los derechos reservados.
           </p>
 

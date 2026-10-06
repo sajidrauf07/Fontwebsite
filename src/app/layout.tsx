@@ -93,7 +93,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
