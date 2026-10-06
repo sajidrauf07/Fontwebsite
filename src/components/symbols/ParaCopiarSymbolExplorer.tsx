@@ -95,14 +95,6 @@ export default function ParaCopiarSymbolExplorer() {
     }
   };
 
-  const pickRandomSymbol = () => {
-    const pool = filteredList.length > 0 ? filteredList : SIMBOLOS_PARA_COPIAR_DATA;
-    const randomItem = pool[Math.floor(Math.random() * pool.length)];
-    copySingleSymbol(randomItem);
-    setRandomFeedback(`¡Símbolo al azar copiado: ${randomItem.symbol} (${randomItem.name})!`);
-    setTimeout(() => setRandomFeedback(null), 3500);
-  };
-
   // Filter logic
   const filteredList = useMemo(() => {
     let result = SIMBOLOS_PARA_COPIAR_DATA;
@@ -132,6 +124,14 @@ export default function ParaCopiarSymbolExplorer() {
 
     return result;
   }, [activeCategory, showOnlyFavorites, showOnlyPopular, searchQuery, favorites]);
+
+  const pickRandomSymbol = () => {
+    const pool = filteredList.length > 0 ? filteredList : SIMBOLOS_PARA_COPIAR_DATA;
+    const randomItem = pool[Math.floor(Math.random() * pool.length)];
+    copySingleSymbol(randomItem);
+    setRandomFeedback(`¡Símbolo al azar copiado: ${randomItem.symbol} (${randomItem.name})!`);
+    setTimeout(() => setRandomFeedback(null), 3500);
+  };
 
   const displayedSymbols = useMemo(() => {
     return filteredList.slice(0, visibleCount);

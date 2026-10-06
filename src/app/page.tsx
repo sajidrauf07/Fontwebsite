@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React from 'react';
 import type { Metadata } from 'next';
 import { FontGenerator } from '@/components/font-generator/FontGenerator';
@@ -74,15 +75,15 @@ export default function HomePage() {
   return (
     <>
       {/* Schema.org Structured Data */}
-      <script
+      <Script id="script-page-1"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
       />
-      <script
+      <Script id="script-page-2"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdApp) }}
       />
-      <script
+      <Script id="script-page-3"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />

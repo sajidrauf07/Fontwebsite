@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -155,15 +156,15 @@ export default function SimbolosPage() {
   return (
     <div className="silo-page">
       {/* Structured Data */}
-      <script
+      <Script id="script-page-1"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
+      <Script id="script-page-2"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
       />
-      <script
+      <Script id="script-page-3"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

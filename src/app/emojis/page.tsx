@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -175,7 +176,7 @@ export default function EmojisPage() {
   return (
     <div className="page-wrapper" style={{ minHeight: '100vh', backgroundColor: 'var(--bg-dark, #0B0F19)' }}>
       {/* Schema Injection */}
-      <script
+      <Script id="script-page-1"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

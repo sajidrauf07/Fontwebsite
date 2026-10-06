@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -146,11 +147,11 @@ export default function LetrasCursivasPage() {
   return (
     <>
       {/* Structured Data */}
-      <script
+      <Script id="script-page-1"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
+      <Script id="script-page-2"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
